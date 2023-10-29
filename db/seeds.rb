@@ -18,6 +18,12 @@ movies = [{:title => 'Aladdin', :rating => 'G', :release_date => '25-Nov-1992'},
       	  {:title => 'Chicken Run', :rating => 'G', :release_date => '21-Jun-2000'},
   	 ]
 
+courses = [{:courseName => 'COMS 4152'},{:courseName => 'CSOR 4231'},{:courseName => 'TestClass'}]
+
 movies.each do |movie|
   Movie.create!(movie)
 end
+
+courses.each do |course|
+	Course.create!(course)
+  end

@@ -1,0 +1,36 @@
+require 'set'
+
+class UsersController < ApplicationController
+
+    skip_before_action :require_login, only: [:create]
+
+    def profile
+        @viewable_courses = Set.new
+        @entitlements = Entitlement.where(uni: current_user.uni)
+        @entitlements.each do |entitlement|
+            @viewable_courses << Course.find_by(id: entitlement.courseId)
+        end
+    end
+
+    def create
+        existing_user = User.find_by(uni: user_params[:uni])
+        if existing_user
+            flash[:warning] = "Inputted UNI already has an account. Please log in instead."
+            redirect_to new_session_path
+        else
+            new_user = User.create(user_params)
+            if new_user.valid?
+                session[:user_id] = new_user.id
+                redirect_to user_profile_path
+            else
+                flash[:warning] = "Invalid account settings. Please try to create an account again."
+                redirect_to new_session_path
+            end
+        end
+    end
+  
+    private 
+    def user_params
+      params.require(:user).permit(:uni, :name, :password)
+    end
+  end
