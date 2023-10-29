@@ -1,0 +1,25 @@
+<h2>Log In</h2>
+
+<%= form_tag sessions_path, method: :post, :class => 'form' do %>
+    <%= label :login, :uni, 'Uni', :class => 'col-form-label' %>
+    <%= text_field :login, :uni, :class => 'form-control' %>
+    <%= label :login, :password, 'Password', :class => 'col-form-label'  %>
+    <%= password_field :login, :password, :class => 'form-control' %>
+    </br>
+    <%= submit_tag "Sign In!", :class => 'btn btn-primary' %>
+<% end %>
+
+</br></br></br>
+
+<h2>Sign Up</h2>
+
+<%= form_tag users_path, method: :post, :class => 'form' do %>
+    <%= label :user, :uni, 'Uni', :class => 'col-form-label' %>
+    <%= text_field :user, :uni, :class => 'form-control' %>
+    <%= label :user, :name, 'Name', :class => 'col-form-label' %>
+    <%= text_field :user, :name, :class => 'form-control' %>
+    <%= label :user, :password, 'Password', :class => 'col-form-label'  %>
+    <%= password_field :user, :password, :class => 'form-control' %>
+    </br>
+    <%= submit_tag "Sign Up!", :class => 'btn btn-primary' %>
+<% end %>

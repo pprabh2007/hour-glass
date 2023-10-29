@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.6.6'
 gem 'rails', '4.2.10'
+gem 'bcrypt', '~> 3.1.7'
 
 # for Heroku deployment 
 group :development, :test do
