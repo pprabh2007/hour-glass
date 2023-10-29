@@ -19,6 +19,8 @@ movies = [{:title => 'Aladdin', :rating => 'G', :release_date => '25-Nov-1992'},
   	 ]
 
 courses = [{:courseName => 'COMS 4152'},{:courseName => 'CSOR 4231'},{:courseName => 'TestClass'}]
+schedules = [{:courseId => 'a', startTime: DateTime.new(2023, 1, 1, 13, 0), endTime: DateTime.new(2023, 1, 1, 14, 0)},
+{:courseId => 'b', startTime: DateTime.new(2023, 1, 2, 14, 0), endTime: DateTime.new(2023, 1, 2, 15, 0)}]
 
 movies.each do |movie|
   Movie.create!(movie)
@@ -27,3 +29,7 @@ end
 courses.each do |course|
 	Course.create!(course)
   end
+
+schedules.each do |schedule|
+    Schedule.create!(schedule)
+end
