@@ -6,7 +6,7 @@ Rottenpotatoes::Application.routes.draw do
   resources :schedules
   get '/profile', to: 'users#profile', as: 'user_profile'
   delete '/sessions/clear', to: 'sessions#clear', as: 'clear_session'
-  root :to => redirect('/profile')
+  root :to => redirect('/sessions/new')
 
   resources :teaching_assistants do
     get 'new_office_hour', on: :collection
