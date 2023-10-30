@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20231029183430) do
     t.string   "courseId"
     t.datetime "startTime"
     t.datetime "endTime"
+  end
 
   create_table "entitlements", force: :cascade do |t|
     t.string   "uni"
