@@ -5089,355 +5089,326 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 726ms (Views: 726.1ms | ActiveRecord: 0.0ms)
 
 
-Started GET "/" for 128.59.177.25 at 2023-10-29 22:09:46 +0000
+Started GET "/" for 76.159.145.92 at 2023-10-29 17:52:48 +0000
 
 
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 22:09:46 +0000
+Started GET "/profile" for 76.159.145.92 at 2023-10-29 17:52:48 +0000
+Processing by UsersController#profile as HTML
+Redirected to https://aromapegasus-naturallimit-3000.codio.io/sessions/new
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 76.159.145.92 at 2023-10-29 17:52:48 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (24.7ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 396ms (Views: 395.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 76.159.145.92 at 2023-10-29 17:52:49 +0000
+
+
+Started GET "/assets/users.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 76.159.145.92 at 2023-10-29 17:52:49 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 76.159.145.92 at 2023-10-29 17:52:49 +0000
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 76.159.145.92 at 2023-10-29 17:52:49 +0000
+
+
+Started GET "/assets/sessions.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 76.159.145.92 at 2023-10-29 17:52:49 +0000
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 76.159.145.92 at 2023-10-29 17:52:49 +0000
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 76.159.145.92 at 2023-10-29 17:52:49 +0000
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 76.159.145.92 at 2023-10-29 17:52:49 +0000
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 17:53:06 +0000
+Processing by TeachingAssistantsController#show as HTML
+  Parameters: {"id"=>"new_office_hour"}
+Redirected to https://aromapegasus-naturallimit-3000.codio.io/sessions/new
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 76.159.145.92 at 2023-10-29 17:53:06 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 37ms (Views: 35.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 76.159.145.92 at 2023-10-29 17:53:27 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kHoHD7l4Vv4rJmQbbn8i2FGCw185O4EERwmMmuaRRn7vsJUMi89ObTOEXhaarRv4kZL6324YUR8L77cUPdGtTw==", "user"=>{"uni"=>"ss5945", "name"=>"Test", "password"=>"[FILTERED]"}, "commit"=>"Sign Up!"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "ss5945"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("uni", "name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "ss5945"], ["name", "Test"], ["password_digest", "$2a$12$jlDf8KGH6.Cl0jG7Om/x3urcdkqJOoPd3oja0Qw6tNa4jOk9x9D/a"], ["created_at", "2023-10-29 17:53:27.781446"], ["updated_at", "2023-10-29 17:53:27.781446"]]
+  [1m[35m (64.4ms)[0m  commit transaction
+Redirected to https://aromapegasus-naturallimit-3000.codio.io/profile
+Completed 302 Found in 409ms (ActiveRecord: 68.6ms)
+
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-29 17:53:27 +0000
 Processing by UsersController#profile as HTML
   [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
-Completed 404 Not Found in 54ms (ActiveRecord: 3.7ms)
-
-ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
-  app/controllers/application_controller.rb:13:in `current_user'
-  app/controllers/users_controller.rb:9:in `profile'
-
-
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.1ms)
-
-
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 22:09:53 +0000
-Processing by UsersController#profile as HTML
-  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
-Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
-
-ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
-  app/controllers/application_controller.rb:13:in `current_user'
-  app/controllers/users_controller.rb:9:in `profile'
-
-
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.6ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (13.1ms)
-
-
-Started GET "/" for 128.59.177.25 at 2023-10-29 22:09:58 +0000
-
-
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 22:09:58 +0000
-Processing by UsersController#profile as HTML
-  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
-Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
-
-ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
-  app/controllers/application_controller.rb:13:in `current_user'
-  app/controllers/users_controller.rb:9:in `profile'
-
-
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (13.8ms)
-
-
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 22:11:47 +0000
-Processing by UsersController#profile as HTML
-Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
-
-NoMethodError (undefined method `[]' for nil:NilClass):
-  app/controllers/application_controller.rb:14:in `current_user'
-  app/controllers/users_controller.rb:9:in `profile'
-
-
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.6ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (13.4ms)
-
-
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 22:11:57 +0000
-Processing by UsersController#profile as HTML
-Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
-
-NoMethodError (undefined method `uni' for nil:NilClass):
-  app/controllers/users_controller.rb:9:in `profile'
-
-
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.5ms)
-
-
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 22:12:02 +0000
-Processing by UsersController#profile as HTML
-  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
-Completed 404 Not Found in 5ms (ActiveRecord: 0.6ms)
-
-ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
-  app/controllers/application_controller.rb:13:in `current_user'
-  app/controllers/users_controller.rb:9:in `profile'
-
-
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.6ms)
-
-
-Started GET "/" for 128.59.177.25 at 2023-10-29 22:13:03 +0000
-
-
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 22:13:03 +0000
-Processing by UsersController#profile as HTML
-  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
-Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
-
-ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
-  app/controllers/application_controller.rb:13:in `current_user'
-  app/controllers/users_controller.rb:9:in `profile'
-
-
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (13.7ms)
-
-
-Started GET "/" for 128.59.177.25 at 2023-10-29 22:14:32 +0000
-
-
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 22:14:32 +0000
-Processing by UsersController#profile as HTML
-  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
-Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
-
-ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
-  app/controllers/application_controller.rb:13:in `current_user'
-  app/controllers/users_controller.rb:9:in `profile'
-
-
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.9ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.8ms)
-
-
-Started GET "/" for 128.59.177.25 at 2023-10-29 22:18:10 +0000
-
-
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 22:18:10 +0000
-Processing by UsersController#profile as HTML
-  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
-Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
-
-ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
-  app/controllers/application_controller.rb:13:in `current_user'
-  app/controllers/users_controller.rb:9:in `profile'
-
-
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.6ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (13.1ms)
-
-
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 22:18:29 +0000
-Processing by UsersController#profile as HTML
-Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
-
-NoMethodError (undefined method `uni' for nil:NilClass):
-  app/controllers/users_controller.rb:9:in `profile'
-
-
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.8ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (14.6ms)
-
-
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 22:18:30 +0000
-Processing by UsersController#profile as HTML
-Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
-
-NoMethodError (undefined method `uni' for nil:NilClass):
-  app/controllers/users_controller.rb:9:in `profile'
-
-
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.5ms)
-
-
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 22:18:51 +0000
-Processing by UsersController#profile as HTML
-  Rendered users/profile.html.erb within layouts/application (1.1ms)
-Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
-
-ActionView::Template::Error (undefined method `name' for nil:NilClass):
-    1: <%= content_tag :h1, "Hello, #{current_user.name}!" %>
-    2: 
-    3: </br>
-    4: <%= content_tag :h3, "Your Viewable Courses" %>
-  app/views/users/profile.html.erb:1:in `_app_views_users_profile_html_erb__2526003851672232841_69943644969840'
-
-
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.5ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (22.2ms)
-
-
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 22:19:44 +0000
-Processing by UsersController#profile as HTML
-  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
-Completed 404 Not Found in 6ms (ActiveRecord: 1.0ms)
-
-ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
-  app/controllers/application_controller.rb:13:in `current_user'
-  app/controllers/users_controller.rb:9:in `profile'
-
-
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.6ms)
-
-
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 22:19:44 +0000
-Processing by UsersController#profile as HTML
-  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
-Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
-
-ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
-  app/controllers/application_controller.rb:13:in `current_user'
-  app/controllers/users_controller.rb:9:in `profile'
-
-
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18.8ms)
-
-
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 22:19:46 +0000
-Processing by UsersController#profile as HTML
-  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
-Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
-
-ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
-  app/controllers/application_controller.rb:13:in `current_user'
-  app/controllers/users_controller.rb:9:in `profile'
-
-
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (14.1ms)
-
-
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 22:20:21 +0000
-Processing by UsersController#profile as HTML
-  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
-  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
-Completed 404 Not Found in 24ms (ActiveRecord: 0.7ms)
-
-ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
-  app/controllers/application_controller.rb:14:in `current_user'
-  app/controllers/users_controller.rb:9:in `profile'
-
-
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.9ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (14.6ms)
-
-
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 22:20:37 +0000
-Processing by UsersController#profile as HTML
-  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
-  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
-Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
-
-ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
-  app/controllers/application_controller.rb:14:in `current_user'
-  app/controllers/users_controller.rb:9:in `profile'
-
-
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (13.6ms)
-
-
-Started GET "/" for 128.59.177.25 at 2023-10-29 22:21:01 +0000
-
-
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 22:21:02 +0000
-Processing by UsersController#profile as HTML
-  [1m[36mUser Load (1.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
-  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
-Completed 404 Not Found in 57ms (ActiveRecord: 2.0ms)
-
-ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
-  app/controllers/application_controller.rb:14:in `current_user'
-  app/controllers/users_controller.rb:9:in `profile'
-
-
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (15.2ms)
-
-
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 22:21:59 +0000
-Processing by UsersController#profile as HTML
-  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
-  [1m[35mEntitlement Load (0.2ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "asdf"]]
-  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
-  Rendered users/profile.html.erb within layouts/application (19.2ms)
-  Rendered layouts/_flash.erb (0.7ms)
-Completed 200 OK in 365ms (Views: 344.4ms | ActiveRecord: 1.7ms)
-
-
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 22:22:06 +0000
-Processing by UsersController#profile as HTML
-  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
-  [1m[36mEntitlement Load (0.1ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "asdf"]]
-  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
-  Rendered users/profile.html.erb within layouts/application (0.6ms)
+  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "ss5945"]]
+  Rendered users/profile.html.erb within layouts/application (8.7ms)
   Rendered layouts/_flash.erb (0.1ms)
-Completed 200 OK in 27ms (Views: 12.8ms | ActiveRecord: 1.2ms)
+Completed 200 OK in 48ms (Views: 34.4ms | ActiveRecord: 0.4ms)
 
 
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 22:23:19 +0000
+Started POST "/entitlements" for 76.159.145.92 at 2023-10-29 17:53:39 +0000
+Processing by EntitlementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uZoa3ncVvsieFutygMgpTooB+pT8jqQi52k2w1JiM+jGUIjdRaKmW4a00X90GhBuShHDFKutdDmrjw1NiSLY2Q==", "entitlement"=>{"courseName"=>"", "role"=>"Viewer"}, "commit"=>"Add New Viewable Course"}
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1[0m  [["courseName", ""]]
+Redirected to https://aromapegasus-naturallimit-3000.codio.io/profile
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-29 17:53:39 +0000
 Processing by UsersController#profile as HTML
-  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
-  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "asdf"]]
-  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
-  Rendered users/profile.html.erb within layouts/application (0.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mEntitlement Load (0.1ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "ss5945"]]
+  Rendered users/profile.html.erb within layouts/application (2.0ms)
   Rendered layouts/_flash.erb (0.1ms)
-Completed 200 OK in 54ms (Views: 51.2ms | ActiveRecord: 0.3ms)
+Completed 200 OK in 35ms (Views: 32.7ms | ActiveRecord: 0.1ms)
 
 
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 22:24:02 +0000
+Started POST "/entitlements" for 76.159.145.92 at 2023-10-29 17:53:46 +0000
+Processing by EntitlementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YUIjWaKvZ4Pkg6cgtA9CzDnXH9gGkQtvahasO6P/9n0eiLFakBh/EPwhnS1A3Xvs+ccmWFGy23Qm8Je1eL8dTA==", "entitlement"=>{"courseName"=>"Test Class", "role"=>"Viewer"}, "commit"=>"Add New Viewable Course"}
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1  [["courseName", "Test Class"]]
+Redirected to https://aromapegasus-naturallimit-3000.codio.io/profile
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-29 17:53:46 +0000
 Processing by UsersController#profile as HTML
-  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
-  [1m[36mEntitlement Load (0.1ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "asdf"]]
-  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
-  Rendered users/profile.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "ss5945"]]
+  Rendered users/profile.html.erb within layouts/application (0.7ms)
   Rendered layouts/_flash.erb (0.1ms)
-Completed 200 OK in 12ms (Views: 9.8ms | ActiveRecord: 0.2ms)
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 0.2ms)
 
 
-Started GET "/'" for 128.59.177.25 at 2023-10-29 22:24:37 +0000
+Started GET "/" for 76.159.145.92 at 2023-10-29 18:03:51 +0000
 
-ActionController::RoutingError (No route matches [GET] "/'"):
-  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-29 18:03:51 +0000
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mEntitlement Load (0.3ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "ss5945"]]
+  Rendered users/profile.html.erb within layouts/application (8.4ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 289ms (Views: 230.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 18:04:23 +0000
+Processing by TeachingAssistantsController#show as HTML
+  Parameters: {"id"=>"new_office_hour"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+NameError (uninitialized constant ApplicationRecord):
+  app/models/teaching_assistant.rb:2:in `<top (required)>'
+  app/controllers/teaching_assistants_controller.rb:61:in `set_teaching_assistant'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (11.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.2ms)
+
+
+Started GET "/" for 76.159.145.92 at 2023-10-29 18:05:35 +0000
+
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-29 18:05:35 +0000
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "ss5945"]]
+  Rendered users/profile.html.erb within layouts/application (7.8ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 257ms (Views: 213.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 18:05:44 +0000
+Processing by TeachingAssistantsController#show as HTML
+  Parameters: {"id"=>"new_office_hour"}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::StatementInvalid (Could not find table 'teaching_assistants'):
+  app/controllers/teaching_assistants_controller.rb:61:in `set_teaching_assistant'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (34.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateTeachingAssistants (20231029180642)
+  [1m[35m (0.1ms)[0m  begin transaction
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /home/codio/workspace/hour-glass/db/migrate/20231029180642_create_teaching_assistants.rb:9)
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "teaching_assistants" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "class_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20231029180642"]]
+  [1m[36m (67.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 76.159.145.92 at 2023-10-29 18:09:08 +0000
+
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-29 18:09:09 +0000
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "ss5945"]]
+  Rendered users/profile.html.erb within layouts/application (8.0ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 248ms (Views: 206.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 18:09:14 +0000
+Processing by TeachingAssistantsController#show as HTML
+  Parameters: {"id"=>"new_office_hour"}
+  [1m[36mTeachingAssistant Load (0.1ms)[0m  [1mSELECT  "teaching_assistants".* FROM "teaching_assistants" WHERE "teaching_assistants"."id" = ? LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 16ms (ActiveRecord: 0.3ms)
+
+ActiveRecord::RecordNotFound (Couldn't find TeachingAssistant with 'id'=new_office_hour):
+  app/controllers/teaching_assistants_controller.rb:61:in `set_teaching_assistant'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (21.4ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.6ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (39.3ms)
+
+
+Started GET "/" for 76.159.145.92 at 2023-10-29 18:11:24 +0000
+
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-29 18:11:25 +0000
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "ss5945"]]
+  Rendered users/profile.html.erb within layouts/application (7.8ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 256ms (Views: 212.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 18:11:34 +0000
+Processing by TeachingAssistantsController#show as HTML
+  Parameters: {"id"=>"new_office_hour"}
+  [1m[36mTeachingAssistant Load (0.1ms)[0m  [1mSELECT  "teaching_assistants".* FROM "teaching_assistants" WHERE "teaching_assistants"."id" = ? LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 14ms (ActiveRecord: 0.3ms)
+
+ActiveRecord::RecordNotFound (Couldn't find TeachingAssistant with 'id'=new_office_hour):
+  app/controllers/teaching_assistants_controller.rb:61:in `set_teaching_assistant'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (23.3ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (40.4ms)
+
+
+Started GET "/" for 76.159.145.92 at 2023-10-29 18:13:53 +0000
+
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-29 18:13:53 +0000
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "ss5945"]]
+  Rendered users/profile.html.erb within layouts/application (7.7ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 247ms (Views: 205.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 18:13:58 +0000
+Processing by TeachingAssistantsController#show as HTML
+  Parameters: {"id"=>"new_office_hour"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+ActionView::MissingTemplate (Missing template teaching_assistants/show, application/show with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby]}. Searched in:
+  * "/home/codio/workspace/hour-glass/app/views"
+):
+  actionview (4.2.10) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.10) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.10) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.10) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.10) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.10) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.10) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.10) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.10) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.10) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.10) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.10) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.10) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.10) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.10) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /usr/lib/ruby/2.6.0/benchmark.rb:308:in `realtime'
+  activesupport (4.2.10) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.10) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.10) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.10) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.10) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.10) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.10) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.10) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.10) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.10) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.10) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.10) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.10) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.10) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.10) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.10) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.10) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.10) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.10) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.10) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.10) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.10) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.10) lib/rack/etag.rb:24:in `call'
+  rack (1.6.10) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.10) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.10) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.10) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.10) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.10) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.10) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
   actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
   railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
   railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
@@ -5454,7 +5425,14 @@ ActionController::RoutingError (No route matches [GET] "/'"):
   rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
   railties (4.2.10) lib/rails/engine.rb:518:in `call'
   railties (4.2.10) lib/rails/application.rb:165:in `call'
-  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  railties (4.2.10) lib/rails/railtie.rb:194:in `public_send'
+  railties (4.2.10) lib/rails/railtie.rb:194:in `method_missing'
+  rack (1.6.10) lib/rack/tempfile_reaper.rb:15:in `call'
+  rack (1.6.10) lib/rack/lint.rb:49:in `_call'
+  rack (1.6.10) lib/rack/lint.rb:37:in `call'
+  rack (1.6.10) lib/rack/showexceptions.rb:24:in `call'
+  rack (1.6.10) lib/rack/commonlogger.rb:33:in `call'
+  rack (1.6.10) lib/rack/chunked.rb:54:in `call'
   rack (1.6.10) lib/rack/content_length.rb:15:in `call'
   rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
   /usr/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
@@ -5462,484 +5440,1147 @@ ActionController::RoutingError (No route matches [GET] "/'"):
   /usr/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
 
 
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.1ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.3ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (21.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (23.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (12.0ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (45.4ms)
 
 
-Started GET "/sessions/new" for 128.59.177.25 at 2023-10-29 22:24:42 +0000
-Processing by SessionsController#new as HTML
-  Rendered sessions/new.html.erb within layouts/application (3.8ms)
-  Rendered layouts/_flash.erb (0.1ms)
-Completed 200 OK in 26ms (Views: 24.9ms | ActiveRecord: 0.0ms)
+Started GET "/" for 76.159.145.92 at 2023-10-29 18:15:55 +0000
 
 
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 22:25:00 +0000
+Started GET "/profile" for 76.159.145.92 at 2023-10-29 18:15:55 +0000
 Processing by UsersController#profile as HTML
-Redirected to https://adriansimilar-performcrimson-3000.codio.io/sessions/new
-Filter chain halted as :require_login rendered or redirected
-Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "ss5945"]]
+  Rendered users/profile.html.erb within layouts/application (7.7ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 246ms (Views: 203.9ms | ActiveRecord: 1.8ms)
 
 
-Started GET "/sessions/new" for 128.59.177.25 at 2023-10-29 22:25:00 +0000
-Processing by SessionsController#new as HTML
-  Rendered sessions/new.html.erb within layouts/application (1.1ms)
-  Rendered layouts/_flash.erb (0.1ms)
-Completed 200 OK in 13ms (Views: 12.6ms | ActiveRecord: 0.0ms)
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 18:16:01 +0000
+Processing by TeachingAssistantsController#show as HTML
+  Parameters: {"id"=>"new_office_hour"}
+  Rendered teaching_assistants/show.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <!-- app/views/teaching_assistants/show.html.erb -->
+    2: <h1>Teaching Assistant Details</h1>
+    3: 
+    4: <p><strong>Name:</strong> <%= @teaching_assistant.name %></p>
+    5: <p><strong>Email:</strong> <%= @teaching_assistant.email %></p>
+    6: <p><strong>Class ID:</strong> <%= @teaching_assistant.class_id %></p>
+    7: 
+  app/views/teaching_assistants/show.html.erb:4:in `_app_views_teaching_assistants_show_html_erb__1839215143974699677_70233655196680'
 
 
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 22:25:05 +0000
-Processing by UsersController#profile as HTML
-Redirected to https://adriansimilar-performcrimson-3000.codio.io/sessions/new
-Filter chain halted as :require_login rendered or redirected
-Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.5ms)
 
 
-Started GET "/sessions/new" for 128.59.177.25 at 2023-10-29 22:25:05 +0000
-Processing by SessionsController#new as HTML
-  Rendered sessions/new.html.erb within layouts/application (1.1ms)
-  Rendered layouts/_flash.erb (0.1ms)
-Completed 200 OK in 13ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 18:16:02 +0000
+Processing by TeachingAssistantsController#show as HTML
+  Parameters: {"id"=>"new_office_hour"}
+  Rendered teaching_assistants/show.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <!-- app/views/teaching_assistants/show.html.erb -->
+    2: <h1>Teaching Assistant Details</h1>
+    3: 
+    4: <p><strong>Name:</strong> <%= @teaching_assistant.name %></p>
+    5: <p><strong>Email:</strong> <%= @teaching_assistant.email %></p>
+    6: <p><strong>Class ID:</strong> <%= @teaching_assistant.class_id %></p>
+    7: 
+  app/views/teaching_assistants/show.html.erb:4:in `_app_views_teaching_assistants_show_html_erb__1839215143974699677_70233655196680'
 
 
-Started POST "/sessions" for 128.59.177.25 at 2023-10-29 22:25:10 +0000
-Processing by SessionsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HHgqkgcbsgnZAPBfdrd4+echii8Lko3ADgBtQ10LyI084yRLBmkCrGYyanDlBXPwpLNNwQMVH498xygExXRmcA==", "login"=>{"uni"=>"asdf", "password"=>"[FILTERED]"}, "commit"=>"Sign In!"}
-  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "asdf"]]
-Redirected to https://adriansimilar-performcrimson-3000.codio.io/sessions/new
-Completed 302 Found in 298ms (ActiveRecord: 0.2ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.5ms)
 
 
-Started GET "/sessions/new" for 128.59.177.25 at 2023-10-29 22:25:11 +0000
-Processing by SessionsController#new as HTML
-  Rendered sessions/new.html.erb within layouts/application (0.8ms)
-  Rendered layouts/_flash.erb (0.1ms)
-Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.0ms)
-  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 18:17:44 +0000
+Processing by TeachingAssistantsController#show as HTML
+  Parameters: {"id"=>"new_office_hour"}
+  [1m[36mTeachingAssistant Load (0.2ms)[0m  [1mSELECT  "teaching_assistants".* FROM "teaching_assistants" WHERE "teaching_assistants"."id" = ? LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 38ms (ActiveRecord: 1.6ms)
+
+ActiveRecord::RecordNotFound (Couldn't find TeachingAssistant with 'id'=new_office_hour):
+  app/controllers/teaching_assistants_controller.rb:12:in `show'
 
 
-Started POST "/users" for 128.59.177.25 at 2023-10-29 22:31:38 +0000
-Processing by UsersController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fITOKH2ZqP8MSWmdZ+haYWnwvzcfGbV4aPB21/mQZjBcH8DxfOsYWrN787L0WlFoKmJ42ReeJzcaNzOQYe/IzQ==", "user"=>{"uni"=>"bhak", "name"=>"bhak", "password"=>"[FILTERED]"}, "commit"=>"Sign Up!"}
-  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "bhak"]]
-  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
-  [1m[35mSQL (0.8ms)[0m  INSERT INTO "users" ("uni", "name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["uni", "bhak"], ["name", "bhak"], ["password_digest", "$2a$12$zTw7../Ish86DEuqMozAzu5UopjHesLKuiuoc7Zat9rypi74B9gBm"], ["created_at", "2023-10-29 22:31:38.903893"], ["updated_at", "2023-10-29 22:31:38.903893"]]
-  [1m[36m (122.9ms)[0m  [1mcommit transaction[0m
-Redirected to https://adriansimilar-performcrimson-3000.codio.io/profile
-Completed 302 Found in 499ms (ActiveRecord: 124.0ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (14.8ms)
 
 
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 22:31:39 +0000
-Processing by UsersController#profile as HTML
-  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
-  [1m[36mEntitlement Load (0.1ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "bhak"]]
-  Rendered users/profile.html.erb within layouts/application (0.7ms)
-  Rendered layouts/_flash.erb (0.1ms)
-Completed 200 OK in 27ms (Views: 25.4ms | ActiveRecord: 0.3ms)
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 18:19:28 +0000
+Processing by TeachingAssistantsController#show as HTML
+  Parameters: {"id"=>"new_office_hour"}
+  Rendered teaching_assistants/show.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <!-- app/views/teaching_assistants/show.html.erb -->
+    2: <h1>Teaching Assistant Details</h1>
+    3: 
+    4: <p><strong>Name:</strong> <%= @teaching_assistant.name %></p>
+    5: <p><strong>Email:</strong> <%= @teaching_assistant.email %></p>
+    6: <p><strong>Class ID:</strong> <%= @teaching_assistant.class_id %></p>
+    7: 
+  app/views/teaching_assistants/show.html.erb:4:in `_app_views_teaching_assistants_show_html_erb__2462732613386234879_70138799710720'
 
 
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 22:48:49 +0000
-Processing by UsersController#profile as HTML
-  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
-  [1m[36mEntitlement Load (3.9ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "bhak"]]
-  Rendered users/profile.html.erb within layouts/application (12.4ms)
-Completed 500 Internal Server Error in 29ms (ActiveRecord: 4.7ms)
-
-ActionView::Template::Error (undefined local variable or method `schedules_path' for #<#<Class:0x00007f2ee54597d0>:0x00007f2ee546a080>):
-    28:   </br>
-    29:   <%= submit_tag "Add New Viewable Course", :class => 'btn btn-primary' %>
-    30: <% end %>
-    31: <%= link_to 'View Schedule', schedules_path, :class => 'btn btn-primary col-2' %>
-    32: 
-    33: </br></br></br></br></br></br></br></br></br>
-    34: <%= link_to "Sign out", clear_session_path, method:"delete" %>
-  app/views/users/profile.html.erb:31:in `_app_views_users_profile_html_erb___2171796880885681154_69919695936440'
-
-
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
   Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
   Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.4ms)
 
 
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 22:49:53 +0000
-Processing by UsersController#profile as HTML
-  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
-  [1m[36mEntitlement Load (0.1ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "bhak"]]
-  Rendered users/profile.html.erb within layouts/application (9.4ms)
-Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.8ms)
-
-ActionView::Template::Error (undefined local variable or method `schedules_path' for #<#<Class:0x00007f2ee5865658>:0x00007f2ee5871ef8>):
-    28:   </br>
-    29:   <%= submit_tag "Add New Viewable Course", :class => 'btn btn-primary' %>
-    30: <% end %>
-    31: <%= link_to 'View Schedule', schedules_path, :class => 'btn btn-primary col-2' %>
-    32: 
-    33: </br></br></br></br></br></br></br></br></br>
-    34: <%= link_to "Sign out", clear_session_path, method:"delete" %>
-  app/views/users/profile.html.erb:31:in `_app_views_users_profile_html_erb___2171796880885681154_69919695936440'
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 18:20:22 +0000
+Processing by TeachingAssistantsController#show as HTML
+  Parameters: {"id"=>"new_office_hour"}
+Redirected to https://aromapegasus-naturallimit-3000.codio.io/teaching_assistants
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
 
 
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.5ms)
+Started GET "/teaching_assistants" for 76.159.145.92 at 2023-10-29 18:20:22 +0000
+Processing by TeachingAssistantsController#index as HTML
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.0ms)
 
-
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 22:49:54 +0000
-Processing by UsersController#profile as HTML
-  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
-  [1m[36mEntitlement Load (0.1ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "bhak"]]
-  Rendered users/profile.html.erb within layouts/application (10.9ms)
-Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.2ms)
-
-ActionView::Template::Error (undefined local variable or method `schedules_path' for #<#<Class:0x00007f2ee5865658>:0x00007f2ee598aee8>):
-    28:   </br>
-    29:   <%= submit_tag "Add New Viewable Course", :class => 'btn btn-primary' %>
-    30: <% end %>
-    31: <%= link_to 'View Schedule', schedules_path, :class => 'btn btn-primary col-2' %>
-    32: 
-    33: </br></br></br></br></br></br></br></br></br>
-    34: <%= link_to "Sign out", clear_session_path, method:"delete" %>
-  app/views/users/profile.html.erb:31:in `_app_views_users_profile_html_erb___2171796880885681154_69919695936440'
-
-
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (15.3ms)
-
-
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 22:49:55 +0000
-Processing by UsersController#profile as HTML
-  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
-  [1m[36mEntitlement Load (0.1ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "bhak"]]
-  Rendered users/profile.html.erb within layouts/application (10.7ms)
-Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.1ms)
-
-ActionView::Template::Error (undefined local variable or method `schedules_path' for #<#<Class:0x00007f2ee5865658>:0x00007f2ee5c7a388>):
-    28:   </br>
-    29:   <%= submit_tag "Add New Viewable Course", :class => 'btn btn-primary' %>
-    30: <% end %>
-    31: <%= link_to 'View Schedule', schedules_path, :class => 'btn btn-primary col-2' %>
-    32: 
-    33: </br></br></br></br></br></br></br></br></br>
-    34: <%= link_to "Sign out", clear_session_path, method:"delete" %>
-  app/views/users/profile.html.erb:31:in `_app_views_users_profile_html_erb___2171796880885681154_69919695936440'
-
-
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (15.3ms)
-
-
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 22:49:56 +0000
-Processing by UsersController#profile as HTML
-  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
-  [1m[36mEntitlement Load (0.1ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "bhak"]]
-  Rendered users/profile.html.erb within layouts/application (10.3ms)
-Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.2ms)
-
-ActionView::Template::Error (undefined local variable or method `schedules_path' for #<#<Class:0x00007f2ee5865658>:0x00007f2ee5cf8918>):
-    28:   </br>
-    29:   <%= submit_tag "Add New Viewable Course", :class => 'btn btn-primary' %>
-    30: <% end %>
-    31: <%= link_to 'View Schedule', schedules_path, :class => 'btn btn-primary col-2' %>
-    32: 
-    33: </br></br></br></br></br></br></br></br></br>
-    34: <%= link_to "Sign out", clear_session_path, method:"delete" %>
-  app/views/users/profile.html.erb:31:in `_app_views_users_profile_html_erb___2171796880885681154_69919695936440'
-
-
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (15.2ms)
-
-
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 22:50:31 +0000
-Processing by UsersController#profile as HTML
-  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
-  [1m[36mEntitlement Load (0.1ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "bhak"]]
-  Rendered users/profile.html.erb within layouts/application (1.2ms)
-  Rendered layouts/_flash.erb (0.1ms)
-Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 0.2ms)
-
-
-Started GET "/movies" for 128.59.177.25 at 2023-10-29 22:50:33 +0000
-Processing by MoviesController#index as HTML
-  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies"
-  Rendered movies/index.html.erb within layouts/application (7.4ms)
-  Rendered layouts/_flash.erb (0.1ms)
-Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.4ms)
-
-
-Started GET "/movies" for 128.59.177.25 at 2023-10-29 22:50:53 +0000
-Processing by MoviesController#index as HTML
-  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
-  Rendered movies/index.html.erb within layouts/application (3.1ms)
-  Rendered layouts/_flash.erb (0.1ms)
-Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.2ms)
-
-
-Started GET "/movies" for 128.59.177.25 at 2023-10-29 22:51:00 +0000
-Processing by MoviesController#index as HTML
-  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies"
-  Rendered movies/index.html.erb within layouts/application (3.2ms)
-  Rendered layouts/_flash.erb (0.1ms)
-Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.2ms)
-
-
-Started GET "/movies" for 128.59.177.25 at 2023-10-29 22:51:08 +0000
-Processing by MoviesController#index as HTML
-  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
-  Rendered movies/index.html.erb within layouts/application (2.9ms)
-  Rendered layouts/_flash.erb (0.1ms)
-Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.2ms)
-
-
-Started GET "/" for 128.59.177.25 at 2023-10-29 22:51:22 +0000
-
-
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 22:51:22 +0000
-Processing by UsersController#profile as HTML
-  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
-  [1m[36mEntitlement Load (0.1ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "bhak"]]
-  Rendered users/profile.html.erb within layouts/application (1.9ms)
-  Rendered layouts/_flash.erb (0.1ms)
-Completed 200 OK in 19ms (Views: 16.4ms | ActiveRecord: 0.2ms)
-
-
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 22:51:27 +0000
-Processing by UsersController#profile as HTML
-  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
-  [1m[36mEntitlement Load (0.1ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "bhak"]]
-  Rendered users/profile.html.erb within layouts/application (14.8ms)
-Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.1ms)
-
-ActionView::Template::Error (undefined local variable or method `schedules_path' for #<#<Class:0x00007f2ee5865658>:0x00007f2ee5cc1ee0>):
-    28:   </br>
-    29:   <%= submit_tag "Add New Viewable Course", :class => 'btn btn-primary' %>
-    30: <% end %>
-    31: <%= link_to 'View Schedule', schedules_path, :class => 'btn btn-primary col-2' %>
-    32: 
-    33: </br></br></br></br></br></br></br></br></br>
-    34: <%= link_to "Sign out", clear_session_path, method:"delete" %>
-  app/views/users/profile.html.erb:31:in `_app_views_users_profile_html_erb___2171796880885681154_69919700288480'
+ActionView::MissingTemplate (Missing template teaching_assistants/index, application/index with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby]}. Searched in:
+  * "/home/codio/workspace/hour-glass/app/views"
+):
+  actionview (4.2.10) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.10) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.10) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.10) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.10) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.10) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.10) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.10) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.10) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.10) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.10) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.10) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.10) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.10) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.10) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /usr/lib/ruby/2.6.0/benchmark.rb:308:in `realtime'
+  activesupport (4.2.10) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.10) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.10) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.10) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.10) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.10) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.10) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.10) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.10) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.10) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.10) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.10) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.10) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.10) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.10) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.10) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.10) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.10) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.10) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.10) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.10) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.10) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.10) lib/rack/etag.rb:24:in `call'
+  rack (1.6.10) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.10) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.10) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.10) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.10) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.10) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.10) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  railties (4.2.10) lib/rails/railtie.rb:194:in `public_send'
+  railties (4.2.10) lib/rails/railtie.rb:194:in `method_missing'
+  rack (1.6.10) lib/rack/tempfile_reaper.rb:15:in `call'
+  rack (1.6.10) lib/rack/lint.rb:49:in `_call'
+  rack (1.6.10) lib/rack/lint.rb:37:in `call'
+  rack (1.6.10) lib/rack/showexceptions.rb:24:in `call'
+  rack (1.6.10) lib/rack/commonlogger.rb:33:in `call'
+  rack (1.6.10) lib/rack/chunked.rb:54:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /usr/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /usr/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
 
 
   Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (18.9ms)
+
+
+Started GET "/teaching_assistants" for 76.159.145.92 at 2023-10-29 18:21:17 +0000
+Processing by TeachingAssistantsController#index as HTML
+  [1m[36mTeachingAssistant Load (1.6ms)[0m  [1mSELECT "teaching_assistants".* FROM "teaching_assistants"[0m
+  Rendered teaching_assistants/index.html.erb within layouts/application (9.3ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 257ms (Views: 225.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 18:24:45 +0000
+Processing by TeachingAssistantsController#show as HTML
+  Parameters: {"id"=>"new_office_hour"}
+Redirected to https://aromapegasus-naturallimit-3000.codio.io/teaching_assistants
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/teaching_assistants" for 76.159.145.92 at 2023-10-29 18:24:45 +0000
+Processing by TeachingAssistantsController#index as HTML
+  [1m[35mTeachingAssistant Load (0.4ms)[0m  SELECT "teaching_assistants".* FROM "teaching_assistants"
+  Rendered teaching_assistants/index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 32ms (Views: 30.7ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "teaching_assistants" ("name", "email", "class_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Dummy TA"], ["email", "dummy@example.com"], ["class_id", 123], ["created_at", "2023-10-29 18:27:48.575127"], ["updated_at", "2023-10-29 18:27:48.575127"]]
+  [1m[36m (81.9ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/teaching_assistants" for 76.159.145.92 at 2023-10-29 18:28:02 +0000
+Processing by TeachingAssistantsController#index as HTML
+  [1m[36mTeachingAssistant Load (1.2ms)[0m  [1mSELECT "teaching_assistants".* FROM "teaching_assistants"[0m
+  Rendered teaching_assistants/index.html.erb within layouts/application (11.3ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 241ms (Views: 210.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 18:28:16 +0000
+Processing by TeachingAssistantsController#show as HTML
+  Parameters: {"id"=>"new_office_hour"}
+Redirected to https://aromapegasus-naturallimit-3000.codio.io/teaching_assistants
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/teaching_assistants" for 76.159.145.92 at 2023-10-29 18:28:16 +0000
+Processing by TeachingAssistantsController#index as HTML
+  [1m[35mTeachingAssistant Load (0.2ms)[0m  SELECT "teaching_assistants".* FROM "teaching_assistants"
+  Rendered teaching_assistants/index.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 32ms (Views: 31.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 18:31:40 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+NameError (uninitialized constant TeachingAssistantsController::Calendar):
+  app/controllers/teaching_assistants_controller.rb:50:in `new_office_hour'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
   Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.0ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (15.2ms)
 
 
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 22:52:34 +0000
-Processing by UsersController#profile as HTML
-  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
-  [1m[36mEntitlement Load (0.2ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "bhak"]]
-  Rendered users/profile.html.erb within layouts/application (17.2ms)
-Completed 500 Internal Server Error in 34ms (ActiveRecord: 1.3ms)
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 18:34:03 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 1.4ms)
 
-ActionView::Template::Error (undefined local variable or method `schedules_path' for #<#<Class:0x00007f2ee5ef9f50>:0x00007f2ee5f02740>):
-    28:   </br>
-    29:   <%= submit_tag "Add New Viewable Course", :class => 'btn btn-primary' %>
-    30: <% end %>
-    31: <%= link_to 'View Schedule', schedules_path, :class => 'btn btn-primary col-2' %>
-    32: 
-    33: </br></br></br></br></br></br></br></br></br>
-    34: <%= link_to "Sign out", clear_session_path, method:"delete" %>
-  app/views/users/profile.html.erb:31:in `_app_views_users_profile_html_erb___2171796880885681154_69919700288480'
+ActiveRecord::StatementInvalid (Could not find table 'calendars'):
+  app/controllers/teaching_assistants_controller.rb:50:in `new_office_hour'
 
 
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.8ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (22.4ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.3ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (14.7ms)
 
 
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 22:52:36 +0000
-Processing by UsersController#profile as HTML
-  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
-  [1m[36mEntitlement Load (0.1ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "bhak"]]
-  Rendered users/profile.html.erb within layouts/application (16.1ms)
-Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.2ms)
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 18:34:50 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 1.2ms)
 
-ActionView::Template::Error (undefined local variable or method `schedules_path' for #<#<Class:0x00007f2ee5ef9f50>:0x00007f2ee5ffaa80>):
-    28:   </br>
-    29:   <%= submit_tag "Add New Viewable Course", :class => 'btn btn-primary' %>
-    30: <% end %>
-    31: <%= link_to 'View Schedule', schedules_path, :class => 'btn btn-primary col-2' %>
-    32: 
-    33: </br></br></br></br></br></br></br></br></br>
-    34: <%= link_to "Sign out", clear_session_path, method:"delete" %>
-  app/views/users/profile.html.erb:31:in `_app_views_users_profile_html_erb___2171796880885681154_69919700288480'
+ActiveRecord::StatementInvalid (Could not find table 'calendars'):
+  app/controllers/teaching_assistants_controller.rb:50:in `new_office_hour'
 
 
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (20.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.4ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (15.4ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 18:34:57 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::StatementInvalid (Could not find table 'calendars'):
+  app/controllers/teaching_assistants_controller.rb:50:in `new_office_hour'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.4ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCalendars (20231029183430)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "calendars" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "class_id" varchar, "start_time" datetime, "end_time" datetime, "teaching_assistant_id" integer) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20231029183430"]]
+  [1m[36m (73.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 18:36:43 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (12.4ms)
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 1.5ms)
+
+ActionView::Template::Error (undefined local variable or method `teaching_assistant_calendars_path' for #<#<Class:0x00007fc1e898dad0>:0x00007fc1e899e8d0>):
+    1: # app/views/teaching_assistants/new_office_hour.html.erb
+    2: <%= form_with(model: @calendar, url: teaching_assistant_calendars_path, local: true) do |form| %>
+    3:   <% if @calendar.errors.any? %>
+    4:     <div id="error_explanation">
+    5:       <h2><%= pluralize(@calendar.errors.count, "error") %> prohibited this calendar from being saved:</h2>
+  app/views/teaching_assistants/new_office_hour.html.erb:2:in `_app_views_teaching_assistants_new_office_hour_html_erb___2595169997063658837_70235403998440'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (15.6ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 18:37:47 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 1.4ms)
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"calendars"} missing required keys: [:teaching_assistant_id]):
+    1: # app/views/teaching_assistants/new_office_hour.html.erb
+    2: <%= form_with(model: @calendar, url: teaching_assistant_calendars_path, local: true) do |form| %>
+    3:   <% if @calendar.errors.any? %>
+    4:     <div id="error_explanation">
+    5:       <h2><%= pluralize(@calendar.errors.count, "error") %> prohibited this calendar from being saved:</h2>
+  app/views/teaching_assistants/new_office_hour.html.erb:2:in `_app_views_teaching_assistants_new_office_hour_html_erb__3154243889238531243_69893115324160'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (18.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (29.9ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 18:39:36 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 1.5ms)
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"calendars", :teaching_assistant_id=>nil} missing required keys: [:teaching_assistant_id]):
+    1: <%= form_with(model: @calendar, url: teaching_assistant_calendars_path(@teaching_assistant), local: true) do |form| %>
+    2:   <% if @calendar.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(@calendar.errors.count, "error") %> prohibited this calendar from being saved:</h2>
+  app/views/teaching_assistants/new_office_hour.html.erb:1:in `_app_views_teaching_assistants_new_office_hour_html_erb__2212757201268186032_69987034204580'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (13.6ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (27.3ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 18:40:44 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  [1m[36mTeachingAssistant Load (0.2ms)[0m  [1mSELECT  "teaching_assistants".* FROM "teaching_assistants" WHERE "teaching_assistants"."id" = ? LIMIT 1[0m  [["id", nil]]
+Completed 404 Not Found in 39ms (ActiveRecord: 1.7ms)
+
+ActiveRecord::RecordNotFound (Couldn't find TeachingAssistant with 'id'=):
+  app/controllers/teaching_assistants_controller.rb:49:in `new_office_hour'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.4ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.7ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 18:41:24 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+Redirected to https://aromapegasus-naturallimit-3000.codio.io/teaching_assistants
+Completed 302 Found in 37ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/teaching_assistants" for 76.159.145.92 at 2023-10-29 18:41:24 +0000
+Processing by TeachingAssistantsController#index as HTML
+  [1m[36mTeachingAssistant Load (0.2ms)[0m  [1mSELECT "teaching_assistants".* FROM "teaching_assistants"[0m
+  Rendered teaching_assistants/index.html.erb within layouts/application (7.4ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 209ms (Views: 204.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 18:41:37 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+Redirected to https://aromapegasus-naturallimit-3000.codio.io/teaching_assistants
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/teaching_assistants" for 76.159.145.92 at 2023-10-29 18:41:37 +0000
+Processing by TeachingAssistantsController#index as HTML
+  [1m[35mTeachingAssistant Load (0.2ms)[0m  SELECT "teaching_assistants".* FROM "teaching_assistants"
+  Rendered teaching_assistants/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 24ms (Views: 22.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 18:41:37 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+Redirected to https://aromapegasus-naturallimit-3000.codio.io/teaching_assistants
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/teaching_assistants" for 76.159.145.92 at 2023-10-29 18:41:38 +0000
+Processing by TeachingAssistantsController#index as HTML
+  [1m[36mTeachingAssistant Load (0.1ms)[0m  [1mSELECT "teaching_assistants".* FROM "teaching_assistants"[0m
+  Rendered teaching_assistants/index.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 28ms (Views: 27.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 18:44:52 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 1.4ms)
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"calendars", :teaching_assistant_id=>nil} missing required keys: [:teaching_assistant_id]):
+    1: <%= form_with(model: @calendar, url: teaching_assistant_calendars_path(@teaching_assistant), local: true) do |form| %>
+    2:   <% if @calendar.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(@calendar.errors.count, "error") %> prohibited this calendar from being saved:</h2>
+  app/views/teaching_assistants/new_office_hour.html.erb:1:in `_app_views_teaching_assistants_new_office_hour_html_erb___2568887280307347112_70251980059520'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (19.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (30.0ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 18:44:53 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"calendars", :teaching_assistant_id=>nil} missing required keys: [:teaching_assistant_id]):
+    1: <%= form_with(model: @calendar, url: teaching_assistant_calendars_path(@teaching_assistant), local: true) do |form| %>
+    2:   <% if @calendar.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(@calendar.errors.count, "error") %> prohibited this calendar from being saved:</h2>
+  app/views/teaching_assistants/new_office_hour.html.erb:1:in `_app_views_teaching_assistants_new_office_hour_html_erb___2568887280307347112_70251980059520'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (15.7ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 18:45:39 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 1.6ms)
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"calendars", :teaching_assistant_id=>nil} missing required keys: [:teaching_assistant_id]):
+    1: <%= form_with(model: @calendar, url: teaching_assistant_calendars_path(@teaching_assistant), local: true) do |form| %>
+    2:   <% if @calendar.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(@calendar.errors.count, "error") %> prohibited this calendar from being saved:</h2>
+  app/views/teaching_assistants/new_office_hour.html.erb:1:in `_app_views_teaching_assistants_new_office_hour_html_erb___968869207154871690_69867211611760'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (18.0ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.7ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 18:45:42 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"calendars", :teaching_assistant_id=>nil} missing required keys: [:teaching_assistant_id]):
+    1: <%= form_with(model: @calendar, url: teaching_assistant_calendars_path(@teaching_assistant), local: true) do |form| %>
+    2:   <% if @calendar.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(@calendar.errors.count, "error") %> prohibited this calendar from being saved:</h2>
+  app/views/teaching_assistants/new_office_hour.html.erb:1:in `_app_views_teaching_assistants_new_office_hour_html_erb___968869207154871690_69867211611760'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.7ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 18:46:18 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 96ms (ActiveRecord: 1.6ms)
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"calendars", :teaching_assistant_id=>nil} missing required keys: [:teaching_assistant_id]):
+    1: <%= form_with(model: @calendar, url: teaching_assistant_calendars_path(@teaching_assistant), local: true) do |form| %>
+    2:   <% if @calendar.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(@calendar.errors.count, "error") %> prohibited this calendar from being saved:</h2>
+  app/views/teaching_assistants/new_office_hour.html.erb:1:in `_app_views_teaching_assistants_new_office_hour_html_erb___3005790635073839832_70166618200540'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.1ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 18:46:23 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"calendars", :teaching_assistant_id=>nil} missing required keys: [:teaching_assistant_id]):
+    1: <%= form_with(model: @calendar, url: teaching_assistant_calendars_path(@teaching_assistant), local: true) do |form| %>
+    2:   <% if @calendar.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(@calendar.errors.count, "error") %> prohibited this calendar from being saved:</h2>
+  app/views/teaching_assistants/new_office_hour.html.erb:1:in `_app_views_teaching_assistants_new_office_hour_html_erb___3005790635073839832_70166618200540'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (15.6ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 18:46:57 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 1.9ms)
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"calendars", :teaching_assistant_id=>nil} missing required keys: [:teaching_assistant_id]):
+    1: <%= form_with(model: @calendar, url: teaching_assistant_calendars_path(@teaching_assistant), local: true) do |form| %>
+    2:   <% if @calendar.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(@calendar.errors.count, "error") %> prohibited this calendar from being saved:</h2>
+  app/views/teaching_assistants/new_office_hour.html.erb:1:in `_app_views_teaching_assistants_new_office_hour_html_erb___3734905487232436643_70271408707200'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
   Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
   Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (33.0ms)
-  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-Migrating to CreateSchedules (20231029230109)
-  [1m[35m (0.1ms)[0m  begin transaction
-  [1m[36m (2.2ms)[0m  [1mCREATE TABLE "schedules" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "courseId" varchar, "startTime" datetime, "endTime" datetime) [0m
-  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20231029230109"]]
-  [1m[36m (59.3ms)[0m  [1mcommit transaction[0m
-  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
-  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-  [1m[35m (0.0ms)[0m  begin transaction
-  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Aladdin"], ["rating", "G"], ["release_date", "1992-11-25 00:00:00.000000"], ["created_at", "2023-10-29 23:04:53.217943"], ["updated_at", "2023-10-29 23:04:53.217943"]]
-  [1m[35m (61.1ms)[0m  commit transaction
-  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
-  [1m[35mSQL (0.3ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "The Terminator"], ["rating", "R"], ["release_date", "1984-10-26 00:00:00.000000"], ["created_at", "2023-10-29 23:04:53.281563"], ["updated_at", "2023-10-29 23:04:53.281563"]]
-  [1m[36m (56.4ms)[0m  [1mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  begin transaction
-  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "When Harry Met Sally"], ["rating", "R"], ["release_date", "1989-07-21 00:00:00.000000"], ["created_at", "2023-10-29 23:04:53.339917"], ["updated_at", "2023-10-29 23:04:53.339917"]]
-  [1m[35m (61.5ms)[0m  commit transaction
-  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
-  [1m[35mSQL (0.2ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "The Help"], ["rating", "PG-13"], ["release_date", "2011-08-10 00:00:00.000000"], ["created_at", "2023-10-29 23:04:53.403376"], ["updated_at", "2023-10-29 23:04:53.403376"]]
-  [1m[36m (56.8ms)[0m  [1mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  begin transaction
-  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Chocolat"], ["rating", "PG-13"], ["release_date", "2001-01-05 00:00:00.000000"], ["created_at", "2023-10-29 23:04:53.461947"], ["updated_at", "2023-10-29 23:04:53.461947"]]
-  [1m[35m (64.6ms)[0m  commit transaction
-  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
-  [1m[35mSQL (0.3ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Amelie"], ["rating", "R"], ["release_date", "2001-04-25 00:00:00.000000"], ["created_at", "2023-10-29 23:04:53.528651"], ["updated_at", "2023-10-29 23:04:53.528651"]]
-  [1m[36m (72.5ms)[0m  [1mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  begin transaction
-  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "2001: A Space Odyssey"], ["rating", "G"], ["release_date", "1968-04-06 00:00:00.000000"], ["created_at", "2023-10-29 23:04:53.603176"], ["updated_at", "2023-10-29 23:04:53.603176"]]
-  [1m[35m (69.2ms)[0m  commit transaction
-  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
-  [1m[35mSQL (0.3ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "The Incredibles"], ["rating", "PG"], ["release_date", "2004-11-05 00:00:00.000000"], ["created_at", "2023-10-29 23:04:53.674700"], ["updated_at", "2023-10-29 23:04:53.674700"]]
-  [1m[36m (61.5ms)[0m  [1mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  begin transaction
-  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Raiders of the Lost Ark"], ["rating", "PG"], ["release_date", "1981-06-12 00:00:00.000000"], ["created_at", "2023-10-29 23:04:53.737980"], ["updated_at", "2023-10-29 23:04:53.737980"]]
-  [1m[35m (58.4ms)[0m  commit transaction
-  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
-  [1m[35mSQL (0.3ms)[0m  INSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Chicken Run"], ["rating", "G"], ["release_date", "2000-06-21 00:00:00.000000"], ["created_at", "2023-10-29 23:04:53.798598"], ["updated_at", "2023-10-29 23:04:53.798598"]]
-  [1m[36m (66.8ms)[0m  [1mcommit transaction[0m
-  [1m[35m (0.0ms)[0m  begin transaction
-  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "courses" ("courseName", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["courseName", "COMS 4152"], ["created_at", "2023-10-29 23:04:53.870411"], ["updated_at", "2023-10-29 23:04:53.870411"]]
-  [1m[35m (62.5ms)[0m  commit transaction
-  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
-  [1m[35mSQL (0.2ms)[0m  INSERT INTO "courses" ("courseName", "created_at", "updated_at") VALUES (?, ?, ?)  [["courseName", "CSOR 4231"], ["created_at", "2023-10-29 23:04:53.934791"], ["updated_at", "2023-10-29 23:04:53.934791"]]
-  [1m[36m (70.0ms)[0m  [1mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  begin transaction
-  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "courses" ("courseName", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["courseName", "TestClass"], ["created_at", "2023-10-29 23:04:54.006564"], ["updated_at", "2023-10-29 23:04:54.006564"]]
-  [1m[35m (56.9ms)[0m  commit transaction
-  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
-  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schedules" ("courseId", "startTime", "endTime") VALUES (?, ?, ?)  [["courseId", "a"], ["startTime", "2023-01-01 13:00:00.000000"], ["endTime", "2023-01-01 14:00:00.000000"]]
-  [1m[36m (56.2ms)[0m  [1mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  begin transaction
-  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schedules" ("courseId", "startTime", "endTime") VALUES (?, ?, ?)[0m  [["courseId", "b"], ["startTime", "2023-01-02 14:00:00.000000"], ["endTime", "2023-01-02 15:00:00.000000"]]
-  [1m[35m (59.6ms)[0m  commit transaction
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.7ms)
 
 
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 23:06:49 +0000
-Processing by UsersController#profile as HTML
-  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
-  [1m[36mEntitlement Load (0.1ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "bhak"]]
-  Rendered users/profile.html.erb within layouts/application (13.4ms)
-Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.9ms)
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 18:48:57 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 2.0ms)
 
-ActionView::Template::Error (undefined local variable or method `schedules_path' for #<#<Class:0x00007f2ee55f8848>:0x00007f2ee5613918>):
-    28:   </br>
-    29:   <%= submit_tag "Add New Viewable Course", :class => 'btn btn-primary' %>
-    30: <% end %>
-    31: <%= link_to 'View Schedule', schedules_path, :class => 'btn btn-primary col-2' %>
-    32: 
-    33: </br></br></br></br></br></br></br></br></br>
-    34: <%= link_to "Sign out", clear_session_path, method:"delete" %>
-  app/views/users/profile.html.erb:31:in `_app_views_users_profile_html_erb___2171796880885681154_69919700288480'
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"calendars", :teaching_assistant_id=>nil} missing required keys: [:teaching_assistant_id]):
+    1: <%= form_with(model: @calendar, url: teaching_assistant_calendars_path(@teaching_assistant), local: true) do |form| %>
+    2:   <% if @calendar.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(@calendar.errors.count, "error") %> prohibited this calendar from being saved:</h2>
+  app/views/teaching_assistants/new_office_hour.html.erb:1:in `_app_views_teaching_assistants_new_office_hour_html_erb__4089196523697210658_69911537404620'
 
 
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.3ms)
-
-
-Started GET "/" for 128.59.177.25 at 2023-10-29 23:09:09 +0000
-
-
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 23:09:09 +0000
-Processing by UsersController#profile as HTML
-  [1m[36mUser Load (3.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
-  [1m[35mEntitlement Load (0.2ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "bhak"]]
-  Rendered users/profile.html.erb within layouts/application (20.5ms)
-Completed 500 Internal Server Error in 77ms (ActiveRecord: 5.2ms)
-
-ActionView::Template::Error (undefined local variable or method `schedules_path' for #<#<Class:0x00007f76448c1ab0>:0x00007f76448d2950>):
-    28:   </br>
-    29:   <%= submit_tag "Add New Viewable Course", :class => 'btn btn-primary' %>
-    30: <% end %>
-    31: <%= link_to 'View Schedule', schedules_path, :class => 'btn btn-primary col-2' %>
-    32: 
-    33: </br></br></br></br></br></br></br></br></br>
-    34: <%= link_to "Sign out", clear_session_path, method:"delete" %>
-  app/views/users/profile.html.erb:31:in `_app_views_users_profile_html_erb___435448341186794595_70072966559080'
-
-
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
   Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
-  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (15.5ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (15.9ms)
 
 
-Started GET "/profile" for 128.59.177.25 at 2023-10-29 23:09:51 +0000
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 18:49:23 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 1.7ms)
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"calendars", :teaching_assistant_id=>nil} missing required keys: [:teaching_assistant_id]):
+    1: <%= form_with(model: @calendar, url: teaching_assistant_calendars_path(@teaching_assistant), local: true) do |form| %>
+    2:   <% if @calendar.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(@calendar.errors.count, "error") %> prohibited this calendar from being saved:</h2>
+  app/views/teaching_assistants/new_office_hour.html.erb:1:in `_app_views_teaching_assistants_new_office_hour_html_erb__2731045206608293639_70140210877120'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.4ms)
+
+
+Started GET "/" for 76.159.145.92 at 2023-10-29 18:50:41 +0000
+
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-29 18:50:41 +0000
 Processing by UsersController#profile as HTML
   [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
-  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "bhak"]]
-  Rendered users/profile.html.erb within layouts/application (1.8ms)
+  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "ss5945"]]
+  Rendered users/profile.html.erb within layouts/application (8.6ms)
   Rendered layouts/_flash.erb (0.5ms)
-Completed 200 OK in 229ms (Views: 226.9ms | ActiveRecord: 0.2ms)
+Completed 200 OK in 259ms (Views: 213.9ms | ActiveRecord: 2.5ms)
 
 
-Started GET "/profile?class=btn+btn-primary+col-2" for 128.59.177.25 at 2023-10-29 23:09:54 +0000
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 18:50:46 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"calendars", :teaching_assistant_id=>nil} missing required keys: [:teaching_assistant_id]):
+    1: <%= form_with(model: [@teaching_assistant, @calendar], url: teaching_assistant_calendars_path(@teaching_assistant), local: true) do |form| %>
+    2:   <% if @calendar.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(@calendar.errors.count, "error") %> prohibited this calendar from being saved:</h2>
+  app/views/teaching_assistants/new_office_hour.html.erb:1:in `_app_views_teaching_assistants_new_office_hour_html_erb__2618934447343297867_70219973806400'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.6ms)
+
+
+Started GET "/teaching_assistants" for 76.159.145.92 at 2023-10-29 18:50:48 +0000
+Processing by TeachingAssistantsController#index as HTML
+  [1m[36mTeachingAssistant Load (0.2ms)[0m  [1mSELECT "teaching_assistants".* FROM "teaching_assistants"[0m
+  Rendered teaching_assistants/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 18:50:52 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"calendars", :teaching_assistant_id=>nil} missing required keys: [:teaching_assistant_id]):
+    1: <%= form_with(model: [@teaching_assistant, @calendar], url: teaching_assistant_calendars_path(@teaching_assistant), local: true) do |form| %>
+    2:   <% if @calendar.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(@calendar.errors.count, "error") %> prohibited this calendar from being saved:</h2>
+  app/views/teaching_assistants/new_office_hour.html.erb:1:in `_app_views_teaching_assistants_new_office_hour_html_erb__2618934447343297867_70219973806400'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.8ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 18:52:54 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 1.8ms)
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"calendars", :teaching_assistant_id=>nil} missing required keys: [:teaching_assistant_id]):
+    1: <%= form_with(model: [@teaching_assistant, @calendar], url: teaching_assistant_calendars_path(@teaching_assistant), local: true) do |form| %>
+    2:   <% if @calendar.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(@calendar.errors.count, "error") %> prohibited this calendar from being saved:</h2>
+  app/views/teaching_assistants/new_office_hour.html.erb:1:in `_app_views_teaching_assistants_new_office_hour_html_erb__4201708612228763416_70036393450520'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.5ms)
+
+
+Started GET "/" for 76.159.145.92 at 2023-10-29 18:59:22 +0000
+
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-29 18:59:23 +0000
 Processing by UsersController#profile as HTML
-  Parameters: {"class"=>"btn btn-primary col-2"}
   [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
-  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "bhak"]]
-  Rendered users/profile.html.erb within layouts/application (0.9ms)
+  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "ss5945"]]
+  Rendered users/profile.html.erb within layouts/application (7.7ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 250ms (Views: 208.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/teaching_assistants" for 76.159.145.92 at 2023-10-29 18:59:28 +0000
+Processing by TeachingAssistantsController#index as HTML
+  [1m[36mTeachingAssistant Load (0.2ms)[0m  [1mSELECT "teaching_assistants".* FROM "teaching_assistants"[0m
+  Rendered teaching_assistants/index.html.erb within layouts/application (10.3ms)
   Rendered layouts/_flash.erb (0.1ms)
-Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.2ms)
+Completed 200 OK in 67ms (Views: 47.7ms | ActiveRecord: 0.4ms)
 
 
-Started GET "/profile?class=btn+btn-primary+col-2" for 128.59.177.25 at 2023-10-29 23:09:55 +0000
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 18:59:31 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"calendars", :teaching_assistant_id=>nil} missing required keys: [:teaching_assistant_id]):
+    1: <%= form_with(model: [@teaching_assistant, @calendar], url: teaching_assistant_calendars_path(@teaching_assistant), local: true) do |form| %>
+    2:   <% if @calendar.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(@calendar.errors.count, "error") %> prohibited this calendar from being saved:</h2>
+  app/views/teaching_assistants/new_office_hour.html.erb:1:in `_app_views_teaching_assistants_new_office_hour_html_erb__2122312013388361214_70026735691940'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.7ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 18:59:31 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"calendars", :teaching_assistant_id=>nil} missing required keys: [:teaching_assistant_id]):
+    1: <%= form_with(model: [@teaching_assistant, @calendar], url: teaching_assistant_calendars_path(@teaching_assistant), local: true) do |form| %>
+    2:   <% if @calendar.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(@calendar.errors.count, "error") %> prohibited this calendar from being saved:</h2>
+  app/views/teaching_assistants/new_office_hour.html.erb:1:in `_app_views_teaching_assistants_new_office_hour_html_erb__2122312013388361214_70026735691940'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.1ms)
+
+
+Started GET "/teaching_assistants" for 76.159.145.92 at 2023-10-29 19:03:34 +0000
+Processing by TeachingAssistantsController#index as HTML
+  [1m[35mTeachingAssistant Load (0.2ms)[0m  SELECT "teaching_assistants".* FROM "teaching_assistants"
+  Rendered teaching_assistants/index.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = 'dummy@example.com' LIMIT 1[0m
+  [1m[36mTeachingAssistant Load (1.2ms)[0m  [1mSELECT "teaching_assistants".* FROM "teaching_assistants"[0m
+  [1m[35mTeachingAssistant Load (0.3ms)[0m  SELECT  "teaching_assistants".* FROM "teaching_assistants" WHERE "teaching_assistants"."name" = ? AND "teaching_assistants"."email" = ? AND "teaching_assistants"."class_id" = ? LIMIT 1  [["name", "Dummy TA"], ["email", "dummy@example.com"], ["class_id", 123]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+
+
+Started GET "/" for 76.159.145.92 at 2023-10-29 19:12:17 +0000
+
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-29 19:12:18 +0000
 Processing by UsersController#profile as HTML
-  Parameters: {"class"=>"btn btn-primary col-2"}
-  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
-  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "bhak"]]
-  Rendered users/profile.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "ss5945"]]
+  Rendered users/profile.html.erb within layouts/application (7.9ms)
+  Rendered layouts/_flash.erb (0.6ms)
+Completed 200 OK in 260ms (Views: 214.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/teaching_assistants" for 76.159.145.92 at 2023-10-29 19:12:23 +0000
+Processing by TeachingAssistantsController#index as HTML
+  [1m[36mTeachingAssistant Load (0.2ms)[0m  [1mSELECT "teaching_assistants".* FROM "teaching_assistants"[0m
+  Rendered teaching_assistants/index.html.erb within layouts/application (16.5ms)
   Rendered layouts/_flash.erb (0.1ms)
-Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.2ms)
+Completed 200 OK in 54ms (Views: 42.3ms | ActiveRecord: 0.4ms)
 
 
-Started GET "/profile?class=btn+btn-primary+col-2" for 128.59.177.25 at 2023-10-29 23:09:55 +0000
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 19:12:25 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (7.4ms)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"calendars", :teaching_assistant_id=>nil} missing required keys: [:teaching_assistant_id]):
+    1: <%= form_with(model: [@teaching_assistant, @calendar], url: teaching_assistant_calendars_path(@teaching_assistant), local: true) do |form| %>
+    2:   <% if @calendar.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(@calendar.errors.count, "error") %> prohibited this calendar from being saved:</h2>
+  app/views/teaching_assistants/new_office_hour.html.erb:1:in `_app_views_teaching_assistants_new_office_hour_html_erb__2335432289830753286_69909227817440'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.0ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-29 19:12:26 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"calendars", :teaching_assistant_id=>nil} missing required keys: [:teaching_assistant_id]):
+    1: <%= form_with(model: [@teaching_assistant, @calendar], url: teaching_assistant_calendars_path(@teaching_assistant), local: true) do |form| %>
+    2:   <% if @calendar.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(@calendar.errors.count, "error") %> prohibited this calendar from being saved:</h2>
+  app/views/teaching_assistants/new_office_hour.html.erb:1:in `_app_views_teaching_assistants_new_office_hour_html_erb__2335432289830753286_69909227817440'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.9ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddTeachingAssistantToCalendars (20231029191346)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "calendars" ADD "teaching_assistant_id" integer[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-30 17:25:29 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 105ms (ActiveRecord: 4.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"calendars", :teaching_assistant_id=>nil} missing required keys: [:teaching_assistant_id]):
+    1: <%= form_with(model: [@teaching_assistant, @calendar], url: teaching_assistant_calendars_path(@teaching_assistant), local: true) do |form| %>
+    2:   <% if @calendar.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(@calendar.errors.count, "error") %> prohibited this calendar from being saved:</h2>
+  app/views/teaching_assistants/new_office_hour.html.erb:1:in `_app_views_teaching_assistants_new_office_hour_html_erb___1792798718147144165_70098636928040'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (26.7ms)
+
+
+Started GET "/teaching_assistants" for 76.159.145.92 at 2023-10-30 17:25:36 +0000
+Processing by TeachingAssistantsController#index as HTML
+  [1m[36mTeachingAssistant Load (0.3ms)[0m  [1mSELECT "teaching_assistants".* FROM "teaching_assistants"[0m
+  Rendered teaching_assistants/index.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 236ms (Views: 235.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-30 17:25:42 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"calendars", :teaching_assistant_id=>nil} missing required keys: [:teaching_assistant_id]):
+    1: <%= form_with(model: [@teaching_assistant, @calendar], url: teaching_assistant_calendars_path(@teaching_assistant), local: true) do |form| %>
+    2:   <% if @calendar.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(@calendar.errors.count, "error") %> prohibited this calendar from being saved:</h2>
+  app/views/teaching_assistants/new_office_hour.html.erb:1:in `_app_views_teaching_assistants_new_office_hour_html_erb___1792798718147144165_70098636928040'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.7ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-30 17:25:45 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"calendars", :teaching_assistant_id=>nil} missing required keys: [:teaching_assistant_id]):
+    1: <%= form_with(model: [@teaching_assistant, @calendar], url: teaching_assistant_calendars_path(@teaching_assistant), local: true) do |form| %>
+    2:   <% if @calendar.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(@calendar.errors.count, "error") %> prohibited this calendar from being saved:</h2>
+  app/views/teaching_assistants/new_office_hour.html.erb:1:in `_app_views_teaching_assistants_new_office_hour_html_erb___1792798718147144165_70098636928040'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (15.7ms)
+  [1m[36mTeachingAssistant Load (0.3ms)[0m  [1mSELECT  "teaching_assistants".* FROM "teaching_assistants" WHERE "teaching_assistants"."email" = ? LIMIT 1[0m  [["email", "dummy@example.com"]]
+  [1m[35mTeachingAssistant Load (0.1ms)[0m  SELECT  "teaching_assistants".* FROM "teaching_assistants" WHERE "teaching_assistants"."email" = ? LIMIT 1  [["email", "dummy@example.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (8.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddTeachingAssistantToCalendars (20231029191346)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-30 17:41:21 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (7.4ms)
+Completed 500 Internal Server Error in 143ms (ActiveRecord: 2.5ms)
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"calendars", :teaching_assistant_id=>nil} missing required keys: [:teaching_assistant_id]):
+    1: <%= form_with(model: [@teaching_assistant, @calendar], url: teaching_assistant_calendars_path(@teaching_assistant), local: true) do |form| %>
+    2:   <% if @calendar.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(@calendar.errors.count, "error") %> prohibited this calendar from being saved:</h2>
+  app/views/teaching_assistants/new_office_hour.html.erb:1:in `_app_views_teaching_assistants_new_office_hour_html_erb__139370874413134060_69973613099820'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (22.0ms)
+
+
+Started GET "/teaching_assistants" for 76.159.145.92 at 2023-10-30 17:49:28 +0000
+Processing by TeachingAssistantsController#index as HTML
+  [1m[36mTeachingAssistant Load (6.4ms)[0m  [1mSELECT "teaching_assistants".* FROM "teaching_assistants"[0m
+  Rendered teaching_assistants/index.html.erb within layouts/application (28.1ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 296ms (Views: 248.5ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-30 17:49:31 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (11.0ms)
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"calendars", :teaching_assistant_id=>nil} missing required keys: [:teaching_assistant_id]):
+    1: <%= form_with(model: [@teaching_assistant, @calendar], url: teaching_assistant_calendars_path(@teaching_assistant), local: true) do |form| %>
+    2:   <% if @calendar.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(@calendar.errors.count, "error") %> prohibited this calendar from being saved:</h2>
+  app/views/teaching_assistants/new_office_hour.html.erb:1:in `_app_views_teaching_assistants_new_office_hour_html_erb___2146414529325608073_70349252639360'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (19.4ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-30 17:49:32 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"calendars", :teaching_assistant_id=>nil} missing required keys: [:teaching_assistant_id]):
+    1: <%= form_with(model: [@teaching_assistant, @calendar], url: teaching_assistant_calendars_path(@teaching_assistant), local: true) do |form| %>
+    2:   <% if @calendar.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(@calendar.errors.count, "error") %> prohibited this calendar from being saved:</h2>
+  app/views/teaching_assistants/new_office_hour.html.erb:1:in `_app_views_teaching_assistants_new_office_hour_html_erb___2146414529325608073_70349252639360'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.5ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-30 17:51:33 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  [1m[36mCalendar Exists (3.6ms)[0m  [1mSELECT  1 AS one FROM "calendars" WHERE "calendars"."teaching_assistant_id" = ? AND "calendars"."teaching_assistant_id" IS NULL LIMIT 1[0m  [["teaching_assistant_id", nil]]
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (24.5ms)
+Completed 500 Internal Server Error in 103ms (ActiveRecord: 5.9ms)
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"calendars", :teaching_assistant_id=>nil} missing required keys: [:teaching_assistant_id]):
+    35:   <% end %>
+    36: <% else %>
+    37:   <!-- Your existing code for the form goes here -->
+    38:   <%= form_with(model: [@teaching_assistant, @calendar], url: teaching_assistant_calendars_path(@teaching_assistant), local: true) do |form| %>
+    39:     <% if @calendar.errors.any? %>
+    40:       <div id="error_explanation">
+    41:         <h2><%= pluralize(@calendar.errors.count, "error") %> prohibited this calendar from being saved:</h2>
+  app/views/teaching_assistants/new_office_hour.html.erb:38:in `_app_views_teaching_assistants_new_office_hour_html_erb___2491064867538299055_70122997438980'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.2ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-30 17:53:37 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 75ms (ActiveRecord: 1.9ms)
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"calendars", :teaching_assistant_id=>nil} missing required keys: [:teaching_assistant_id]):
+    1: <% if @teaching_assistant %>
+    2:   <%= form_with(model: [@teaching_assistant, @calendar], url: teaching_assistant_calendars_path(@teaching_assistant), local: true) do |form| %>
+    3:     <% if @calendar.errors.any? %>
+    4:       <div id="error_explanation">
+    5:         <h2><%= pluralize(@calendar.errors.count, "error") %> prohibited this calendar from being saved:</h2>
+  app/views/teaching_assistants/new_office_hour.html.erb:2:in `_app_views_teaching_assistants_new_office_hour_html_erb___1391611203412723050_70317411812720'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.1ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-30 17:55:23 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (15.5ms)
+Completed 500 Internal Server Error in 83ms (ActiveRecord: 1.9ms)
+
+ActionView::Template::Error (undefined method `form_with' for #<#<Class:0x00007f5ab0aeb8b8>:0x00007f5ab0ae86e0>):
+    1: <% if @teaching_assistant %>
+    2:   <%= form_with(model: @calendar, url: calendars_path, local: true) do |form| %>
+    3:     <% if @calendar.errors.any? %>
+    4:       <div id="error_explanation">
+    5:         <h2><%= pluralize(@calendar.errors.count, "error") %> prohibited this calendar from being saved:</h2>
+  app/views/teaching_assistants/new_office_hour.html.erb:2:in `_app_views_teaching_assistants_new_office_hour_html_erb___2778555387381309079_70013744096200'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (17.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.9ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-30 17:56:17 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (69.2ms)
+  Rendered layouts/_flash.erb (0.6ms)
+Completed 200 OK in 452ms (Views: 382.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 76.159.145.92 at 2023-10-30 18:04:48 +0000
+
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-30 18:04:48 +0000
 Processing by UsersController#profile as HTML
-  Parameters: {"class"=>"btn btn-primary col-2"}
-  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
-  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "bhak"]]
-  Rendered users/profile.html.erb within layouts/application (0.7ms)
+Redirected to https://aromapegasus-naturallimit-3000.codio.io/sessions/new
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 76.159.145.92 at 2023-10-30 18:04:49 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (6.4ms)
   Rendered layouts/_flash.erb (0.1ms)
-Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+Completed 200 OK in 38ms (Views: 36.8ms | ActiveRecord: 0.0ms)
 
 
-Started GET "/profile?class=btn+btn-primary+col-2" for 128.59.177.25 at 2023-10-29 23:10:43 +0000
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 76.159.145.92 at 2023-10-30 18:04:49 +0000
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 76.159.145.92 at 2023-10-30 18:04:49 +0000
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 76.159.145.92 at 2023-10-30 18:04:49 +0000
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 76.159.145.92 at 2023-10-30 18:04:49 +0000
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 76.159.145.92 at 2023-10-30 18:04:49 +0000
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 76.159.145.92 at 2023-10-30 18:04:50 +0000
+
+
+Started GET "/assets/users.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 76.159.145.92 at 2023-10-30 18:04:50 +0000
+
+
+Started GET "/assets/sessions.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 76.159.145.92 at 2023-10-30 18:04:50 +0000
+
+
+Started GET "/teaching_assistants" for 76.159.145.92 at 2023-10-30 18:05:04 +0000
+Processing by TeachingAssistantsController#index as HTML
+Redirected to https://aromapegasus-naturallimit-3000.codio.io/sessions/new
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 76.159.145.92 at 2023-10-30 18:05:05 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 14ms (Views: 13.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-30 18:05:28 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-30 18:05:38 +0000
 Processing by UsersController#profile as HTML
-  Parameters: {"class"=>"btn btn-primary col-2"}
+  [1m[36mUser Load (3.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "ss5945"]]
+  Rendered users/profile.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 48ms (Views: 14.6ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/" for 76.159.145.92 at 2023-10-30 18:05:42 +0000
+
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-30 18:05:42 +0000
+Processing by UsersController#profile as HTML
   [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
-  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "bhak"]]
-  Rendered users/profile.html.erb within layouts/application (1.3ms)
+  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "ss5945"]]
+  Rendered users/profile.html.erb within layouts/application (0.5ms)
   Rendered layouts/_flash.erb (0.1ms)
-Completed 200 OK in 25ms (Views: 15.8ms | ActiveRecord: 1.0ms)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.2ms)
 
 
-Started GET "/schedules" for 128.59.177.25 at 2023-10-29 23:10:44 +0000
-Processing by SchedulesController#index as HTML
-  Rendered schedules/index.html.erb within layouts/application (0.3ms)
+Started GET "/teaching_assistants" for 76.159.145.92 at 2023-10-30 18:05:47 +0000
+Processing by TeachingAssistantsController#index as HTML
+  [1m[36mTeachingAssistant Load (0.3ms)[0m  [1mSELECT "teaching_assistants".* FROM "teaching_assistants"[0m
+  Rendered teaching_assistants/index.html.erb within layouts/application (1.2ms)
   Rendered layouts/_flash.erb (0.1ms)
-Completed 200 OK in 16ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-30 18:05:50 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (7.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 22ms (Views: 20.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-30 18:05:51 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 23ms (Views: 21.9ms | ActiveRecord: 0.0ms)

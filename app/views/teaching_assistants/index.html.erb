@@ -1,0 +1,8 @@
+<!-- app/views/teaching_assistants/index.html.erb -->
+<h1>Teaching Assistants</h1>
+
+<ul>
+  <% @teaching_assistants.each do |teaching_assistant| %>
+    <li><%= teaching_assistant.name %> - <%= teaching_assistant.email %> - <%= teaching_assistant.class_id %></li>
+  <% end %>
+</ul>
