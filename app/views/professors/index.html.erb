@@ -1,0 +1,21 @@
+<%= content_tag :h1, "Hello, Professor #{current_user.name}!" %>
+
+</br>
+<%= content_tag :h3, "Currently Owned Courses" %>
+
+</br>
+<%= content_tag :h3, "Create A New Course" %>
+<%= form_tag professors_path, method: :post, :class => 'form' do %>
+  <%= label :professor, :courseId, 'Course Id', :class => 'col-form-label'  %>
+  <%= text_field :professor, :courseId, :class => 'form-control' %>
+  
+  <%= label :professor, :courseName, 'Course Name', :class => 'col-form-label'  %>
+  <%= text_field :professor, :courseName, :class => 'form-control' %>
+  
+  <%= label :professor, :unis, 'Enter TA UNI\'s (comma seperated)', :class => 'col-form-label'  %>
+  <%= text_field :professor, :unis, :class => 'form-control' %>
+  
+  <%= text_field :professor, :role, value: 'Professor', :type => 'hidden' %>
+  </br>
+  <%= submit_tag "Create a New Course", :class => 'btn btn-primary' %>
+<% end %>

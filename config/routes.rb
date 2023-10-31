@@ -4,6 +4,7 @@ Rottenpotatoes::Application.routes.draw do
   resources :entitlements, only: [:create]
   resources :movies
   resources :schedules
+  resources :professors
   get '/profile', to: 'users#profile', as: 'user_profile'
   delete '/sessions/clear', to: 'sessions#clear', as: 'clear_session'
   root :to => redirect('/sessions/new')
