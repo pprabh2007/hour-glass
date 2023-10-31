@@ -6923,3 +6923,380 @@ Migrating to AddCourseDescriptionToCourses (20231031042319)
   [1m[36mSQL (2.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231031042319"]]
   [1m[35m (10.1ms)[0m  commit transaction
   [1m[36mActiveRecord::SchemaMigration Load (2.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (17.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (19.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (2.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20231028192901)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (7.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "uni" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (2.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231028192901"]]
+  [1m[35m (10.3ms)[0m  commit transaction
+Migrating to AddNameToUsers (20231028193103)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (6.9ms)[0m  ALTER TABLE "users" ADD "name" varchar
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231028193103"]]
+  [1m[35m (11.4ms)[0m  commit transaction
+Migrating to CreateEntitlements (20231028231144)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (7.4ms)[0m  CREATE TABLE "entitlements" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "uni" varchar, "courseId" integer, "role" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (2.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231028231144"]]
+  [1m[35m (9.8ms)[0m  commit transaction
+Migrating to CreateCourses (20231029001317)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (8.2ms)[0m  CREATE TABLE "courses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "courseName" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231029001317"]]
+  [1m[35m (9.7ms)[0m  commit transaction
+Migrating to CreateTeachingAssistants (20231029180642)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/db/migrate/20231029180642_create_teaching_assistants.rb:9)
+  [1m[35m (7.5ms)[0m  CREATE TABLE "teaching_assistants" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "class_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231029180642"]]
+  [1m[35m (9.9ms)[0m  commit transaction
+Migrating to CreateCalendars (20231029183430)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (7.4ms)[0m  CREATE TABLE "calendars" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "class_id" varchar, "start_time" datetime, "end_time" datetime, "teaching_assistant_id" integer) 
+  [1m[36mSQL (2.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231029183430"]]
+  [1m[35m (9.5ms)[0m  commit transaction
+Migrating to CreateSchedules (20231029230109)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (8.3ms)[0m  CREATE TABLE "schedules" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "courseId" varchar, "startTime" datetime, "endTime" datetime) 
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231029230109"]]
+  [1m[35m (11.8ms)[0m  commit transaction
+Migrating to AddCourseDescriptionToCourses (20231031042319)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (8.5ms)[0m  ALTER TABLE "courses" ADD "courseDescription" varchar
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231031042319"]]
+  [1m[35m (11.4ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (3.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (2.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-31 10:45:18 -0400
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2023-10-31 10:45:20 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (139.1ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 2107ms (Views: 2059.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-10-31 10:45:33 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jY2yrlnY7Hr5rkLcRMB8+6TG9YtlClFPPRESedUJV9OrlLbOiuddGC2VKfMfqzKcIYJV6nLZVDGnU+8UjPwlYw==", "user"=>{"uni"=>"testUni", "name"=>"testName", "password"=>"[FILTERED]"}, "commit"=>"Sign Up!"}
+  [1m[36mUser Load (2.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "testUni"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (8.1ms)[0m  [1mINSERT INTO "users" ("uni", "name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "testUni"], ["name", "testName"], ["password_digest", "$2a$12$LYNmnTzdOCtCGpVoJMtXFuDkjnQYyGvvQ7t95IA/blW6gV2toAF6S"], ["created_at", "2023-10-31 14:45:34.682058"], ["updated_at", "2023-10-31 14:45:34.682058"]]
+  [1m[35m (9.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 614ms (ActiveRecord: 46.8ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-10-31 10:45:34 -0400
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEntitlement Load (2.2ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "testUni"]]
+  Rendered users/profile.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 723ms (Views: 613.9ms | ActiveRecord: 7.1ms)
+
+
+Started POST "/entitlements" for 127.0.0.1 at 2023-10-31 10:45:37 -0400
+Processing by EntitlementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fuY4v9QKxEukDjZwAZ9W5LCwIQbnfCBhsHKLjnv+gwtY/zzfBzV1KXA1XV9a9BiDNfSBZ/CvJR8qMHbjIgvxuw==", "entitlement"=>{"courseName"=>"", "role"=>"Viewer"}, "commit"=>"Add New Viewable Course"}
+  [1m[36mCourse Load (2.9ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1[0m  [["courseName", ""]]
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 83ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-10-31 10:45:37 -0400
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (2.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEntitlement Load (2.7ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "testUni"]]
+  Rendered users/profile.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 693ms (Views: 685.7ms | ActiveRecord: 5.3ms)
+
+
+Started POST "/entitlements" for 127.0.0.1 at 2023-10-31 10:45:42 -0400
+Processing by EntitlementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Uh3T77Fe9ILkbkEWnaCESIqm7tuUtWeFFHdNJMw5w610BNePYmFF4DBVKjnGy8ovD+JOuoNmYvuONbBJlcyxHQ==", "entitlement"=>{"courseName"=>"COMS 4152", "role"=>"Viewer"}, "commit"=>"Add New Viewable Course"}
+  [1m[35mCourse Load (2.4ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1  [["courseName", "COMS 4152"]]
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 6ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-10-31 10:45:42 -0400
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (3.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEntitlement Load (3.5ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "testUni"]]
+  Rendered users/profile.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 696ms (Views: 685.6ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/entitlements" for 127.0.0.1 at 2023-10-31 10:45:52 -0400
+Processing by EntitlementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Pb51mcIDTIuFF8vVzQJ4j56/fOuDlkyZREPdhBHK7W0bp3H5ETz96VEsoPqWaTboG/vcipRFSefeASDpSD+f3Q==", "entitlement"=>{"courseName"=>"COMS 4152", "role"=>"Viewer"}, "commit"=>"Add New Viewable Course"}
+  [1m[36mCourse Load (2.3ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1[0m  [["courseName", "COMS 4152"]]
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 5ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-10-31 10:45:52 -0400
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (2.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEntitlement Load (2.4ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "testUni"]]
+  Rendered users/profile.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 701ms (Views: 692.7ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-10-31 10:46:11 -0400
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (3.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEntitlement Load (2.9ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "testUni"]]
+  Rendered users/profile.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 702ms (Views: 693.4ms | ActiveRecord: 6.4ms)
+
+
+Started POST "/entitlements" for 127.0.0.1 at 2023-10-31 10:46:30 -0400
+Processing by EntitlementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0KqrDcjkQLzMFEGGv+LIE6lsVtYlsop79tsg6XLdfWX2s69tG9vx3hgvKqnkiYZ0LCj2tzJhjwVsmd2EKygP1Q==", "entitlement"=>{"courseName"=>"TestC", "role"=>"Viewer"}, "commit"=>"Add New Viewable Course"}
+  [1m[35mCourse Load (2.7ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1  [["courseName", "TestC"]]
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 5ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-10-31 10:46:30 -0400
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEntitlement Load (2.4ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "testUni"]]
+  Rendered users/profile.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 725ms (Views: 718.0ms | ActiveRecord: 4.9ms)
+
+
+Started POST "/entitlements" for 127.0.0.1 at 2023-10-31 10:46:35 -0400
+Processing by EntitlementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cvM9m1L3c7AUrDVchGjxgHYnAOP1OGhv1VFK+cNRVC5U6jn7gcjC0sCXXnPfA7/n82OgguLrbRFPE7eUmqQmng==", "entitlement"=>{"courseName"=>"TestClass", "role"=>"Viewer"}, "commit"=>"Add New Viewable Course"}
+  [1m[36mCourse Load (2.9ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1[0m  [["courseName", "TestClass"]]
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 5ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-10-31 10:46:35 -0400
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (2.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEntitlement Load (3.3ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "testUni"]]
+  Rendered users/profile.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 799ms (Views: 790.7ms | ActiveRecord: 6.1ms)
+
+
+Started POST "/entitlements" for 127.0.0.1 at 2023-10-31 10:47:01 -0400
+Processing by EntitlementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E+kjc9bmNc61oPR3zRUs/fr9E/MQON0b95G4ksmSl6I18CcTBdmErGGbn1iWfmKaf7mzkgfr2GVt00X/kGflEg==", "entitlement"=>{"courseName"=>"asdf", "role"=>"Viewer"}, "commit"=>"Add New Viewable Course"}
+  [1m[35mCourse Load (3.5ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1  [["courseName", "asdf"]]
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 6ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-10-31 10:47:01 -0400
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEntitlement Load (2.4ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "testUni"]]
+  Rendered users/profile.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 703ms (Views: 694.4ms | ActiveRecord: 4.9ms)
+  [1m[36mActiveRecord::SchemaMigration Load (2.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (3.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (9.4ms)[0m  [1mINSERT INTO "courses" ("courseName", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["courseName", "COMS 4152"], ["created_at", "2023-10-31 14:48:10.891775"], ["updated_at", "2023-10-31 14:48:10.891775"]]
+  [1m[35m (9.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (8.4ms)[0m  INSERT INTO "courses" ("courseName", "created_at", "updated_at") VALUES (?, ?, ?)  [["courseName", "CSOR 4231"], ["created_at", "2023-10-31 14:48:10.912656"], ["updated_at", "2023-10-31 14:48:10.912656"]]
+  [1m[36m (11.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (8.0ms)[0m  [1mINSERT INTO "courses" ("courseName", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["courseName", "TestClass"], ["created_at", "2023-10-31 14:48:10.934776"], ["updated_at", "2023-10-31 14:48:10.934776"]]
+  [1m[35m (9.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (8.7ms)[0m  INSERT INTO "schedules" ("courseId", "startTime", "endTime") VALUES (?, ?, ?)  [["courseId", "a"], ["startTime", "2023-01-01 13:00:00.000000"], ["endTime", "2023-01-01 14:00:00.000000"]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (7.6ms)[0m  [1mINSERT INTO "schedules" ("courseId", "startTime", "endTime") VALUES (?, ?, ?)[0m  [["courseId", "b"], ["startTime", "2023-01-02 14:00:00.000000"], ["endTime", "2023-01-02 15:00:00.000000"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+
+
+Started POST "/entitlements" for 127.0.0.1 at 2023-10-31 10:48:38 -0400
+Processing by EntitlementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zs7/Hf1Jm/l7s0X8skEMnhngHzxHzfjBQmlRVrE49yno1/t9LnYqm6+ILtPpKkL5nKS/XVAe/b/YK6w76M2FmQ==", "entitlement"=>{"courseName"=>"COMS 4152", "role"=>"Viewer"}, "commit"=>"Add New Viewable Course"}
+  [1m[36mCourse Load (3.2ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1[0m  [["courseName", "COMS 4152"]]
+  [1m[35mUser Load (3.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEntitlement Load (3.1ms)[0m  [1mSELECT  "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ? AND "entitlements"."courseId" = ? LIMIT 1[0m  [["uni", "testUni"], ["courseId", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (9.7ms)[0m  [1mINSERT INTO "entitlements" ("uni", "courseId", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "testUni"], ["courseId", 1], ["role", "Viewer"], ["created_at", "2023-10-31 14:48:41.723401"], ["updated_at", "2023-10-31 14:48:41.723401"]]
+  [1m[35m (10.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 666ms (ActiveRecord: 69.3ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-10-31 10:48:41 -0400
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (3.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEntitlement Load (2.9ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "testUni"]]
+  [1m[36mCourse Load (3.9ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/profile.html.erb within layouts/application (118.2ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 2092ms (Views: 2057.5ms | ActiveRecord: 10.0ms)
+  [1m[36m (17.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (15.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (3.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20231028192901)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (7.5ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "uni" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (2.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231028192901"]]
+  [1m[35m (9.8ms)[0m  commit transaction
+Migrating to AddNameToUsers (20231028193103)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (7.2ms)[0m  ALTER TABLE "users" ADD "name" varchar
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231028193103"]]
+  [1m[35m (9.6ms)[0m  commit transaction
+Migrating to CreateEntitlements (20231028231144)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (6.6ms)[0m  CREATE TABLE "entitlements" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "uni" varchar, "courseId" integer, "role" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231028231144"]]
+  [1m[35m (8.9ms)[0m  commit transaction
+Migrating to CreateCourses (20231029001317)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (6.8ms)[0m  CREATE TABLE "courses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "courseName" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231029001317"]]
+  [1m[35m (9.0ms)[0m  commit transaction
+Migrating to CreateTeachingAssistants (20231029180642)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/db/migrate/20231029180642_create_teaching_assistants.rb:9)
+  [1m[35m (6.5ms)[0m  CREATE TABLE "teaching_assistants" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "class_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231029180642"]]
+  [1m[35m (8.9ms)[0m  commit transaction
+Migrating to CreateCalendars (20231029183430)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (7.3ms)[0m  CREATE TABLE "calendars" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "class_id" varchar, "start_time" datetime, "end_time" datetime, "teaching_assistant_id" integer) 
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231029183430"]]
+  [1m[35m (8.7ms)[0m  commit transaction
+Migrating to CreateSchedules (20231029230109)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (7.5ms)[0m  CREATE TABLE "schedules" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "courseId" varchar, "startTime" datetime, "endTime" datetime) 
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231029230109"]]
+  [1m[35m (9.0ms)[0m  commit transaction
+Migrating to AddCourseDescriptionToCourses (20231031042319)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (8.9ms)[0m  ALTER TABLE "courses" ADD "courseDescription" varchar
+  [1m[36mSQL (2.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231031042319"]]
+  [1m[35m (11.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (2.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (3.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (10.3ms)[0m  [1mINSERT INTO "courses" ("courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["courseName", "COMS 4152"], ["courseDescription", "Engineering Software-as-a-Service"], ["created_at", "2023-10-31 14:51:02.042681"], ["updated_at", "2023-10-31 14:51:02.042681"]]
+  [1m[35m (11.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (9.1ms)[0m  INSERT INTO "courses" ("courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["courseName", "CSOR 4231"], ["courseDescription", "Intro to Algorithms"], ["created_at", "2023-10-31 14:51:02.066926"], ["updated_at", "2023-10-31 14:51:02.066926"]]
+  [1m[36m (10.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (9.5ms)[0m  [1mINSERT INTO "courses" ("courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["courseName", "TestClass"], ["courseDescription", "Test Description"], ["created_at", "2023-10-31 14:51:02.089252"], ["updated_at", "2023-10-31 14:51:02.089252"]]
+  [1m[35m (10.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (8.7ms)[0m  INSERT INTO "schedules" ("courseId", "startTime", "endTime") VALUES (?, ?, ?)  [["courseId", "a"], ["startTime", "2023-01-01 13:00:00.000000"], ["endTime", "2023-01-01 14:00:00.000000"]]
+  [1m[36m (10.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (9.5ms)[0m  [1mINSERT INTO "schedules" ("courseId", "startTime", "endTime") VALUES (?, ?, ?)[0m  [["courseId", "b"], ["startTime", "2023-01-02 14:00:00.000000"], ["endTime", "2023-01-02 15:00:00.000000"]]
+  [1m[35m (10.7ms)[0m  commit transaction
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-31 10:51:58 -0400
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2023-10-31 10:52:00 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (139.1ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 2146ms (Views: 2102.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-10-31 10:52:14 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3F8rBbSuop4iGJXf/0yN2Z59q7gv9iUxONc6UlPcVJr6Ri9lZ5ET/PYj/vCkJ8O+GzkL2TglIE+ilcc/CikmKg==", "user"=>{"uni"=>"testUni", "name"=>"testName", "password"=>"[FILTERED]"}, "commit"=>"Sign Up!"}
+  [1m[36mUser Load (2.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "testUni"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (12.3ms)[0m  [1mINSERT INTO "users" ("uni", "name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "testUni"], ["name", "testName"], ["password_digest", "$2a$12$Fm5sAOoWrXixB4lyqsM3o.HB6iW4z1ZGBexONW2qaW2DgbxFXHYZe"], ["created_at", "2023-10-31 14:52:14.844816"], ["updated_at", "2023-10-31 14:52:14.844816"]]
+  [1m[35m (12.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 628ms (ActiveRecord: 57.9ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-10-31 10:52:14 -0400
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (3.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEntitlement Load (3.8ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "testUni"]]
+  Rendered users/profile.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 847ms (Views: 688.6ms | ActiveRecord: 11.2ms)
+
+
+Started POST "/entitlements" for 127.0.0.1 at 2023-10-31 10:52:27 -0400
+Processing by EntitlementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wVTo1503DzNKRm+4jgjAEnUA5Mc98PJCDUYjT1Pm6C3nTey3Tgi+UZ59BJfVY4518EREpioj9zyXBN4iChOanQ==", "entitlement"=>{"courseName"=>"COMS 4152", "role"=>"Viewer"}, "commit"=>"Add New Viewable Course"}
+  [1m[36mCourse Load (2.8ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1[0m  [["courseName", "COMS 4152"]]
+  [1m[35mUser Load (3.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEntitlement Load (3.0ms)[0m  [1mSELECT  "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ? AND "entitlements"."courseId" = ? LIMIT 1[0m  [["uni", "testUni"], ["courseId", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (10.1ms)[0m  [1mINSERT INTO "entitlements" ("uni", "courseId", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "testUni"], ["courseId", 1], ["role", "Viewer"], ["created_at", "2023-10-31 14:52:27.748998"], ["updated_at", "2023-10-31 14:52:27.748998"]]
+  [1m[35m (10.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 120ms (ActiveRecord: 38.1ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-10-31 10:52:27 -0400
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (2.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEntitlement Load (3.4ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "testUni"]]
+  [1m[36mCourse Load (3.8ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/profile.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 736ms (Views: 721.6ms | ActiveRecord: 10.1ms)
+
+
+Started DELETE "/sessions/clear" for 127.0.0.1 at 2023-10-31 10:52:40 -0400
+Processing by SessionsController#clear as HTML
+  Parameters: {"authenticity_token"=>"iSMc3zOLxIqJrGVqdjky9fgKFnfm09CiF9RhC318EhevOhi/4LR16F2XDkUtUnySfU62FvEA1dyNlpxmJIlgpw=="}
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2023-10-31 10:52:41 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 816ms (Views: 816.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2023-10-31 10:54:41 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7nuGax+TDwRWvxCYekYwzqIXj18mPMk0jIXFWplLY2nIYoILzKy+ZoKEe7chLX6pJ1MvPjHvzEoWxzg3wL4R2Q==", "login"=>{"uni"=>"testUni", "password"=>"[FILTERED]"}, "commit"=>"Sign In!"}
+  [1m[36mUser Load (3.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "testUni"]]
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 629ms (ActiveRecord: 32.1ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-10-31 10:54:44 -0400
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (2.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEntitlement Load (2.8ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "testUni"]]
+  [1m[35mCourse Load (3.0ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/profile.html.erb within layouts/application (114.8ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 2106ms (Views: 1929.3ms | ActiveRecord: 18.8ms)
