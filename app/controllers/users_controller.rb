@@ -19,13 +19,8 @@ class UsersController < ApplicationController
             redirect_to new_session_path
         else
             new_user = User.create(user_params)
-            if new_user.valid?
-                session[:user_id] = new_user.id
-                redirect_to user_profile_path
-            else
-                flash[:warning] = "Invalid account settings. Please try to create an account again."
-                redirect_to new_session_path
-            end
+            session[:user_id] = new_user.id
+            redirect_to user_profile_path
         end
     end
   
