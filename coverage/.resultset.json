@@ -8,6 +8,34 @@
           null
         ]
       },
+      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/models/course.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/models/entitlement.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          1,
+          2,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          null,
+          2,
+          2,
+          null,
+          null,
+          null
+        ]
+      },
       "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/sessions_controller.rb": {
         "lines": [
           1,
@@ -15,14 +43,14 @@
           1,
           null,
           1,
-          12,
+          15,
           null,
           null,
           1,
-          7,
-          7,
-          6,
-          6,
+          10,
+          10,
+          9,
+          9,
           null,
           1,
           1,
@@ -36,7 +64,7 @@
           null,
           1,
           1,
-          14,
+          20,
           null,
           null
         ]
@@ -51,11 +79,11 @@
           1,
           null,
           1,
-          15,
+          24,
           null,
           null,
           1,
-          23,
+          38,
           null,
           null
         ]
@@ -87,10 +115,10 @@
           1,
           null,
           1,
-          10,
-          10,
-          10,
-          8,
+          13,
+          13,
+          13,
+          11,
           null,
           null,
           null,
@@ -113,30 +141,53 @@
           null
         ]
       },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/models/entitlement.rb": {
+      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/professors_controller.rb": {
         "lines": [
           1,
           null,
+          1,
+          4,
+          4,
+          4,
+          4,
+          4,
+          null,
+          null,
           null,
           null,
           1,
           2,
-          0,
-          0,
           2,
-          0,
-          0,
-          0,
+          2,
           null,
           2,
-          2,
+          1,
+          1,
+          3,
+          1,
+          0,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          6,
           null,
           null,
           null
         ]
       },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/models/course.rb": {
+      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/models/teaching_assistant.rb": {
         "lines": [
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
           1,
           null
         ]
@@ -168,40 +219,6 @@
           null,
           null
         ]
-      },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/professors_controller.rb": {
-        "lines": [
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0
-        ],
-        "branches": {
-        }
       },
       "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/schedules_controller.rb": {
         "lines": [
@@ -338,23 +355,9 @@
         ],
         "branches": {
         }
-      },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/models/teaching_assistant.rb": {
-        "lines": [
-          null,
-          0,
-          null,
-          0,
-          null,
-          null,
-          0,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1698764147
+    "timestamp": 1698772606
   },
   "RSpec": {
     "coverage": {
@@ -456,11 +459,18 @@
           0,
           0,
           0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
           null,
           0,
           0,
           0,
           0,
+          null,
           0,
           0,
           0,
@@ -723,6 +733,6 @@
         }
       }
     },
-    "timestamp": 1698764054
+    "timestamp": 1698772628
   }
 }
