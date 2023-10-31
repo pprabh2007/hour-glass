@@ -82,7 +82,7 @@ class TeachingAssistantsController < ApplicationController
     end
   
     def teaching_assistant_params
-      params.require(:teaching_assistant).permit(:name, :email, :class_id) # Adjust the permitted parameters as needed
+      params.require(:teaching_assistant).permit(:name, :uni, :class_id) # Adjust the permitted parameters as needed
     end
   
     private
