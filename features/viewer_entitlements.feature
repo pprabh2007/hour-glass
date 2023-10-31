@@ -1,8 +1,8 @@
-Feature: login as a specific user
+Feature: add a viewable class
 
   As a user of the application
-  So that I can search for the Office Hours for my own classes
-  I want to have an account to log in with and a personalized profile page
+  So that I can view the Office Hour schedule for a class
+  I want to have a button that lets me add a class to my schedule
 
 Background: users, courses, and entitlements in the database
 
@@ -10,46 +10,61 @@ Background: users, courses, and entitlements in the database
   | uni        | password        | name     |
   | testUni    | testPassword    | testName |
 
+  Given the following courses exist:
+  | id | courseName | courseDescription                 | 
+  | 0  | COMS 4152  | Engineering Software-as-a-Service |
+  | 1  | CSOR 4231  | Intro to Algorithms               |
+
+  Given the following entitlements exist:
+  | uni        | courseId  | role   | 
+  | testUni    | 0         | Viewer |
 
 
-Scenario: Login as myself, see personalized profile page, and log out
+Scenario: Login and see my viewable classes
   When I go to the login page
   And  I fill in "Uni" with "testUni"
   And  I fill in "Password" with "testPassword"
   And  I press "Sign In!"
   Then I should see "Hello, testName!"
-  When I follow "Sign out"
-  Then I should see "Log In"
+  And  I should see "Your Viewable Courses"
+  And  I should see "COMS 4152"
+  And  I should see "Engineering Software-as-a-Service"
+  And  I should not see "CSOR 4231"
+  And  I should not see "Intro to Algorithms"
 
-Scenario: Sign up for a new account, sign out, and relogin as myself
-  When I go to the login page
-  And  I fill in "New Uni" with "differentUni"
-  And  I fill in "Name" with "differentName"
-  And  I fill in "New Password" with "differentPassword"
-  And  I press "Sign Up!"
-  Then I should see "Hello, differentName!"
-  When I follow "Sign out"
-  Then I should see "Log In"
-  And I should see "You have successfully logged out."
-  When I fill in "Uni" with "differentUni"
-  And  I fill in "Password" with "differentPassword"
-  And  I press "Sign In!"
-  Then I should see "Hello, differentName!"
-
-Scenario: Invalid credentials should remain on login screen with a warning
+  Scenario: Add entitlement for a new viewable class
   When I go to the login page
   And  I fill in "Uni" with "testUni"
-  And  I fill in "Password" with "nonexistentPassword"
-  And  I press "Sign In!"
-  Then I should see "Log In"
-  And  I should see "Invalid login. Please try again."
-
-  
-Scenario: Cannot create two accounts with the same uni
-  When I go to the login page
-  And  I fill in "New Uni" with "testUni"
-  And  I fill in "Name" with "testName"
   And  I fill in "Password" with "testPassword"
-  And  I press "Sign Up!"
-  Then I should see "Log In"
-  And  I should see "Inputted UNI already has an account. Please log in instead."
+  And  I press "Sign In!"
+  Then I should see "Hello, testName!"
+  And  I should see "Your Viewable Courses"
+  And  I should not see "CSOR 4231"
+  And  I should not see "Intro to Algorithms"
+  When I fill in "Course Name" with "CSOR 4231"
+  And  I press "Add New Viewable Course"
+  Then I should see "CSOR 4231"
+  And I should see "Intro to Algorithms"
+  And I should see "Added new class 'CSOR 4231' to schedule"
+
+  Scenario: Cannot add same class multiple times
+  When I go to the login page
+  And  I fill in "Uni" with "testUni"
+  And  I fill in "Password" with "testPassword"
+  And  I press "Sign In!"
+  Then I should see "Hello, testName!"
+  And  I should see "Your Viewable Courses"
+  And  I should see "COMS 4152"
+  When I fill in "Course Name" with "COMS 4152"
+  And  I press "Add New Viewable Course"
+  And  I should see "You already have access to the inputted class."
+
+  Scenario: Cannot input invalid class name
+  When I go to the login page
+  And  I fill in "Uni" with "testUni"
+  And  I fill in "Password" with "testPassword"
+  And  I press "Sign In!"
+  And  I fill in "Course Name" with "NOTACLASS"
+  And  I press "Add New Viewable Course"
+  Then I should see "Hello, testName!"
+  And  I should see "No such class exists. Please input a valid class."
