@@ -9,7 +9,7 @@ class Entitlement < ActiveRecord::Base
         elsif role == "TA"
             prof_entitlement = Entitlement.find_by(uni: uni, courseId: courseId, role: "Prof")
             ta_entitlement = Entitlement.find_by(uni: uni, courseId: courseId, role: "TA")
-            return (!prof_entitlement.nil?) || (!ta_entitlement)
+            return (!prof_entitlement.nil?) || (!ta_entitlement.nil?)
         else
             any_entitlement = Entitlement.find_by(uni: uni, courseId: courseId)
             return !any_entitlement.nil?
