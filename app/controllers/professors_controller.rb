@@ -1,28 +1,34 @@
 class ProfessorsController < ApplicationController
 
     def index
-      puts "hi"
+      @viewable_courses = Set.new
+        @entitlements = Entitlement.where(uni: current_user.uni)
+        @entitlements.each do |entitlement|
+            if not Course.find_by(id: entitlement.courseId).nil?
+              @viewable_courses << Course.find_by(id: entitlement.courseId)
+            end
+      end
     end
   
     def create
-      code = professors_params[:courseCode]
       name = professors_params[:courseName]
+      description = professors_params[:courseDescription]
       unis =professors_params[:unis]
-      value = Course.find_by(id: id)
-      puts value.courseName
-      if Course.find_by(courseCode: code).nil?
-        Course.create!({:courseCode => code, :courseName => name})
-        puts "In here"
-        flash[:warning] = "Successfully Created New Course."
+
+      if Course.find_by(courseName: name).nil?
+        course = Course.create!({:courseName => name, :courseDescription => description})
+        Entitlement.create!({:uni => current_user.uni, :courseId => course.id, :role => "Prof"})
+        unis.split( /, */ ).each { |uni| Entitlement.create!({:uni => uni, :courseId => course.id, :role => "TA"})}
+        flash[:notice] = "Successfully Created New Course."
       else
-        flash[:warning] = "Error: A Course With This CourseId Already Exists."
+        flash[:warning] = "Error: A Course With This Course Id Already Exists."
       end
       redirect_to professors_path
     end
 
     private
     def professors_params
-        params.require(:professor).permit(:courseCode, :courseName, :unis, :role)
+        params.require(:professor).permit(:courseName, :courseDescription, :unis, :role)
     end
 
 end

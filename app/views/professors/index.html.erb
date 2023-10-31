@@ -3,19 +3,38 @@
 </br>
 <%= content_tag :h3, "Currently Owned Courses" %>
 
+<table class="table table-striped col-md-12" id="movies">
+  <thead>
+    <tr>
+      <th>Course</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @viewable_courses.each do |course| %>
+      <tr>
+        <td>
+          <%= course.courseName %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</br>
+
 </br>
 <%= content_tag :h3, "Create A New Course" %>
 <%= form_tag professors_path, method: :post, :class => 'form' do %>
-  <%= label :professor, :courseId, 'Course Id', :class => 'col-form-label'  %>
-  <%= text_field :professor, :courseId, :class => 'form-control' %>
-  
-  <%= label :professor, :courseName, 'Course Name', :class => 'col-form-label'  %>
+  <%= label :professor, :courseName, 'Course Id', :class => 'col-form-label'  %>
   <%= text_field :professor, :courseName, :class => 'form-control' %>
+  
+  <%= label :professor, :courseDescription, 'Course Name', :class => 'col-form-label'  %>
+  <%= text_field :professor, :courseDescription, :class => 'form-control' %>
   
   <%= label :professor, :unis, 'Enter TA UNI\'s (comma seperated)', :class => 'col-form-label'  %>
   <%= text_field :professor, :unis, :class => 'form-control' %>
   
-  <%= text_field :professor, :role, value: 'Professor', :type => 'hidden' %>
+  <%= text_field :professor, :role, value: 'Prof', :type => 'hidden' %>
   </br>
   <%= submit_tag "Create a New Course", :class => 'btn btn-primary' %>
 <% end %>
