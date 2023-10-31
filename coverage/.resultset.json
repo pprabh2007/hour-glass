@@ -66,16 +66,6 @@
           null
         ]
       },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/helpers/movies_helper.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          0,
-          null,
-          null
-        ]
-      },
       "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/helpers/sessions_helper.rb": {
         "lines": [
           1,
@@ -178,59 +168,6 @@
           null,
           null
         ]
-      },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/movies_controller.rb": {
-        "lines": [
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
       },
       "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/professors_controller.rb": {
         "lines": [
@@ -394,14 +331,6 @@
         "branches": {
         }
       },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/models/movie.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/models/schedule.rb": {
         "lines": [
           0,
@@ -425,6 +354,6 @@
         }
       }
     },
-    "timestamp": 1698730303
+    "timestamp": 1698731291
   }
 }
