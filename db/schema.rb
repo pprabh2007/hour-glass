@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20231031042319) do
 
   create_table "teaching_assistants", force: :cascade do |t|
     t.string   "name"
-    t.string   "email"
+    t.string   "uni"
     t.integer  "class_id"
     t.datetime "created_at"
     t.datetime "updated_at"
