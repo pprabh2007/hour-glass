@@ -55,22 +55,14 @@ class TeachingAssistantsController < ApplicationController
     end
   
     def create_office_hour
-      @teaching_assistant = TeachingAssistant.find_by(id: params[:teaching_assistant_id])
-      if @teaching_assistant
-        if @teaching_assistant.calendars.exists?(teaching_assistant_id: nil) # Check if the teaching_assistant_id is nil
-          redirect_to new_office_hour_path, alert: "Teaching Assistant ID is missing in the calendar."
+        @calendar = current_user.calendars.build(calendar_params)
+      
+        if @calendar.save
+          redirect_to user_profile_path, notice: 'Office hours were successfully added.'
         else
-          @calendar = @teaching_assistant.calendars.build(calendar_params)
-          if @calendar.save
-            redirect_to calendar_path(@calendar), notice: 'Office hours were successfully added.'
-          else
-            render :new_office_hour
-          end
+          render :new_office_hour
         end
-      else
-        redirect_to teaching_assistants_path, alert: "Teaching Assistant not found"
       end
-    end
     
   
     private

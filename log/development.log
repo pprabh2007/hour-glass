@@ -7454,3 +7454,944 @@ Migrating to AddCourseDescriptionToCourses (20231031042319)
   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231031042319"]]
   [1m[35m (0.6ms)[0m  commit transaction
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 76.159.145.92 at 2023-10-31 22:21:10 +0000
+
+
+Started GET "/sessions/new" for 76.159.145.92 at 2023-10-31 22:21:10 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (9.5ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 232ms (Views: 225.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sessions.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 76.159.145.92 at 2023-10-31 22:21:11 +0000
+
+
+Started GET "/assets/users.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 76.159.145.92 at 2023-10-31 22:21:11 +0000
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 76.159.145.92 at 2023-10-31 22:21:11 +0000
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 76.159.145.92 at 2023-10-31 22:21:11 +0000
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 76.159.145.92 at 2023-10-31 22:21:11 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 76.159.145.92 at 2023-10-31 22:21:11 +0000
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 76.159.145.92 at 2023-10-31 22:21:11 +0000
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 76.159.145.92 at 2023-10-31 22:21:11 +0000
+
+
+Started GET "/sessions/teaching_assistants" for 76.159.145.92 at 2023-10-31 22:21:29 +0000
+
+ActionController::RoutingError (No route matches [GET] "/sessions/teaching_assistants"):
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  railties (4.2.10) lib/rails/railtie.rb:194:in `public_send'
+  railties (4.2.10) lib/rails/railtie.rb:194:in `method_missing'
+  rack (1.6.10) lib/rack/tempfile_reaper.rb:15:in `call'
+  rack (1.6.10) lib/rack/lint.rb:49:in `_call'
+  rack (1.6.10) lib/rack/lint.rb:37:in `call'
+  rack (1.6.10) lib/rack/showexceptions.rb:24:in `call'
+  rack (1.6.10) lib/rack/commonlogger.rb:33:in `call'
+  rack (1.6.10) lib/rack/chunked.rb:54:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /usr/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /usr/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (35.4ms)
+
+
+Started GET "/sessions//teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-31 22:22:10 +0000
+
+ActionController::RoutingError (No route matches [GET] "/sessions/teaching_assistants/new_office_hour"):
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  railties (4.2.10) lib/rails/railtie.rb:194:in `public_send'
+  railties (4.2.10) lib/rails/railtie.rb:194:in `method_missing'
+  rack (1.6.10) lib/rack/tempfile_reaper.rb:15:in `call'
+  rack (1.6.10) lib/rack/lint.rb:49:in `_call'
+  rack (1.6.10) lib/rack/lint.rb:37:in `call'
+  rack (1.6.10) lib/rack/showexceptions.rb:24:in `call'
+  rack (1.6.10) lib/rack/commonlogger.rb:33:in `call'
+  rack (1.6.10) lib/rack/chunked.rb:54:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /usr/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /usr/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.3ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (44.1ms)
+
+
+Started GET "/sessions/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-31 22:22:34 +0000
+
+ActionController::RoutingError (No route matches [GET] "/sessions/teaching_assistants/new_office_hour"):
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  railties (4.2.10) lib/rails/railtie.rb:194:in `public_send'
+  railties (4.2.10) lib/rails/railtie.rb:194:in `method_missing'
+  rack (1.6.10) lib/rack/tempfile_reaper.rb:15:in `call'
+  rack (1.6.10) lib/rack/lint.rb:49:in `_call'
+  rack (1.6.10) lib/rack/lint.rb:37:in `call'
+  rack (1.6.10) lib/rack/showexceptions.rb:24:in `call'
+  rack (1.6.10) lib/rack/commonlogger.rb:33:in `call'
+  rack (1.6.10) lib/rack/chunked.rb:54:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /usr/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /usr/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (27.1ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-31 22:23:54 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+Redirected to https://ringotorch-giantcairo-3000.codio.io/sessions/new
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 76.159.145.92 at 2023-10-31 22:23:54 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (13.7ms)
+  Rendered layouts/_flash.erb (0.6ms)
+Completed 200 OK in 254ms (Views: 252.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-31 22:24:02 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+Redirected to https://ringotorch-giantcairo-3000.codio.io/sessions/new
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 76.159.145.92 at 2023-10-31 22:24:02 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 41ms (Views: 40.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-31 22:25:10 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+Redirected to https://ringotorch-giantcairo-3000.codio.io/sessions/new
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 76.159.145.92 at 2023-10-31 22:25:11 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 34ms (Views: 33.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 76.159.145.92 at 2023-10-31 22:25:22 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"toDkdHPnACFb/ee0lqAz0YSEm58M4Rykz3kKSZrPO6owduSqqsdXANptnthTDnkUJtYQa7nwm0xHwYnmlj5qTQ==", "login"=>{"uni"=>"ss5945", "password"=>"[FILTERED]"}, "commit"=>"Sign In!"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "ss5945"]]
+Redirected to https://ringotorch-giantcairo-3000.codio.io/sessions/new
+Completed 302 Found in 61ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/sessions/new" for 76.159.145.92 at 2023-10-31 22:25:22 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 76.159.145.92 at 2023-10-31 22:25:26 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"70LNkqg83HaZyE3j8nf1P0udSoOIoHPq+xoIrn6RoB5ptM1McRyLVxhYNI832b/66c/Bdz2x9AJzoosBcmDx+Q==", "user"=>{"uni"=>"ss5945", "name"=>"Test", "password"=>"[FILTERED]"}, "commit"=>"Sign Up!"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "ss5945"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("uni", "name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["uni", "ss5945"], ["name", "Test"], ["password_digest", "$2a$12$YxBmXcN8tPWqiDQ5YVRe.u2jsqojb6KxsVkXODj5fTSUDv7kJeDe2"], ["created_at", "2023-10-31 22:25:27.065565"], ["updated_at", "2023-10-31 22:25:27.065565"]]
+  [1m[36m (77.6ms)[0m  [1mcommit transaction[0m
+Redirected to https://ringotorch-giantcairo-3000.codio.io/profile
+Completed 302 Found in 390ms (ActiveRecord: 78.5ms)
+
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-31 22:25:27 +0000
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEntitlement Load (0.2ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "ss5945"]]
+  Rendered users/profile.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 51ms (Views: 32.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/entitlements" for 76.159.145.92 at 2023-10-31 22:25:37 +0000
+Processing by EntitlementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B1uDxmiJ+HtEUQDvirhU+4ilu/w6k0VOT3rOkPguosyBrYMYsamvWsXBeYNPFh4+KvcwCI+CwqbHwk0/9N/zKw==", "entitlement"=>{"courseName"=>"Test Class", "role"=>"Viewer"}, "commit"=>"Add New Viewable Course"}
+  [1m[35mCourse Load (0.2ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1  [["courseName", "Test Class"]]
+Redirected to https://ringotorch-giantcairo-3000.codio.io/profile
+Completed 302 Found in 7ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-31 22:25:37 +0000
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "ss5945"]]
+  Rendered users/profile.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 28ms (Views: 25.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/schedules" for 76.159.145.92 at 2023-10-31 22:25:41 +0000
+Processing by SchedulesController#index as HTML
+  Rendered schedules/index.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/professors" for 76.159.145.92 at 2023-10-31 22:25:45 +0000
+Processing by ProfessorsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "ss5945"]]
+  Rendered professors/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-31 22:29:53 +0000
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "ss5945"]]
+  Rendered users/profile.html.erb within layouts/application (7.9ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 273ms (Views: 230.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-31 22:29:59 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (41.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 105ms (Views: 55.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-31 22:37:37 +0000
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "ss5945"]]
+  Rendered users/profile.html.erb within layouts/application (7.9ms)
+  Rendered layouts/_flash.erb (1.8ms)
+Completed 200 OK in 266ms (Views: 220.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-31 22:38:09 +0000
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "ss5945"]]
+  Rendered users/profile.html.erb within layouts/application (8.6ms)
+  Rendered layouts/_flash.erb (1.7ms)
+Completed 200 OK in 261ms (Views: 218.4ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/entitlements" for 76.159.145.92 at 2023-10-31 22:38:29 +0000
+Processing by EntitlementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fRN4fXzXTR/HqLaQsS88ZHROLx5zhW3phlorfbDPC7j75XijpfcaPkY4z/x0gXah1hyk6saU6gEO4qjSvD5aXw==", "entitlement"=>{"courseName"=>"", "role"=>"Viewer"}, "commit"=>"Add New Viewable Course"}
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1[0m  [["courseName", ""]]
+Redirected to https://ringotorch-giantcairo-3000.codio.io/profile
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-31 22:38:29 +0000
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEntitlement Load (0.1ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "ss5945"]]
+  Rendered users/profile.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 25ms (Views: 23.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/professors" for 76.159.145.92 at 2023-10-31 22:38:31 +0000
+Processing by ProfessorsController#index as HTML
+  [1m[35mUser Load (1.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEntitlement Load (0.1ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "ss5945"]]
+  Rendered professors/index.html.erb within layouts/application (4.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 44ms (Views: 40.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-31 22:45:58 +0000
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEntitlement Load (0.2ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "ss5945"]]
+  Rendered users/profile.html.erb within layouts/application (8.2ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 280ms (Views: 236.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-31 22:45:59 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (52.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 118ms (Views: 66.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/teaching_assistants/create_office_hour" for 76.159.145.92 at 2023-10-31 22:46:08 +0000
+Processing by TeachingAssistantsController#create_office_hour as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JzzxlhzyVB2FelZQjNpA0IAjnR7607Mf5Mc1ykH84sOhyvFIxdIDPATqLzxJdAoVInEW6k/CNPdsf7ZlTQ2zJA==", "calendar"=>{"class_id"=>"test", "start_time(1i)"=>"2023", "start_time(2i)"=>"10", "start_time(3i)"=>"31", "start_time(4i)"=>"22", "start_time(5i)"=>"46", "end_time(1i)"=>"2023", "end_time(2i)"=>"10", "end_time(3i)"=>"31", "end_time(4i)"=>"22", "end_time(5i)"=>"59"}, "commit"=>"Create Calendar"}
+  [1m[36mTeachingAssistant Load (0.3ms)[0m  [1mSELECT  "teaching_assistants".* FROM "teaching_assistants" WHERE "teaching_assistants"."id" IS NULL LIMIT 1[0m
+Redirected to https://ringotorch-giantcairo-3000.codio.io/teaching_assistants
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/teaching_assistants" for 76.159.145.92 at 2023-10-31 22:46:09 +0000
+Processing by TeachingAssistantsController#index as HTML
+  [1m[35mTeachingAssistant Load (0.1ms)[0m  SELECT "teaching_assistants".* FROM "teaching_assistants"
+  Rendered teaching_assistants/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 11.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-31 22:46:27 +0000
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "ss5945"]]
+  Rendered users/profile.html.erb within layouts/application (13.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 56ms (Views: 49.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/professors" for 76.159.145.92 at 2023-10-31 22:47:20 +0000
+Processing by ProfessorsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "ss5945"]]
+  Rendered professors/index.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 45ms (Views: 42.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/professors" for 76.159.145.92 at 2023-10-31 22:47:36 +0000
+Processing by ProfessorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SxuxNmR8GLkD320zDt21Sxff/qM/1A7u8HpYTVm8UPnN7bHovVxPmIJPFF/Lc/+OtY11V4rFiQZ4wtviVU0BHg==", "professor"=>{"courseName"=>"test", "courseDescription"=>"test", "unis"=>"ss5945", "role"=>"Prof"}, "commit"=>"Create a New Course"}
+  [1m[36mCourse Load (1.6ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1[0m  [["courseName", "test"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "courses" ("courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["courseName", "test"], ["courseDescription", "test"], ["created_at", "2023-10-31 22:47:36.297294"], ["updated_at", "2023-10-31 22:47:36.297294"]]
+  [1m[35m (75.1ms)[0m  commit transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "entitlements" ("uni", "courseId", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "ss5945"], ["courseId", 1], ["role", "Prof"], ["created_at", "2023-10-31 22:47:36.378672"], ["updated_at", "2023-10-31 22:47:36.378672"]]
+  [1m[35m (72.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "entitlements" ("uni", "courseId", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["uni", "ss5945"], ["courseId", 1], ["role", "TA"], ["created_at", "2023-10-31 22:47:36.454126"], ["updated_at", "2023-10-31 22:47:36.454126"]]
+  [1m[36m (78.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "teaching_assistants" ("uni", "class_id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "ss5945"], ["class_id", 1], ["name", "Test"], ["created_at", "2023-10-31 22:47:36.534576"], ["updated_at", "2023-10-31 22:47:36.534576"]]
+  [1m[35m (75.0ms)[0m  commit transaction
+Redirected to https://ringotorch-giantcairo-3000.codio.io/professors
+Completed 302 Found in 322ms (ActiveRecord: 305.2ms)
+
+
+Started GET "/professors" for 76.159.145.92 at 2023-10-31 22:47:36 +0000
+Processing by ProfessorsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "ss5945"]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered professors/index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 14ms (Views: 10.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-31 22:47:48 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-31 22:49:37 +0000
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEntitlement Load (0.2ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "ss5945"]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/profile.html.erb within layouts/application (30.5ms)
+Completed 500 Internal Server Error in 97ms (ActiveRecord: 2.6ms)
+
+ActionView::Template::Error (undefined method `teaching_assistant' for #<User:0x00007fdd48a2d938>):
+    39: 
+    40: </br></br>
+    41: 
+    42: <% if current_user.teaching_assistant %>
+    43:   <% if current_user.teaching_assistant.calendars.any? %>
+    44:     <h3>Your Office Hours:</h3>
+    45:     <ul>
+  app/views/users/profile.html.erb:42:in `_app_views_users_profile_html_erb___176932952917210023_70294192093140'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.5ms)
+
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-31 22:50:26 +0000
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "ss5945"]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/profile.html.erb within layouts/application (24.4ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 281ms (Views: 231.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-31 23:03:27 +0000
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEntitlement Load (0.2ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "ss5945"]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/profile.html.erb within layouts/application (10.3ms)
+  Rendered layouts/_flash.erb (2.4ms)
+Completed 200 OK in 315ms (Views: 256.1ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-31 23:03:30 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (48.2ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 119ms (Views: 65.6ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/teaching_assistants/create_office_hour" for 76.159.145.92 at 2023-10-31 23:03:40 +0000
+Processing by TeachingAssistantsController#create_office_hour as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xBbAptDu0KK4yhPrz0HLUGqqzPBLn6UlZt3WJpvvDTZC4MB4Cc6HgzlaaocK74GVyPhHBP6OIs3uZVWJlx5c0Q==", "calendar"=>{"class_id"=>"test", "start_time(1i)"=>"2023", "start_time(2i)"=>"10", "start_time(3i)"=>"31", "start_time(4i)"=>"09", "start_time(5i)"=>"03", "end_time(1i)"=>"2023", "end_time(2i)"=>"10", "end_time(3i)"=>"31", "end_time(4i)"=>"23", "end_time(5i)"=>"03"}, "commit"=>"Create Calendar"}
+  [1m[36mTeachingAssistant Load (0.2ms)[0m  [1mSELECT  "teaching_assistants".* FROM "teaching_assistants" WHERE "teaching_assistants"."id" IS NULL LIMIT 1[0m
+Redirected to https://ringotorch-giantcairo-3000.codio.io/teaching_assistants
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/teaching_assistants" for 76.159.145.92 at 2023-10-31 23:03:40 +0000
+Processing by TeachingAssistantsController#index as HTML
+  [1m[35mTeachingAssistant Load (0.2ms)[0m  SELECT "teaching_assistants".* FROM "teaching_assistants"
+  Rendered teaching_assistants/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-31 23:03:52 +0000
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "ss5945"]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/profile.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 51ms (Views: 40.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 76.159.145.92 at 2023-10-31 23:09:55 +0000
+
+
+Started GET "/sessions/new" for 76.159.145.92 at 2023-10-31 23:09:55 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (15.0ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 231ms (Views: 224.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 76.159.145.92 at 2023-10-31 23:09:58 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q6nEVOw7rxDLNeNhHXcDkykS4xD/CqEI4Ii7RbAzK3jFX8SKNRv4MUqlmg3Y2UlWi0Bo5EobJuBoMDjqvMJ6nw==", "login"=>{"uni"=>"Test", "password"=>"[FILTERED]"}, "commit"=>"Sign In!"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "Test"]]
+Redirected to https://ringotorch-giantcairo-3000.codio.io/sessions/new
+Completed 302 Found in 68ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/sessions/new" for 76.159.145.92 at 2023-10-31 23:09:59 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 29ms (Views: 27.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 76.159.145.92 at 2023-10-31 23:10:02 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eT0Bd2dMgFOQ7gvrlJomELrMNqmW23wuS8MbRXUopvL/ywGpvmzXchF+codRNGzVGJ69XSPK+8bDe5jqedn3FQ==", "user"=>{"uni"=>"ss5945", "name"=>"Test", "password"=>"[FILTERED]"}, "commit"=>"Sign Up!"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "ss5945"]]
+Redirected to https://ringotorch-giantcairo-3000.codio.io/sessions/new
+Completed 302 Found in 12ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/sessions/new" for 76.159.145.92 at 2023-10-31 23:10:02 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 9.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 76.159.145.92 at 2023-10-31 23:10:06 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9SBGpEEYtiOdk4laB8DKLvnCSnXVDX/ADguB1ZeocLRz1kZ6mDjhAhwD8DbCboDrW5DBgWAc+CiGswJ6m1khUw==", "login"=>{"uni"=>"ss5945", "password"=>"[FILTERED]"}, "commit"=>"Sign In!"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "ss5945"]]
+Redirected to https://ringotorch-giantcairo-3000.codio.io/profile
+Completed 302 Found in 294ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-31 23:10:07 +0000
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEntitlement Load (0.1ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "ss5945"]]
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCalendar Load (0.9ms)[0m  SELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?  [[nil, 1]]
+  Rendered users/profile.html.erb within layouts/application (6.3ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 1.8ms)
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: calendars.user_id: SELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?):
+    34:     </tr>
+    35:   </thead>
+    36:   <tbody>
+    37:     <% @calendar.each do |slot| %>
+    38:       <tr>
+    39:         <td>
+    40:           <%= slot.start_time %>
+  app/views/users/profile.html.erb:37:in `_app_views_users_profile_html_erb___1553712567886285868_46979267750820'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.8ms)
+
+
+Started GET "/" for 76.159.145.92 at 2023-10-31 23:10:32 +0000
+
+
+Started GET "/sessions/new" for 76.159.145.92 at 2023-10-31 23:10:32 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (14.0ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 248ms (Views: 239.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 76.159.145.92 at 2023-10-31 23:10:39 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G9vTMUBRz6UrrttCIGLj7B6uh8z7GPMmiBwzTONYuiqdLdPvmXGYhKo+oi7lzKkpvPwMOE4JdM4ApLDj76nrzQ==", "login"=>{"uni"=>"ss5945", "password"=>"[FILTERED]"}, "commit"=>"Sign In!"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "ss5945"]]
+Redirected to https://ringotorch-giantcairo-3000.codio.io/profile
+Completed 302 Found in 391ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-31 23:10:39 +0000
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEntitlement Load (0.2ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "ss5945"]]
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/profile.html.erb within layouts/application (7.0ms)
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 2.8ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    34:     </tr>
+    35:   </thead>
+    36:   <tbody>
+    37:     <% @calendars.each do |slot| %>
+    38:       <tr>
+    39:         <td>
+    40:           <%= slot.start_time %>
+  app/views/users/profile.html.erb:37:in `_app_views_users_profile_html_erb__2620282260001663471_70164912899940'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.0ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (20.0ms)
+
+
+Started GET "/" for 76.159.145.92 at 2023-10-31 23:11:49 +0000
+
+
+Started GET "/sessions/new" for 76.159.145.92 at 2023-10-31 23:11:50 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (8.8ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 217ms (Views: 210.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 76.159.145.92 at 2023-10-31 23:11:54 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Kxk30MhKAte9QTXiGjmAgQby+rnKhQy36fx3JWN7ltCt7zcOEWpV9jzRTI7fl8pEpKBxTX+Ui19hRPSKb4rHNw==", "login"=>{"uni"=>"ss5945", "password"=>"[FILTERED]"}, "commit"=>"Sign In!"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "ss5945"]]
+Redirected to https://ringotorch-giantcairo-3000.codio.io/profile
+Completed 302 Found in 428ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-31 23:11:55 +0000
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCalendar Load (1.6ms)[0m  [1mSELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?[0m  [[nil, 1]]
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 2.0ms)
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: calendars.user_id: SELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?):
+  app/controllers/users_controller.rb:9:in `new'
+  app/controllers/users_controller.rb:9:in `profile'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (4.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddUserIdToCalendars (20231031231236)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "calendars" ADD "user_id" integer[0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_calendars_on_user_id" ON "calendars" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20231031231236"]]
+  [1m[36m (75.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_calendars_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_calendars_on_user_id' AND type='index'
+[0m
+
+
+Started GET "/" for 76.159.145.92 at 2023-10-31 23:13:06 +0000
+
+
+Started GET "/sessions/new" for 76.159.145.92 at 2023-10-31 23:13:07 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (8.8ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 227ms (Views: 220.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 76.159.145.92 at 2023-10-31 23:13:11 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"O8vREu5vLtTjzwdKMIJi+MludFOl5OhVqCsPY+0Dv3e9PdHMN0959WJffib1LCg9azz/pxD1b70gk4zM4fLukA==", "login"=>{"uni"=>"ss5945", "password"=>"[FILTERED]"}, "commit"=>"Sign In!"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "ss5945"]]
+Redirected to https://ringotorch-giantcairo-3000.codio.io/profile
+Completed 302 Found in 370ms (ActiveRecord: 10.5ms)
+
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-31 23:13:12 +0000
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCalendar Load (0.2ms)[0m  [1mSELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mEntitlement Load (0.2ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "ss5945"]]
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/profile.html.erb within layouts/application (6.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 132ms (Views: 52.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-31 23:13:17 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (34.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 80ms (Views: 63.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/teaching_assistants/create_office_hour" for 76.159.145.92 at 2023-10-31 23:13:18 +0000
+Processing by TeachingAssistantsController#create_office_hour as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q9OudFTFvTJNS9SB8WE0XMJFtkWr6hD6niWBayye3HDFJa6qjeXqE8zbre00z36ZYBc9sR77lxIWnQLEIG+Nlw==", "calendar"=>{"class_id"=>"", "start_time(1i)"=>"2023", "start_time(2i)"=>"10", "start_time(3i)"=>"31", "start_time(4i)"=>"23", "start_time(5i)"=>"13", "end_time(1i)"=>"2023", "end_time(2i)"=>"10", "end_time(3i)"=>"31", "end_time(4i)"=>"23", "end_time(5i)"=>"13"}, "commit"=>"Create Calendar"}
+  [1m[36mTeachingAssistant Load (0.2ms)[0m  [1mSELECT  "teaching_assistants".* FROM "teaching_assistants" WHERE "teaching_assistants"."id" IS NULL LIMIT 1[0m
+Redirected to https://ringotorch-giantcairo-3000.codio.io/teaching_assistants
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/teaching_assistants" for 76.159.145.92 at 2023-10-31 23:13:19 +0000
+Processing by TeachingAssistantsController#index as HTML
+  [1m[35mTeachingAssistant Load (0.2ms)[0m  SELECT "teaching_assistants".* FROM "teaching_assistants"
+  Rendered teaching_assistants/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 39ms (Views: 38.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-31 23:13:26 +0000
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCalendar Load (0.1ms)[0m  SELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?  [["user_id", 1]]
+  [1m[36mEntitlement Load (0.1ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "ss5945"]]
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/profile.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 14ms (Views: 10.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 76.159.145.92 at 2023-10-31 23:16:23 +0000
+
+
+Started GET "/sessions/new" for 76.159.145.92 at 2023-10-31 23:16:23 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 76.159.145.92 at 2023-10-31 23:16:25 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rV5sPdIvTl8IJ4vy+3MmI666XZfqF+WCNXGrItQ6ZXUrqGzjCw8Zfom38p4+3WzmDOjWY18GYmq9ySiN2Ms0kg==", "login"=>{"uni"=>"ss5945", "password"=>"[FILTERED]"}, "commit"=>"Sign In!"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "ss5945"]]
+Redirected to https://ringotorch-giantcairo-3000.codio.io/profile
+Completed 302 Found in 327ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-31 23:16:26 +0000
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCalendar Load (0.1ms)[0m  SELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?  [["user_id", 1]]
+  [1m[36mEntitlement Load (0.1ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "ss5945"]]
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/profile.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 34ms (Views: 29.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-31 23:16:28 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/teaching_assistants/create_office_hour" for 76.159.145.92 at 2023-10-31 23:16:30 +0000
+Processing by TeachingAssistantsController#create_office_hour as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i/vbZlEaXs+Rqb5508zPByOZ/7SK/ho7crrS5heKEecNDdu4iDoJ7hA5xxUWYoXCgct0QD/vndP6AlFJG3tAAA==", "calendar"=>{"class_id"=>"test", "start_time(1i)"=>"2023", "start_time(2i)"=>"10", "start_time(3i)"=>"31", "start_time(4i)"=>"23", "start_time(5i)"=>"16", "end_time(1i)"=>"2023", "end_time(2i)"=>"10", "end_time(3i)"=>"31", "end_time(4i)"=>"23", "end_time(5i)"=>"16"}, "commit"=>"Create Calendar"}
+  [1m[35mTeachingAssistant Load (0.2ms)[0m  SELECT  "teaching_assistants".* FROM "teaching_assistants" WHERE "teaching_assistants"."id" IS NULL LIMIT 1
+Redirected to https://ringotorch-giantcairo-3000.codio.io/teaching_assistants
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/teaching_assistants" for 76.159.145.92 at 2023-10-31 23:16:30 +0000
+Processing by TeachingAssistantsController#index as HTML
+  [1m[36mTeachingAssistant Load (0.2ms)[0m  [1mSELECT "teaching_assistants".* FROM "teaching_assistants"[0m
+  Rendered teaching_assistants/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-31 23:16:35 +0000
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCalendar Load (0.1ms)[0m  [1mSELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "ss5945"]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/profile.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 9.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-31 23:17:28 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/teaching_assistants/create_office_hour" for 76.159.145.92 at 2023-10-31 23:17:30 +0000
+Processing by TeachingAssistantsController#create_office_hour as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oaCZpWuOYxQKce0nnri500jMJILx2N9ESNJB2PWm4s4nVpl7sq40NYvhlEtbFvMW6p6vdkTJWKzAasJ3+VezKQ==", "calendar"=>{"class_id"=>"", "start_time(1i)"=>"2023", "start_time(2i)"=>"10", "start_time(3i)"=>"31", "start_time(4i)"=>"23", "start_time(5i)"=>"17", "end_time(1i)"=>"2023", "end_time(2i)"=>"10", "end_time(3i)"=>"31", "end_time(4i)"=>"23", "end_time(5i)"=>"17"}, "commit"=>"Create Calendar"}
+  [1m[36mTeachingAssistant Load (0.1ms)[0m  [1mSELECT  "teaching_assistants".* FROM "teaching_assistants" WHERE "teaching_assistants"."id" IS NULL LIMIT 1[0m
+Redirected to https://ringotorch-giantcairo-3000.codio.io/teaching_assistants
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/teaching_assistants" for 76.159.145.92 at 2023-10-31 23:17:30 +0000
+Processing by TeachingAssistantsController#index as HTML
+  [1m[35mTeachingAssistant Load (0.2ms)[0m  SELECT "teaching_assistants".* FROM "teaching_assistants"
+  Rendered teaching_assistants/index.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 76.159.145.92 at 2023-10-31 23:19:40 +0000
+
+
+Started GET "/sessions/new" for 76.159.145.92 at 2023-10-31 23:19:40 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (9.3ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 240ms (Views: 232.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 76.159.145.92 at 2023-10-31 23:19:43 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XeZQ1PQBYrHXG9Wb4+4XWG3KQM5WV9B70InKEN1klg7bEFAKLSE1kFaLrPcmQF2dz5jLOuNGV5NYMUm/0ZXH6Q==", "login"=>{"uni"=>"ss5945", "password"=>"[FILTERED]"}, "commit"=>"Sign In!"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "ss5945"]]
+Redirected to https://ringotorch-giantcairo-3000.codio.io/profile
+Completed 302 Found in 389ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-31 23:19:43 +0000
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCalendar Load (0.1ms)[0m  [1mSELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mEntitlement Load (0.2ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "ss5945"]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/profile.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 98ms (Views: 39.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 76.159.145.92 at 2023-10-31 23:19:45 +0000
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (18.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 65ms (Views: 51.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/teaching_assistants/create_office_hour" for 76.159.145.92 at 2023-10-31 23:19:47 +0000
+Processing by TeachingAssistantsController#create_office_hour as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+DJeIfLhGtwQKjc7OFurYCpivBHNBoYK1et4QCB94UJ+xF7/K8FN/ZG6Tlf99eGliDA35XgXAeJdU/vvLIywpQ==", "calendar"=>{"class_id"=>"test", "start_time(1i)"=>"2023", "start_time(2i)"=>"10", "start_time(3i)"=>"31", "start_time(4i)"=>"23", "start_time(5i)"=>"19", "end_time(1i)"=>"2023", "end_time(2i)"=>"10", "end_time(3i)"=>"31", "end_time(4i)"=>"23", "end_time(5i)"=>"19"}, "commit"=>"Create Calendar"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.6ms)[0m  [1mINSERT INTO "calendars" ("class_id", "start_time", "end_time", "user_id") VALUES (?, ?, ?, ?)[0m  [["class_id", "test"], ["start_time", "2023-10-31 23:19:00.000000"], ["end_time", "2023-10-31 23:19:00.000000"], ["user_id", 1]]
+  [1m[35m (82.9ms)[0m  commit transaction
+Redirected to https://ringotorch-giantcairo-3000.codio.io/profile
+Completed 302 Found in 96ms (ActiveRecord: 85.8ms)
+
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-31 23:19:47 +0000
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCalendar Load (0.1ms)[0m  SELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?  [["user_id", 1]]
+  [1m[36mEntitlement Load (0.1ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "ss5945"]]
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/profile.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 53ms (Views: 45.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-31 23:26:42 +0000
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCalendar Load (0.3ms)[0m  SELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?  [["user_id", 1]]
+  [1m[36mEntitlement Load (0.1ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "ss5945"]]
+  [1m[35mCourse Load (0.2ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/profile.html.erb within layouts/application (8.9ms)
+  Rendered layouts/_flash.erb (1.1ms)
+Completed 200 OK in 334ms (Views: 235.8ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-31 23:26:56 +0000
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCalendar Load (0.1ms)[0m  [1mSELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "ss5945"]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/profile.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 25ms (Views: 20.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 76.159.145.92 at 2023-10-31 23:27:38 +0000
+
+
+Started GET "/sessions/new" for 76.159.145.92 at 2023-10-31 23:27:38 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 76.159.145.92 at 2023-10-31 23:27:39 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oOKMoOgNfGFbV/0z8PgD8Xhmunb/SgUjp4DsxUihY70mFIx+MS0rQNrHhF81Vkk02jQxgkpbgssvOG9qRFAyWg==", "login"=>{"uni"=>"ss5945", "password"=>"[FILTERED]"}, "commit"=>"Sign In!"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "ss5945"]]
+Redirected to https://ringotorch-giantcairo-3000.codio.io/profile
+Completed 302 Found in 310ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/profile" for 76.159.145.92 at 2023-10-31 23:27:40 +0000
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCalendar Load (0.1ms)[0m  [1mSELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "ss5945"]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/profile.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 14ms (Views: 10.9ms | ActiveRecord: 0.3ms)
