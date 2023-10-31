@@ -11,14 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20231031042319) do
+ActiveRecord::Schema.define(version: 20231031231236) do
 
   create_table "calendars", force: :cascade do |t|
     t.string   "class_id"
     t.datetime "start_time"
     t.datetime "end_time"
     t.integer  "teaching_assistant_id"
+    t.integer  "user_id"
   end
+
+  add_index "calendars", ["user_id"], name: "index_calendars_on_user_id"
 
   create_table "courses", force: :cascade do |t|
     t.string   "courseName"
