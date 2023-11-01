@@ -215,6 +215,15 @@ Then /^the "([^"]*)" checkbox(?: within (.*))? should be checked$/ do |label, pa
     end
   end
 end
+  
+  
+  When(/^I click the "([^"]*)" button$/) do |button_name|
+    click_button button_name
+  end  
+  
+  Then(/^I should see a success message "(.*?)"$/) do |message|
+    expect(page).to have_content(message)
+  end
 
 Then /^the "([^"]*)" checkbox(?: within (.*))? should not be checked$/ do |label, parent|
   with_scope(parent) do
