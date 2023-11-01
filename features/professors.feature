@@ -1,6 +1,7 @@
 Feature: create a new class
 
   As a user of the application who is a professor
+  So that I can have an office hour schedule for my class
   I want to be able to create a new class and add TAs to it
 
 Background: users, courses, and entitlements in the database
