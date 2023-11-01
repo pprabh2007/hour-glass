@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20231031231236) do
 
   create_table "entitlements", force: :cascade do |t|
     t.string   "uni"
-    t.integer  "courseId"
+    t.string   "courseId"
     t.string   "role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
