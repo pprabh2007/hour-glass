@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     def profile
 
         @viewable_courses = Set.new
-        @calendars = @calendars = Set.new(current_user.calendars)
+        @calendars = Set.new(current_user.calendars)
         @entitlements = Entitlement.where(uni: current_user.uni)
         @entitlements.each do |entitlement|
             @viewable_courses << Course.find_by(courseName: entitlement.courseId)
