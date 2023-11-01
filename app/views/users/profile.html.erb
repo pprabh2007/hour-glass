@@ -1,6 +1,7 @@
 <%= content_tag :h1, "Hello, #{current_user.name}!" %>
+<%= link_to "Sign out", clear_session_path, method:"delete", :class => 'text-right' %>
 
-</br>
+</br></br></br>
 <%= content_tag :h3, "Your Viewable Courses" %>
 <table class="table table-striped col-md-12" id="movies">
   <thead>
@@ -23,7 +24,8 @@
   </tbody>
 </table>
 
-</br>
+<%= link_to 'View Schedule', schedules_path, :class => 'btn btn-primary col-2' %>
+</br></br></br>
 
 <%= content_tag :h3, "Your Office Hour Slots" %>
 <table class="table table-striped col-md-12" id="movies">
@@ -46,8 +48,9 @@
     <% end %>
   </tbody>
 </table>
+<%= link_to 'Edit TA Office Hours', new_office_hour_teaching_assistants_path, :class => 'btn btn-primary col-2' %>
+</br></br></br>
 
-</br>
 <%= content_tag :h3, "View a new course on your schedule" %>
 <%= form_tag entitlements_path, method: :post, :class => 'form' do %>
   <%= label :entitlement, :courseName, 'Course Name', :class => 'col-form-label'  %>
@@ -56,10 +59,5 @@
   </br>
   <%= submit_tag "Add New Viewable Course", :class => 'btn btn-primary' %>
 <% end %>
-
-<%= link_to 'View Schedule', schedules_path, :class => 'btn btn-primary col-2' %>
+</br></br>
 <%= link_to 'Create a New Course', professors_path, :class => 'btn btn-primary col-2' %>
-<%= link_to 'Edit TA Office Hours', new_office_hour_teaching_assistants_path, :class => 'btn btn-primary col-2' %>
-
-</br></br></br></br></br></br></br></br></br>
-<%= link_to "Sign out", clear_session_path, method:"delete" %>
