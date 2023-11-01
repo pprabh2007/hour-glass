@@ -9,7 +9,7 @@ class EntitlementsController < ApplicationController
             if Entitlement.equivalent_perm_exists?(current_user.uni, input_course.id, entitlement_params[:role])
                 flash[:warning] = "You already have access to the inputted class."
             else
-                new_entitlement = Entitlement.create(uni: current_user.uni, courseId: input_course.id, role: entitlement_params[:role])
+                new_entitlement = Entitlement.create(uni: current_user.uni, courseId: input_course.courseName, role: entitlement_params[:role])
                 flash[:notice] = "Added new class '#{course_name}' to schedule";
             end
         end
