@@ -16,7 +16,7 @@ Background: users, courses, and entitlements in the database
 
   Given the following entitlements exist:
   | uni        | courseId  | role   | 
-  | testUni    | 0         | TA |
+  | testUni    | COMS 4152 | TA     |
 
 Scenario: Login and navigating to new office hour creation page
   When I go to the login page

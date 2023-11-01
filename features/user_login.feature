@@ -7,7 +7,7 @@ Feature: login as a specific user
 Background: users in database
 
   Given the following users exist:
-  | uni        | password_digest        | name     |
+  | uni        | password        | name     |
   | testUni    | testPassword    | testName |
 
 Scenario: Login as myself, see personalized profile page, and log out
