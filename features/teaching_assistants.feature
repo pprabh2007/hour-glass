@@ -1,6 +1,7 @@
 Feature: add office hour slots
 
   As a user of the application who is a TA
+  So that I can display my Office Hours schedule for my class
   I want to be able to create a new office hour slot
 
 Background: users, courses, and entitlements in the database
