@@ -10182,3 +10182,78 @@ Processing by SchedulesController#index as HTML
   Rendered schedules/index.html.erb within layouts/application (8.6ms)
   Rendered layouts/_flash.erb (0.1ms)
 Completed 200 OK in 44ms (Views: 35.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/profile" for 128.59.177.103 at 2023-11-01 02:34:15 +0000
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCalendar Load (0.1ms)[0m  [1mSELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "cheems"]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1[0m  [["courseName", "COMS 4152"]]
+  Rendered users/profile.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 30ms (Views: 12.2ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/sessions/clear" for 128.59.177.103 at 2023-11-01 02:34:22 +0000
+Processing by SessionsController#clear as HTML
+  Parameters: {"authenticity_token"=>"f9CRiXNFze17InQu0PiQLhYygmsi7P1R/p9Pl3/FqPUAER2YoAl1//1XzMKItV16XZQDEH7d9WjKVECgBSWPEA=="}
+Redirected to https://adriansimilar-performcrimson-3000.codio.io/sessions/new
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 128.59.177.103 at 2023-11-01 02:34:22 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 128.59.177.103 at 2023-11-01 02:34:26 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MQTcnmVnMLnFkcwY0pp0dRZXgtcdoF/tpPTKnnqYPcBOxVCPtiuIq0PkdPSK17khXfEDrEGRV9SQP8WpAHgaJQ==", "user"=>{"uni"=>"lol", "name"=>"lol", "password"=>"[FILTERED]"}, "commit"=>"Sign Up!"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "lol"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("uni", "name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["uni", "lol"], ["name", "lol"], ["password_digest", "$2a$12$zWPcpsZt38J4dXd32DIunu8sLqp430sSx1YUZuRTyQUwgRtV6gFMm"], ["created_at", "2023-11-01 02:34:27.224361"], ["updated_at", "2023-11-01 02:34:27.224361"]]
+  [1m[36m (94.7ms)[0m  [1mcommit transaction[0m
+Redirected to https://adriansimilar-performcrimson-3000.codio.io/profile
+Completed 302 Found in 468ms (ActiveRecord: 95.5ms)
+
+
+Started GET "/profile" for 128.59.177.103 at 2023-11-01 02:34:27 +0000
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCalendar Load (0.1ms)[0m  [1mSELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "lol"]]
+  Rendered users/profile.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 13ms (Views: 10.1ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/sessions/clear" for 128.59.177.103 at 2023-11-01 02:34:29 +0000
+Processing by SessionsController#clear as HTML
+  Parameters: {"authenticity_token"=>"HWrhkMIb3mvdMStYK7XhHprj7ragiWfbgTmAf+EsSd5iq22BEVdmeVtEk7Rz+CxK0UVvzfy4b+K18o9Im8xuOw=="}
+Redirected to https://adriansimilar-performcrimson-3000.codio.io/sessions/new
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 128.59.177.103 at 2023-11-01 02:34:29 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 128.59.177.103 at 2023-11-01 02:34:33 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r9INmyPzMSoAs0JlEUoHXUWT9pBUdZexYrB1uixNW7zQE4GK8L+JOIbG+olJB8oJDjV36whEn4hWe3qNVq18WQ==", "login"=>{"uni"=>"lol", "password"=>"[FILTERED]"}, "commit"=>"Sign In!"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "lol"]]
+Redirected to https://adriansimilar-performcrimson-3000.codio.io/sessions/new
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/sessions/new" for 128.59.177.103 at 2023-11-01 02:34:33 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.0ms)

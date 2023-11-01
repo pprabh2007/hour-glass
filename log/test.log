@@ -14520,3 +14520,1081 @@ Processing by UsersController#profile as HTML
   Rendered layouts/_flash.erb (0.1ms)
 Completed 200 OK in 6ms (Views: 2.9ms | ActiveRecord: 0.2ms)
   [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("uni", "password_digest", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["uni", "testUni"], ["password_digest", "testPassword"], ["name", "testName"], ["created_at", "2023-11-01 02:36:35.490895"], ["updated_at", "2023-11-01 02:36:35.490895"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "courses" ("id", "courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["id", 0], ["courseName", "COMS 4152"], ["courseDescription", "Engineering Software-as-a-Service"], ["created_at", "2023-11-01 02:36:35.499862"], ["updated_at", "2023-11-01 02:36:35.499862"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "courses" ("id", "courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["id", 1], ["courseName", "CSOR 4231"], ["courseDescription", "Intro to Algorithms"], ["created_at", "2023-11-01 02:36:35.501620"], ["updated_at", "2023-11-01 02:36:35.501620"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "entitlements" ("uni", "courseId", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "testUni"], ["courseId", "COMS 4152"], ["role", "Professor"], ["created_at", "2023-11-01 02:36:35.508488"], ["updated_at", "2023-11-01 02:36:35.508488"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 02:36:35 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (8.2ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 279ms (Views: 272.9ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 02:36:35 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "login"=>{"uni"=>"testUni", "password"=>"[FILTERED]"}, "commit"=>"Sign In!"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "testUni"]]
+Redirected to http://www.example.com/profile
+Completed 302 Found in 7ms (ActiveRecord: 0.2ms)
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 02:36:35 +0000
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCalendar Load (0.1ms)[0m  [1mSELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "testUni"]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1[0m  [["courseName", "COMS 4152"]]
+  Rendered users/profile.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 27ms (Views: 9.0ms | ActiveRecord: 0.6ms)
+Started GET "/professors" for 127.0.0.1 at 2023-11-01 02:36:35 +0000
+Processing by ProfessorsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEntitlement Load (0.0ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "testUni"]]
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", "COMS 4152"]]
+  Rendered professors/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("uni", "password_digest", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "testUni"], ["password_digest", "testPassword"], ["name", "testName"], ["created_at", "2023-11-01 02:36:35.890667"], ["updated_at", "2023-11-01 02:36:35.890667"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "courses" ("id", "courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["id", 0], ["courseName", "COMS 4152"], ["courseDescription", "Engineering Software-as-a-Service"], ["created_at", "2023-11-01 02:36:35.893127"], ["updated_at", "2023-11-01 02:36:35.893127"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "courses" ("id", "courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["id", 1], ["courseName", "CSOR 4231"], ["courseDescription", "Intro to Algorithms"], ["created_at", "2023-11-01 02:36:35.894655"], ["updated_at", "2023-11-01 02:36:35.894655"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "entitlements" ("uni", "courseId", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["uni", "testUni"], ["courseId", "COMS 4152"], ["role", "Professor"], ["created_at", "2023-11-01 02:36:35.896432"], ["updated_at", "2023-11-01 02:36:35.896432"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 02:36:35 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 02:36:35 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "login"=>{"uni"=>"testUni", "password"=>"[FILTERED]"}, "commit"=>"Sign In!"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "testUni"]]
+Redirected to http://www.example.com/profile
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 02:36:35 +0000
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCalendar Load (0.0ms)[0m  SELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?  [["user_id", 1]]
+  [1m[36mEntitlement Load (0.0ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "testUni"]]
+  [1m[35mCourse Load (0.0ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1  [["courseName", "COMS 4152"]]
+  Rendered users/profile.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.2ms)
+Started GET "/professors" for 127.0.0.1 at 2023-11-01 02:36:35 +0000
+Processing by ProfessorsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "testUni"]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", "COMS 4152"]]
+  Rendered professors/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.3ms)
+Started POST "/professors" for 127.0.0.1 at 2023-11-01 02:36:35 +0000
+Processing by ProfessorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "professor"=>{"courseName"=>"COMS 4444", "courseDescription"=>"Programming & Problem Solving", "unis"=>"TA123,TA234", "role"=>"Prof"}, "commit"=>"Create a New Course"}
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1[0m  [["courseName", "COMS 4444"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "courses" ("courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["courseName", "COMS 4444"], ["courseDescription", "Programming & Problem Solving"], ["created_at", "2023-11-01 02:36:35.934990"], ["updated_at", "2023-11-01 02:36:35.934990"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "entitlements" ("uni", "courseId", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "testUni"], ["courseId", "2"], ["role", "Prof"], ["created_at", "2023-11-01 02:36:35.937158"], ["updated_at", "2023-11-01 02:36:35.937158"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "entitlements" ("uni", "courseId", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["uni", "TA123"], ["courseId", "2"], ["role", "TA"], ["created_at", "2023-11-01 02:36:35.938716"], ["updated_at", "2023-11-01 02:36:35.938716"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "entitlements" ("uni", "courseId", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "TA234"], ["courseId", "2"], ["role", "TA"], ["created_at", "2023-11-01 02:36:35.940196"], ["updated_at", "2023-11-01 02:36:35.940196"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "teaching_assistants" ("uni", "class_id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["uni", "testUni"], ["class_id", 2], ["name", "testName"], ["created_at", "2023-11-01 02:36:35.947565"], ["updated_at", "2023-11-01 02:36:35.947565"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/professors
+Completed 302 Found in 16ms (ActiveRecord: 1.2ms)
+Started GET "/professors" for 127.0.0.1 at 2023-11-01 02:36:35 +0000
+Processing by ProfessorsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEntitlement Load (0.1ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "testUni"]]
+  [1m[35mCourse Load (0.0ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", "COMS 4152"]]
+  [1m[35mCourse Load (0.0ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  Rendered professors/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 6ms (Views: 2.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("uni", "password_digest", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "testUni"], ["password_digest", "testPassword"], ["name", "testName"], ["created_at", "2023-11-01 02:36:35.964984"], ["updated_at", "2023-11-01 02:36:35.964984"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "courses" ("id", "courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["id", 0], ["courseName", "COMS 4152"], ["courseDescription", "Engineering Software-as-a-Service"], ["created_at", "2023-11-01 02:36:35.967406"], ["updated_at", "2023-11-01 02:36:35.967406"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "courses" ("id", "courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["id", 1], ["courseName", "CSOR 4231"], ["courseDescription", "Intro to Algorithms"], ["created_at", "2023-11-01 02:36:35.969058"], ["updated_at", "2023-11-01 02:36:35.969058"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "entitlements" ("uni", "courseId", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["uni", "testUni"], ["courseId", "COMS 4152"], ["role", "Professor"], ["created_at", "2023-11-01 02:36:35.970960"], ["updated_at", "2023-11-01 02:36:35.970960"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 02:36:35 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 02:36:35 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "login"=>{"uni"=>"testUni", "password"=>"[FILTERED]"}, "commit"=>"Sign In!"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "testUni"]]
+Redirected to http://www.example.com/profile
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 02:36:35 +0000
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCalendar Load (0.1ms)[0m  SELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?  [["user_id", 1]]
+  [1m[36mEntitlement Load (0.1ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "testUni"]]
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1  [["courseName", "COMS 4152"]]
+  Rendered users/profile.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 0.3ms)
+Started GET "/professors" for 127.0.0.1 at 2023-11-01 02:36:35 +0000
+Processing by ProfessorsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEntitlement Load (0.0ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "testUni"]]
+  [1m[36mCourse Load (0.0ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", "COMS 4152"]]
+  Rendered professors/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.2ms)
+Started POST "/professors" for 127.0.0.1 at 2023-11-01 02:36:36 +0000
+Processing by ProfessorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "professor"=>{"courseName"=>"CSOR 4231", "courseDescription"=>"Introduction to Algorithms", "unis"=>"TA123,TA234", "role"=>"Prof"}, "commit"=>"Create a New Course"}
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1[0m  [["courseName", "CSOR 4231"]]
+Redirected to http://www.example.com/professors
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+Started GET "/professors" for 127.0.0.1 at 2023-11-01 02:36:36 +0000
+Processing by ProfessorsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEntitlement Load (0.1ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "testUni"]]
+  [1m[35mCourse Load (0.0ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", "COMS 4152"]]
+  Rendered professors/index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("uni", "password_digest", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "testUni"], ["password_digest", "testPassword"], ["name", "testName"], ["created_at", "2023-11-01 02:36:36.024877"], ["updated_at", "2023-11-01 02:36:36.024877"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "courses" ("id", "courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["id", 0], ["courseName", "COMS 4152"], ["courseDescription", "Engineering Software-as-a-Service"], ["created_at", "2023-11-01 02:36:36.029631"], ["updated_at", "2023-11-01 02:36:36.029631"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "courses" ("id", "courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["id", 1], ["courseName", "CSOR 4231"], ["courseDescription", "Intro to Algorithms"], ["created_at", "2023-11-01 02:36:36.031920"], ["updated_at", "2023-11-01 02:36:36.031920"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "entitlements" ("uni", "courseId", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["uni", "testUni"], ["courseId", "COMS 4152"], ["role", "Viewer"], ["created_at", "2023-11-01 02:36:36.035547"], ["updated_at", "2023-11-01 02:36:36.035547"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schedules" ("courseId", "startTime", "endTime") VALUES (?, ?, ?)[0m  [["courseId", "COMS 4152"], ["startTime", "2023-10-31 08:00:00.000000"], ["endTime", "2023-10-31 10:00:00.000000"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schedules" ("courseId", "startTime", "endTime") VALUES (?, ?, ?)  [["courseId", "CSOR 4231"], ["startTime", "2023-10-31 11:00:00.000000"], ["endTime", "2023-10-31 13:00:00.000000"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 02:36:36 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 02:36:36 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "login"=>{"uni"=>"testUni", "password"=>"[FILTERED]"}, "commit"=>"Sign In!"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "testUni"]]
+Redirected to http://www.example.com/profile
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 02:36:36 +0000
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCalendar Load (0.1ms)[0m  SELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?  [["user_id", 1]]
+  [1m[36mEntitlement Load (0.1ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "testUni"]]
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1  [["courseName", "COMS 4152"]]
+  Rendered users/profile.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 6ms (Views: 2.8ms | ActiveRecord: 0.3ms)
+Started GET "/schedules" for 127.0.0.1 at 2023-11-01 02:36:36 +0000
+Processing by SchedulesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT "entitlements"."courseId" FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "testUni"]]
+  [1m[36mSchedule Load (0.2ms)[0m  [1mSELECT "schedules".* FROM "schedules" WHERE "schedules"."courseId" = 'COMS 4152'[0m
+  Rendered schedules/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 7.5ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("uni", "password_digest", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "testUni"], ["password_digest", "testPassword"], ["name", "testName"], ["created_at", "2023-11-01 02:36:36.112028"], ["updated_at", "2023-11-01 02:36:36.112028"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 02:36:36 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 02:36:36 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "login"=>{"uni"=>"testUni", "password"=>"[FILTERED]"}, "commit"=>"Sign In!"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "testUni"]]
+Redirected to http://www.example.com/profile
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 02:36:36 +0000
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCalendar Load (0.0ms)[0m  [1mSELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mEntitlement Load (0.0ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "testUni"]]
+  Rendered users/profile.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.1ms)
+Started DELETE "/sessions/clear" for 127.0.0.1 at 2023-11-01 02:36:36 +0000
+Processing by SessionsController#clear as HTML
+Redirected to http://www.example.com/sessions/new
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 02:36:36 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("uni", "password_digest", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["uni", "testUni"], ["password_digest", "testPassword"], ["name", "testName"], ["created_at", "2023-11-01 02:36:36.152582"], ["updated_at", "2023-11-01 02:36:36.152582"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 02:36:36 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("uni", "password_digest", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "testUni"], ["password_digest", "testPassword"], ["name", "testName"], ["created_at", "2023-11-01 02:36:36.199980"], ["updated_at", "2023-11-01 02:36:36.199980"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 02:36:36 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 02:36:36 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "login"=>{"uni"=>"testUni", "password"=>"[FILTERED]"}, "commit"=>"Sign In!"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "testUni"]]
+Redirected to http://www.example.com/sessions/new
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 02:36:36 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("uni", "password_digest", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "testUni"], ["password_digest", "testPassword"], ["name", "testName"], ["created_at", "2023-11-01 02:36:36.227894"], ["updated_at", "2023-11-01 02:36:36.227894"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 02:36:36 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2023-11-01 02:36:36 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"uni"=>"testUni", "name"=>"testName", "password_digest"=>"[FILTERED]"}, "commit"=>"Sign Up!"}
+Unpermitted parameter: password_digest
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "testUni"]]
+Redirected to http://www.example.com/sessions/new
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 02:36:36 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("uni", "password_digest", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "testUni"], ["password_digest", "testPassword"], ["name", "testName"], ["created_at", "2023-11-01 02:36:36.255609"], ["updated_at", "2023-11-01 02:36:36.255609"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "courses" ("id", "courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["id", 0], ["courseName", "COMS 4152"], ["courseDescription", "Engineering Software-as-a-Service"], ["created_at", "2023-11-01 02:36:36.259174"], ["updated_at", "2023-11-01 02:36:36.259174"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "courses" ("id", "courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["id", 1], ["courseName", "CSOR 4231"], ["courseDescription", "Intro to Algorithms"], ["created_at", "2023-11-01 02:36:36.260907"], ["updated_at", "2023-11-01 02:36:36.260907"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "entitlements" ("uni", "courseId", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["uni", "testUni"], ["courseId", "COMS 4152"], ["role", "Viewer"], ["created_at", "2023-11-01 02:36:36.263142"], ["updated_at", "2023-11-01 02:36:36.263142"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 02:36:36 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 02:36:36 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "login"=>{"uni"=>"testUni", "password"=>"[FILTERED]"}, "commit"=>"Sign In!"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "testUni"]]
+Redirected to http://www.example.com/profile
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 02:36:36 +0000
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCalendar Load (0.0ms)[0m  SELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?  [["user_id", 1]]
+  [1m[36mEntitlement Load (0.0ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "testUni"]]
+  [1m[35mCourse Load (0.0ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1  [["courseName", "COMS 4152"]]
+  Rendered users/profile.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 5ms (Views: 2.2ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("uni", "password_digest", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["uni", "testUni"], ["password_digest", "testPassword"], ["name", "testName"], ["created_at", "2023-11-01 02:36:36.298169"], ["updated_at", "2023-11-01 02:36:36.298169"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "courses" ("id", "courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["id", 0], ["courseName", "COMS 4152"], ["courseDescription", "Engineering Software-as-a-Service"], ["created_at", "2023-11-01 02:36:36.300515"], ["updated_at", "2023-11-01 02:36:36.300515"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "courses" ("id", "courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["id", 1], ["courseName", "CSOR 4231"], ["courseDescription", "Intro to Algorithms"], ["created_at", "2023-11-01 02:36:36.302065"], ["updated_at", "2023-11-01 02:36:36.302065"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "entitlements" ("uni", "courseId", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "testUni"], ["courseId", "COMS 4152"], ["role", "Viewer"], ["created_at", "2023-11-01 02:36:36.303747"], ["updated_at", "2023-11-01 02:36:36.303747"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 02:36:36 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 02:36:36 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "login"=>{"uni"=>"testUni", "password"=>"[FILTERED]"}, "commit"=>"Sign In!"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "testUni"]]
+Redirected to http://www.example.com/profile
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 02:36:36 +0000
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCalendar Load (0.0ms)[0m  [1mSELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mEntitlement Load (0.0ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "testUni"]]
+  [1m[36mCourse Load (0.0ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1[0m  [["courseName", "COMS 4152"]]
+  Rendered users/profile.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 5ms (Views: 2.2ms | ActiveRecord: 0.2ms)
+Started POST "/entitlements" for 127.0.0.1 at 2023-11-01 02:36:36 +0000
+Processing by EntitlementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "entitlement"=>{"courseName"=>"CSOR 4231", "role"=>"Viewer"}, "commit"=>"Add New Viewable Course"}
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1  [["courseName", "CSOR 4231"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEntitlement Load (0.1ms)[0m  SELECT  "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ? AND "entitlements"."courseId" = ? LIMIT 1  [["uni", "testUni"], ["courseId", "1"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "entitlements" ("uni", "courseId", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["uni", "testUni"], ["courseId", "CSOR 4231"], ["role", "Viewer"], ["created_at", "2023-11-01 02:36:36.363494"], ["updated_at", "2023-11-01 02:36:36.363494"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/profile
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 02:36:36 +0000
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCalendar Load (0.0ms)[0m  [1mSELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "testUni"]]
+  [1m[36mCourse Load (0.0ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1[0m  [["courseName", "COMS 4152"]]
+  [1m[35mCourse Load (0.0ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1  [["courseName", "CSOR 4231"]]
+  Rendered users/profile.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 7ms (Views: 3.0ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("uni", "password_digest", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["uni", "testUni"], ["password_digest", "testPassword"], ["name", "testName"], ["created_at", "2023-11-01 02:36:36.390842"], ["updated_at", "2023-11-01 02:36:36.390842"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "courses" ("id", "courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["id", 0], ["courseName", "COMS 4152"], ["courseDescription", "Engineering Software-as-a-Service"], ["created_at", "2023-11-01 02:36:36.393897"], ["updated_at", "2023-11-01 02:36:36.393897"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "courses" ("id", "courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["id", 1], ["courseName", "CSOR 4231"], ["courseDescription", "Intro to Algorithms"], ["created_at", "2023-11-01 02:36:36.395946"], ["updated_at", "2023-11-01 02:36:36.395946"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "entitlements" ("uni", "courseId", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "testUni"], ["courseId", "COMS 4152"], ["role", "Viewer"], ["created_at", "2023-11-01 02:36:36.398615"], ["updated_at", "2023-11-01 02:36:36.398615"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 02:36:36 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 02:36:36 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "login"=>{"uni"=>"testUni", "password"=>"[FILTERED]"}, "commit"=>"Sign In!"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "testUni"]]
+Redirected to http://www.example.com/profile
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 02:36:36 +0000
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCalendar Load (0.0ms)[0m  [1mSELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "testUni"]]
+  [1m[36mCourse Load (0.0ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1[0m  [["courseName", "COMS 4152"]]
+  Rendered users/profile.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 7ms (Views: 3.3ms | ActiveRecord: 0.2ms)
+Started POST "/entitlements" for 127.0.0.1 at 2023-11-01 02:36:36 +0000
+Processing by EntitlementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "entitlement"=>{"courseName"=>"COMS 4152", "role"=>"Viewer"}, "commit"=>"Add New Viewable Course"}
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1  [["courseName", "COMS 4152"]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEntitlement Load (0.0ms)[0m  SELECT  "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ? AND "entitlements"."courseId" = ? LIMIT 1  [["uni", "testUni"], ["courseId", "0"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "entitlements" ("uni", "courseId", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["uni", "testUni"], ["courseId", "COMS 4152"], ["role", "Viewer"], ["created_at", "2023-11-01 02:36:36.444908"], ["updated_at", "2023-11-01 02:36:36.444908"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/profile
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 02:36:36 +0000
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCalendar Load (0.1ms)[0m  [1mSELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "testUni"]]
+  [1m[36mCourse Load (0.0ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1[0m  [["courseName", "COMS 4152"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1  [["courseName", "COMS 4152"]]
+  Rendered users/profile.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 3.4ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("uni", "password_digest", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["uni", "testUni"], ["password_digest", "testPassword"], ["name", "testName"], ["created_at", "2023-11-01 02:36:36.496848"], ["updated_at", "2023-11-01 02:36:36.496848"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "courses" ("id", "courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["id", 0], ["courseName", "COMS 4152"], ["courseDescription", "Engineering Software-as-a-Service"], ["created_at", "2023-11-01 02:36:36.500619"], ["updated_at", "2023-11-01 02:36:36.500619"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "courses" ("id", "courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["id", 1], ["courseName", "CSOR 4231"], ["courseDescription", "Intro to Algorithms"], ["created_at", "2023-11-01 02:36:36.502374"], ["updated_at", "2023-11-01 02:36:36.502374"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "entitlements" ("uni", "courseId", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "testUni"], ["courseId", "COMS 4152"], ["role", "Viewer"], ["created_at", "2023-11-01 02:36:36.504431"], ["updated_at", "2023-11-01 02:36:36.504431"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 02:36:36 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 02:36:36 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "login"=>{"uni"=>"testUni", "password"=>"[FILTERED]"}, "commit"=>"Sign In!"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "testUni"]]
+Redirected to http://www.example.com/profile
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 02:36:36 +0000
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCalendar Load (0.0ms)[0m  [1mSELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mEntitlement Load (0.0ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "testUni"]]
+  [1m[36mCourse Load (0.0ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1[0m  [["courseName", "COMS 4152"]]
+  Rendered users/profile.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 6ms (Views: 3.3ms | ActiveRecord: 0.2ms)
+Started POST "/entitlements" for 127.0.0.1 at 2023-11-01 02:36:36 +0000
+Processing by EntitlementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "entitlement"=>{"courseName"=>"NOTACLASS", "role"=>"Viewer"}, "commit"=>"Add New Viewable Course"}
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1  [["courseName", "NOTACLASS"]]
+Redirected to http://www.example.com/profile
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 02:36:36 +0000
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCalendar Load (0.0ms)[0m  SELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?  [["user_id", 1]]
+  [1m[36mEntitlement Load (0.1ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "testUni"]]
+  [1m[35mCourse Load (0.0ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1  [["courseName", "COMS 4152"]]
+  Rendered users/profile.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 4.6ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("uni", "password_digest", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["uni", "testUni"], ["password_digest", "testPassword"], ["name", "testName"], ["created_at", "2023-11-01 02:37:01.294252"], ["updated_at", "2023-11-01 02:37:01.294252"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "courses" ("id", "courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["id", 0], ["courseName", "COMS 4152"], ["courseDescription", "Engineering Software-as-a-Service"], ["created_at", "2023-11-01 02:37:01.303397"], ["updated_at", "2023-11-01 02:37:01.303397"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "courses" ("id", "courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["id", 1], ["courseName", "CSOR 4231"], ["courseDescription", "Intro to Algorithms"], ["created_at", "2023-11-01 02:37:01.305257"], ["updated_at", "2023-11-01 02:37:01.305257"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "entitlements" ("uni", "courseId", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "testUni"], ["courseId", "COMS 4152"], ["role", "Professor"], ["created_at", "2023-11-01 02:37:01.312239"], ["updated_at", "2023-11-01 02:37:01.312239"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 02:37:01 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (8.4ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 276ms (Views: 269.7ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 02:37:01 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "login"=>{"uni"=>"testUni", "password"=>"[FILTERED]"}, "commit"=>"Sign In!"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "testUni"]]
+Redirected to http://www.example.com/profile
+Completed 302 Found in 6ms (ActiveRecord: 0.2ms)
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 02:37:01 +0000
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCalendar Load (0.2ms)[0m  [1mSELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "testUni"]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1[0m  [["courseName", "COMS 4152"]]
+  Rendered users/profile.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 30ms (Views: 11.0ms | ActiveRecord: 0.6ms)
+Started GET "/professors" for 127.0.0.1 at 2023-11-01 02:37:01 +0000
+Processing by ProfessorsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEntitlement Load (0.1ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "testUni"]]
+  [1m[35mCourse Load (0.2ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", "COMS 4152"]]
+  Rendered professors/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 11.1ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("uni", "password_digest", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "testUni"], ["password_digest", "testPassword"], ["name", "testName"], ["created_at", "2023-11-01 02:37:01.707983"], ["updated_at", "2023-11-01 02:37:01.707983"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "courses" ("id", "courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["id", 0], ["courseName", "COMS 4152"], ["courseDescription", "Engineering Software-as-a-Service"], ["created_at", "2023-11-01 02:37:01.711192"], ["updated_at", "2023-11-01 02:37:01.711192"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "courses" ("id", "courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["id", 1], ["courseName", "CSOR 4231"], ["courseDescription", "Intro to Algorithms"], ["created_at", "2023-11-01 02:37:01.713331"], ["updated_at", "2023-11-01 02:37:01.713331"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "entitlements" ("uni", "courseId", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["uni", "testUni"], ["courseId", "COMS 4152"], ["role", "Professor"], ["created_at", "2023-11-01 02:37:01.715749"], ["updated_at", "2023-11-01 02:37:01.715749"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 02:37:01 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 02:37:01 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "login"=>{"uni"=>"testUni", "password"=>"[FILTERED]"}, "commit"=>"Sign In!"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "testUni"]]
+Redirected to http://www.example.com/profile
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 02:37:01 +0000
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCalendar Load (0.1ms)[0m  SELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?  [["user_id", 1]]
+  [1m[36mEntitlement Load (0.1ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "testUni"]]
+  [1m[35mCourse Load (0.0ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1  [["courseName", "COMS 4152"]]
+  Rendered users/profile.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 0.3ms)
+Started GET "/professors" for 127.0.0.1 at 2023-11-01 02:37:01 +0000
+Processing by ProfessorsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "testUni"]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", "COMS 4152"]]
+  Rendered professors/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 6ms (Views: 2.8ms | ActiveRecord: 0.2ms)
+Started POST "/professors" for 127.0.0.1 at 2023-11-01 02:37:01 +0000
+Processing by ProfessorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "professor"=>{"courseName"=>"COMS 4444", "courseDescription"=>"Programming & Problem Solving", "unis"=>"TA123,TA234", "role"=>"Prof"}, "commit"=>"Create a New Course"}
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1[0m  [["courseName", "COMS 4444"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "courses" ("courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["courseName", "COMS 4444"], ["courseDescription", "Programming & Problem Solving"], ["created_at", "2023-11-01 02:37:01.764090"], ["updated_at", "2023-11-01 02:37:01.764090"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "entitlements" ("uni", "courseId", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "testUni"], ["courseId", "2"], ["role", "Prof"], ["created_at", "2023-11-01 02:37:01.767159"], ["updated_at", "2023-11-01 02:37:01.767159"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "entitlements" ("uni", "courseId", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["uni", "TA123"], ["courseId", "2"], ["role", "TA"], ["created_at", "2023-11-01 02:37:01.769193"], ["updated_at", "2023-11-01 02:37:01.769193"]]
+  [1m[36m (0.8ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "entitlements" ("uni", "courseId", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "TA234"], ["courseId", "2"], ["role", "TA"], ["created_at", "2023-11-01 02:37:01.771644"], ["updated_at", "2023-11-01 02:37:01.771644"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "teaching_assistants" ("uni", "class_id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["uni", "testUni"], ["class_id", 2], ["name", "testName"], ["created_at", "2023-11-01 02:37:01.780380"], ["updated_at", "2023-11-01 02:37:01.780380"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/professors
+Completed 302 Found in 21ms (ActiveRecord: 2.4ms)
+Started GET "/professors" for 127.0.0.1 at 2023-11-01 02:37:01 +0000
+Processing by ProfessorsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEntitlement Load (0.1ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "testUni"]]
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", "COMS 4152"]]
+  [1m[35mCourse Load (0.0ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  Rendered professors/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 6ms (Views: 2.7ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("uni", "password_digest", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "testUni"], ["password_digest", "testPassword"], ["name", "testName"], ["created_at", "2023-11-01 02:37:01.801008"], ["updated_at", "2023-11-01 02:37:01.801008"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "courses" ("id", "courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["id", 0], ["courseName", "COMS 4152"], ["courseDescription", "Engineering Software-as-a-Service"], ["created_at", "2023-11-01 02:37:01.804201"], ["updated_at", "2023-11-01 02:37:01.804201"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "courses" ("id", "courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["id", 1], ["courseName", "CSOR 4231"], ["courseDescription", "Intro to Algorithms"], ["created_at", "2023-11-01 02:37:01.806257"], ["updated_at", "2023-11-01 02:37:01.806257"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "entitlements" ("uni", "courseId", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["uni", "testUni"], ["courseId", "COMS 4152"], ["role", "Professor"], ["created_at", "2023-11-01 02:37:01.808373"], ["updated_at", "2023-11-01 02:37:01.808373"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 02:37:01 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 02:37:01 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "login"=>{"uni"=>"testUni", "password"=>"[FILTERED]"}, "commit"=>"Sign In!"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "testUni"]]
+Redirected to http://www.example.com/profile
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 02:37:01 +0000
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCalendar Load (0.1ms)[0m  SELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?  [["user_id", 1]]
+  [1m[36mEntitlement Load (0.1ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "testUni"]]
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1  [["courseName", "COMS 4152"]]
+  Rendered users/profile.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 7ms (Views: 2.6ms | ActiveRecord: 0.3ms)
+Started GET "/professors" for 127.0.0.1 at 2023-11-01 02:37:01 +0000
+Processing by ProfessorsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEntitlement Load (0.0ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "testUni"]]
+  [1m[36mCourse Load (0.0ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", "COMS 4152"]]
+  Rendered professors/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 0.2ms)
+Started POST "/professors" for 127.0.0.1 at 2023-11-01 02:37:01 +0000
+Processing by ProfessorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "professor"=>{"courseName"=>"CSOR 4231", "courseDescription"=>"Introduction to Algorithms", "unis"=>"TA123,TA234", "role"=>"Prof"}, "commit"=>"Create a New Course"}
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1[0m  [["courseName", "CSOR 4231"]]
+Redirected to http://www.example.com/professors
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+Started GET "/professors" for 127.0.0.1 at 2023-11-01 02:37:01 +0000
+Processing by ProfessorsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEntitlement Load (0.0ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "testUni"]]
+  [1m[35mCourse Load (0.0ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1  [["id", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT 1[0m  [["id", "COMS 4152"]]
+  Rendered professors/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("uni", "password_digest", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "testUni"], ["password_digest", "testPassword"], ["name", "testName"], ["created_at", "2023-11-01 02:37:01.866086"], ["updated_at", "2023-11-01 02:37:01.866086"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "courses" ("id", "courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["id", 0], ["courseName", "COMS 4152"], ["courseDescription", "Engineering Software-as-a-Service"], ["created_at", "2023-11-01 02:37:01.869503"], ["updated_at", "2023-11-01 02:37:01.869503"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "courses" ("id", "courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["id", 1], ["courseName", "CSOR 4231"], ["courseDescription", "Intro to Algorithms"], ["created_at", "2023-11-01 02:37:01.871278"], ["updated_at", "2023-11-01 02:37:01.871278"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "entitlements" ("uni", "courseId", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["uni", "testUni"], ["courseId", "COMS 4152"], ["role", "Viewer"], ["created_at", "2023-11-01 02:37:01.874033"], ["updated_at", "2023-11-01 02:37:01.874033"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schedules" ("courseId", "startTime", "endTime") VALUES (?, ?, ?)[0m  [["courseId", "COMS 4152"], ["startTime", "2023-10-31 08:00:00.000000"], ["endTime", "2023-10-31 10:00:00.000000"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schedules" ("courseId", "startTime", "endTime") VALUES (?, ?, ?)  [["courseId", "CSOR 4231"], ["startTime", "2023-10-31 11:00:00.000000"], ["endTime", "2023-10-31 13:00:00.000000"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 02:37:01 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 02:37:01 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "login"=>{"uni"=>"testUni", "password"=>"[FILTERED]"}, "commit"=>"Sign In!"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "testUni"]]
+Redirected to http://www.example.com/profile
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 02:37:01 +0000
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCalendar Load (0.0ms)[0m  SELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?  [["user_id", 1]]
+  [1m[36mEntitlement Load (0.0ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "testUni"]]
+  [1m[35mCourse Load (0.0ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1  [["courseName", "COMS 4152"]]
+  Rendered users/profile.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.2ms)
+Started GET "/schedules" for 127.0.0.1 at 2023-11-01 02:37:01 +0000
+Processing by SchedulesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT "entitlements"."courseId" FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "testUni"]]
+  [1m[36mSchedule Load (0.1ms)[0m  [1mSELECT "schedules".* FROM "schedules" WHERE "schedules"."courseId" = 'COMS 4152'[0m
+  Rendered schedules/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 7.9ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("uni", "password_digest", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "testUni"], ["password_digest", "testPassword"], ["name", "testName"], ["created_at", "2023-11-01 02:37:01.937534"], ["updated_at", "2023-11-01 02:37:01.937534"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 02:37:01 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 02:37:01 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "login"=>{"uni"=>"testUni", "password"=>"[FILTERED]"}, "commit"=>"Sign In!"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "testUni"]]
+Redirected to http://www.example.com/profile
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 02:37:01 +0000
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCalendar Load (0.1ms)[0m  [1mSELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "testUni"]]
+  Rendered users/profile.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 6ms (Views: 2.5ms | ActiveRecord: 0.3ms)
+Started DELETE "/sessions/clear" for 127.0.0.1 at 2023-11-01 02:37:01 +0000
+Processing by SessionsController#clear as HTML
+Redirected to http://www.example.com/sessions/new
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 02:37:01 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("uni", "password_digest", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["uni", "testUni"], ["password_digest", "testPassword"], ["name", "testName"], ["created_at", "2023-11-01 02:37:02.010357"], ["updated_at", "2023-11-01 02:37:02.010357"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 02:37:02 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2023-11-01 02:37:02 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"uni"=>"differentUni", "name"=>"differentName", "password_digest"=>"[FILTERED]"}, "commit"=>"Sign Up!"}
+Unpermitted parameter: password_digest
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "differentUni"]]
+Unpermitted parameter: password_digest
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Redirected to http://www.example.com/profile
+Completed 302 Found in 8ms (ActiveRecord: 0.2ms)
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 02:37:02 +0000
+Processing by UsersController#profile as HTML
+Redirected to http://www.example.com/sessions/new
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 02:37:02 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("uni", "password_digest", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["uni", "testUni"], ["password_digest", "testPassword"], ["name", "testName"], ["created_at", "2023-11-01 02:37:02.072445"], ["updated_at", "2023-11-01 02:37:02.072445"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 02:37:02 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 02:37:02 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "login"=>{"uni"=>"testUni", "password"=>"[FILTERED]"}, "commit"=>"Sign In!"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "testUni"]]
+Redirected to http://www.example.com/sessions/new
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 02:37:02 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("uni", "password_digest", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["uni", "testUni"], ["password_digest", "testPassword"], ["name", "testName"], ["created_at", "2023-11-01 02:37:02.101786"], ["updated_at", "2023-11-01 02:37:02.101786"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 02:37:02 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2023-11-01 02:37:02 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"uni"=>"testUni", "name"=>"testName", "password_digest"=>"[FILTERED]"}, "commit"=>"Sign Up!"}
+Unpermitted parameter: password_digest
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "testUni"]]
+Redirected to http://www.example.com/sessions/new
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 02:37:02 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("uni", "password_digest", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["uni", "testUni"], ["password_digest", "testPassword"], ["name", "testName"], ["created_at", "2023-11-01 02:37:02.132970"], ["updated_at", "2023-11-01 02:37:02.132970"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "courses" ("id", "courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["id", 0], ["courseName", "COMS 4152"], ["courseDescription", "Engineering Software-as-a-Service"], ["created_at", "2023-11-01 02:37:02.136758"], ["updated_at", "2023-11-01 02:37:02.136758"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "courses" ("id", "courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["id", 1], ["courseName", "CSOR 4231"], ["courseDescription", "Intro to Algorithms"], ["created_at", "2023-11-01 02:37:02.138460"], ["updated_at", "2023-11-01 02:37:02.138460"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "entitlements" ("uni", "courseId", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "testUni"], ["courseId", "COMS 4152"], ["role", "Viewer"], ["created_at", "2023-11-01 02:37:02.140965"], ["updated_at", "2023-11-01 02:37:02.140965"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 02:37:02 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 02:37:02 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "login"=>{"uni"=>"testUni", "password"=>"[FILTERED]"}, "commit"=>"Sign In!"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "testUni"]]
+Redirected to http://www.example.com/profile
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 02:37:02 +0000
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCalendar Load (0.1ms)[0m  [1mSELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mEntitlement Load (0.0ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "testUni"]]
+  [1m[36mCourse Load (0.0ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1[0m  [["courseName", "COMS 4152"]]
+  Rendered users/profile.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 7ms (Views: 3.6ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("uni", "password_digest", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "testUni"], ["password_digest", "testPassword"], ["name", "testName"], ["created_at", "2023-11-01 02:37:02.202077"], ["updated_at", "2023-11-01 02:37:02.202077"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "courses" ("id", "courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["id", 0], ["courseName", "COMS 4152"], ["courseDescription", "Engineering Software-as-a-Service"], ["created_at", "2023-11-01 02:37:02.206577"], ["updated_at", "2023-11-01 02:37:02.206577"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "courses" ("id", "courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["id", 1], ["courseName", "CSOR 4231"], ["courseDescription", "Intro to Algorithms"], ["created_at", "2023-11-01 02:37:02.210506"], ["updated_at", "2023-11-01 02:37:02.210506"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "entitlements" ("uni", "courseId", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["uni", "testUni"], ["courseId", "COMS 4152"], ["role", "Viewer"], ["created_at", "2023-11-01 02:37:02.213221"], ["updated_at", "2023-11-01 02:37:02.213221"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 02:37:02 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 02:37:02 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "login"=>{"uni"=>"testUni", "password"=>"[FILTERED]"}, "commit"=>"Sign In!"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "testUni"]]
+Redirected to http://www.example.com/profile
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 02:37:02 +0000
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCalendar Load (0.1ms)[0m  SELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?  [["user_id", 1]]
+  [1m[36mEntitlement Load (0.1ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "testUni"]]
+  [1m[35mCourse Load (0.0ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1  [["courseName", "COMS 4152"]]
+  Rendered users/profile.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 7ms (Views: 3.5ms | ActiveRecord: 0.3ms)
+Started POST "/entitlements" for 127.0.0.1 at 2023-11-01 02:37:02 +0000
+Processing by EntitlementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "entitlement"=>{"courseName"=>"CSOR 4231", "role"=>"Viewer"}, "commit"=>"Add New Viewable Course"}
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1[0m  [["courseName", "CSOR 4231"]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEntitlement Load (0.1ms)[0m  [1mSELECT  "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ? AND "entitlements"."courseId" = ? LIMIT 1[0m  [["uni", "testUni"], ["courseId", "1"]]
+  [1m[35m (0.7ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "entitlements" ("uni", "courseId", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "testUni"], ["courseId", "CSOR 4231"], ["role", "Viewer"], ["created_at", "2023-11-01 02:37:02.279999"], ["updated_at", "2023-11-01 02:37:02.279999"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/profile
+Completed 302 Found in 6ms (ActiveRecord: 1.1ms)
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 02:37:02 +0000
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCalendar Load (0.1ms)[0m  SELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?  [["user_id", 1]]
+  [1m[36mEntitlement Load (0.1ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "testUni"]]
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1  [["courseName", "COMS 4152"]]
+  [1m[36mCourse Load (0.0ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1[0m  [["courseName", "CSOR 4231"]]
+  Rendered users/profile.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 4.5ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("uni", "password_digest", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "testUni"], ["password_digest", "testPassword"], ["name", "testName"], ["created_at", "2023-11-01 02:37:02.315615"], ["updated_at", "2023-11-01 02:37:02.315615"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "courses" ("id", "courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["id", 0], ["courseName", "COMS 4152"], ["courseDescription", "Engineering Software-as-a-Service"], ["created_at", "2023-11-01 02:37:02.318886"], ["updated_at", "2023-11-01 02:37:02.318886"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "courses" ("id", "courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["id", 1], ["courseName", "CSOR 4231"], ["courseDescription", "Intro to Algorithms"], ["created_at", "2023-11-01 02:37:02.321128"], ["updated_at", "2023-11-01 02:37:02.321128"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "entitlements" ("uni", "courseId", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["uni", "testUni"], ["courseId", "COMS 4152"], ["role", "Viewer"], ["created_at", "2023-11-01 02:37:02.325418"], ["updated_at", "2023-11-01 02:37:02.325418"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 02:37:02 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 02:37:02 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "login"=>{"uni"=>"testUni", "password"=>"[FILTERED]"}, "commit"=>"Sign In!"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "testUni"]]
+Redirected to http://www.example.com/profile
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 02:37:02 +0000
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCalendar Load (0.0ms)[0m  SELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?  [["user_id", 1]]
+  [1m[36mEntitlement Load (0.1ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "testUni"]]
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1  [["courseName", "COMS 4152"]]
+  Rendered users/profile.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 14ms (Views: 3.1ms | ActiveRecord: 0.2ms)
+Started POST "/entitlements" for 127.0.0.1 at 2023-11-01 02:37:02 +0000
+Processing by EntitlementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "entitlement"=>{"courseName"=>"COMS 4152", "role"=>"Viewer"}, "commit"=>"Add New Viewable Course"}
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1[0m  [["courseName", "COMS 4152"]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEntitlement Load (0.0ms)[0m  [1mSELECT  "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ? AND "entitlements"."courseId" = ? LIMIT 1[0m  [["uni", "testUni"], ["courseId", "0"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "entitlements" ("uni", "courseId", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "testUni"], ["courseId", "COMS 4152"], ["role", "Viewer"], ["created_at", "2023-11-01 02:37:02.377701"], ["updated_at", "2023-11-01 02:37:02.377701"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/profile
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 02:37:02 +0000
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCalendar Load (0.1ms)[0m  SELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?  [["user_id", 1]]
+  [1m[36mEntitlement Load (0.1ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "testUni"]]
+  [1m[35mCourse Load (0.0ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1  [["courseName", "COMS 4152"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1[0m  [["courseName", "COMS 4152"]]
+  Rendered users/profile.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 7ms (Views: 3.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("uni", "password_digest", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "testUni"], ["password_digest", "testPassword"], ["name", "testName"], ["created_at", "2023-11-01 02:37:02.401177"], ["updated_at", "2023-11-01 02:37:02.401177"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "courses" ("id", "courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["id", 0], ["courseName", "COMS 4152"], ["courseDescription", "Engineering Software-as-a-Service"], ["created_at", "2023-11-01 02:37:02.404136"], ["updated_at", "2023-11-01 02:37:02.404136"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "courses" ("id", "courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["id", 1], ["courseName", "CSOR 4231"], ["courseDescription", "Intro to Algorithms"], ["created_at", "2023-11-01 02:37:02.406446"], ["updated_at", "2023-11-01 02:37:02.406446"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "entitlements" ("uni", "courseId", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["uni", "testUni"], ["courseId", "COMS 4152"], ["role", "Viewer"], ["created_at", "2023-11-01 02:37:02.409048"], ["updated_at", "2023-11-01 02:37:02.409048"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 02:37:02 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 02:37:02 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "login"=>{"uni"=>"testUni", "password"=>"[FILTERED]"}, "commit"=>"Sign In!"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "testUni"]]
+Redirected to http://www.example.com/profile
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 02:37:02 +0000
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCalendar Load (0.0ms)[0m  SELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?  [["user_id", 1]]
+  [1m[36mEntitlement Load (0.3ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "testUni"]]
+  [1m[35mCourse Load (0.0ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1  [["courseName", "COMS 4152"]]
+  Rendered users/profile.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 5.7ms | ActiveRecord: 0.5ms)
+Started POST "/entitlements" for 127.0.0.1 at 2023-11-01 02:37:02 +0000
+Processing by EntitlementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "entitlement"=>{"courseName"=>"NOTACLASS", "role"=>"Viewer"}, "commit"=>"Add New Viewable Course"}
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1[0m  [["courseName", "NOTACLASS"]]
+Redirected to http://www.example.com/profile
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 02:37:02 +0000
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCalendar Load (0.0ms)[0m  [1mSELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mEntitlement Load (0.1ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "testUni"]]
+  [1m[36mCourse Load (0.0ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1[0m  [["courseName", "COMS 4152"]]
+  Rendered users/profile.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 7ms (Views: 3.0ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
