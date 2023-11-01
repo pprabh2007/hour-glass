@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by(uni: login_params[:uni])
-    if @user && @user.password_digest == login_params[:password]
+    if @user && @user.authenticate(login_params[:password])
       session[:user_id] = @user.id
       redirect_to user_profile_path
     else 

@@ -7,7 +7,7 @@ Feature: add a viewable class
 Background: users, courses, and entitlements in the database
 
   Given the following users exist:
-  | uni        | password_digest      | name     |
+  | uni        | password        | name     |
   | testUni    | testPassword    | testName |
 
   Given the following courses exist:
