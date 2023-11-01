@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     skip_before_action :require_login, only: [:create]
 
     def profile
+
         @viewable_courses = Set.new
         @calendars = @calendars = Set.new(current_user.calendars)
         @entitlements = Entitlement.where(uni: current_user.uni)
