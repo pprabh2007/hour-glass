@@ -6,7 +6,7 @@ Feature: create a new class
 Background: users, courses, and entitlements in the database
 
   Given the following users exist:
-  | uni        | password_digest        | name     |
+  | uni        | password        | name     |
   | testUni    | testPassword    | testName |
 
   Given the following courses exist:
@@ -16,7 +16,7 @@ Background: users, courses, and entitlements in the database
 
   Given the following entitlements exist:
   | uni        | courseId  | role   | 
-  | testUni    | COMS 4152 | Professor |
+  | testUni    | 0         | Professor |
 
 Scenario: Login and navigating to new course creation page
   When I go to the login page

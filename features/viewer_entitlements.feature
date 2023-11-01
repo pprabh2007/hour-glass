@@ -7,7 +7,7 @@ Feature: add a viewable class
 Background: users, courses, and entitlements in the database
 
   Given the following users exist:
-  | uni        | password_digest      | name     |
+  | uni        | password        | name     |
   | testUni    | testPassword    | testName |
 
   Given the following courses exist:
@@ -17,7 +17,7 @@ Background: users, courses, and entitlements in the database
 
   Given the following entitlements exist:
   | uni        | courseId  | role   | 
-  | testUni    | COMS 4152 | Viewer |
+  | testUni    | 0         | Viewer |
 
 
 Scenario: Login and see my viewable classes
