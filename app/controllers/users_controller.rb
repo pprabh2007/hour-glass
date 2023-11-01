@@ -5,11 +5,12 @@ class UsersController < ApplicationController
     skip_before_action :require_login, only: [:create]
 
     def profile
+
         @viewable_courses = Set.new
-        @calendars = Set.new(current_user.calendars)
+        @calendars = @calendars = Set.new(current_user.calendars)
         @entitlements = Entitlement.where(uni: current_user.uni)
         @entitlements.each do |entitlement|
-            @viewable_courses << Course.find_by(id: entitlement.courseId)
+            @viewable_courses << Course.find_by(courseName: entitlement.courseId)
         end
     end
 
