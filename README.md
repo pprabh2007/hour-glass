@@ -16,7 +16,7 @@ bundle install --without production
 
 bundle exec rake db:drop
 
-bundle exec rake db:migrate RAILS_ENV=test
+bundle exec rake db:migrate
 
 bundle exec rackup --port 3000
 
