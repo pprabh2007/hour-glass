@@ -6,6 +6,8 @@
 
 **Github Link:** [pprabh2007/hour-glass (github.com)](https://github.com/pprabh2007/hour-glass)
 
+Iteration 1 code is under the branch: iteration-1-submission
+
 **Code coverage (in the repo in the coverage/index.html directory):** 100%
 
 **To run our code, we used the following commands in our root project directory:**
