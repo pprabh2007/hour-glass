@@ -10,8 +10,9 @@ class UsersController < ApplicationController
         @calendars = Set.new(current_user.calendars)
         @entitlements = Entitlement.where(uni: current_user.uni)
         @entitlements.each do |entitlement|
-            if not Course.find_by(id: entitlement.courseId).nil?
-                @viewable_courses << Course.find_by(id: entitlement.courseId)
+            potential_course = Course.find_by(courseName: entitlement.courseId)
+            if not potential_course.nil?
+                @viewable_courses << potential_course
             end
         end
     end
