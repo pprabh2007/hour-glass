@@ -1,31 +1,31 @@
-Group Member Names & UNI’s:
+**Group Member Names & UNI’s:**
 
-Member 1 Name: Harpreet Multani (hkm2125)
+**Member 1 Name: Harpreet Multani (hkm2125)
 Member 2 Name: Prabhpreet Sodhi (pss2161)
 Member 3 Name: Shivansh Srivastava (ss5945)
-Member 4 Name: Atharv Vanarase (avv2116)
+Member 4 Name: Atharv Vanarase (avv2116)**
 
-Heroku Link: https://stark-spire-91731-04d281d9e62f.herokuapp.com/ 
+**Heroku Link:** https://stark-spire-91731-04d281d9e62f.herokuapp.com/ 
 
-Github Link: [pprabh2007/hour-glass (github.com)](https://github.com/pprabh2007/hour-glass)
+**Github Link:** [pprabh2007/hour-glass (github.com)](https://github.com/pprabh2007/hour-glass)
 
-Code coverage (in the repo in the coverage/index.html directory): 100%
+**Code coverage (in the repo in the coverage/index.html directory):** 100%
 
-To run our code, we used the following commands in our root project directory:
+**To run our code, we used the following commands in our root project directory:**
 
 bundle install --without production
 bundle exec rake db:drop
 bundle exec rake db:migrate RAILS_ENV=test
 bundle exec rackup --port 3000
 
-To run our test code, we used the following commands in our root project directory:
+**To run our test code, we used the following commands in our root project directory:**
 
 bundle exec rake db:drop
 bundle exec rake db:migrate RAILS_ENV=test
 bundle exec rake cucumber
 bundle exec rake spec
 
-How to navigate the app:
+**How to navigate the app:**
 
 Once you open up the app, you will be prompted to create an account using your uni, name, and password.
 Once you are on the profile page you will now see a few different sections, at the very top you’ll be able to view courses that you have added to your schedule (currently empty since you haven’t created any). Then you will see a button to add TA office hours and at the bottom to create a new course.
