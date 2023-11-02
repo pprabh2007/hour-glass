@@ -14,15 +14,21 @@ Member 4 Name: Atharv Vanarase (avv2116)**
 **To run our code, we used the following commands in our root project directory:**
 
 bundle install --without production
+
 bundle exec rake db:drop
+
 bundle exec rake db:migrate RAILS_ENV=test
+
 bundle exec rackup --port 3000
 
 **To run our test code, we used the following commands in our root project directory:**
 
 bundle exec rake db:drop
+
 bundle exec rake db:migrate RAILS_ENV=test
+
 bundle exec rake cucumber
+
 bundle exec rake spec
 
 **How to navigate the app:**
