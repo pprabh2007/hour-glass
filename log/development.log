@@ -11716,3 +11716,586 @@ Processing by CalendarsController#index as HTML
   Rendered calendars/index.html.erb within layouts/application (6.1ms)
   Rendered layouts/_flash.erb (0.1ms)
 Completed 200 OK in 856ms (Views: 840.5ms | ActiveRecord: 11.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-01 22:35:38 -0400
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 22:35:39 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (108.0ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 2623ms (Views: 2584.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 22:35:43 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 969ms (Views: 968.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-11-01 22:35:51 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NsYtC2p0YgK+ukZC7CtavqXsN6oTHcwahah2rzz6WQMQ3ylruUvTYGqBLW23QBTZIKiXywTOyWQf6ovCZQ8rsw==", "user"=>{"uni"=>"testUni", "name"=>"testName", "password"=>"[FILTERED]"}, "commit"=>"Sign Up!"}
+Completed 500 Internal Server Error in 294ms (ActiveRecord: 17.7ms)
+
+ActiveRecord::StatementInvalid (Could not find table 'users'):
+  app/controllers/users_controller.rb:21:in `create'
+
+
+  Rendered /home/atharvvanarase/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.5ms)
+  Rendered /home/atharvvanarase/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.2ms)
+  Rendered /home/atharvvanarase/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/atharvvanarase/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.9ms)
+  [1m[36m (24.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (24.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (3.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20231028192901)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (7.2ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "uni" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (3.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231028192901"]]
+  [1m[35m (9.7ms)[0m  commit transaction
+Migrating to AddNameToUsers (20231028193103)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (9.5ms)[0m  ALTER TABLE "users" ADD "name" varchar
+  [1m[36mSQL (2.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231028193103"]]
+  [1m[35m (12.1ms)[0m  commit transaction
+Migrating to CreateEntitlements (20231028231144)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (11.9ms)[0m  CREATE TABLE "entitlements" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "uni" varchar, "courseId" varchar, "role" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231028231144"]]
+  [1m[35m (12.9ms)[0m  commit transaction
+Migrating to CreateCourses (20231029001317)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (13.2ms)[0m  CREATE TABLE "courses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "courseName" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (2.9ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231029001317"]]
+  [1m[35m (17.7ms)[0m  commit transaction
+Migrating to CreateTeachingAssistants (20231029180642)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/db/migrate/20231029180642_create_teaching_assistants.rb:9)
+  [1m[35m (11.3ms)[0m  CREATE TABLE "teaching_assistants" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "uni" varchar, "class_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (2.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231029180642"]]
+  [1m[35m (14.2ms)[0m  commit transaction
+Migrating to CreateCalendars (20231029183430)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (10.2ms)[0m  CREATE TABLE "calendars" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "class_id" varchar, "start_time" datetime, "end_time" datetime, "teaching_assistant_id" integer) 
+  [1m[36mSQL (2.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231029183430"]]
+  [1m[35m (13.5ms)[0m  commit transaction
+Migrating to AddCourseDescriptionToCourses (20231031042319)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (16.2ms)[0m  ALTER TABLE "courses" ADD "courseDescription" varchar
+  [1m[36mSQL (2.9ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231031042319"]]
+  [1m[35m (12.4ms)[0m  commit transaction
+Migrating to AddUserIdToCalendars (20231031231236)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (9.4ms)[0m  ALTER TABLE "calendars" ADD "user_id" integer
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_calendars_on_user_id" ON "calendars" ("user_id")[0m
+  [1m[35mSQL (3.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20231031231236"]]
+  [1m[36m (16.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (2.7ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (3.7ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_calendars_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_calendars_on_user_id' AND type='index'
+[0m
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 22:36:44 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (123.2ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 2575ms (Views: 2539.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-11-01 22:36:55 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7RiMmyT76jiTXfuIgXWuY+kk4NdGn14Ky87pN/7K8CfLAYj798RbWkdmkKfaHuAEbGBAtlFMW3RRjBRapz+Clw==", "user"=>{"uni"=>"testUni", "name"=>"testName", "password"=>"[FILTERED]"}, "commit"=>"Sign Up!"}
+  [1m[36mUser Load (3.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "testUni"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (10.3ms)[0m  [1mINSERT INTO "users" ("uni", "name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "testUni"], ["name", "testName"], ["password_digest", "$2a$12$aCz4Com5nvf6RWWplUUKjOqdPmVvFnTLgiAn3QW1R6yFcZrlYM8dG"], ["created_at", "2023-11-02 02:36:56.186334"], ["updated_at", "2023-11-02 02:36:56.186334"]]
+  [1m[35m (15.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 657ms (ActiveRecord: 63.3ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 22:36:56 -0400
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCalendar Load (6.4ms)[0m  SELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?  [["user_id", 1]]
+  [1m[36mEntitlement Load (5.8ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "testUni"]]
+  Rendered users/profile.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 1417ms (Views: 1058.4ms | ActiveRecord: 23.6ms)
+
+
+Started DELETE "/sessions/clear" for 127.0.0.1 at 2023-11-01 22:37:01 -0400
+Processing by SessionsController#clear as HTML
+  Parameters: {"authenticity_token"=>"o3MViPOanEpaqmvh0XUJ2KTYx+fPynYBR19LiD8IOOqFahHoIKUtKI6RAM6KHke/IZxnhtgZc3/dHbblZv1KWg=="}
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 22:37:01 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 993ms (Views: 992.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-11-01 22:37:09 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RiHhHN7sbCgpakPu9n3YVlwsFIhGVYR1elwn3AGrUtJgOOV8DdPdSv1RKMGtFpYx2Wi06VGGgQvgHtqxWF4gYg==", "user"=>{"uni"=>"testUni2", "name"=>"testName2", "password"=>"[FILTERED]"}, "commit"=>"Sign Up!"}
+  [1m[35mUser Load (2.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "testUni2"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (14.1ms)[0m  INSERT INTO "users" ("uni", "name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["uni", "testUni2"], ["name", "testName2"], ["password_digest", "$2a$12$VcScVCBkxkGnTFm2eZZWBOm4MCDbrwHeLUzYRii7p5DE3Wrj1S4Zy"], ["created_at", "2023-11-02 02:37:09.720516"], ["updated_at", "2023-11-02 02:37:09.720516"]]
+  [1m[36m (13.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 235ms (ActiveRecord: 30.1ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 22:37:09 -0400
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (2.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCalendar Load (3.1ms)[0m  [1mSELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mEntitlement Load (3.9ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "testUni2"]]
+  Rendered users/profile.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 854ms (Views: 838.4ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/professors" for 127.0.0.1 at 2023-11-01 22:37:13 -0400
+Processing by ProfessorsController#index as HTML
+  [1m[36mUser Load (3.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mEntitlement Load (6.9ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ? AND "entitlements"."role" = ?  [["uni", "testUni2"], ["role", "Prof"]]
+  Rendered professors/index.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 942ms (Views: 927.6ms | ActiveRecord: 10.3ms)
+
+
+Started POST "/professors" for 127.0.0.1 at 2023-11-01 22:37:24 -0400
+Processing by ProfessorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DL3p3HCkUX0Y5Rc0eYJCvbPhavffbh3ku3Hb9H6rwKsqpO28o5vgH8zefBsi6QzaNqXKlsi9GJohMyaZJ16yGw==", "professor"=>{"courseName"=>"testCourseName", "courseDescription"=>"testCourseDescription", "unis"=>"testUni", "role"=>"Prof"}, "commit"=>"Create a New Course"}
+  [1m[36mCourse Load (4.2ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1[0m  [["courseName", "testCourseName"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (19.1ms)[0m  [1mINSERT INTO "courses" ("courseName", "courseDescription", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["courseName", "testCourseName"], ["courseDescription", "testCourseDescription"], ["created_at", "2023-11-02 02:37:24.641454"], ["updated_at", "2023-11-02 02:37:24.641454"]]
+  [1m[35m (12.9ms)[0m  commit transaction
+  [1m[36mUser Load (5.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (14.2ms)[0m  begin transaction
+  [1m[36mSQL (10.8ms)[0m  [1mINSERT INTO "entitlements" ("uni", "courseId", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "testUni2"], ["courseId", "testCourseName"], ["role", "Prof"], ["created_at", "2023-11-02 02:37:24.713079"], ["updated_at", "2023-11-02 02:37:24.713079"]]
+  [1m[35m (19.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (11.5ms)[0m  INSERT INTO "entitlements" ("uni", "courseId", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["uni", "testUni"], ["courseId", "testCourseName"], ["role", "TA"], ["created_at", "2023-11-02 02:37:24.747687"], ["updated_at", "2023-11-02 02:37:24.747687"]]
+  [1m[36m (11.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (15.2ms)[0m  [1mINSERT INTO "teaching_assistants" ("uni", "class_id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "testUni2"], ["class_id", 0], ["name", "testName2"], ["created_at", "2023-11-02 02:37:24.877832"], ["updated_at", "2023-11-02 02:37:24.877832"]]
+  [1m[35m (12.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/professors
+Completed 302 Found in 381ms (ActiveRecord: 158.9ms)
+
+
+Started GET "/professors" for 127.0.0.1 at 2023-11-01 22:37:24 -0400
+Processing by ProfessorsController#index as HTML
+  [1m[36mUser Load (5.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mEntitlement Load (5.6ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ? AND "entitlements"."role" = ?  [["uni", "testUni2"], ["role", "Prof"]]
+  [1m[36mCourse Load (3.6ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1[0m  [["courseName", "testCourseName"]]
+  Rendered professors/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 1086ms (Views: 1066.9ms | ActiveRecord: 14.5ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 22:37:27 -0400
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (5.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCalendar Load (4.3ms)[0m  [1mSELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mEntitlement Load (3.9ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "testUni2"]]
+  [1m[36mCourse Load (4.3ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1[0m  [["courseName", "testCourseName"]]
+  Rendered users/profile.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 974ms (Views: 949.8ms | ActiveRecord: 18.4ms)
+
+
+Started POST "/entitlements" for 127.0.0.1 at 2023-11-01 22:37:34 -0400
+Processing by EntitlementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"09hPbi16iR71RYWDiFoXFzA0n6abXahq1aWsoyasl9v1wUsO/kU4fCF+7qzTMVlwtXA/x4yOrRRP51HOf1nlaw==", "entitlement"=>{"courseName"=>"testCourseName", "role"=>"Viewer"}, "commit"=>"Add New Viewable Course"}
+  [1m[35mCourse Load (2.8ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1  [["courseName", "testCourseName"]]
+  [1m[36mUser Load (3.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mEntitlement Load (4.3ms)[0m  SELECT  "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ? AND "entitlements"."courseId" = ? LIMIT 1  [["uni", "testUni2"], ["courseId", "testCourseName"]]
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 16ms (ActiveRecord: 10.7ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 22:37:35 -0400
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (3.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCalendar Load (3.1ms)[0m  SELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?  [["user_id", 2]]
+  [1m[36mEntitlement Load (3.0ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "testUni2"]]
+  [1m[35mCourse Load (2.7ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1  [["courseName", "testCourseName"]]
+  Rendered users/profile.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 922ms (Views: 904.4ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/calendars" for 127.0.0.1 at 2023-11-01 22:37:40 -0400
+Processing by CalendarsController#index as HTML
+  [1m[36mUser Load (3.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (3.5ms)[0m  SELECT "entitlements"."courseId" FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "testUni2"]]
+  [1m[36mCalendar Load (4.0ms)[0m  [1mSELECT "calendars".* FROM "calendars" WHERE "calendars"."class_id" = 'testCourseName'[0m
+  Rendered calendars/index.html.erb within layouts/application (6.2ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 952ms (Views: 936.4ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 22:37:42 -0400
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (5.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCalendar Load (3.9ms)[0m  [1mSELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mEntitlement Load (3.7ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "testUni2"]]
+  [1m[36mCourse Load (5.5ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1[0m  [["courseName", "testCourseName"]]
+  Rendered users/profile.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 1011ms (Views: 985.7ms | ActiveRecord: 19.0ms)
+
+
+Started DELETE "/sessions/clear" for 127.0.0.1 at 2023-11-01 22:37:46 -0400
+Processing by SessionsController#clear as HTML
+  Parameters: {"authenticity_token"=>"E/kNe/vkl+G55Kyu6QxANpfVnDkldZb/rGEooEYt+Fo14AkbKNsmg23fx4GyZw5REpE8WDKmk4E2I9XNH9iK6g=="}
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 22:37:46 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 909ms (Views: 908.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 22:37:53 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NkKdPG44Sxy3fu9qQQYr2vOgiGVovIOLIqNFKH47OPoQW5lcvQf6fmNFhEUabWW9duQoBH9vhvW44bhFJ85KSg==", "login"=>{"uni"=>"testName", "password"=>"[FILTERED]"}, "commit"=>"Sign In!"}
+  [1m[35mUser Load (3.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1  [["uni", "testName"]]
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 6ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 22:37:53 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 911ms (Views: 911.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 22:38:00 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"v+kBX93VVp8snnltS5EPfLYpm7c/Z4Qjf67VyMrsJYaZ8AU/Durn/filEkIQ+kEbM2071ii0gV3l7CilkxlXNg==", "login"=>{"uni"=>"testUni", "password"=>"[FILTERED]"}, "commit"=>"Sign In!"}
+  [1m[36mUser Load (2.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "testUni"]]
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 213ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 22:38:00 -0400
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (3.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCalendar Load (3.0ms)[0m  [1mSELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mEntitlement Load (3.2ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "testUni"]]
+  [1m[36mCourse Load (5.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1[0m  [["courseName", "testCourseName"]]
+  Rendered users/profile.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 931ms (Views: 909.9ms | ActiveRecord: 14.4ms)
+
+
+Started POST "/entitlements" for 127.0.0.1 at 2023-11-01 22:38:08 -0400
+Processing by EntitlementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"diS95ppNVivgqUwylRWqzvje0c62/xK2kn9GpOMhzFVQPbmGSXLnSTSSJx3OfuSpfZpxr6EsF8gIPbvJutS+5Q==", "entitlement"=>{"courseName"=>"testCourseName", "role"=>"Viewer"}, "commit"=>"Add New Viewable Course"}
+  [1m[35mCourse Load (3.8ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1  [["courseName", "testCourseName"]]
+  [1m[36mUser Load (6.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEntitlement Load (4.4ms)[0m  SELECT  "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ? AND "entitlements"."courseId" = ? LIMIT 1  [["uni", "testUni"], ["courseId", "testCourseName"]]
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 21ms (ActiveRecord: 14.8ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 22:38:08 -0400
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (3.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCalendar Load (3.4ms)[0m  SELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?  [["user_id", 1]]
+  [1m[36mEntitlement Load (2.9ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "testUni"]]
+  [1m[35mCourse Load (5.2ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1  [["courseName", "testCourseName"]]
+  Rendered users/profile.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 1004ms (Views: 984.8ms | ActiveRecord: 14.5ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 127.0.0.1 at 2023-11-01 22:38:12 -0400
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  [1m[36mUser Load (2.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (61.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 971ms (Views: 961.6ms | ActiveRecord: 6.3ms)
+
+
+Started POST "/teaching_assistants/create_office_hour" for 127.0.0.1 at 2023-11-01 22:38:24 -0400
+Processing by TeachingAssistantsController#create_office_hour as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"33g5JrodjScZQZya4ZC1Dhhoux4WJa0WL0IMaRV8IjP5YT1GaSI8Rc1697W6+/tpnSwbfwH2qGi1APEETIlQgw==", "calendar"=>{"class_id"=>"testCourseName", "start_time(1i)"=>"2023", "start_time(2i)"=>"11", "start_time(3i)"=>"10", "start_time(4i)"=>"02", "start_time(5i)"=>"38", "end_time(1i)"=>"2023", "end_time(2i)"=>"11", "end_time(3i)"=>"10", "end_time(4i)"=>"07", "end_time(5i)"=>"38"}, "commit"=>"Create Calendar"}
+  [1m[35mUser Load (3.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (12.5ms)[0m  INSERT INTO "calendars" ("class_id", "start_time", "end_time", "user_id") VALUES (?, ?, ?, ?)  [["class_id", "testCourseName"], ["start_time", "2023-11-10 02:38:00.000000"], ["end_time", "2023-11-10 07:38:00.000000"], ["user_id", 1]]
+  [1m[36m (15.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 40ms (ActiveRecord: 31.9ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 22:38:24 -0400
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (3.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCalendar Load (2.9ms)[0m  [1mSELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mEntitlement Load (5.2ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "testUni"]]
+  [1m[36mCourse Load (3.3ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1[0m  [["courseName", "testCourseName"]]
+  Rendered users/profile.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 935ms (Views: 914.7ms | ActiveRecord: 14.8ms)
+
+
+Started GET "/calendars" for 127.0.0.1 at 2023-11-01 22:38:28 -0400
+Processing by CalendarsController#index as HTML
+  [1m[35mUser Load (3.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (3.2ms)[0m  [1mSELECT "entitlements"."courseId" FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "testUni"]]
+  [1m[35mCalendar Load (2.4ms)[0m  SELECT "calendars".* FROM "calendars" WHERE "calendars"."class_id" = 'testCourseName'
+  Rendered calendars/index.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 959ms (Views: 947.1ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 22:38:30 -0400
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (3.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCalendar Load (3.6ms)[0m  SELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?  [["user_id", 1]]
+  [1m[36mEntitlement Load (4.4ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "testUni"]]
+  [1m[35mCourse Load (5.3ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1  [["courseName", "testCourseName"]]
+  Rendered users/profile.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 1045ms (Views: 1021.1ms | ActiveRecord: 16.8ms)
+
+
+Started GET "/teaching_assistants/new_office_hour" for 127.0.0.1 at 2023-11-01 22:38:33 -0400
+Processing by TeachingAssistantsController#new_office_hour as HTML
+  [1m[36mUser Load (4.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered teaching_assistants/new_office_hour.html.erb within layouts/application (10.6ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 1030ms (Views: 1024.6ms | ActiveRecord: 4.5ms)
+
+
+Started POST "/teaching_assistants/create_office_hour" for 127.0.0.1 at 2023-11-01 22:38:39 -0400
+Processing by TeachingAssistantsController#create_office_hour as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CQhPaz/r+kFWaM2rZVNY92KcWzr22LYg4TjHXK82w60vEUsL7NRLI4JTpoQ+OBaQ59j7W+ELs157ejox9sOxHQ==", "calendar"=>{"class_id"=>"asdfasdfasdfsdaf", "start_time(1i)"=>"2023", "start_time(2i)"=>"11", "start_time(3i)"=>"2", "start_time(4i)"=>"02", "start_time(5i)"=>"38", "end_time(1i)"=>"2023", "end_time(2i)"=>"11", "end_time(3i)"=>"6", "end_time(4i)"=>"02", "end_time(5i)"=>"38"}, "commit"=>"Create Calendar"}
+  [1m[35mUser Load (3.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (16.8ms)[0m  INSERT INTO "calendars" ("class_id", "start_time", "end_time", "user_id") VALUES (?, ?, ?, ?)  [["class_id", "asdfasdfasdfsdaf"], ["start_time", "2023-11-02 02:38:00.000000"], ["end_time", "2023-11-06 02:38:00.000000"], ["user_id", 1]]
+  [1m[36m (13.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 42ms (ActiveRecord: 34.1ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 22:38:39 -0400
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (5.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCalendar Load (3.8ms)[0m  [1mSELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mEntitlement Load (5.4ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "testUni"]]
+  [1m[36mCourse Load (2.8ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1[0m  [["courseName", "testCourseName"]]
+  Rendered users/profile.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 958ms (Views: 935.4ms | ActiveRecord: 17.3ms)
+
+
+Started GET "/calendars" for 127.0.0.1 at 2023-11-01 22:38:42 -0400
+Processing by CalendarsController#index as HTML
+  [1m[35mUser Load (3.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (3.5ms)[0m  [1mSELECT "entitlements"."courseId" FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "testUni"]]
+  [1m[35mCalendar Load (5.9ms)[0m  SELECT "calendars".* FROM "calendars" WHERE "calendars"."class_id" = 'testCourseName'
+  Rendered calendars/index.html.erb within layouts/application (8.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 988ms (Views: 972.1ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 22:38:45 -0400
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (3.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCalendar Load (5.2ms)[0m  SELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?  [["user_id", 1]]
+  [1m[36mEntitlement Load (3.2ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "testUni"]]
+  [1m[35mCourse Load (3.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1  [["courseName", "testCourseName"]]
+  Rendered users/profile.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 947ms (Views: 926.6ms | ActiveRecord: 14.6ms)
+
+
+Started DELETE "/sessions/clear" for 127.0.0.1 at 2023-11-01 22:38:53 -0400
+Processing by SessionsController#clear as HTML
+  Parameters: {"authenticity_token"=>"wwHKQq3oiuuG+R9pvV0kdyuQlnTMGdRstO1IQY5+3DblGM4iftc7iVLCdEbmNmoQrtQ2FdvK0RIur7Us14uuhg=="}
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 22:38:53 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 902ms (Views: 901.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-11-01 22:39:05 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oYgHvS42MR9d0cVQXe4dXXGFiAHomGAvzOBPWwTmblaHkQPd/QmAfYnqrn8GhVM69MEoYP9LZVFWorI2XRMc5g==", "user"=>{"uni"=>"testUni3", "name"=>"testName3", "password"=>"[FILTERED]"}, "commit"=>"Sign Up!"}
+  [1m[36mUser Load (4.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "testUni3"]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (13.4ms)[0m  [1mINSERT INTO "users" ("uni", "name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["uni", "testUni3"], ["name", "testName3"], ["password_digest", "$2a$12$NqLtW7PDXx/qFM/xAmzcmOQLUe2LZjtCVl7dG7/LytXrAWDe3MYOq"], ["created_at", "2023-11-02 02:39:05.615722"], ["updated_at", "2023-11-02 02:39:05.615722"]]
+  [1m[35m (10.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 250ms (ActiveRecord: 28.5ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 22:39:05 -0400
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (4.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCalendar Load (4.6ms)[0m  SELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?  [["user_id", 3]]
+  [1m[36mEntitlement Load (2.8ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "testUni3"]]
+  Rendered users/profile.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 917ms (Views: 899.5ms | ActiveRecord: 12.2ms)
+
+
+Started POST "/entitlements" for 127.0.0.1 at 2023-11-01 22:39:13 -0400
+Processing by EntitlementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dVJWnGIDExOzLj45/8cya12wvla6tBZmoibA/4YcDwlTS1L8sTyicWcVVRakrHwM2PQeN61nExg4ZD2S3+l9uQ==", "entitlement"=>{"courseName"=>"testCourseName", "role"=>"Viewer"}, "commit"=>"Add New Viewable Course"}
+  [1m[35mCourse Load (3.2ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1  [["courseName", "testCourseName"]]
+  [1m[36mUser Load (5.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mEntitlement Load (3.7ms)[0m  SELECT  "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ? AND "entitlements"."courseId" = ? LIMIT 1  [["uni", "testUni3"], ["courseId", "testCourseName"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (11.8ms)[0m  INSERT INTO "entitlements" ("uni", "courseId", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["uni", "testUni3"], ["courseId", "testCourseName"], ["role", "Viewer"], ["created_at", "2023-11-02 02:39:13.346021"], ["updated_at", "2023-11-02 02:39:13.346021"]]
+  [1m[36m (13.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 47ms (ActiveRecord: 38.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 22:39:13 -0400
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (3.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCalendar Load (3.1ms)[0m  [1mSELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35mEntitlement Load (5.4ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "testUni3"]]
+  [1m[36mCourse Load (2.7ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1[0m  [["courseName", "testCourseName"]]
+  Rendered users/profile.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 1003ms (Views: 983.2ms | ActiveRecord: 14.6ms)
+
+
+Started GET "/calendars" for 127.0.0.1 at 2023-11-01 22:39:18 -0400
+Processing by CalendarsController#index as HTML
+  [1m[35mUser Load (3.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (4.1ms)[0m  [1mSELECT "entitlements"."courseId" FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "testUni3"]]
+  [1m[35mCalendar Load (5.3ms)[0m  SELECT "calendars".* FROM "calendars" WHERE "calendars"."class_id" = 'testCourseName'
+  Rendered calendars/index.html.erb within layouts/application (6.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 920ms (Views: 904.8ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 22:39:28 -0400
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (3.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCalendar Load (3.1ms)[0m  SELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?  [["user_id", 3]]
+  [1m[36mEntitlement Load (2.5ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "testUni3"]]
+  [1m[35mCourse Load (6.0ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1  [["courseName", "testCourseName"]]
+  Rendered users/profile.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 961ms (Views: 940.9ms | ActiveRecord: 14.8ms)
+
+
+Started DELETE "/sessions/clear" for 127.0.0.1 at 2023-11-01 22:39:31 -0400
+Processing by SessionsController#clear as HTML
+  Parameters: {"authenticity_token"=>"bnkdce47vvRJb8dGdl02sNNU8M+nuEt5MtUPpNdW5j9IYBkRPQQPlp1UrGktNnjXVhBQrrBrTgeol/LJjqOUjw=="}
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 22:39:31 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 945ms (Views: 944.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2023-11-01 22:39:39 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ylx5t5z+pADbjO5rlv5sZMsrcjhC2ZfDYpYouzDMkt3sRX3XT8EVYg+3hUTNlSIDTm/SWVUKkr341NXWaTngbQ==", "login"=>{"uni"=>"testUni2", "password"=>"[FILTERED]"}, "commit"=>"Sign In!"}
+  [1m[36mUser Load (2.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uni" = ? LIMIT 1[0m  [["uni", "testUni2"]]
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 208ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 22:39:39 -0400
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (3.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCalendar Load (3.1ms)[0m  [1mSELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mEntitlement Load (3.7ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "testUni2"]]
+  [1m[36mCourse Load (6.2ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1[0m  [["courseName", "testCourseName"]]
+  Rendered users/profile.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 990ms (Views: 967.7ms | ActiveRecord: 16.5ms)
+
+
+Started GET "/calendars" for 127.0.0.1 at 2023-11-01 22:39:42 -0400
+Processing by CalendarsController#index as HTML
+  [1m[35mUser Load (5.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (3.5ms)[0m  [1mSELECT "entitlements"."courseId" FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "testUni2"]]
+  [1m[35mCalendar Load (4.4ms)[0m  SELECT "calendars".* FROM "calendars" WHERE "calendars"."class_id" = 'testCourseName'
+  Rendered calendars/index.html.erb within layouts/application (6.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 1016ms (Views: 999.2ms | ActiveRecord: 13.7ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 22:39:45 -0400
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (3.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCalendar Load (4.1ms)[0m  SELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?  [["user_id", 2]]
+  [1m[36mEntitlement Load (4.2ms)[0m  [1mSELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?[0m  [["uni", "testUni2"]]
+  [1m[35mCourse Load (3.7ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1  [["courseName", "testCourseName"]]
+  Rendered users/profile.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 847ms (Views: 825.5ms | ActiveRecord: 15.3ms)
+
+
+Started GET "/calendars" for 127.0.0.1 at 2023-11-01 22:39:54 -0400
+Processing by CalendarsController#index as HTML
+  [1m[36mUser Load (3.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (5.3ms)[0m  SELECT "entitlements"."courseId" FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "testUni2"]]
+  [1m[36mCalendar Load (3.7ms)[0m  [1mSELECT "calendars".* FROM "calendars" WHERE "calendars"."class_id" = 'testCourseName'[0m
+  Rendered calendars/index.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 892ms (Views: 876.4ms | ActiveRecord: 12.6ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-11-01 22:41:11 -0400
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (2.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCalendar Load (3.3ms)[0m  [1mSELECT "calendars".* FROM "calendars" WHERE "calendars"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mEntitlement Load (3.7ms)[0m  SELECT "entitlements".* FROM "entitlements" WHERE "entitlements"."uni" = ?  [["uni", "testUni2"]]
+  [1m[36mCourse Load (3.2ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."courseName" = ? LIMIT 1[0m  [["courseName", "testCourseName"]]
+  Rendered users/profile.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 917ms (Views: 899.6ms | ActiveRecord: 13.0ms)
+
+
+Started DELETE "/sessions/clear" for 127.0.0.1 at 2023-11-01 22:41:19 -0400
+Processing by SessionsController#clear as HTML
+  Parameters: {"authenticity_token"=>"Hl20E/WIdCJOYH+Dgy0N4tq6j7TQLZsxitP1HkOpcjk4RLBzJrfFQJpbFKzYRkOFX/4v1cf+nk8QkQhzGlwAiQ=="}
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2023-11-01 22:41:19 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 868ms (Views: 867.6ms | ActiveRecord: 0.0ms)
