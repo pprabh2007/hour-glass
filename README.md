@@ -7,7 +7,7 @@ Member 4 Name: Atharv Vanarase (avv2116)
 
 Heroku Link: https://stark-spire-91731-04d281d9e62f.herokuapp.com/ 
 
-Github Link: pprabh2007/hour-glass (github.com)
+Github Link: [pprabh2007/hour-glass (github.com)](https://github.com/pprabh2007/hour-glass)
 
 Code coverage (in the repo in the coverage/index.html directory): 100%
 
