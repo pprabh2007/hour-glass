@@ -1,9 +1,6 @@
 **Group Member Names & UNI’s:**
 
-**Member 1 Name: Harpreet Multani (hkm2125)
-Member 2 Name: Prabhpreet Sodhi (pss2161)
-Member 3 Name: Shivansh Srivastava (ss5945)
-Member 4 Name: Atharv Vanarase (avv2116)**
+**Harpreet Multani (hkm2125), Prabhpreet Sodhi (pss2161), Shivansh Srivastava (ss5945), Atharv Vanarase (avv2116)**
 
 **Heroku Link:** https://stark-spire-91731-04d281d9e62f.herokuapp.com/ 
 
