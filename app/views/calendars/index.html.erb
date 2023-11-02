@@ -1,0 +1,26 @@
+
+<table class="table table-striped col-md-12" id="movies">
+  <thead>
+    <tr>
+      <th>Course ID</th>
+      <th>Start Time</th>
+      <th>End Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @calendars.each do |c| %>
+      <tr>
+        <td>
+          <%= c.class_id %>
+        </td>
+        <td>
+          <%= c.start_time %>
+        </td>
+        <td>
+          <%= c.end_time %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'Back', user_profile_path, :class => 'btn btn-primary' %>

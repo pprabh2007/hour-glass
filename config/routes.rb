@@ -3,7 +3,6 @@ Rottenpotatoes::Application.routes.draw do
   resources :sessions, only: [:new, :create]
   resources :entitlements, only: [:create]
   resources :movies
-  resources :schedules
   resources :professors
   get '/profile', to: 'users#profile', as: 'user_profile'
   delete '/sessions/clear', to: 'sessions#clear', as: 'clear_session'
@@ -14,5 +13,5 @@ Rottenpotatoes::Application.routes.draw do
     post 'create_office_hour', on: :collection
   end
 
-  resources :calendars, except: [:index]
+  resources :calendars
 end

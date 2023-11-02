@@ -38,12 +38,6 @@ ActiveRecord::Schema.define(version: 20231031231236) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "schedules", force: :cascade do |t|
-    t.string   "courseId"
-    t.datetime "startTime"
-    t.datetime "endTime"
-  end
-
   create_table "teaching_assistants", force: :cascade do |t|
     t.string   "name"
     t.string   "uni"

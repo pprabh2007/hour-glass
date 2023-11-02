@@ -37,6 +37,19 @@
           null
         ]
       },
+      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/models/calendar.rb": {
+        "lines": [
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/sessions_controller.rb": {
         "lines": [
           1,
@@ -147,15 +160,19 @@
           null
         ]
       },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/models/calendar.rb": {
+      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/calendars_controller.rb": {
         "lines": [
-          null,
-          1,
           1,
           null,
           1,
           1,
           1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
           null,
           null
         ]
@@ -209,29 +226,6 @@
           null,
           null,
           1,
-          null
-        ]
-      },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/models/schedule.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/schedules_controller.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
           null
         ]
       },
@@ -294,7 +288,7 @@
         ]
       }
     },
-    "timestamp": 1698888197
+    "timestamp": 1698891352
   },
   "RSpec": {
     "coverage": {
@@ -420,6 +414,25 @@
           null
         ]
       },
+      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/calendars_controller.rb": {
+        "lines": [
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/entitlements_controller.rb": {
         "lines": [
           0,
@@ -483,25 +496,6 @@
           0,
           null,
           0,
-          0,
-          0,
-          0,
-          null,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/schedules_controller.rb": {
-        "lines": [
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
           0,
           0,
           0,
@@ -595,16 +589,8 @@
         ],
         "branches": {
         }
-      },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/models/schedule.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1698888229
+    "timestamp": 1698891377
   }
 }

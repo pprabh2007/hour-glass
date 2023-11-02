@@ -23,8 +23,8 @@ courses.each do |course|
 	Course.create!(course)
   end
 
-schedules.each do |schedule|
-  Schedule.create!(schedule)
+calendars.each do |calendar|
+  Calendar.create!(calendar)
 end
 
 users.each do |user|
