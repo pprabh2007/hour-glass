@@ -3,8 +3,8 @@ class TeachingAssistantsController < ApplicationController
     skip_before_action :authenticate_user, only: [:new_office_hour, :create_office_hour]
   
     def new_office_hour
-        @teaching_assistant = TeachingAssistant.find_by(id: params[:id]) if params[:id] && params[:id] != 'new_office_hour'
-        @teaching_assistant ||= TeachingAssistant.new
+        # @teaching_assistant = TeachingAssistant.find_by(id: params[:id]) if params[:id] && params[:id] != 'new_office_hour'
+        # @teaching_assistant ||= TeachingAssistant.new
         @calendar = Calendar.new
       end       
       
