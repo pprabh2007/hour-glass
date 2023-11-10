@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2023-11-10T00:50:04+00:00">2023-11-10T00:50:04+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2023-11-10T06:19:45+00:00">2023-11-10T06:19:45+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -128,7 +128,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#947df4095f6c8ea258993c959cca393bd80d2756" class="src_link" title="app/controllers/teaching_assistants_controller.rb">app/controllers/teaching_assistants_controller.rb</a></td>
             <td class="red strong cell--number t-file__coverage">62.50 %</td>
-            <td class="cell--number">38</td>
+            <td class="cell--number">43</td>
             <td class="cell--number">24</td>
             <td class="cell--number">15</td>
             <td class="cell--number">9</td>
@@ -183,7 +183,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#7c9eff70db4fe9b74685acc5bc4a9cdf16caeb31" class="src_link" title="app/models/calendar.rb">app/models/calendar.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">8</td>
+            <td class="cell--number">7</td>
             <td class="cell--number">5</td>
             <td class="cell--number">5</td>
             <td class="cell--number">0</td>
@@ -341,7 +341,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#947df4095f6c8ea258993c959cca393bd80d2756" class="src_link" title="app/controllers/teaching_assistants_controller.rb">app/controllers/teaching_assistants_controller.rb</a></td>
             <td class="red strong cell--number t-file__coverage">62.50 %</td>
-            <td class="cell--number">38</td>
+            <td class="cell--number">43</td>
             <td class="cell--number">24</td>
             <td class="cell--number">15</td>
             <td class="cell--number">9</td>
@@ -479,7 +479,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#7c9eff70db4fe9b74685acc5bc4a9cdf16caeb31" class="src_link" title="app/models/calendar.rb">app/models/calendar.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">8</td>
+            <td class="cell--number">7</td>
             <td class="cell--number">5</td>
             <td class="cell--number">5</td>
             <td class="cell--number">0</td>
@@ -2419,7 +2419,7 @@
 
             
 
-            <code class="ruby">        start_time = @calendar.start_time</code>
+            <code class="ruby">        start_time = @calendar.start_time.advance(weeks: 1)</code>
           </li>
         </div>
       
@@ -2430,7 +2430,7 @@
 
             
 
-            <code class="ruby">        end_time = @calendar.end_time</code>
+            <code class="ruby">        end_time = @calendar.end_time.advance(weeks: 1)</code>
           </li>
         </div>
       
@@ -2452,40 +2452,40 @@
 
             
 
-            <code class="ruby">          new_calendar = Calendar.new(class_id: @calendar.class_id, start_time: start_time, end_time: end_time, recurrence: @calendar.recurrence)</code>
+            <code class="ruby">          new_calendar = current_user.calendars.build(</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="18">
+          <li class="never" data-hits="" data-linenumber="18">
             
             
 
             
 
-            <code class="ruby">          new_calendar.save</code>
+            <code class="ruby">            class_id: @calendar.class_id,</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="19">
+          <li class="never" data-hits="" data-linenumber="19">
             
             
 
             
 
-            <code class="ruby">          start_time = start_time.advance(weeks: 1)</code>
+            <code class="ruby">            start_time: start_time,</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="20">
+          <li class="never" data-hits="" data-linenumber="20">
             
             
 
             
 
-            <code class="ruby">          end_time = end_time.advance(weeks: 1)</code>
+            <code class="ruby">            end_time: end_time,</code>
           </li>
         </div>
       
@@ -2496,12 +2496,67 @@
 
             
 
+            <code class="ruby">            recurrence: @calendar.recurrence</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="22">
+            
+            
+
+            
+
+            <code class="ruby">          )</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="23">
+            
+            
+
+            
+
+            <code class="ruby">          new_calendar.save</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="24">
+            
+            
+
+            
+
+            <code class="ruby">          start_time = start_time.advance(weeks: 1)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="25">
+            
+            
+
+            
+
+            <code class="ruby">          end_time = end_time.advance(weeks: 1)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="26">
+            
+            
+
+            
+
             <code class="ruby">        end</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="22">
+          <li class="missed" data-hits="0" data-linenumber="27">
             
             
 
@@ -2512,7 +2567,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="23">
+          <li class="covered" data-hits="1" data-linenumber="28">
             <span class="hits">1</span>
             
 
@@ -2523,7 +2578,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="24">
+          <li class="covered" data-hits="1" data-linenumber="29">
             <span class="hits">1</span>
             
 
@@ -2534,7 +2589,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="25">
+          <li class="never" data-hits="" data-linenumber="30">
             
             
 
@@ -2545,7 +2600,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="26">
+          <li class="missed" data-hits="0" data-linenumber="31">
             
             
 
@@ -2556,7 +2611,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="27">
+          <li class="never" data-hits="" data-linenumber="32">
             
             
 
@@ -2567,7 +2622,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="28">
+          <li class="never" data-hits="" data-linenumber="33">
             
             
 
@@ -2578,7 +2633,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="29">
+          <li class="covered" data-hits="1" data-linenumber="34">
             <span class="hits">1</span>
             
 
@@ -2589,7 +2644,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="30">
+          <li class="never" data-hits="" data-linenumber="35">
             
             
 
@@ -2600,68 +2655,13 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="31">
+          <li class="never" data-hits="" data-linenumber="36">
             
             
 
             
 
             <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="32">
-            
-            
-
-            
-
-            <code class="ruby">  </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="33">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">  private</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="34">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="35">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">  def calendar_params</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="36">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">    params.require(:calendar).permit(:class_id, :start_time, :end_time, :recurrence)</code>
           </li>
         </div>
       
@@ -2672,12 +2672,67 @@
 
             
 
+            <code class="ruby">  </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="38">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">  private</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="39">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="40">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">  def calendar_params</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="41">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    params.require(:calendar).permit(:class_id, :start_time, :end_time, :recurrence)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="42">
+            
+            
+
+            
+
             <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="38">
+          <li class="never" data-hits="" data-linenumber="43">
             
             
 
@@ -3322,23 +3377,12 @@
 
             
 
-            <code class="ruby">  # belongs_to :teaching_assistant</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="3">
-            
-            
-
-            
-
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="4">
+          <li class="covered" data-hits="2" data-linenumber="3">
             <span class="hits">2</span>
             
 
@@ -3349,7 +3393,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="5">
+          <li class="covered" data-hits="2" data-linenumber="4">
             <span class="hits">2</span>
             
 
@@ -3360,7 +3404,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="6">
+          <li class="covered" data-hits="2" data-linenumber="5">
             <span class="hits">2</span>
             
 
@@ -3371,7 +3415,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="7">
+          <li class="covered" data-hits="2" data-linenumber="6">
             <span class="hits">2</span>
             
 
@@ -3382,7 +3426,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="8">
+          <li class="never" data-hits="" data-linenumber="7">
             
             
 

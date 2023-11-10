@@ -41,7 +41,6 @@
         "lines": [
           1,
           null,
-          null,
           1,
           1,
           1,
@@ -235,6 +234,11 @@
           0,
           0,
           0,
+          null,
+          null,
+          null,
+          null,
+          null,
           0,
           0,
           0,
@@ -287,7 +291,7 @@
         ]
       }
     },
-    "timestamp": 1699577401
+    "timestamp": 1699597183
   },
   "RSpec": {
     "coverage": {
@@ -347,6 +351,11 @@
           0,
           0,
           0,
+          null,
+          null,
+          null,
+          null,
+          null,
           0,
           0,
           0,
@@ -373,7 +382,6 @@
       "/home/codio/workspace/hour-glass/app/models/calendar.rb": {
         "lines": [
           1,
-          null,
           null,
           1,
           1,
@@ -589,6 +597,6 @@
         }
       }
     },
-    "timestamp": 1699577404
+    "timestamp": 1699597185
   }
 }

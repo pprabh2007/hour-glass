@@ -11,10 +11,15 @@ class TeachingAssistantsController < ApplicationController
   
     if @calendar.save
       if @calendar.recurrence == "1"
-        start_time = @calendar.start_time
-        end_time = @calendar.end_time
+        start_time = @calendar.start_time.advance(weeks: 1)
+        end_time = @calendar.end_time.advance(weeks: 1)
         while start_time < 15.weeks.from_now(@calendar.start_time)
-          new_calendar = Calendar.new(class_id: @calendar.class_id, start_time: start_time, end_time: end_time, recurrence: @calendar.recurrence)
+          new_calendar = current_user.calendars.build(
+            class_id: @calendar.class_id,
+            start_time: start_time,
+            end_time: end_time,
+            recurrence: @calendar.recurrence
+          )
           new_calendar.save
           start_time = start_time.advance(weeks: 1)
           end_time = end_time.advance(weeks: 1)
