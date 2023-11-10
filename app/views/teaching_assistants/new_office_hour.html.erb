@@ -27,6 +27,11 @@
     <%= form.datetime_select :end_time %>
   </div>
 
+  <div class="field">
+    <%= form.label :recurrence, "Recurring Office Hour" %>
+    <%= form.check_box :recurrence, { checked: false } %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
