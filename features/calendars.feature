@@ -20,9 +20,9 @@ Background: users, courses, and entitlements in the database
   | testUni    | COMS 4152 | Viewer |
 
   Given the following calendars exist:
-  | class_id   | start_time          | end_time            |
-  | COMS 4152  | 2023-10-31 08:00:00 | 2023-10-31 10:00:00 |
-  | CSOR 4231  | 2023-10-31 11:00:00 | 2023-10-31 13:00:00 |
+  | class_id  | start_time          | end_time            | recurrence |
+  | COMS 4152 | 2023-10-31 08:00:00 | 2023-10-31 10:00:00 | 1          |
+  | CSOR 4231 | 2023-10-31 11:00:00 | 2023-10-31 13:00:00 | 1          |
 
 Scenario: Login and see my calendar
   When I go to the login page

@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20231031231236) do
     t.datetime "start_time"
     t.datetime "end_time"
     t.integer  "teaching_assistant_id"
+    t.string   "recurrence",            default: "one_time"
     t.integer  "user_id"
   end
 
