@@ -11,6 +11,7 @@ Rottenpotatoes::Application.routes.draw do
   resources :teaching_assistants do
     get 'new_office_hour', on: :collection
     post 'create_office_hour', on: :collection
+    get 'edit_office_hour', on: :collection
   end
 
   resources :calendars

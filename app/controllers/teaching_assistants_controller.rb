@@ -34,6 +34,17 @@ class TeachingAssistantsController < ApplicationController
       render :new_office_hour
     end
   end
+
+  def edit_office_hour
+    @class_ids = current_user.calendars.uniq(&:class_id).map(&:class_id)
+  
+    if params[:class_id].present?
+      @filtered_calendars = current_user.calendars.select { |calendar| calendar.class_id == params[:class_id] }
+    else
+      @filtered_calendars = current_user.calendars
+    end
+    logger.debug @class_ids
+  end
   
   private
 

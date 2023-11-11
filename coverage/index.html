@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2023-11-10T06:19:45+00:00">2023-11-10T06:19:45+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2023-11-11T01:21:20+00:00">2023-11-11T01:21:20+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  93.43%
+  90.21%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         4.16
+         4.0
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>137</b> relevant lines,
-    <span class="green"><b>128</b> lines covered</span> and
-    <span class="red"><b>9</b> lines missed. </span>
+    <b>143</b> relevant lines,
+    <span class="green"><b>129</b> lines covered</span> and
+    <span class="red"><b>14</b> lines missed. </span>
     (<span class="green">
-  93.43%
+  90.21%
 </span>
 )
   </div>
@@ -127,12 +127,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#947df4095f6c8ea258993c959cca393bd80d2756" class="src_link" title="app/controllers/teaching_assistants_controller.rb">app/controllers/teaching_assistants_controller.rb</a></td>
-            <td class="red strong cell--number t-file__coverage">62.50 %</td>
-            <td class="cell--number">43</td>
-            <td class="cell--number">24</td>
-            <td class="cell--number">15</td>
-            <td class="cell--number">9</td>
-            <td class="cell--number">1.13</td>
+            <td class="red strong cell--number t-file__coverage">53.33 %</td>
+            <td class="cell--number">54</td>
+            <td class="cell--number">30</td>
+            <td class="cell--number">16</td>
+            <td class="cell--number">14</td>
+            <td class="cell--number">0.97</td>
             
           </tr>
         
@@ -235,15 +235,15 @@
   <h2>
     <span class="group_name">Controllers</span>
     (<span class="covered_percent">
-      <span class="green">
-  92.11%
+      <span class="yellow">
+  88.33%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         4.27
+         4.08
        </span>
     </span> hits/line
     )
@@ -256,11 +256,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>114</b> relevant lines,
-    <span class="green"><b>105</b> lines covered</span> and
-    <span class="red"><b>9</b> lines missed. </span>
-    (<span class="green">
-  92.11%
+    <b>120</b> relevant lines,
+    <span class="green"><b>106</b> lines covered</span> and
+    <span class="red"><b>14</b> lines missed. </span>
+    (<span class="yellow">
+  88.33%
 </span>
 )
   </div>
@@ -340,12 +340,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#947df4095f6c8ea258993c959cca393bd80d2756" class="src_link" title="app/controllers/teaching_assistants_controller.rb">app/controllers/teaching_assistants_controller.rb</a></td>
-            <td class="red strong cell--number t-file__coverage">62.50 %</td>
-            <td class="cell--number">43</td>
-            <td class="cell--number">24</td>
-            <td class="cell--number">15</td>
-            <td class="cell--number">9</td>
-            <td class="cell--number">1.13</td>
+            <td class="red strong cell--number t-file__coverage">53.33 %</td>
+            <td class="cell--number">54</td>
+            <td class="cell--number">30</td>
+            <td class="cell--number">16</td>
+            <td class="cell--number">14</td>
+            <td class="cell--number">0.97</td>
             
           </tr>
         
@@ -2248,7 +2248,7 @@
     <h3>app/controllers/teaching_assistants_controller.rb</h3>
     <h4>
       <span class="red">
-  62.5%
+  53.33%
 </span>
 
       lines covered
@@ -2257,9 +2257,9 @@
     
 
     <div class="t-line-summary">
-      <b>24</b> relevant lines.
-      <span class="green"><b>15</b> lines covered</span> and
-      <span class="red"><b>9</b> lines missed.</span>
+      <b>30</b> relevant lines.
+      <span class="green"><b>16</b> lines covered</span> and
+      <span class="red"><b>14</b> lines missed.</span>
     </div>
 
     
@@ -2672,7 +2672,7 @@
 
             
 
-            <code class="ruby">  </code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -2683,45 +2683,100 @@
 
             
 
-            <code class="ruby">  private</code>
+            <code class="ruby">  def edit_office_hour</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="39">
+          <li class="missed" data-hits="0" data-linenumber="39">
             
             
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    @class_ids = current_user.calendars.uniq(&amp;:class_id).map(&amp;:class_id)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="40">
-            <span class="hits">2</span>
+          <li class="never" data-hits="" data-linenumber="40">
+            
             
 
             
 
-            <code class="ruby">  def calendar_params</code>
+            <code class="ruby">  </code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="41">
-            <span class="hits">2</span>
+          <li class="missed" data-hits="0" data-linenumber="41">
+            
             
 
             
 
-            <code class="ruby">    params.require(:calendar).permit(:class_id, :start_time, :end_time, :recurrence)</code>
+            <code class="ruby">    if params[:class_id].present?</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="42">
+          <li class="missed" data-hits="0" data-linenumber="42">
+            
+            
+
+            
+
+            <code class="ruby">      @filtered_calendars = current_user.calendars.select { |calendar| calendar.class_id == params[:class_id] }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="43">
+            
+            
+
+            
+
+            <code class="ruby">    else</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="44">
+            
+            
+
+            
+
+            <code class="ruby">      @filtered_calendars = current_user.calendars</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="45">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="46">
+            
+            
+
+            
+
+            <code class="ruby">    logger.debug @class_ids</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="47">
             
             
 
@@ -2732,7 +2787,73 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="43">
+          <li class="never" data-hits="" data-linenumber="48">
+            
+            
+
+            
+
+            <code class="ruby">  </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="49">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">  private</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="50">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="51">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">  def calendar_params</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="52">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    params.require(:calendar).permit(:class_id, :start_time, :end_time, :recurrence)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="53">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="54">
             
             
 
