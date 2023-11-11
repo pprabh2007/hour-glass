@@ -1,0 +1,38 @@
+<%= content_tag :h1, "Hello, TA #{current_user.name}!" %>
+
+<%= content_tag :h3, "Filter by Course" %>
+<%= form_tag({ controller: 'teaching_assistants', action: 'edit_office_hour' }, method: :get) do %>
+  <%= label_tag :class_id, 'Select Course:' %>
+  <%= select_tag(:class_id, options_for_select(@class_ids), { prompt: 'Select a Course' }) %>
+  <%= submit_tag 'Filter', :class => 'btn btn-primary' %>
+<% end %>
+
+</br></br></br>
+
+<%= content_tag :h3, "Filtered Office Hour Slots" %>
+<table class="table table-striped col-md-12" id="office_hours">
+  <thead>
+    <tr>
+      <th>Course Name</th>
+      <th>Start Time</th>
+      <th>End Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @filtered_calendars.each do |slot| %>
+      <tr>
+        <td>
+          <%= slot.class_id %>
+        </td>
+        <td>
+          <%= slot.start_time %>
+        </td>
+        <td>
+          <%= slot.end_time %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Back to Profile Page', user_profile_path, :class => 'btn btn-primary col-2' %>

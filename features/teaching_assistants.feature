@@ -25,7 +25,7 @@ Scenario: Login and navigating to new office hour creation page
   And  I fill in "Password" with "testPassword"
   And  I press "Sign In!"
   Then I should see "Hello, testName!"
-  When I follow "Edit TA Office Hours"
+  When I follow "Create New TA Office Hours"
   Then I should see "Hello, TA testName"
 
 Scenario: Login and creating a new office hour slot
@@ -33,7 +33,7 @@ Scenario: Login and creating a new office hour slot
   And I fill in "Uni" with "testUni"
   And I fill in "Password" with "testPassword"
   And I press "Sign In!"
-  When I follow "Edit TA Office Hours"
+  When I follow "Create New TA Office Hours"
   And I fill in "Class" with "COMS 4152"
   And I click the "Create Calendar" button
   Then I should see a success message "Office hours were successfully added."
@@ -43,7 +43,7 @@ Scenario: Fill out and submit the office hour form with invalid data
   And I fill in "Uni" with "testUni"
   And I fill in "Password" with "testPassword"
   And I press "Sign In!"
-  When I follow "Edit TA Office Hours"
+  When I follow "Create New TA Office Hours"
   And I fill in "Class" with ""
   And I click the "Create Calendar" button
   Then I should see "1 error prohibited this calendar from being saved:"
