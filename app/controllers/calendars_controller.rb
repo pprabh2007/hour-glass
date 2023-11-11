@@ -10,4 +10,10 @@ class CalendarsController < ApplicationController
       @calendars = Calendar.where(class_id: classes)
     end
 
+    def destroy
+      @calendar = Calendar.find(params[:id])
+      @calendar.destroy
+      redirect_to edit_office_hour_teaching_assistants_path, notice: 'Office hour was successfully deleted.'
+    end
+
 end
