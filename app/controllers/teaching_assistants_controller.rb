@@ -1,5 +1,5 @@
 class TeachingAssistantsController < ApplicationController
-  before_action :set_teaching_assistant, only: [:show, :edit, :update, :destroy]
+  before_action only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user, only: [:new_office_hour, :create_office_hour]
 
   def new_office_hour
@@ -44,6 +44,16 @@ class TeachingAssistantsController < ApplicationController
       @filtered_calendars = current_user.calendars
     end
     logger.debug @class_ids
+  end
+
+  def update
+    @calendar = Calendar.find(params[:id])
+  
+    if @calendar.update(calendar_params)
+      redirect_to edit_office_hour_teaching_assistants_path, notice: 'Office hour was successfully updated.'
+    else
+      render :edit_office_hour
+    end
   end
   
   private

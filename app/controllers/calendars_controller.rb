@@ -16,4 +16,16 @@ class CalendarsController < ApplicationController
       redirect_to edit_office_hour_teaching_assistants_path, notice: 'Office hour was successfully deleted.'
     end
 
+    def edit
+      @calendar = Calendar.find(params[:id])
+    end
+    
+    def update
+      if @calendar.update(calendar_params)
+        redirect_to edit_office_hour_teaching_assistants_path, notice: 'Office hour was successfully updated.'
+      else
+        render :edit
+      end
+    end
+
 end
