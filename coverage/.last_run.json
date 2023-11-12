@@ -1,5 +1,9 @@
 {
   "result": {
+<<<<<<< HEAD
     "covered_percent": 76.38
+=======
+    "covered_percent": 69.54
+>>>>>>> 0ad383a (Clean up all course identifiers and use only courseName)
   }
 }

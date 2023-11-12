@@ -3,7 +3,7 @@ class TeachingAssistantsController < ApplicationController
   skip_before_action :authenticate_user, only: [:new_office_hour, :create_office_hour]
 
   def new_office_hour
-    @your_classes = Entitlement.where({uni: session[:user_uni], role: "TA"}).pluck(:courseId)
+    @your_classes = Entitlement.where({uni: session[:user_uni], role: "TA"}).pluck(:courseName)
     @calendar = Calendar.new
   end
 
@@ -16,7 +16,7 @@ class TeachingAssistantsController < ApplicationController
         end_time = @calendar.end_time.advance(weeks: 1)
         while start_time < 15.weeks.from_now(@calendar.start_time)
           new_calendar = current_user.calendars.build(
-            class_id: @calendar.class_id,
+            courseName: @calendar.courseName,
             start_time: start_time,
             end_time: end_time,
             recurrence: @calendar.recurrence
@@ -37,14 +37,14 @@ class TeachingAssistantsController < ApplicationController
   end
 
   def edit_office_hour
-    @class_ids = current_user.calendars.uniq(&:class_id).map(&:class_id).to_set
+    @courseNames = current_user.calendars.uniq(&:courseName).map(&:courseName).to_set
   
-    if params[:class_id].present?
-      @filtered_calendars = current_user.calendars.select { |calendar| calendar.class_id == params[:class_id] }
+    if params[:courseName].present?
+      @filtered_calendars = current_user.calendars.select { |calendar| calendar.courseName == params[:courseName] }
     else
       @filtered_calendars = current_user.calendars
     end
-    logger.debug @class_ids
+    logger.debug @courseNames
   end
 
   def update
@@ -60,6 +60,6 @@ class TeachingAssistantsController < ApplicationController
   private
 
   def calendar_params
-    params.require(:calendar).permit(:class_id, :start_time, :end_time, :recurrence)
+    params.require(:calendar).permit(:courseName, :start_time, :end_time, :recurrence)
   end
 end

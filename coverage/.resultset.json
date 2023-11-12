@@ -22,16 +22,16 @@
           null,
           null,
           1,
-          2,
           0,
           0,
-          2,
+          0,
+          0,
           0,
           0,
           0,
           null,
-          2,
-          2,
+          0,
+          0,
           null,
           null,
           null
@@ -55,16 +55,25 @@
           1,
           null,
           1,
+<<<<<<< HEAD
           21,
           21,
+=======
+          22,
+          22,
+>>>>>>> 0ad383a (Clean up all course identifiers and use only courseName)
           null,
           null,
           1,
           15,
           15,
+<<<<<<< HEAD
           14,
           14,
           14,
+=======
+          15,
+>>>>>>> 0ad383a (Clean up all course identifiers and use only courseName)
           null,
           1,
           1,
@@ -93,11 +102,19 @@
           1,
           null,
           1,
+<<<<<<< HEAD
           35,
           null,
           null,
           1,
           97,
+=======
+          32,
+          null,
+          null,
+          1,
+          90,
+>>>>>>> 0ad383a (Clean up all course identifiers and use only courseName)
           null,
           null
         ]
@@ -130,6 +147,7 @@
           null,
           1,
           null,
+<<<<<<< HEAD
           18,
           18,
           null,
@@ -141,6 +159,19 @@
           null,
           null,
           18,
+=======
+          17,
+          17,
+          null,
+          17,
+          17,
+          11,
+          11,
+          11,
+          null,
+          null,
+          17,
+>>>>>>> 0ad383a (Clean up all course identifiers and use only courseName)
           null,
           null,
           1,
@@ -374,6 +405,7 @@
       },
       "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/entitlements_controller.rb": {
         "lines": [
+<<<<<<< HEAD
           1,
           null,
           1,
@@ -391,13 +423,42 @@
           1,
           1,
           5,
+=======
+          0,
+>>>>>>> 0ad383a (Clean up all course identifiers and use only courseName)
           null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
           null,
+          0,
+          0,
+          0,
+          0,
+          0,
           null
-        ]
+        ],
+        "branches": {
+        }
       }
     },
+<<<<<<< HEAD
     "timestamp": 1699807835
+=======
+    "timestamp": 1699757753
+>>>>>>> 0ad383a (Clean up all course identifiers and use only courseName)
   },
   "RSpec": {
     "coverage": {
@@ -809,6 +870,10 @@
         }
       }
     },
+<<<<<<< HEAD
     "timestamp": 1699807915
+=======
+    "timestamp": 1699757773
+>>>>>>> 0ad383a (Clean up all course identifiers and use only courseName)
   }
 }
