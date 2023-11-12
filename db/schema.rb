@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20231031231236) do
+ActiveRecord::Schema.define(version: 20231111215639) do
 
   create_table "calendars", force: :cascade do |t|
     t.string   "class_id"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20231031231236) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "name"
+    t.boolean  "is_professor"
   end
 
 end

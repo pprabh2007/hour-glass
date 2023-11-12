@@ -20,6 +20,11 @@
     <%= text_field :user, :name, :class => 'form-control' %>
     <%= label :user, :password, 'New Password', :class => 'col-form-label'  %>
     <%= password_field :user, :password, :class => 'form-control' %>
+    <%= content_tag :p, "Are You a Professor?" %>
+    <%= radio_button_tag 'user[is_professor]', true %> Yes
+    </br>
+    <%= radio_button_tag 'user[is_professor]', false, :checked => true %> No
+    </br>
     </br>
     <%= submit_tag "Sign Up!", :class => 'btn btn-primary' %>
 <% end %>

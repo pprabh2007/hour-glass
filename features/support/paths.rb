@@ -17,6 +17,8 @@ module NavigationHelpers
 
     when /^the (Hourglass )?profile\s?page$/ then '/profile'
 
+    when /^the professors page manually$/ then '/professors'
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

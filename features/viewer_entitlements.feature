@@ -7,8 +7,8 @@ Feature: add a viewable class
 Background: users, courses, and entitlements in the database
 
   Given the following users exist:
-  | uni        | password        | name     |
-  | testUni    | testPassword    | testName |
+  | uni        | password        | name     | is_professor |
+  | testUni    | testPassword    | testName | false        |
 
   Given the following courses exist:
   | id | courseName | courseDescription                 | 
