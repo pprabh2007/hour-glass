@@ -3,6 +3,7 @@ class TeachingAssistantsController < ApplicationController
   skip_before_action :authenticate_user, only: [:new_office_hour, :create_office_hour]
 
   def new_office_hour
+    @your_classes = Entitlement.where({uni: session[:user_uni], role: "TA"}).pluck(:courseId)
     @calendar = Calendar.new
   end
 
