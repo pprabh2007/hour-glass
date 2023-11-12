@@ -26,7 +26,7 @@ class UsersController < ApplicationController
             redirect_to new_session_path
         else
             new_user = User.create(user_params)
-            session[:user_id] = new_user.id
+            session[:user_uni] = new_user.uni
             redirect_to user_profile_path
         end
     end

@@ -17,13 +17,13 @@ RSpec.describe ApplicationController, type: :controller do
   describe "current_user" do
     let(:user) { User.create(name: "Test User", uni: "testuni", password: "password") }
 
-    it "returns current user if session user_id is present" do
-      session[:user_id] = user.id
+    it "returns current user if session user_uni is present" do
+      session[:user_uni] = user.uni
       expect(controller.current_user).to eq(user)
     end
 
-    it "returns nil if session user_id is not present" do
-      session[:user_id] = nil
+    it "returns nil if session user_uni is not present" do
+      session[:user_uni] = nil
       expect(controller.current_user).to be_nil
     end
   end

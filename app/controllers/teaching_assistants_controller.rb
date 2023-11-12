@@ -3,13 +3,12 @@ class TeachingAssistantsController < ApplicationController
   skip_before_action :authenticate_user, only: [:new_office_hour, :create_office_hour]
 
   def new_office_hour
-    @your_classes = Entitlement.where({uni: session[:user_uni], role: ["TA", "Prof"]}).pluck(:courseName)
+    @your_classes = Entitlement.where({uni: current_user.uni, role: ["TA", "Prof"]}).pluck(:courseName)
     @calendar = Calendar.new
   end
 
   def create_office_hour
     @calendar = current_user.calendars.build(calendar_params)
-  
     if @calendar.save
       if @calendar.repeated_weeks.positive?
         start_time = @calendar.start_time.advance(weeks: 1)
@@ -38,7 +37,6 @@ class TeachingAssistantsController < ApplicationController
 
   def edit_office_hour
     @courseNames = current_user.calendars.uniq(&:courseName).map(&:courseName).to_set
-  
     if params[:courseName].present?
       @filtered_calendars = current_user.calendars.select { |calendar| calendar.courseName == params[:courseName] }
     else
@@ -49,7 +47,6 @@ class TeachingAssistantsController < ApplicationController
 
   def update
     @calendar = Calendar.find(params[:id])
-  
     if @calendar.update(calendar_params)
       redirect_to edit_office_hour_teaching_assistants_path, notice: 'Office hour was successfully updated.'
     else
@@ -58,7 +55,6 @@ class TeachingAssistantsController < ApplicationController
   end
   
   private
-
   def calendar_params
     params.require(:calendar).permit(:courseName, :start_time, :end_time, :repeated_weeks)
   end
