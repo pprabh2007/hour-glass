@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
         @viewable_courses = Set.new
         @calendars = Set.new(current_user.calendars)
+
         @entitlements = Entitlement.where(uni: current_user.uni)
         @entitlements.each do |entitlement|
             potential_course = Course.find_by(courseName: entitlement.courseId)
@@ -15,6 +16,7 @@ class UsersController < ApplicationController
                 @viewable_courses << potential_course
             end
         end
+        @all_course_list = Course.pluck(:courseName)
     end
 
     def create

@@ -59,7 +59,7 @@
 <%= content_tag :h3, "View a new course on your schedule" %>
 <%= form_tag entitlements_path, method: :post, :class => 'form' do %>
   <%= label :entitlement, :courseName, 'Course Name', :class => 'col-form-label'  %>
-  <%= text_field :entitlement, :courseName, :class => 'form-control' %>
+  <%= select :entitlement, :courseName, @all_course_list, { prompt: 'Select a Course' }, class: 'form-control' %>
   <%= text_field :entitlement, :role, value: 'Viewer', :type => 'hidden' %>
   </br>
   <%= submit_tag "Add New Viewable Course", :class => 'btn btn-primary' %>
