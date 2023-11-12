@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="app/assets/stylesheets/sessions.scss">
+</head>
+<body>
 <%= content_tag :h1, "Hello, #{current_user.name}!" %>
 <%= link_to "Sign out", clear_session_path, method:"delete", :class => 'text-right' %>
 
@@ -69,3 +75,6 @@
 <% if current_user.is_professor == true %>
   <%= link_to 'Create a New Course', professors_path, :class => 'btn btn-primary col-2' %>
 <% end %>
+
+</body>
+</html>
