@@ -14,7 +14,6 @@
     .time-column, .day-column, .time-cell, .event-cell {
       width: 14.2857%; /* 100% / 7 columns */
       text-align: center;
-      padding: 8px;
       border: 1px solid #ddd;
     }
 
@@ -30,7 +29,7 @@
       margin: 0;
       padding: 5px;
       background-color: #e0e0e0;
-      border-radius: 5px;
+      border-radius: 0px;
       font-size: 12px;
       position: absolute;
       bottom: 0;
@@ -62,7 +61,7 @@
         <td class="time-cell"><%= format('%02d:00', hour) %></td>
         <% (0..6).each do |day| %>
           <td class="event-cell">
-            <% events_for_cell = @calendars.select { |event| event.start_time.wday == day && event.start_time.hour == hour } %>
+            <% events_for_cell = @calendars.select { |event| event.start_time.wday == day && (event.start_time.hour <= hour && event.end_time.hour > hour) } %>
             <% events_for_cell.each do |event| %>
               <p><%= "#{event.class_id} (#{event.start_time.strftime('%H:%M')} - #{event.end_time.strftime('%H:%M')})" %></p>
             <% end %>
