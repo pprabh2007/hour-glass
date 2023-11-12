@@ -3,15 +3,11 @@ require 'date'
 class CalendarsController < ApplicationController
 
     def index
-      
       if not params.key?(:year)
         current_sunday = get_last_sunday_date(Date.today)
       else
         current_sunday = Date.new(params[:year].to_i, params[:month].to_i, params[:day].to_i)
       end
-      user_id = session[:user_id]
-      user = User.find_by(id: user_id)
-      uni = user.uni
 
       @year = current_sunday.year
       @month = current_sunday.month
@@ -23,7 +19,7 @@ class CalendarsController < ApplicationController
       dtstart = DateTime.new(@year, @month, @day)
       dtend = dtstart + 7
 
-      classes = Entitlement.where(uni: uni).pluck(:courseName)
+      classes = Entitlement.where(uni: current_user.uni).pluck(:courseName)
       @calendars = Calendar.where(courseName: classes).where('start_time >= ? AND end_time < ?', dtstart, dtend).order(:start_time)
       @calendars = @calendars.map do |calendar|
         new_calendar = OpenStruct.new(calendar.attributes)
