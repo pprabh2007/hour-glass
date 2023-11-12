@@ -22,6 +22,11 @@ class CalendarsController < ApplicationController
 
       classes = Entitlement.where(uni: uni).pluck(:courseId)
       @calendars = Calendar.where(class_id: classes).where('start_time >= ? AND end_time < ?', dtstart, dtend).order(:start_time)
+      @calendars = @calendars.map do |calendar|
+        new_calendar = OpenStruct.new(calendar.attributes)
+        new_calendar.wday = idx_to_day(calendar.start_time.wday)
+        new_calendar
+      end
     end
 
     def destroy
