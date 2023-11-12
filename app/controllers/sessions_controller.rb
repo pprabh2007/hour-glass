@@ -3,14 +3,12 @@ class SessionsController < ApplicationController
   skip_before_action :require_login, only: [:new, :create]
 
   def new
-    session[:user_id] = nil
     session[:user_uni] = nil
   end
 
   def create
     @user = User.find_by(uni: login_params[:uni])
     if @user && @user.authenticate(login_params[:password])
-      session[:user_id] = @user.id
       session[:user_uni] = @user.uni
       redirect_to user_profile_path
     else 
