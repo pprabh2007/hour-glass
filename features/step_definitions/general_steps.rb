@@ -4,6 +4,14 @@ Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
   expect(page.body.index(e1) < page.body.index(e2))
 end
 
+Then /I should not see "(.*)" before "(.*)"/ do |e1, e2|
+  #  ensure that that e1 occurs before e2.
+  #  page.body is the entire content of the page as a string.
+  index_1 = page.body.index(e1)
+  index_2 = page.body.index(e2)
+  expect(index_1.nil? || (index_2.nil? == false && index_1 > index_2))
+end
+
 # When /I (un)?check the following ratings: (.*)/ do |uncheck, rating_list|
 #   rating_list.split(', ').each do |rating|
 #     step %{I #{uncheck.nil? ? '' : 'un'}check "ratings_#{rating}"}
