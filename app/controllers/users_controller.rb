@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
         @entitlements = Entitlement.where(uni: current_user.uni)
         @entitlements.each do |entitlement|
-            potential_course = Course.find_by(courseName: entitlement.courseId)
+            potential_course = Course.find_by(courseName: entitlement.courseName)
             if not potential_course.nil?
                 @viewable_courses << potential_course
             end

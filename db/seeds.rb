@@ -16,7 +16,7 @@ users = [{:uni => "cheems", :password_digest => BCrypt::Password.create("passwor
 {:uni => "testStudent", :password_digest => BCrypt::Password.create("testPassword"), :name => "testStudent" , :is_professor => false},
 {:uni => "testProfessor", :password_digest => BCrypt::Password.create("testPassword"), :name => "testProfessor" , :is_professor => true}]
 
-entitlements = [{:uni => "cheems", :courseId => "COMS 4152", :role => "Viewer", 
+entitlements = [{:uni => "cheems", :courseName => "COMS 4152", :role => "Viewer", 
 :created_at=> DateTime.new(2023,1,1), :updated_at=>DateTime.new(2023,1,1)}];
 
 courses.each do |course|

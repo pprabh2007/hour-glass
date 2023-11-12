@@ -2,8 +2,8 @@
 
 <%= content_tag :h3, "Filter by Course" %>
 <%= form_tag({ controller: 'teaching_assistants', action: 'edit_office_hour' }, method: :get) do %>
-  <%= label_tag :class_id, 'Select Course:' %>
-  <%= select_tag(:class_id, options_for_select(@class_ids), { prompt: 'Select a Course' }) %>
+  <%= label_tag :courseName, 'Select Course:' %>
+  <%= select_tag(:courseName, options_for_select(@courseNames), { prompt: 'Select a Course' }) %>
   <%= submit_tag 'Filter', :class => 'btn btn-primary' %>
 <% end %>
 
@@ -23,7 +23,7 @@
     <% @filtered_calendars.each do |slot| %>
       <tr>
         <td>
-          <%= slot.class_id %>
+          <%= slot.courseName %>
         </td>
         <td>
           <%= slot.start_time %>

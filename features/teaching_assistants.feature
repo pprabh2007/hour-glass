@@ -11,13 +11,13 @@ Background: users, courses, and entitlements in the database
   | testUni    | testPassword    | testName | false        |
 
   Given the following courses exist:
-  | id | courseName | courseDescription                 | 
-  | 0  | COMS 4152  | Engineering Software-as-a-Service |
-  | 1  | CSOR 4231  | Intro to Algorithms               |
+  | courseName | courseDescription                 | 
+  | COMS 4152  | Engineering Software-as-a-Service |
+  | CSOR 4231  | Intro to Algorithms               |
 
   Given the following entitlements exist:
-  | uni        | courseId  | role   | 
-  | testUni    | COMS 4152 | TA     |
+  | uni        | courseName  | role   | 
+  | testUni    | COMS 4152   | TA     |
 
 Scenario: Login and navigating to new office hour creation page
   When I go to the login page
