@@ -28,8 +28,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :recurrence, "Recurring Office Hour" %>
-    <%= form.check_box :recurrence, { checked: false } %>
+    <%= form.label :repeated_weeks, "Number of Repeated Weeks" %>
+    <%= form.number_field :repeated_weeks, class: 'form-control' %>
   </div>
 
   <div class="actions">
