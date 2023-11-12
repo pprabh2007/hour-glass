@@ -24,3 +24,7 @@
   </tbody>
 </table>
 <%= link_to 'Back', user_profile_path, :class => 'btn btn-primary' %>
+<%= link_to 'Next Week', next_week_calendars_path(year: @year, month: @month, 
+                                                      day: @day ), :class => 'btn btn-primary' %>
+<%= link_to 'Previous Week', prev_week_calendars_path(year: @year, month: @month, 
+                                                      day: @day ), :class => 'btn btn-primary' %>

@@ -15,6 +15,9 @@ Rottenpotatoes::Application.routes.draw do
       patch 'update', on: :member
     end
   
-    resources :calendars, only: [:index, :destroy, :edit, :update]
+    resources :calendars, only: [:index, :destroy, :edit, :update] do
+        get 'next_week', on: :collection
+        get 'prev_week', on: :collection
+    end
   end
   
