@@ -27,34 +27,36 @@
 <%= link_to 'View Schedule', calendars_path, :class => 'btn btn-primary col-2' %>
 </br></br></br>
 
-<%= content_tag :h3, "Your Office Hour Slots" %>
-<table class="table table-striped col-md-12" id="movies">
-  <thead>
-    <tr>
-      <th>Course Name</th>
-      <th>Start Time</th>
-      <th>End Time</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @calendars.each do |slot| %>
+<% if @entitlements.any? { |entitlement| ['Prof', 'TA'].include?(entitlement.role) } %>
+  <%= content_tag :h3, "Your Office Hour Slots" %>
+  <table class="table table-striped col-md-12" id="movies">
+    <thead>
       <tr>
-        <td>
-          <%= slot.courseName %>
-        </td>
-        <td>
-          <%= slot.start_time %>
-        </td>
-        <td>
-          <%= slot.end_time %>
-        </td>
+        <th>Course Name</th>
+        <th>Start Time</th>
+        <th>End Time</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-<%= link_to 'Create New TA Office Hours', new_office_hour_teaching_assistants_path, :class => 'btn btn-primary col-2' %>
-<%= link_to 'Edit TA Office Hours', edit_office_hour_teaching_assistants_path, :class => 'btn btn-primary col-2' %>
+    </thead>
+    <tbody>
+      <% @calendars.each do |slot| %>
+        <tr>
+          <td>
+            <%= slot.courseName %>
+          </td>
+          <td>
+            <%= slot.start_time %>
+          </td>
+          <td>
+            <%= slot.end_time %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to 'Create New TA Office Hours', new_office_hour_teaching_assistants_path, :class => 'btn btn-primary col-2' %>
+  <%= link_to 'Edit TA Office Hours', edit_office_hour_teaching_assistants_path, :class => 'btn btn-primary col-2' %>
 </br></br></br>
+<% end %>
 
 <%= content_tag :h3, "View a new course on your schedule" %>
 <%= form_tag entitlements_path, method: :post, :class => 'form' do %>
@@ -64,6 +66,7 @@
   </br>
   <%= submit_tag "Add New Viewable Course", :class => 'btn btn-primary' %>
 <% end %>
+
 </br></br>
 
 <% if current_user.is_professor == true %>

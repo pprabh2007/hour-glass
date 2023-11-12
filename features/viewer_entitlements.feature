@@ -17,7 +17,7 @@ Background: users, courses, and entitlements in the database
 
   Given the following entitlements exist:
   | uni        | courseName | role   | 
-  | testUni    | COMS 4152  | Viewer |
+  | testUni    | COMS 4152  | TA     |
 
 
 Scenario: Login and see my viewable classes
