@@ -21,7 +21,7 @@ class CalendarsController < ApplicationController
       dtend = dtstart + 7
 
       classes = Entitlement.where(uni: uni).pluck(:courseId)
-      @calendars = Calendar.where(class_id: classes).where('start_time >= ? AND end_time < ?', dtstart, dtend)
+      @calendars = Calendar.where(class_id: classes).where('start_time >= ? AND end_time < ?', dtstart, dtend).order(:start_time)
     end
 
     def destroy
