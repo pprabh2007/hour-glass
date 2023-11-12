@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2023-11-12T11:51:56-05:00">2023-11-12T11:51:56-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2023-11-12T13:10:04-05:00">2023-11-12T13:10:04-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -1305,7 +1305,7 @@
 
             
 
-            <code class="ruby">      classes = Entitlement.where(uni: uni).pluck(:courseId)</code>
+            <code class="ruby">      classes = Entitlement.where(uni: uni).pluck(:courseName)</code>
           </li>
         </div>
       
@@ -1316,7 +1316,7 @@
 
             
 
-            <code class="ruby">      @calendars = Calendar.where(class_id: classes).where(&#39;start_time &gt;= ? AND end_time &lt; ?&#39;, dtstart, dtend).order(:start_time)</code>
+            <code class="ruby">      @calendars = Calendar.where(courseName: classes).where(&#39;start_time &gt;= ? AND end_time &lt; ?&#39;, dtstart, dtend).order(:start_time)</code>
           </li>
         </div>
       
@@ -2117,7 +2117,7 @@
 
             
 
-            <code class="ruby">            new_entitlement = Entitlement.create(uni: current_user.uni, courseId: course_name, role: entitlement_params[:role])</code>
+            <code class="ruby">            new_entitlement = Entitlement.create(uni: current_user.uni, courseName: course_name, role: entitlement_params[:role])</code>
           </li>
         </div>
       
@@ -2445,7 +2445,7 @@
 
             
 
-            <code class="ruby">          potential_course = Course.find_by(courseName: entitlement.courseId)</code>
+            <code class="ruby">          potential_course = Course.find_by(courseName: entitlement.courseName)</code>
           </li>
         </div>
       
@@ -2599,7 +2599,7 @@
 
             
 
-            <code class="ruby">        Entitlement.create!({:uni =&gt; current_user.uni, :courseId =&gt; course.courseName, :role =&gt; &quot;Prof&quot;})</code>
+            <code class="ruby">        Entitlement.create!({:uni =&gt; current_user.uni, :courseName =&gt; course.courseName, :role =&gt; &quot;Prof&quot;})</code>
           </li>
         </div>
       
@@ -2610,7 +2610,7 @@
 
             
 
-            <code class="ruby">        unis.split( /, */ ).each { |uni| Entitlement.create!({:uni =&gt; uni, :courseId =&gt; course.courseName, :role =&gt; &quot;TA&quot;})}</code>
+            <code class="ruby">        unis.split( /, */ ).each { |uni| Entitlement.create!({:uni =&gt; uni, :courseName =&gt; course.courseName, :role =&gt; &quot;TA&quot;})}</code>
           </li>
         </div>
       
@@ -2621,7 +2621,7 @@
 
             
 
-            <code class="ruby">        # TeachingAssistant.create!({:uni =&gt; current_user.uni, :class_id =&gt; course.courseName, :name =&gt; current_user.name})</code>
+            <code class="ruby">        # TeachingAssistant.create!({:uni =&gt; current_user.uni, :courseName =&gt; course.courseName, :name =&gt; current_user.name})</code>
           </li>
         </div>
       
@@ -3233,7 +3233,7 @@
 
             
 
-            <code class="ruby">    @your_classes = Entitlement.where({uni: session[:user_uni], role: &quot;TA&quot;}).pluck(:courseId)</code>
+            <code class="ruby">    @your_classes = Entitlement.where({uni: session[:user_uni], role: &quot;TA&quot;}).pluck(:courseName)</code>
           </li>
         </div>
       
@@ -3376,7 +3376,7 @@
 
             
 
-            <code class="ruby">            class_id: @calendar.class_id,</code>
+            <code class="ruby">            courseName: @calendar.courseName,</code>
           </li>
         </div>
       
@@ -3607,7 +3607,7 @@
 
             
 
-            <code class="ruby">    @class_ids = current_user.calendars.uniq(&amp;:class_id).map(&amp;:class_id).to_set</code>
+            <code class="ruby">    @courseNames = current_user.calendars.uniq(&amp;:courseName).map(&amp;:courseName).to_set</code>
           </li>
         </div>
       
@@ -3629,7 +3629,7 @@
 
             
 
-            <code class="ruby">    if params[:class_id].present?</code>
+            <code class="ruby">    if params[:courseName].present?</code>
           </li>
         </div>
       
@@ -3640,7 +3640,7 @@
 
             
 
-            <code class="ruby">      @filtered_calendars = current_user.calendars.select { |calendar| calendar.class_id == params[:class_id] }</code>
+            <code class="ruby">      @filtered_calendars = current_user.calendars.select { |calendar| calendar.courseName == params[:courseName] }</code>
           </li>
         </div>
       
@@ -3684,7 +3684,7 @@
 
             
 
-            <code class="ruby">    logger.debug @class_ids</code>
+            <code class="ruby">    logger.debug @courseNames</code>
           </li>
         </div>
       
@@ -3860,7 +3860,7 @@
 
             
 
-            <code class="ruby">    params.require(:calendar).permit(:class_id, :start_time, :end_time, :recurrence)</code>
+            <code class="ruby">    params.require(:calendar).permit(:courseName, :start_time, :end_time, :recurrence)</code>
           </li>
         </div>
       
@@ -4067,7 +4067,7 @@
 
             
 
-            <code class="ruby">            potential_course = Course.find_by(courseName: entitlement.courseId)</code>
+            <code class="ruby">            potential_course = Course.find_by(courseName: entitlement.courseName)</code>
           </li>
         </div>
       
@@ -4554,7 +4554,7 @@
 
             
 
-            <code class="ruby">  validates :class_id, presence: true</code>
+            <code class="ruby">  validates :courseName, presence: true</code>
           </li>
         </div>
       
@@ -4737,7 +4737,7 @@
 
             
 
-            <code class="ruby">    def self.equivalent_perm_exists?(uni, courseId, role)</code>
+            <code class="ruby">    def self.equivalent_perm_exists?(uni, courseName, role)</code>
           </li>
         </div>
       
@@ -4759,7 +4759,7 @@
 
             
 
-            <code class="ruby">            prof_entitlement = Entitlement.find_by(uni: uni, courseId: courseId, role: &quot;Prof&quot;)</code>
+            <code class="ruby">            prof_entitlement = Entitlement.find_by(uni: uni, courseName: courseName, role: &quot;Prof&quot;)</code>
           </li>
         </div>
       
@@ -4792,7 +4792,7 @@
 
             
 
-            <code class="ruby">            prof_entitlement = Entitlement.find_by(uni: uni, courseId: courseId, role: &quot;Prof&quot;)</code>
+            <code class="ruby">            prof_entitlement = Entitlement.find_by(uni: uni, courseName: courseName, role: &quot;Prof&quot;)</code>
           </li>
         </div>
       
@@ -4803,7 +4803,7 @@
 
             
 
-            <code class="ruby">            ta_entitlement = Entitlement.find_by(uni: uni, courseId: courseId, role: &quot;TA&quot;)</code>
+            <code class="ruby">            ta_entitlement = Entitlement.find_by(uni: uni, courseName: courseName, role: &quot;TA&quot;)</code>
           </li>
         </div>
       
@@ -4836,7 +4836,7 @@
 
             
 
-            <code class="ruby">            any_entitlement = Entitlement.find_by(uni: uni, courseId: courseId)</code>
+            <code class="ruby">            any_entitlement = Entitlement.find_by(uni: uni, courseName: courseName)</code>
           </li>
         </div>
       

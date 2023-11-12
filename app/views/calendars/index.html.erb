@@ -64,7 +64,7 @@
           <td class="event-cell">
             <% events_for_cell = @calendars.select { |event| event.start_time.wday == day && event.start_time.hour == hour } %>
             <% events_for_cell.each do |event| %>
-              <p><%= "#{event.class_id} (#{event.start_time.strftime('%H:%M')} - #{event.end_time.strftime('%H:%M')})" %></p>
+              <p><%= "#{event.courseName} (#{event.start_time.strftime('%H:%M')} - #{event.end_time.strftime('%H:%M')})" %></p>
             <% end %>
           </td>
         <% end %>

@@ -6,7 +6,7 @@ class EntitlementsController < ApplicationController
         if Entitlement.equivalent_perm_exists?(current_user.uni, course_name, entitlement_params[:role])
             flash[:warning] = "You already have access to the inputted class."
         else
-            new_entitlement = Entitlement.create(uni: current_user.uni, courseId: course_name, role: entitlement_params[:role])
+            new_entitlement = Entitlement.create(uni: current_user.uni, courseName: course_name, role: entitlement_params[:role])
             flash[:notice] = "Added new class '#{course_name}' to schedule";
         end
         redirect_to user_profile_path
