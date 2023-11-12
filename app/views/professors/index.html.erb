@@ -25,10 +25,10 @@
 </br>
 <%= content_tag :h3, "Create A New Course" %>
 <%= form_tag professors_path, method: :post, :class => 'form' do %>
-  <%= label :professor, :courseName, 'Course Id', :class => 'col-form-label'  %>
+  <%= label :professor, :courseName, 'Course Name', :class => 'col-form-label'  %>
   <%= text_field :professor, :courseName, :class => 'form-control' %>
   
-  <%= label :professor, :courseDescription, 'Course Name', :class => 'col-form-label'  %>
+  <%= label :professor, :courseDescription, 'Course Description', :class => 'col-form-label'  %>
   <%= text_field :professor, :courseDescription, :class => 'form-control' %>
   
   <%= label :professor, :unis, 'Enter TA UNIs (comma seperated)', :class => 'col-form-label'  %>

@@ -10,10 +10,10 @@ RSpec.describe TeachingAssistantsController, type: :controller do
 
   describe "private #calendar_params" do
     it "permits the correct parameters" do
-      params = ActionController::Parameters.new(calendar: { "class_id" => "COMS101", "start_time" => "9:00 AM", "end_time" => "11:00 AM", "teaching_assistant_id" => 1 })
-      permitted_params = params.require(:calendar).permit(:class_id, :start_time, :end_time, :teaching_assistant_id)
+      params = ActionController::Parameters.new(calendar: { "courseName" => "COMS101", "start_time" => "9:00 AM", "end_time" => "11:00 AM", "teaching_assistant_id" => 1 })
+      permitted_params = params.require(:calendar).permit(:courseName, :start_time, :end_time, :teaching_assistant_id)
 
-      expect(permitted_params).to eq({ "class_id" => "COMS101", "start_time" => "9:00 AM", "end_time" => "11:00 AM", "teaching_assistant_id" => 1 })
+      expect(permitted_params).to eq({ "courseName" => "COMS101", "start_time" => "9:00 AM", "end_time" => "11:00 AM", "teaching_assistant_id" => 1 })
     end
   end
 end

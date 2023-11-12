@@ -1,26 +1,79 @@
+<!-- app/views/calendars/index.html.erb -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calendar</title>
 
-<table class="table table-striped col-md-12" id="movies">
+  <style>
+    .calendar-table {
+      table-layout: fixed;
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .time-column, .day-column, .time-cell, .event-cell {
+      width: 14.2857%; /* 100% / 7 columns */
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+
+    .time-cell {
+      background-color: #f0f0f0;
+    }
+
+    .event-cell {
+      position: relative;
+    }
+
+    .event-cell p {
+      margin: 0;
+      padding: 5px;
+      background-color: #e0e0e0;
+      border-radius: 0px;
+      font-size: 12px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    .btn {
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Calendar</h1>
+
+<table class="calendar-table" border="1">
   <thead>
     <tr>
-      <th>Course ID</th>
-      <th>Start Time</th>
-      <th>End Time</th>
+      <th class="time-column">Time</th>
+      <% @all_days.each do |day| %>
+        <th class="day-column"><%= day %></th>
+      <% end %>
     </tr>
   </thead>
   <tbody>
-    <% @calendars.each do |c| %>
+    <% (0..23).each do |hour| %>
       <tr>
-        <td>
-          <%= c.class_id %>
-        </td>
-        <td>
-          <%= c.start_time %>
-        </td>
-        <td>
-          <%= c.end_time %>
-        </td>
+        <td class="time-cell"><%= format('%02d:00', hour) %></td>
+        <% (0..6).each do |day| %>
+          <td class="event-cell">
+            <% events_for_cell = @calendars.select { |event| event.start_time.wday == day && (event.start_time.hour <= hour && event.end_time.hour > hour) } %>
+            <% events_for_cell.each do |event| %>
+              <p><%= "#{event.courseName} (#{event.start_time.strftime('%H:%M')} - #{event.end_time.strftime('%H:%M')})" %></p>
+            <% end %>
+          </td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
+
 <%= link_to 'Back', user_profile_path, :class => 'btn btn-primary' %>
+<%= link_to 'Next Week', next_week_calendars_path(year: @year, month: @month, 
+                                                      day: @day ), :class => 'btn btn-primary' %>
+<%= link_to 'Previous Week', prev_week_calendars_path(year: @year, month: @month, 
+                                                      day: @day ), :class => 'btn btn-primary' %>

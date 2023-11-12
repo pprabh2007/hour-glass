@@ -14,11 +14,10 @@
 ActiveRecord::Schema.define(version: 20231111215639) do
 
   create_table "calendars", force: :cascade do |t|
-    t.string   "class_id"
+    t.string   "courseName"
     t.datetime "start_time"
     t.datetime "end_time"
-    t.integer  "teaching_assistant_id"
-    t.string   "recurrence",            default: "one_time"
+    t.integer  "repeated_weeks", default: 0
     t.integer  "user_id"
   end
 
@@ -33,7 +32,7 @@ ActiveRecord::Schema.define(version: 20231111215639) do
 
   create_table "entitlements", force: :cascade do |t|
     t.string   "uni"
-    t.string   "courseId"
+    t.string   "courseName"
     t.string   "role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

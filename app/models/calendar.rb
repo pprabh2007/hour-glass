@@ -1,7 +1,7 @@
+# app/models/calendar.rb
 class Calendar < ActiveRecord::Base
-
-  validates :class_id, presence: true
+  validates :courseName, presence: true
   validates :start_time, presence: true
   validates :end_time, presence: true
-  validates :recurrence, inclusion: { in: %w(0 1) }
+  validates :repeated_weeks, numericality: { greater_than_or_equal_to: 0 }
 end

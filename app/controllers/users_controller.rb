@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
         @entitlements = Entitlement.where(uni: current_user.uni)
         @entitlements.each do |entitlement|
-            potential_course = Course.find_by(courseName: entitlement.courseId)
+            potential_course = Course.find_by(courseName: entitlement.courseName)
             if not potential_course.nil?
                 @viewable_courses << potential_course
             end
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
             redirect_to new_session_path
         else
             new_user = User.create(user_params)
-            session[:user_id] = new_user.id
+            session[:user_uni] = new_user.uni
             redirect_to user_profile_path
         end
     end

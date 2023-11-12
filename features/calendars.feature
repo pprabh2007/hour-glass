@@ -11,18 +11,18 @@ Background: users, courses, and entitlements in the database
   | testUni    | testPassword    | testName | false        |
 
   Given the following courses exist:
-  | id | courseName | courseDescription                 | 
-  | 0  | COMS 4152  | Engineering Software-as-a-Service |
-  | 1  | CSOR 4231  | Intro to Algorithms               |
+  | courseName | courseDescription                 | 
+  | COMS 4152  | Engineering Software-as-a-Service |
+  | CSOR 4231  | Intro to Algorithms               |
 
   Given the following entitlements exist:
-  | uni        | courseId  | role   | 
+  | uni        | courseName  | role   | 
   | testUni    | COMS 4152 | Viewer |
 
   Given the following calendars exist:
-  | class_id  | start_time          | end_time            | recurrence |
-  | COMS 4152 | 2023-10-31 08:00:00 | 2023-10-31 10:00:00 | 1          |
-  | CSOR 4231 | 2023-10-31 11:00:00 | 2023-10-31 13:00:00 | 1          |
+  | courseName | start_time          | end_time            | repeated_weeks |
+  | COMS 4152  | 2023-10-31 08:00:00 | 2023-10-31 10:00:00 | 0              |
+  | CSOR 4231  | 2023-10-31 11:00:00 | 2023-10-31 13:00:00 | 0              |
 
 Scenario: Login and see my calendar
   When I go to the login page
