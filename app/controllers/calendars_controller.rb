@@ -3,12 +3,12 @@ require 'date'
 class CalendarsController < ApplicationController
 
     def index
+      
       if not params.key?(:year)
         current_sunday = get_last_sunday_date(Date.today)
       else
         current_sunday = Date.new(params[:year].to_i, params[:month].to_i, params[:day].to_i)
       end
-      #debugger()
       user_id = session[:user_id]
       user = User.find_by(id: user_id)
       uni = user.uni
@@ -16,7 +16,10 @@ class CalendarsController < ApplicationController
       @year = current_sunday.year
       @month = current_sunday.month
       @day = current_sunday.day 
-      
+      @all_days = []
+      for i in 0..6
+        @all_days.append(days_map[i])
+      end
       dtstart = DateTime.new(@year, @month, @day)
       dtend = dtstart + 7
 
@@ -70,14 +73,16 @@ class CalendarsController < ApplicationController
     end
 
     def idx_to_day(idx)
-        days = {0 => "Sunday", 
-                1 => "Monday", 
-                2 => "Tuesday",
-                3 => "Wednesday",
-                4 => "Thursday",
-                5 => "Friday",
-                6 => "Saturday"}
-        days[idx]
+        days_map[idx]
+    end
+    def days_map
+        {0 => "Sunday", 
+        1 => "Monday", 
+        2 => "Tuesday",
+        3 => "Wednesday",
+        4 => "Thursday",
+        5 => "Friday",
+        6 => "Saturday"}
     end
 end
 
