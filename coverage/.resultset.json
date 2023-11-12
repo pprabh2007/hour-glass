@@ -56,13 +56,11 @@
           null,
           1,
           21,
-          21,
           null,
           null,
           1,
           15,
           15,
-          14,
           14,
           14,
           null,
@@ -169,13 +167,11 @@
           1,
           null,
           1,
-          null,
           1,
           1,
           null,
           0,
           null,
-          1,
           null,
           1,
           1,
@@ -391,7 +387,7 @@
         ]
       }
     },
-    "timestamp": 1699819271
+    "timestamp": 1699820242
   },
   "RSpec": {
     "coverage": {
@@ -540,8 +536,6 @@
       },
       "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/calendars_controller.rb": {
         "lines": [
-          0,
-          null,
           0,
           null,
           0,
@@ -716,9 +710,7 @@
           0,
           0,
           0,
-          0,
           null,
-          0,
           0,
           0,
           0,
@@ -797,6 +789,6 @@
         }
       }
     },
-    "timestamp": 1699819502
+    "timestamp": 1699820264
   }
 }
