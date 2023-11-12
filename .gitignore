@@ -1,2 +1,5 @@
 /tmp/cache
 /.bundle/
+/log/
+/db/development.sqlite3
+/db/test.sqlite3

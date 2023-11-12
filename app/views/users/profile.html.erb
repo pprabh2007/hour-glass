@@ -65,4 +65,7 @@
   <%= submit_tag "Add New Viewable Course", :class => 'btn btn-primary' %>
 <% end %>
 </br></br>
-<%= link_to 'Create a New Course', professors_path, :class => 'btn btn-primary col-2' %>
+
+<% if current_user.is_professor == true %>
+  <%= link_to 'Create a New Course', professors_path, :class => 'btn btn-primary col-2' %>
+<% end %>

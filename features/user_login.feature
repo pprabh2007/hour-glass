@@ -7,15 +7,27 @@ Feature: login as a specific user
 Background: users in database
 
   Given the following users exist:
-  | uni        | password        | name     |
-  | testUni    | testPassword    | testName |
+  | uni                 | password        | name              | is_professor |
+  | testStudentUni      | testPassword    | testStudentName   | false        |
+  | testProfessorUni    | diffPassword    | testProfessorName | true         |
 
-Scenario: Login as myself, see personalized profile page, and log out
+Scenario: Login as a student, see personalized profile page, and log out
   When I go to the login page
-  And  I fill in "Uni" with "testUni"
+  And  I fill in "Uni" with "testStudentUni"
   And  I fill in "Password" with "testPassword"
   And  I press "Sign In!"
-  Then I should see "Hello, testName!"
+  Then I should see "Hello, testStudentName!"
+  And I should not see "Create a New Course"
+  When I follow "Sign out"
+  Then I should see "Log In"
+
+Scenario: Login as a professor, see personalized profile page, and log out
+  When I go to the login page
+  And  I fill in "Uni" with "testProfessorUni"
+  And  I fill in "Password" with "diffPassword"
+  And  I press "Sign In!"
+  Then I should see "Hello, testProfessorName!"
+  And I should see "Create a New Course"
   When I follow "Sign out"
   Then I should see "Log In"
 
@@ -36,7 +48,7 @@ Scenario: Sign up for a new account, sign out, and relogin as myself
 
 Scenario: Invalid credentials should remain on login screen with a warning
   When I go to the login page
-  And  I fill in "Uni" with "testUni"
+  And  I fill in "Uni" with "testStudentUni"
   And  I fill in "Password" with "nonexistentPassword"
   And  I press "Sign In!"
   Then I should see "Log In"
@@ -45,8 +57,8 @@ Scenario: Invalid credentials should remain on login screen with a warning
   
 Scenario: Cannot create two accounts with the same uni
   When I go to the login page
-  And  I fill in "New Uni" with "testUni"
-  And  I fill in "Name" with "testName"
+  And  I fill in "New Uni" with "testStudentUni"
+  And  I fill in "Name" with "testStudentName"
   And  I fill in "Password" with "testPassword"
   And  I press "Sign Up!"
   Then I should see "Log In"

@@ -1,5 +1,14 @@
 class ProfessorsController < ApplicationController
 
+    before_action :require_professor_entitlement
+
+    def require_professor_entitlement
+      if current_user.is_professor != true
+        flash[:warning] = "You do not have permission to add new courses"
+        redirect_to user_profile_path
+      end
+    end
+
     def index
       @viewable_courses = Set.new
         @entitlements = Entitlement.where(uni: current_user.uni, role: "Prof")
