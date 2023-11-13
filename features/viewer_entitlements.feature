@@ -58,3 +58,14 @@ Scenario: Login and see my viewable classes
   When I select "COMS 4152" from "Course Name"
   And  I press "Add New Viewable Course"
   And  I should see "You already have access to the inputted class."
+
+  Scenario: Cannot add empty class name
+  When I go to the login page
+  And  I fill in "Uni" with "testUni"
+  And  I fill in "Password" with "testPassword"
+  And  I press "Sign In!"
+  Then I should see "Hello, testName!"
+  And  I should see "Your Viewable Courses"
+  And  I should see "COMS 4152" before "Your Office Hour Slots"
+  When I press "Add New Viewable Course"
+  And  I should see "Please choose a valid class to start viewing."

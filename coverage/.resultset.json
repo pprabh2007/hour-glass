@@ -1,7 +1,7 @@
 {
   "Cucumber Features": {
     "coverage": {
-      "/home/codio/workspace/hour-glass/app/models/user.rb": {
+      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/models/user.rb": {
         "lines": [
           1,
           1,
@@ -9,35 +9,35 @@
           null
         ]
       },
-      "/home/codio/workspace/hour-glass/app/models/course.rb": {
+      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/models/course.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/codio/workspace/hour-glass/app/models/entitlement.rb": {
+      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/models/entitlement.rb": {
         "lines": [
           1,
           null,
           null,
           null,
           1,
+          2,
           0,
           0,
-          0,
-          0,
+          2,
           0,
           0,
           0,
           null,
-          0,
-          0,
+          2,
+          2,
           null,
           null,
           null
         ]
       },
-      "/home/codio/workspace/hour-glass/app/models/calendar.rb": {
+      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/models/calendar.rb": {
         "lines": [
           null,
           1,
@@ -48,14 +48,264 @@
           null
         ]
       },
-      "/home/codio/workspace/hour-glass/app/controllers/sessions_controller.rb": {
+      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/sessions_controller.rb": {
         "lines": [
           1,
           null,
           1,
+          null,
+          1,
+          22,
+          null,
           null,
           1,
           16,
+          16,
+          15,
+          15,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          3,
+          3,
+          null,
+          null,
+          1,
+          1,
+          32,
+          null,
+          null
+        ]
+      },
+      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          38,
+          null,
+          null,
+          1,
+          109,
+          null,
+          null
+        ]
+      },
+      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/helpers/sessions_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/helpers/users_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          20,
+          20,
+          null,
+          20,
+          20,
+          15,
+          15,
+          15,
+          null,
+          null,
+          20,
+          null,
+          null,
+          1,
+          2,
+          2,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          3,
+          null,
+          null
+        ]
+      },
+      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/calendars_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          7,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          1,
+          7,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/professors_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          8,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          5,
+          5,
+          5,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          2,
+          2,
+          2,
+          null,
+          2,
+          1,
+          1,
+          3,
+          null,
+          1,
+          null,
+          1,
+          null,
+          2,
+          null,
+          null,
+          1,
+          1,
+          6,
+          null,
+          null,
+          null
+        ]
+      },
+      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/teaching_assistants_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          3,
+          3,
           null,
           null,
           1,
@@ -63,8 +313,25 @@
           0,
           0,
           0,
+          0,
+          0,
           null,
           0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          null,
           0,
           null,
           null,
@@ -72,6 +339,20 @@
           1,
           0,
           0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
           null,
           null,
           1,
@@ -81,345 +362,58 @@
           null
         ]
       },
-      "/home/codio/workspace/hour-glass/app/controllers/application_controller.rb": {
+      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/entitlements_controller.rb": {
         "lines": [
           1,
           null,
+          1,
+          3,
+          3,
+          1,
+          null,
+          2,
+          2,
+          1,
           null,
           1,
           1,
-          1,
-          null,
-          1,
-          0,
           null,
           null,
+          3,
+          null,
+          null,
           1,
-          0,
+          1,
+          6,
+          null,
           null,
           null
         ]
-      },
-      "/home/codio/workspace/hour-glass/app/helpers/application_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/home/codio/workspace/hour-glass/app/helpers/sessions_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/home/codio/workspace/hour-glass/app/helpers/users_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/home/codio/workspace/hour-glass/app/controllers/calendars_controller.rb": {
-        "lines": [
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null
-        ],
-        "branches": {
-        }
-      },
-      "/home/codio/workspace/hour-glass/app/controllers/entitlements_controller.rb": {
-        "lines": [
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null
-        ],
-        "branches": {
-        }
-      },
-      "/home/codio/workspace/hour-glass/app/controllers/professors_controller.rb": {
-        "lines": [
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/home/codio/workspace/hour-glass/app/controllers/teaching_assistants_controller.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/home/codio/workspace/hour-glass/app/controllers/users_controller.rb": {
-        "lines": [
-          0,
-          null,
-          0,
-          null,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1699915786
+    "timestamp": 1699916845
   },
   "RSpec": {
     "coverage": {
-      "/home/codio/workspace/hour-glass/app/helpers/application_helper.rb": {
+      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/codio/workspace/hour-glass/app/helpers/sessions_helper.rb": {
+      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/helpers/sessions_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/codio/workspace/hour-glass/app/helpers/users_helper.rb": {
+      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/helpers/users_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/codio/workspace/hour-glass/app/controllers/application_controller.rb": {
+      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/application_controller.rb": {
         "lines": [
           1,
           null,
@@ -438,7 +432,7 @@
           null
         ]
       },
-      "/home/codio/workspace/hour-glass/app/controllers/teaching_assistants_controller.rb": {
+      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/teaching_assistants_controller.rb": {
         "lines": [
           1,
           1,
@@ -503,7 +497,7 @@
           null
         ]
       },
-      "/home/codio/workspace/hour-glass/app/models/calendar.rb": {
+      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/models/calendar.rb": {
         "lines": [
           null,
           1,
@@ -514,7 +508,7 @@
           null
         ]
       },
-      "/home/codio/workspace/hour-glass/app/models/entitlement.rb": {
+      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/models/entitlement.rb": {
         "lines": [
           1,
           null,
@@ -536,7 +530,7 @@
           null
         ]
       },
-      "/home/codio/workspace/hour-glass/app/models/user.rb": {
+      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/models/user.rb": {
         "lines": [
           1,
           1,
@@ -544,7 +538,7 @@
           null
         ]
       },
-      "/home/codio/workspace/hour-glass/app/controllers/calendars_controller.rb": {
+      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/calendars_controller.rb": {
         "lines": [
           0,
           null,
@@ -634,10 +628,14 @@
         "branches": {
         }
       },
-      "/home/codio/workspace/hour-glass/app/controllers/entitlements_controller.rb": {
+      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/entitlements_controller.rb": {
         "lines": [
           0,
           null,
+          0,
+          0,
+          0,
+          0,
           0,
           0,
           0,
@@ -660,7 +658,7 @@
         "branches": {
         }
       },
-      "/home/codio/workspace/hour-glass/app/controllers/professors_controller.rb": {
+      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/professors_controller.rb": {
         "lines": [
           0,
           null,
@@ -711,7 +709,7 @@
         "branches": {
         }
       },
-      "/home/codio/workspace/hour-glass/app/controllers/sessions_controller.rb": {
+      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/sessions_controller.rb": {
         "lines": [
           0,
           null,
@@ -746,7 +744,7 @@
         "branches": {
         }
       },
-      "/home/codio/workspace/hour-glass/app/controllers/users_controller.rb": {
+      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/users_controller.rb": {
         "lines": [
           0,
           null,
@@ -790,7 +788,7 @@
         "branches": {
         }
       },
-      "/home/codio/workspace/hour-glass/app/models/course.rb": {
+      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/models/course.rb": {
         "lines": [
           0,
           0
@@ -799,6 +797,6 @@
         }
       }
     },
-    "timestamp": 1699915804
+    "timestamp": 1699916863
   }
 }
