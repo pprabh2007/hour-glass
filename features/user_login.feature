@@ -19,7 +19,8 @@ Scenario: Login as a student, see personalized profile page, and log out
   Then I should see "Hello, testStudentName!"
   And I should not see "Create a New Course"
   When I follow "Sign out"
-  Then I should see "Log In"
+  Then I should see "Sign In"
+  And I should see "You have successfully logged out"
 
 Scenario: Login as a professor, see personalized profile page, and log out
   When I go to the login page
@@ -29,7 +30,8 @@ Scenario: Login as a professor, see personalized profile page, and log out
   Then I should see "Hello, testProfessorName!"
   And I should see "Create a New Course"
   When I follow "Sign out"
-  Then I should see "Log In"
+  Then I should see "Sign In"
+  And I should see "You have successfully logged out"
 
 Scenario: Sign up for a new account, sign out, and relogin as myself
   When I go to the login page
@@ -39,9 +41,10 @@ Scenario: Sign up for a new account, sign out, and relogin as myself
   And  I press "Sign Up!"
   Then I should see "Hello, differentName!"
   When I follow "Sign out"
-  Then I should see "Log In"
-  And I should see "You have successfully logged out."
-  When I fill in "Uni" with "differentUni"
+  Then I should see "Sign In"
+  And  I should see "You have successfully logged out."
+  When I check "Sign In"
+  And  I fill in "Uni" with "differentUni"
   And  I fill in "Password" with "differentPassword"
   And  I press "Sign In!"
   Then I should see "Hello, differentName!"
@@ -51,15 +54,12 @@ Scenario: Invalid credentials should remain on login screen with a warning
   And  I fill in "Uni" with "testStudentUni"
   And  I fill in "Password" with "nonexistentPassword"
   And  I press "Sign In!"
-  Then I should see "Log In"
-  And  I should see "Invalid login. Please try again."
+  Then I should see "Invalid login. Please try again."
 
-  
 Scenario: Cannot create two accounts with the same uni
   When I go to the login page
   And  I fill in "New Uni" with "testStudentUni"
   And  I fill in "Name" with "testStudentName"
   And  I fill in "Password" with "testPassword"
   And  I press "Sign Up!"
-  Then I should see "Log In"
-  And  I should see "Inputted UNI already has an account. Please log in instead."
+  Then I should see "Inputted UNI already has an account. Please log in instead."

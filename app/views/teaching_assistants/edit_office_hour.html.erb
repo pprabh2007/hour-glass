@@ -4,7 +4,7 @@
 <%= form_tag({ controller: 'teaching_assistants', action: 'edit_office_hour' }, method: :get) do %>
   <%= label_tag :courseName, 'Select Course:' %>
   <%= select_tag(:courseName, options_for_select(@courseNames), { prompt: 'Select a Course' }) %>
-  <%= submit_tag 'Filter', :class => 'btn btn-primary' %>
+  <%= submit_tag 'Filter', :class => 'btn btn-primary col-2' %>
 <% end %>
 
 </br></br></br>
@@ -32,8 +32,8 @@
           <%= slot.end_time %>
         </td>
         <td>
-          <%= link_to 'Edit', edit_calendar_path(slot), class: 'btn btn-warning' %>
-          <%= link_to 'Delete', calendar_path(slot), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+          <%= link_to 'Edit', edit_calendar_path(slot), class: 'btn btn-primary col-2' %>
+          <%= link_to 'Delete', calendar_path(slot), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary col-2' %>
         </td>
       </tr>
     <% end %>

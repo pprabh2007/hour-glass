@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 </head>
 <body class="theloginbody">
-	<div class="main">  	
+    <center><div class="main">  	
 		<input type="checkbox" id="chk" aria-hidden="true">
 
 			<div class="signup">
@@ -15,10 +15,12 @@
 				</form>
 
                 <%= form_tag users_path, method: :post, :class => 'form' do %>
-                    
+                    <%= label :user, :uni, 'New Uni', :class => 'col-form-label', :hidden => "hidden" %>
                     <%= text_field :user, :uni, :class => 'text', :placeholder=>"uni" %>
+                    <%= label :user, :name, 'Name', :class => 'col-form-label', :hidden => "hidden" %>
                     <%= text_field :user, :name, :class => 'text', :placeholder=>"name" %>
-                    <%= password_field :user, :password, :class => 'password', :id=>"ppadding", :placeholder=>"password" %>
+                    <%= label :user, :password, 'New Password', :class => 'col-form-label', :hidden => "hidden" %>
+                    <%= password_field :user, :password, :class => 'password', :placeholder=>"password" %>
                     <div class="prof">Are you a professor?</div>
                     <span class="allradios">
                     <%= radio_button_tag 'user[is_professor]', true, id="r1", :class => 'rbuttons' %> <label for="r1" class="radios">Yes</label>
@@ -26,10 +28,9 @@
                     </span>
 
                     <br><br>
-                    <button>Sign up</button>
+                    <%= submit_tag "Sign Up!", :class => 'btn btn-primary' %>
                 <% end %>
-                
-                </div>
+            </div>
 
 			<div class="login">
 				<form>
@@ -37,13 +38,14 @@
 				</form>
 
                 <%= form_tag sessions_path, method: :post, :class => 'form' do %>
-                    
+                    <%= label :login, :uni, 'Uni', :class => 'col-form-label', :hidden => "hidden" %>
                     <%= text_field :login, :uni, :class => 'text', :placeholder=>"uni" %>
+                    <%= label :login, :password, 'Password', :class => 'col-form-label', :hidden => "hidden" %>
                     <%= password_field :login, :password, :class => 'password', :placeholder=>"password" %>
                     </br>
-                    <button>Sign In!</button>
+                    <%= submit_tag "Sign In!", :class => 'btn btn-primary' %>
                 <% end %>
 			</div>
-	</div>
+	</div></center>
 </body>
 </html>
