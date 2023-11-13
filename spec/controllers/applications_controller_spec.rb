@@ -8,7 +8,15 @@ RSpec.describe ApplicationController, type: :controller do
   end
 
   describe "require_login" do
+    let(:user) { User.create(name: "Test User", uni: "testuni", password: "password") }
+
     it "redirects to new_session_path if no user is logged in" do
+      get :index
+      expect(response).to redirect_to(new_session_path)
+    end
+
+    it "redirects to new_session_path if unknown user is logged in" do
+      session[:user_uni] = 'unknownUni'
       get :index
       expect(response).to redirect_to(new_session_path)
     end

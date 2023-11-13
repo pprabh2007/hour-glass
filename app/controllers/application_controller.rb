@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def require_login
-    redirect_to new_session_path unless session.include? :user_uni
+    redirect_to new_session_path unless session.include? :user_uni && User.find_by(uni: session[:user_uni]).nil? == false
   end
 
   def current_user
