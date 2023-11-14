@@ -225,6 +225,14 @@ end
     expect(page).to have_content(message)
   end
 
+  When(/^I select "([^"]*)" from the course dropdown menu$/) do |course_name|
+    select(course_name, from: 'calendar_courseName')
+  end
+
+  When(/^I select "([^']*)" from the course dropdown for filtering$/) do |course_name|
+    select(course_name, from: 'courseName')
+  end
+
 Then /^the "([^"]*)" checkbox(?: within (.*))? should not be checked$/ do |label, parent|
   with_scope(parent) do
     field_checked = find_field(label)['checked']
