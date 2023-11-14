@@ -40,7 +40,7 @@
 input{
 	width: 60%;
 	height: 20px;
-	background: #e0dede;
+	background: #ececec;
 	justify-content: center;
 	display: flex;
 	margin: 20px auto;
@@ -98,8 +98,14 @@ input{
     display: inline;
 }
 
-.rbuttons {
+.leftfloat {
 	float: left;
+    clear: none;
+    margin: 2px 0 0 2px;
+}
+
+.rightfloat {
+	float: right;
     clear: none;
     margin: 2px 0 0 2px;
 }
