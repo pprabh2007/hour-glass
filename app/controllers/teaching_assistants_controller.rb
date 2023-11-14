@@ -30,8 +30,6 @@ class TeachingAssistantsController < ApplicationController
       else
         redirect_to user_profile_path, notice: 'Office hour was successfully added.'
       end
-    else
-      render :new_office_hour
     end
   end
 
@@ -42,15 +40,12 @@ class TeachingAssistantsController < ApplicationController
     else
       @filtered_calendars = current_user.calendars
     end
-    logger.debug @courseNames
   end
 
   def update
     @calendar = Calendar.find(params[:id])
     if @calendar.update(calendar_params)
       redirect_to edit_office_hour_teaching_assistants_path, notice: 'Office hour was successfully updated.'
-    else
-      render :edit_office_hour
     end
   end
   

@@ -28,23 +28,53 @@ Scenario: Login and navigating to new office hour creation page
   When I follow "Create New TA Office Hours"
   Then I should see "Hello, TA testName"
 
-Scenario: Login and creating a new office hour slot
+Scenario: Login and creating a single new office hour slot
   When I go to the login page
   And I fill in "Uni" with "testUni"
   And I fill in "Password" with "testPassword"
   And I press "Sign In!"
   When I follow "Create New TA Office Hours"
-  And I fill in "Class" with "COMS 4152"
+  When I select "COMS 4152" from the course dropdown menu
+  And I click the "Create Calendar" button
+  Then I should see a success message "Office hour was successfully added."
+
+Scenario: Login and creating a recurring new office hour slot
+  When I go to the login page
+  And I fill in "Uni" with "testUni"
+  And I fill in "Password" with "testPassword"
+  And I press "Sign In!"
+  When I follow "Create New TA Office Hours"
+  When I select "COMS 4152" from the course dropdown menu
+  And I fill in "Number of Repeated Weeks" with "2"
   And I click the "Create Calendar" button
   Then I should see a success message "Office hours were successfully added."
 
-Scenario: Fill out and submit the office hour form with invalid data
+Scenario: Login, creating a single new office hour slot, and filtering
   When I go to the login page
   And I fill in "Uni" with "testUni"
   And I fill in "Password" with "testPassword"
   And I press "Sign In!"
   When I follow "Create New TA Office Hours"
-  And I fill in "Class" with ""
+  When I select "COMS 4152" from the course dropdown menu
   And I click the "Create Calendar" button
-  Then I should see "1 error prohibited this calendar from being saved:"
-  And I should see "Class can't be blank"
+  Then I should see a success message "Office hour was successfully added."
+  When I follow "Edit TA Office Hours"
+  When I select "COMS 4152" from the course dropdown for filtering
+  And I click the "Filter" button
+  Then I should see "COMS 4152"
+  And I should see "Edit"
+  And I should see "Delete"
+
+Scenario: Login, creating a single new office hour slot, and updating it
+  When I go to the login page
+  And I fill in "Uni" with "testUni"
+  And I fill in "Password" with "testPassword"
+  And I press "Sign In!"
+  When I follow "Create New TA Office Hours"
+  When I select "COMS 4152" from the course dropdown menu
+  And I click the "Create Calendar" button
+  Then I should see a success message "Office hour was successfully added."
+  When I follow "Edit TA Office Hours"
+  When I follow "Edit"
+  And I click the "Update Calendar" button
+  Then I should see a success message "Office hour was successfully updated."

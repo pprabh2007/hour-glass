@@ -109,8 +109,6 @@ RSpec.describe TeachingAssistantsController, type: :controller do
       it "permits the correct parameters" do
         params = ActionController::Parameters.new(calendar: { "courseName" => "COMS101", "start_time" => "9:00 AM", "end_time" => "11:00 AM", "repeated_weeks" => 1 })
         permitted_params = params.require(:calendar).permit(:courseName, :start_time, :end_time, :repeated_weeks)
-
-
         expect(permitted_params).to eq({ "courseName" => "COMS101", "start_time" => "9:00 AM", "end_time" => "11:00 AM", "repeated_weeks" => 1 })
       end
     end
