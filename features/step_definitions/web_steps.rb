@@ -120,6 +120,16 @@ Then /^(?:|I )should see \/([^\/]*)\/$/ do |regexp|
   end
 end
 
+Then /^(?:|I )should not see the following in my results: "([^"]*)"$/ do |text|
+    if page.respond_to? :should
+      occurrences = page.all(:xpath, "//text()[contains(.,'#{text}')]").count
+      expect(occurrences).to be <= 1
+    else
+      occurrences = page.all(:xpath, "//text()[contains(.,'#{text}')]").count
+      assert occurrences <= 1
+    end
+  end
+
 Then /^(?:|I )should not see "([^"]*)"$/ do |text|
   if page.respond_to? :should
     page.should have_no_content(text)
@@ -231,6 +241,12 @@ end
 
   When(/^I select "([^']*)" from the course dropdown for filtering$/) do |course_name|
     select(course_name, from: 'courseName')
+  end
+
+  When(/^I advance the start and end times by (\d+) day\(s\)$/) do |days|
+    new_start_time = @calendar.start_time + days.to_i.days
+    new_end_time = @calendar.end_time + days.to_i.days
+    @calendar.update(start_time: new_start_time, end_time: new_end_time)
   end
 
 Then /^the "([^"]*)" checkbox(?: within (.*))? should not be checked$/ do |label, parent|
