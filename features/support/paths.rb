@@ -19,6 +19,9 @@ module NavigationHelpers
 
     when /^the professors page manually$/ then '/professors'
 
+    when /^the calendars page for day (..), month (..), year (....)$/i
+      '/calendars?day=' + $1 + '&month=' + $2 + '&year=' + $3
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
