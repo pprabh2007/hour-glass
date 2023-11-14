@@ -58,7 +58,7 @@
     <tr>
       <th class="time-column">Time</th>
       <% @all_days.each do |day| %>
-        <th class="day-column"><%= day %></th>
+        <th class="day-column"><%= "#{day[:wday]} #{day[:date]}" %></th>
       <% end %>
     </tr>
   </thead>

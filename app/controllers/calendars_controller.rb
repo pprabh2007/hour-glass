@@ -12,12 +12,14 @@ class CalendarsController < ApplicationController
       @year = current_sunday.year
       @month = current_sunday.month
       @day = current_sunday.day 
-      @all_days = []
-      for i in 0..6
-        @all_days.append(days_map[i])
-      end
+      
       dtstart = DateTime.new(@year, @month, @day)
       dtend = dtstart + 7
+      
+      @all_days = []
+      for i in 0..6
+        @all_days.append({wday: days_map[i], date: (dtstart + i).strftime('%m/%d/%Y')})
+      end
 
       classes = Entitlement.where(uni: current_user.uni).pluck(:courseName)
       @calendars = Calendar.where(courseName: classes).where('start_time >= ? AND end_time < ?', dtstart, dtend).order(:start_time)
