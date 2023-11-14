@@ -51,6 +51,8 @@ Scenario: Login as a professor and creating a new course
   And  I fill in "Enter TA UNIs (comma seperated)" with "TA123,TA234"
   And  I press "Create a New Course"
   Then I should see "Successfully created new course 'COMS 4444:Programming & Problem Solving'."
+  When I follow "Create a New Course"
+  Then I should see "COMS 4444"
 
 Scenario: Login as a professor and re-creating an already existing course
   When I go to the login page
