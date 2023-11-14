@@ -18,6 +18,7 @@ Background: users, courses, and entitlements in the database
   Given the following entitlements exist:
   | uni        | courseName  | role   | 
   | testUni    | COMS 4152   | TA     |
+  | testUni    | CSOR 4231   | TA     |
 
 Scenario: Login and navigating to new office hour creation page
   When I go to the login page
@@ -49,7 +50,7 @@ Scenario: Login and creating a recurring new office hour slot
   And I click the "Create Calendar" button
   Then I should see a success message "Office hours were successfully added."
 
-Scenario: Login, creating a single new office hour slot, and filtering
+Scenario: Login, creating a single new office hour slot for 2 different classes, and filtering
   When I go to the login page
   And I fill in "Uni" with "testUni"
   And I fill in "Password" with "testPassword"
@@ -58,12 +59,19 @@ Scenario: Login, creating a single new office hour slot, and filtering
   When I select "COMS 4152" from the course dropdown menu
   And I click the "Create Calendar" button
   Then I should see a success message "Office hour was successfully added."
+  When I follow "Create New TA Office Hours"
+  When I select "CSOR 4231" from the course dropdown menu
+  And I click the "Create Calendar" button
+  Then I should see a success message "Office hour was successfully added."
   When I follow "Edit TA Office Hours"
+  Then I should see "COMS 4152"
+  Then I should see "CSOR 4231"
   When I select "COMS 4152" from the course dropdown for filtering
   And I click the "Filter" button
   Then I should see "COMS 4152"
   And I should see "Edit"
   And I should see "Delete"
+  Then I should not see the following in my results: "CSOR 4231"
 
 Scenario: Login, creating a single new office hour slot, and updating it
   When I go to the login page
