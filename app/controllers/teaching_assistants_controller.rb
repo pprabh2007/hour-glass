@@ -3,7 +3,7 @@ class TeachingAssistantsController < ApplicationController
   skip_before_action :authenticate_user, only: [:new_office_hour, :create_office_hour]
 
   def new_office_hour
-    @your_classes = Entitlement.where({uni: current_user.uni, role: ["TA", "Prof"]}).pluck(:courseName)
+    @your_classes = Entitlement.where({uni: current_user.uni, role: ["TA", "Prof"]}).map(&:courseName)
     @calendar = Calendar.new
   end
 

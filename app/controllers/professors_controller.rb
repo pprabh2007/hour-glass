@@ -29,7 +29,6 @@ class ProfessorsController < ApplicationController
         course = Course.create!({:courseName => name, :courseDescription => description})
         Entitlement.create!({:uni => current_user.uni, :courseName => course.courseName, :role => "Prof"})
         unis.split( /, */ ).each { |uni| Entitlement.create!({:uni => uni, :courseName => course.courseName, :role => "TA"})}
-        # TeachingAssistant.create!({:uni => current_user.uni, :courseName => course.courseName, :name => current_user.name})
         flash[:notice] = "Successfully created new course \'#{name}:#{description}\'."
       else
         flash[:warning] = "Error: Course \'#{name}\' already exists."
