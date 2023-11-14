@@ -14,7 +14,10 @@
 
   <div class="field">
     <%= form.label :courseName %>
-    <%= form.text_field :courseName %>
+    </br>
+    <%= form.text_field :courseName, :class => 'leftfloat'%>
+    </br>
+    </br>
   </div>
 
   <div class="field">
@@ -33,9 +36,11 @@
   </div>
 
   <div class="actions">
-    <%= form.submit 'Update Calendar', :class => 'btn btn-primary col-3' %>
+    <%= form.submit 'Update Calendar', :class => 'btn btn-primary leftfloat col-2' %>
   </div>
 <% end %>
 
 </br>
-<%= link_to 'Back to Edit TA Office Hours Page', edit_office_hour_teaching_assistants_path, :class => 'btn btn-primary col-5' %>
+</br>
+</br>
+<%= link_to 'Back to Edit TA Office Hours Page', edit_office_hour_teaching_assistants_path, :class => 'btn btn-primary leftfloat col-4' %>

@@ -34,7 +34,7 @@ class ProfessorsController < ApplicationController
       else
         flash[:warning] = "Error: Course \'#{name}\' already exists."
       end
-      redirect_to professors_path
+      redirect_to user_profile_path
     end
 
     private

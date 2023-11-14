@@ -47,9 +47,11 @@
 <h1>Calendar</h1>
 
 <%= link_to 'Next Week', next_week_calendars_path(year: @year, month: @month, 
-                                                      day: @day ), :class => 'btn btn-primary col-2' %>
+                                                      day: @day ), :class => 'btn btn-primary rightfloat col-2' %>
 <%= link_to 'Prev Week', prev_week_calendars_path(year: @year, month: @month, 
-                                                      day: @day ), :class => 'btn btn-primary col-2' %>
+                                                      day: @day ), :class => 'btn btn-primary leftfloat col-2' %>
+
+</br></br></br>
 
 <table class="calendar-table" border="1">
   <thead>
