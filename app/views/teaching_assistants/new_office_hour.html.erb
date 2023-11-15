@@ -18,18 +18,24 @@
   </div>
 
   <div class="field">
-    <%= form.label :start_time %>
-    <%= form.datetime_select :start_time %>
+    <span class="form-group form-inline">
+      <%= form.label :start_time %>
+      <%= form.datetime_select :start_time, :default => DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, DateTime.now.hour, 0), :discard_minute => true%>
+      <label>&nbsp:00</label>
+    </span>
   </div>
 
   <div class="field">
-    <%= form.label :end_time %>
-    <%= form.datetime_select :end_time %>
+    <span class="form-group form-inline">
+      <%= form.label :end_time %>
+      <%= form.datetime_select :end_time, :default => DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, DateTime.now.hour, 0), :discard_minute => true%>
+      <label>&nbsp:00</label>
+    </span>
   </div>
 
   <div class="field">
     <%= form.label :repeated_weeks, "Number of Repeated Weeks" %>
-    <%= form.number_field :repeated_weeks, class: 'form-control' %>
+    <%= form.number_field :repeated_weeks, class: 'form-control', min: "0" %>
   </div>
 
   <div class="actions">
