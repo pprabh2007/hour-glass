@@ -86,7 +86,7 @@ RSpec.describe ProfessorsController, type: :controller do
           }
         }
 
-        expect(response).to redirect_to(user_profile_path)
+        expect(response).to redirect_to(professors_path)
         expect(flash[:warning]).to eq("Error: Course 'COMS 4152' already exists.")
       end
     end
