@@ -21,7 +21,7 @@ class CalendarsController < ApplicationController
         @all_days.append({wday: days_map[i], date: (dtstart + i).strftime('%m/%d/%Y')})
       end
 
-      classes = Entitlement.where(uni: current_user.uni).pluck(:courseName)
+      classes = Entitlement.where(uni: current_user.uni).distinct.pluck(:courseName)
       @calendars = Calendar.where(courseName: classes).where('start_time >= ? AND end_time < ?', dtstart, dtend).order(:start_time)
       @calendars = @calendars.map do |calendar|
         new_calendar = OpenStruct.new(calendar.attributes)
