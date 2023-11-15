@@ -45,5 +45,11 @@ Now once you are on the profile page, in order to view the current TA schedules,
 
 Then, return to the profile page by clicking back and sign out. On the login screen, sign up as a new account with a new uni, new name, new password, and select student. Then, you should see a profile for this new user (the name at the top should be the one you just inputted). Since this is a student account, you should not see any buttons to create office hours or courses. Select the course name that you just created into the course name field under “View a new course on your schedule”. If you input the course correctly, you should see that course under “Your Viewable Courses”. If you click on the view schedule again, you should see the Office Hours that you inputted as the previous user. Hit back to return to your profile page.
 
+**Pre-filled Test Data:**
+If you'd like to navigate the app with users that have pre-filled data, you can sign in with one of the below:
+uni: testStudent password: password
+uni testTA password: password
+uni: testProfessor password: password
+
 Template reference:
 Login css reference: https://codepen.io/mamislimen/pen/jOwwLvy
