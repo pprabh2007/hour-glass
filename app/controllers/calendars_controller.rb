@@ -21,7 +21,16 @@ class CalendarsController < ApplicationController
         @all_days.append({wday: days_map[i], date: (dtstart + i).strftime('%m/%d/%Y')})
       end
 
-      classes = Entitlement.where(uni: current_user.uni).distinct.pluck(:courseName)
+      # The pluck method works for application usage here, but runs into issues with Rspec testing due to our old Ruby version. 
+      # Simiplified to a for loop for now
+      my_entitlements = Entitlement.where(uni: current_user.uni)
+      classes = []
+      my_entitlements.each do |entitlement|
+        if not entitlement.courseName.nil?
+          classes << entitlement.courseName
+        end
+      end
+
       @calendars = Calendar.where(courseName: classes).where('start_time >= ? AND end_time < ?', dtstart, dtend).order(:start_time)
       @calendars = @calendars.map do |calendar|
         new_calendar = OpenStruct.new(calendar.attributes)
