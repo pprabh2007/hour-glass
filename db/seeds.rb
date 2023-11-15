@@ -65,6 +65,38 @@ taCalendars = [
   end_time: DateTime.new(2023, 12, 15, 17) + 1.hour, repeated_weeks: 4, user_id: 3 }
 ]
 
+profCalendars = [
+  {courseName: "CSOR 4231", start_time: DateTime.new(2023, 11, 13, 12), 
+  end_time: DateTime.new(2023, 11, 13, 12) + 2.hour, repeated_weeks: 4, user_id: 2 },
+
+  {courseName: "CSOR 4231", start_time: DateTime.new(2023, 11, 14, 9), 
+  end_time: DateTime.new(2023, 11, 14, 9) + 1.hour, repeated_weeks: 4, user_id: 2 },
+
+  {courseName: "CSOR 4231", start_time: DateTime.new(2023, 11, 20, 12), 
+  end_time: DateTime.new(2023, 11, 20, 12) + 2.hour, repeated_weeks: 4, user_id: 2 },
+
+  {courseName: "CSOR 4231", start_time: DateTime.new(2023, 11, 21, 9), 
+  end_time: DateTime.new(2023, 11, 21, 9) + 1.hour, repeated_weeks: 4, user_id: 2 },
+
+  {courseName: "CSOR 4231", start_time: DateTime.new(2023, 11, 27, 12), 
+  end_time: DateTime.new(2023, 11, 27, 12) + 2.hour, repeated_weeks: 4, user_id: 2 },
+
+  {courseName: "CSOR 4231", start_time: DateTime.new(2023, 11, 28, 9), 
+  end_time: DateTime.new(2023, 11, 28, 9) + 1.hour, repeated_weeks: 4, user_id: 2 },
+
+  {courseName: "CSOR 4231", start_time: DateTime.new(2023, 12, 4, 12), 
+  end_time: DateTime.new(2023, 12, 4, 12) + 2.hour, repeated_weeks: 4, user_id: 2 },
+
+  {courseName: "CSOR 4231", start_time: DateTime.new(2023, 12, 5, 9), 
+  end_time: DateTime.new(2023, 12, 5, 9) + 1.hour, repeated_weeks: 4, user_id: 2 },
+
+  {courseName: "CSOR 4231", start_time: DateTime.new(2023, 12, 11, 12), 
+  end_time: DateTime.new(2023, 12, 11, 12) + 2.hour, repeated_weeks: 4, user_id: 2 },
+
+  {courseName: "CSOR 4231", start_time: DateTime.new(2023, 12, 12, 9), 
+  end_time: DateTime.new(2023, 12, 12, 9) + 1.hour, repeated_weeks: 4, user_id: 2 }
+]
+
 users.each do |user|
   User.create user
 end
@@ -78,5 +110,9 @@ entitlements.each do |entitlement|
 end
 
 taCalendars.each do |calendar|
+  Calendar.create(calendar)
+end
+
+profCalendars.each do |calendar|
   Calendar.create(calendar)
 end
