@@ -5,7 +5,6 @@ class EntitlementsController < ApplicationController
         if course_name.empty?
             flash[:warning] = "Please choose a valid class to start viewing."
         else
-            input_course = Course.find_by(courseName: course_name)
             if Entitlement.equivalent_perm_exists?(current_user.uni, course_name, entitlement_params[:role])
                 flash[:warning] = "You already have access to the inputted class."
             else
