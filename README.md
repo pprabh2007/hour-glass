@@ -8,6 +8,8 @@
 
 *Iteration 1 code is under the branch: iteration-1-submission*
 
+*Iteration 2 code is under the branch: iteration-2-submission*
+
 **Code coverage (in the repo in the coverage/index.html directory):** 100%
 
 **To run our code, we used the following commands in our root project directory:**
@@ -48,7 +50,7 @@ Then, return to the profile page by clicking back and sign out. On the login scr
 **Pre-filled Test Data:**
 If you'd like to navigate the app with users that have pre-filled data, you can sign in with one of the below:
 uni: testStudent password: password
-uni testTA password: password
+uni: testTA password: password
 uni: testProfessor password: password
 
 Template reference:
