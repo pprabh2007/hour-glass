@@ -25,7 +25,7 @@ Scenario: Login and navigating to new office hour creation page
   And  I fill in "Uni" with "testUni"
   And  I fill in "Password" with "testPassword"
   And  I press "Sign In!"
-  Then I should see "Hello, testName!"
+  Then I should see "testName"
   When I follow "Create New TA Office Hours"
   Then I should see "Hello, TA testName"
 

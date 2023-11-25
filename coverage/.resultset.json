@@ -1,7 +1,7 @@
 {
   "Cucumber Features": {
     "coverage": {
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/models/user.rb": {
+      "/Users/harpreetmultani/Desktop/Engineering SaaS/hour-glass/app/models/user.rb": {
         "lines": [
           1,
           1,
@@ -9,13 +9,13 @@
           null
         ]
       },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/models/course.rb": {
+      "/Users/harpreetmultani/Desktop/Engineering SaaS/hour-glass/app/models/course.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/models/entitlement.rb": {
+      "/Users/harpreetmultani/Desktop/Engineering SaaS/hour-glass/app/models/entitlement.rb": {
         "lines": [
           1,
           null,
@@ -37,7 +37,7 @@
           null
         ]
       },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/models/calendar.rb": {
+      "/Users/harpreetmultani/Desktop/Engineering SaaS/hour-glass/app/models/calendar.rb": {
         "lines": [
           null,
           1,
@@ -48,7 +48,7 @@
           null
         ]
       },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/sessions_controller.rb": {
+      "/Users/harpreetmultani/Desktop/Engineering SaaS/hour-glass/app/controllers/sessions_controller.rb": {
         "lines": [
           1,
           null,
@@ -81,7 +81,7 @@
           null
         ]
       },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/application_controller.rb": {
+      "/Users/harpreetmultani/Desktop/Engineering SaaS/hour-glass/app/controllers/application_controller.rb": {
         "lines": [
           1,
           null,
@@ -95,30 +95,30 @@
           null,
           null,
           1,
-          188,
+          219,
           null,
           null
         ]
       },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/helpers/application_helper.rb": {
+      "/Users/harpreetmultani/Desktop/Engineering SaaS/hour-glass/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/helpers/sessions_helper.rb": {
+      "/Users/harpreetmultani/Desktop/Engineering SaaS/hour-glass/app/helpers/sessions_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/helpers/users_helper.rb": {
+      "/Users/harpreetmultani/Desktop/Engineering SaaS/hour-glass/app/helpers/users_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/users_controller.rb": {
+      "/Users/harpreetmultani/Desktop/Engineering SaaS/hour-glass/app/controllers/users_controller.rb": {
         "lines": [
           1,
           null,
@@ -160,7 +160,7 @@
           null
         ]
       },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/calendars_controller.rb": {
+      "/Users/harpreetmultani/Desktop/Engineering SaaS/hour-glass/app/controllers/calendars_controller.rb": {
         "lines": [
           1,
           null,
@@ -251,7 +251,7 @@
           null
         ]
       },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/teaching_assistants_controller.rb": {
+      "/Users/harpreetmultani/Desktop/Engineering SaaS/hour-glass/app/controllers/teaching_assistants_controller.rb": {
         "lines": [
           1,
           1,
@@ -311,7 +311,7 @@
           null
         ]
       },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/professors_controller.rb": {
+      "/Users/harpreetmultani/Desktop/Engineering SaaS/hour-glass/app/controllers/professors_controller.rb": {
         "lines": [
           1,
           null,
@@ -360,7 +360,7 @@
           null
         ]
       },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/entitlements_controller.rb": {
+      "/Users/harpreetmultani/Desktop/Engineering SaaS/hour-glass/app/controllers/entitlements_controller.rb": {
         "lines": [
           1,
           null,
@@ -388,29 +388,29 @@
         ]
       }
     },
-    "timestamp": 1700087561
+    "timestamp": 1700870256
   },
   "RSpec": {
     "coverage": {
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/helpers/application_helper.rb": {
+      "/Users/harpreetmultani/Desktop/Engineering SaaS/hour-glass/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/helpers/sessions_helper.rb": {
+      "/Users/harpreetmultani/Desktop/Engineering SaaS/hour-glass/app/helpers/sessions_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/helpers/users_helper.rb": {
+      "/Users/harpreetmultani/Desktop/Engineering SaaS/hour-glass/app/helpers/users_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/application_controller.rb": {
+      "/Users/harpreetmultani/Desktop/Engineering SaaS/hour-glass/app/controllers/application_controller.rb": {
         "lines": [
           1,
           null,
@@ -429,7 +429,7 @@
           null
         ]
       },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/calendars_controller.rb": {
+      "/Users/harpreetmultani/Desktop/Engineering SaaS/hour-glass/app/controllers/calendars_controller.rb": {
         "lines": [
           1,
           null,
@@ -520,7 +520,7 @@
           null
         ]
       },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/entitlements_controller.rb": {
+      "/Users/harpreetmultani/Desktop/Engineering SaaS/hour-glass/app/controllers/entitlements_controller.rb": {
         "lines": [
           1,
           null,
@@ -547,7 +547,7 @@
           null
         ]
       },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/professors_controller.rb": {
+      "/Users/harpreetmultani/Desktop/Engineering SaaS/hour-glass/app/controllers/professors_controller.rb": {
         "lines": [
           1,
           null,
@@ -596,7 +596,7 @@
           null
         ]
       },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/sessions_controller.rb": {
+      "/Users/harpreetmultani/Desktop/Engineering SaaS/hour-glass/app/controllers/sessions_controller.rb": {
         "lines": [
           1,
           null,
@@ -629,7 +629,7 @@
           null
         ]
       },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/teaching_assistants_controller.rb": {
+      "/Users/harpreetmultani/Desktop/Engineering SaaS/hour-glass/app/controllers/teaching_assistants_controller.rb": {
         "lines": [
           1,
           1,
@@ -689,7 +689,7 @@
           null
         ]
       },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/controllers/users_controller.rb": {
+      "/Users/harpreetmultani/Desktop/Engineering SaaS/hour-glass/app/controllers/users_controller.rb": {
         "lines": [
           1,
           null,
@@ -731,7 +731,7 @@
           null
         ]
       },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/models/calendar.rb": {
+      "/Users/harpreetmultani/Desktop/Engineering SaaS/hour-glass/app/models/calendar.rb": {
         "lines": [
           null,
           1,
@@ -742,7 +742,7 @@
           null
         ]
       },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/models/entitlement.rb": {
+      "/Users/harpreetmultani/Desktop/Engineering SaaS/hour-glass/app/models/entitlement.rb": {
         "lines": [
           1,
           null,
@@ -764,7 +764,7 @@
           null
         ]
       },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/models/user.rb": {
+      "/Users/harpreetmultani/Desktop/Engineering SaaS/hour-glass/app/models/user.rb": {
         "lines": [
           1,
           1,
@@ -772,13 +772,13 @@
           null
         ]
       },
-      "/mnt/c/Users/athar/OneDrive/Desktop/Columbia Work/COMS 4152/hour-glass/app/models/course.rb": {
+      "/Users/harpreetmultani/Desktop/Engineering SaaS/hour-glass/app/models/course.rb": {
         "lines": [
           1,
           null
         ]
       }
     },
-    "timestamp": 1700087524
+    "timestamp": 1700870437
   }
 }

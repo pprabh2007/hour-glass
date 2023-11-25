@@ -113,17 +113,21 @@ input{
 .allradios {
 	float: left;
     clear: none;
-	padding-left: 72px;
-	display: inline-block;
+	padding-left: 85px;
+	display: -webkit-inline-box;
 }
 
 .prof {
 	font-size: 18px;
 	color: white;
-	padding-left: 0px;
+	padding-left: 85px;
 	padding-top: -2px;
 }
 
 #ppadding {
 	margin-bottom: 10px;
+}
+
+.parent {
+	display: flex;
 }
