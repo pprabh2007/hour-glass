@@ -38,6 +38,7 @@ Scenario: Login and creating a single new office hour slot
   When I select "COMS 4152" from the course dropdown menu
   When I select "2023", "November", "26", "03 PM" for the start-time
   When I select "2023", "November", "26", "04 PM" for the end-time
+  And I fill in "Location" with "Zoom (Link TBA)"
   And I click the "Create Calendar" button
   Then I should see a success message "Office hour was successfully added."
 
@@ -51,6 +52,7 @@ Scenario: Login and creating a recurring new office hour slot
   When I select "2023", "November", "26", "03 PM" for the start-time
   When I select "2023", "November", "26", "04 PM" for the end-time
   And I fill in "Number of Repeated Weeks" with "2"
+  And I fill in "Location" with "Zoom"
   And I click the "Create Calendar" button
   Then I should see a success message "Office hours were successfully added."
 
@@ -64,6 +66,7 @@ Scenario: Login and attempt to setup an invalid office hour slot and get a warni
   When I select "2023", "November", "26", "03 PM" for the start-time
   When I select "2023", "November", "26", "02 PM" for the end-time
   And I fill in "Number of Repeated Weeks" with "2"
+  And I fill in "Location" with "Zoom"
   And I click the "Create Calendar" button
   Then I should see "All calendar events must end on the same day and strictly after the start time"
   When I select "COMS 4152" from the course dropdown menu
@@ -76,6 +79,7 @@ Scenario: Login and attempt to setup an invalid office hour slot and get a warni
   When I select "2023", "November", "26", "03 PM" for the start-time
   When I select "2023", "November", "26", "04 PM" for the end-time
   And I fill in "Number of Repeated Weeks" with "2"
+  And I fill in "Location" with "Zoom"
   And I click the "Create Calendar" button
   Then I should see a success message "Office hours were successfully added."
 
@@ -88,12 +92,14 @@ Scenario: Login, creating a single new office hour slot for 2 different classes,
   When I select "COMS 4152" from the course dropdown menu
   When I select "2023", "November", "26", "03 PM" for the start-time
   When I select "2023", "November", "26", "04 PM" for the end-time
+  And I fill in "Location" with "Zoom"
   And I click the "Create Calendar" button
   Then I should see a success message "Office hour was successfully added."
   When I follow "Create New TA Office Hours"
   When I select "CSOR 4231" from the course dropdown menu
   When I select "2023", "November", "26", "03 PM" for the start-time
   When I select "2023", "November", "26", "04 PM" for the end-time
+  And I fill in "Location" with "Zoom"
   And I click the "Create Calendar" button
   Then I should see a success message "Office hour was successfully added."
   When I follow "Edit TA Office Hours"
@@ -115,6 +121,7 @@ Scenario: Login, creating a single new office hour slot, and updating it
   When I select "COMS 4152" from the course dropdown menu
   When I select "2023", "November", "26", "03 PM" for the start-time
   When I select "2023", "November", "26", "04 PM" for the end-time
+  And I fill in "Location" with "Zoom"
   And I click the "Create Calendar" button
   Then I should see a success message "Office hour was successfully added."
   When I follow "Edit TA Office Hours"

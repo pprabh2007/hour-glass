@@ -35,66 +35,66 @@ entitlements = [
 
 taCalendars = [
   {courseName: "CSOR 4231", start_time: DateTime.new(2023, 11, 15, 14), 
-  end_time: DateTime.new(2023, 11, 15, 14) + 2.hour, repeated_weeks: 4, user_id: 3 },
+  end_time: DateTime.new(2023, 11, 15, 14) + 2.hour, repeated_weeks: 4, location: "CSB 451", user_id: 3 },
 
   {courseName: "CSOR 4231", start_time: DateTime.new(2023, 11, 17, 17), 
-  end_time: DateTime.new(2023, 11, 17, 17) + 1.hour, repeated_weeks: 4, user_id: 3 },
+  end_time: DateTime.new(2023, 11, 17, 17) + 1.hour, repeated_weeks: 4, location: "CSB 451", user_id: 3 },
 
   {courseName: "CSOR 4231", start_time: DateTime.new(2023, 11, 22, 14), 
-  end_time: DateTime.new(2023, 11, 22, 14) + 2.hour, repeated_weeks: 4, user_id: 3 },
+  end_time: DateTime.new(2023, 11, 22, 14) + 2.hour, repeated_weeks: 4, location: "CSB 451", user_id: 3 },
 
   {courseName: "CSOR 4231", start_time: DateTime.new(2023, 11, 24, 17), 
-  end_time: DateTime.new(2023, 11, 24, 17) + 1.hour, repeated_weeks: 4, user_id: 3 },
+  end_time: DateTime.new(2023, 11, 24, 17) + 1.hour, repeated_weeks: 4, location: "CSB 451", user_id: 3 },
 
   {courseName: "CSOR 4231", start_time: DateTime.new(2023, 11, 29, 14), 
-  end_time: DateTime.new(2023, 11, 29, 14) + 2.hour, repeated_weeks: 4, user_id: 3 },
+  end_time: DateTime.new(2023, 11, 29, 14) + 2.hour, repeated_weeks: 4, location: "CSB 451", user_id: 3 },
 
   {courseName: "CSOR 4231", start_time: DateTime.new(2023, 12, 1, 17), 
-  end_time: DateTime.new(2023, 12, 1, 17) + 1.hour, repeated_weeks: 4, user_id: 3 },
+  end_time: DateTime.new(2023, 12, 1, 17) + 1.hour, repeated_weeks: 4, location: "CSB 451", user_id: 3 },
 
   {courseName: "CSOR 4231", start_time: DateTime.new(2023, 12, 6, 14), 
-  end_time: DateTime.new(2023, 12, 6, 14) + 2.hour, repeated_weeks: 4, user_id: 3 },
+  end_time: DateTime.new(2023, 12, 6, 14) + 2.hour, repeated_weeks: 4, location: "CSB 451", user_id: 3 },
 
   {courseName: "CSOR 4231", start_time: DateTime.new(2023, 12, 8, 17), 
-  end_time: DateTime.new(2023, 12, 8, 17) + 1.hour, repeated_weeks: 4, user_id: 3 },
+  end_time: DateTime.new(2023, 12, 8, 17) + 1.hour, repeated_weeks: 4, location: "CSB 451", user_id: 3 },
 
   {courseName: "CSOR 4231", start_time: DateTime.new(2023, 12, 13, 14), 
-  end_time: DateTime.new(2023, 12, 13, 14) + 2.hour, repeated_weeks: 4, user_id: 3 },
+  end_time: DateTime.new(2023, 12, 13, 14) + 2.hour, repeated_weeks: 4, location: "CSB 451", user_id: 3 },
 
   {courseName: "CSOR 4231", start_time: DateTime.new(2023, 12, 15, 17), 
-  end_time: DateTime.new(2023, 12, 15, 17) + 1.hour, repeated_weeks: 4, user_id: 3 }
+  end_time: DateTime.new(2023, 12, 15, 17) + 1.hour, repeated_weeks: 4, location: "CSB 451", user_id: 3 }
 ]
 
 profCalendars = [
   {courseName: "CSOR 4231", start_time: DateTime.new(2023, 11, 13, 12), 
-  end_time: DateTime.new(2023, 11, 13, 12) + 2.hour, repeated_weeks: 4, user_id: 2 },
+  end_time: DateTime.new(2023, 11, 13, 12) + 2.hour, repeated_weeks: 4, location: "Zoom (Link TBA)", user_id: 2 },
 
   {courseName: "CSOR 4231", start_time: DateTime.new(2023, 11, 14, 9), 
-  end_time: DateTime.new(2023, 11, 14, 9) + 1.hour, repeated_weeks: 4, user_id: 2 },
+  end_time: DateTime.new(2023, 11, 14, 9) + 1.hour, repeated_weeks: 4, location: "Zoom (Link TBA)", user_id: 2 },
 
   {courseName: "CSOR 4231", start_time: DateTime.new(2023, 11, 20, 12), 
-  end_time: DateTime.new(2023, 11, 20, 12) + 2.hour, repeated_weeks: 4, user_id: 2 },
+  end_time: DateTime.new(2023, 11, 20, 12) + 2.hour, repeated_weeks: 4, location: "Zoom (Link TBA)", user_id: 2 },
 
   {courseName: "CSOR 4231", start_time: DateTime.new(2023, 11, 21, 9), 
-  end_time: DateTime.new(2023, 11, 21, 9) + 1.hour, repeated_weeks: 4, user_id: 2 },
+  end_time: DateTime.new(2023, 11, 21, 9) + 1.hour, repeated_weeks: 4, location: "Zoom (Link TBA)", user_id: 2 },
 
   {courseName: "CSOR 4231", start_time: DateTime.new(2023, 11, 27, 12), 
-  end_time: DateTime.new(2023, 11, 27, 12) + 2.hour, repeated_weeks: 4, user_id: 2 },
+  end_time: DateTime.new(2023, 11, 27, 12) + 2.hour, repeated_weeks: 4, location: "Zoom (Link TBA)", user_id: 2 },
 
   {courseName: "CSOR 4231", start_time: DateTime.new(2023, 11, 28, 9), 
-  end_time: DateTime.new(2023, 11, 28, 9) + 1.hour, repeated_weeks: 4, user_id: 2 },
+  end_time: DateTime.new(2023, 11, 28, 9) + 1.hour, repeated_weeks: 4, location: "Zoom (Link TBA)", user_id: 2 },
 
   {courseName: "CSOR 4231", start_time: DateTime.new(2023, 12, 4, 12), 
-  end_time: DateTime.new(2023, 12, 4, 12) + 2.hour, repeated_weeks: 4, user_id: 2 },
+  end_time: DateTime.new(2023, 12, 4, 12) + 2.hour, repeated_weeks: 4, location: "Zoom (Link TBA)", user_id: 2 },
 
   {courseName: "CSOR 4231", start_time: DateTime.new(2023, 12, 5, 9), 
-  end_time: DateTime.new(2023, 12, 5, 9) + 1.hour, repeated_weeks: 4, user_id: 2 },
+  end_time: DateTime.new(2023, 12, 5, 9) + 1.hour, repeated_weeks: 4, location: "Zoom (Link TBA)", user_id: 2 },
 
   {courseName: "CSOR 4231", start_time: DateTime.new(2023, 12, 11, 12), 
-  end_time: DateTime.new(2023, 12, 11, 12) + 2.hour, repeated_weeks: 4, user_id: 2 },
+  end_time: DateTime.new(2023, 12, 11, 12) + 2.hour, repeated_weeks: 4, location: "Zoom (Link TBA)", user_id: 2 },
 
   {courseName: "CSOR 4231", start_time: DateTime.new(2023, 12, 12, 9), 
-  end_time: DateTime.new(2023, 12, 12, 9) + 1.hour, repeated_weeks: 4, user_id: 2 }
+  end_time: DateTime.new(2023, 12, 12, 9) + 1.hour, repeated_weeks: 4, location: "Zoom (Link TBA)", user_id: 2 }
 ]
 
 users.each do |user|

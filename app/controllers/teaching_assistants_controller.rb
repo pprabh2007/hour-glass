@@ -18,13 +18,15 @@ class TeachingAssistantsController < ApplicationController
           start_time = @calendar.start_time.advance(weeks: 1)
           end_time = @calendar.end_time.advance(weeks: 1)
           repeated_weeks = @calendar.repeated_weeks
+          location = @calendar.location
     
           while start_time <= repeated_weeks.weeks.from_now(@calendar.start_time)
             new_calendar = current_user.calendars.build(
               courseName: @calendar.courseName,
               start_time: start_time,
               end_time: end_time,
-              repeated_weeks: @calendar.repeated_weeks
+              repeated_weeks: @calendar.repeated_weeks,
+              location: @calendar.location
             )
             new_calendar.save
             start_time = start_time.advance(weeks: 1)
@@ -59,7 +61,7 @@ class TeachingAssistantsController < ApplicationController
   
   private
   def calendar_params
-    params.require(:calendar).permit(:courseName, :start_time, :end_time, :repeated_weeks)
+    params.require(:calendar).permit(:courseName, :start_time, :end_time, :repeated_weeks, :location)
   end
 
   private

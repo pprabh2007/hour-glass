@@ -15,14 +15,14 @@
   <div class="field">
     <span class="form-group form-inline">
       <%= form.label :start_time %>
-      <%= form.datetime_select :start_time, :default => DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, DateTime.now.hour, 0), :ampm => true, :minute_step => 15%>
+      <%= form.datetime_select :start_time, :default => DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, DateTime.now.hour, 0), :ampm => true, :minute_step => 15 %>
     </span>
   </div>
 
   <div class="field">
     <span class="form-group form-inline">
       <%= form.label :end_time %>
-      <%= form.datetime_select :end_time, :default => DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, DateTime.now.hour, 0), :ampm => true, :minute_step => 15%>
+      <%= form.datetime_select :end_time, :default => DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, DateTime.now.hour, 0), :ampm => true, :minute_step => 15 %>
     </span>
   </div>
 
@@ -31,12 +31,17 @@
     <%= form.number_field :repeated_weeks, class: 'form-control' %>
   </div>
 
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location, class: 'form-control' %>
+  </div>
+
   <div class="actions">
     <%= form.submit 'Update Calendar', :class => 'btn btn-primary leftfloat col-2' %>
   </div>
 <% end %>
 
-</br>
-</br>
-</br>
+<br>
+<br>
+<br>
 <%= link_to 'Back to Edit TA Office Hours Page', edit_office_hour_teaching_assistants_path, :class => 'btn btn-primary leftfloat col-4' %>

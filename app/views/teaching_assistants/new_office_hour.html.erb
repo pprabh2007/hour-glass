@@ -36,6 +36,11 @@
     <%= form.number_field :repeated_weeks, class: 'form-control', min: "0" %>
   </div>
 
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location, class: 'form-control' %>
+  </div>
+
   <div class="actions">
     <%= form.submit 'Create Calendar', :class => 'btn btn-primary leftfloat col-3'%>
   </div>
