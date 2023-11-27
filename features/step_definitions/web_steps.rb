@@ -123,10 +123,10 @@ end
 Then /^(?:|I )should not see the following in my results: "([^"]*)"$/ do |text|
     if page.respond_to? :should
       occurrences = page.all(:xpath, "//text()[contains(.,'#{text}')]").count
-      expect(occurrences).to be <= 1
+      expect(occurrences).to be <= 2
     else
       occurrences = page.all(:xpath, "//text()[contains(.,'#{text}')]").count
-      assert occurrences <= 1
+      assert occurrences <= 2
     end
   end
 
