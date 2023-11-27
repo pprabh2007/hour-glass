@@ -25,7 +25,7 @@ Scenario: Login as a professor and navigating to new course creation page
   And  I fill in "Uni" with "testProfessorUni"
   And  I fill in "Password" with "testPassword"
   And  I press "Sign In!"
-  Then I should see "Hello, testProfessorName!"
+  Then I should see "testProfessorName"
   When I follow "Create a New Course"
   Then I should see "Hello, Professor testProfessorName!"
 
@@ -34,10 +34,10 @@ Scenario: Login as a student and fail to navigate to new course creation page (o
   And  I fill in "Uni" with "testStudentUni"
   And  I fill in "Password" with "testPassword"
   And  I press "Sign In!"
-  Then I should see "Hello, testStudentName!"
+  Then I should see "testStudentName"
   And  I should not see "Create a New Course"
   When I go to the professors page manually
-  Then I should see "Hello, testStudentName!"
+  Then I should see "testStudentName"
   And  I should see "You do not have permission to add new courses"
 
 Scenario: Login as a professor and creating a new course

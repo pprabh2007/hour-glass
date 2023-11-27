@@ -16,7 +16,7 @@ Scenario: Login as a student, see personalized profile page, and log out
   And  I fill in "Uni" with "testStudentUni"
   And  I fill in "Password" with "testPassword"
   And  I press "Sign In!"
-  Then I should see "Hello, testStudentName!"
+  Then I should see "testStudentName"
   And I should not see "Create a New Course"
   When I follow "Sign out"
   Then I should see "Sign In"
@@ -27,7 +27,7 @@ Scenario: Login as a professor, see personalized profile page, and log out
   And  I fill in "Uni" with "testProfessorUni"
   And  I fill in "Password" with "diffPassword"
   And  I press "Sign In!"
-  Then I should see "Hello, testProfessorName!"
+  Then I should see "testProfessorName"
   And I should see "Create a New Course"
   When I follow "Sign out"
   Then I should see "Sign In"
@@ -39,7 +39,7 @@ Scenario: Sign up for a new account, sign out, and relogin as myself
   And  I fill in "Name" with "differentName"
   And  I fill in "New Password" with "differentPassword"
   And  I press "Sign Up!"
-  Then I should see "Hello, differentName!"
+  Then I should see "differentName"
   When I follow "Sign out"
   Then I should see "Sign In"
   And  I should see "You have successfully logged out."
@@ -47,7 +47,7 @@ Scenario: Sign up for a new account, sign out, and relogin as myself
   And  I fill in "Uni" with "differentUni"
   And  I fill in "Password" with "differentPassword"
   And  I press "Sign In!"
-  Then I should see "Hello, differentName!"
+  Then I should see "differentName"
 
 Scenario: Invalid credentials should remain on login screen with a warning
   When I go to the login page

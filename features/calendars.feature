@@ -25,9 +25,9 @@ Background: users, courses, and entitlements in the database
   | testProfessor  | CSOR 4231   | Prof   |
 
   Given the following calendars exist:
-  | courseName | start_time          | end_time            | repeated_weeks | user_id |
-  | COMS 4152  | 2023-10-31 08:00:00 | 2023-10-31 10:00:00 | 0              | 2       |
-  | CSOR 4231  | 2023-10-31 11:00:00 | 2023-10-31 13:00:00 | 0              | 3       |
+  | courseName | start_time          | end_time            | repeated_weeks | location         | user_id |
+  | COMS 4152  | 2023-10-31 08:00:00 | 2023-10-31 10:00:00 | 0              | Zooom (Link TBA) | 2       |
+  | CSOR 4231  | 2023-10-31 11:00:00 | 2023-10-31 13:00:00 | 0              | CSB 451          | 3       |
 
 Scenario: Login as a student and see calendar items with my viewable classes
   When I go to the login page

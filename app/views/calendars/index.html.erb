@@ -5,36 +5,120 @@
   <title>Calendar</title>
 
   <style>
-    .calendar-table {
-      table-layout: fixed;
-      width: 100%;
-      border-collapse: collapse;
+
+    .container {
+      width: 85%;
+      display: grid;
+      grid-template-areas: ". days" "time calendar";
     }
 
-    .time-column, .day-column, .time-cell, .event-cell {
-      width: 14.2857%; /* 100% / 7 columns */
-      text-align: center;
-      border: 1px solid #ddd;
-    }
-
-    .time-cell {
-      background-color: #f0f0f0;
-    }
-
-    .event-cell {
-      position: relative;
-    }
-
-    .event-cell p {
+    ol {
+      list-style: none;
       margin: 0;
-      padding: 5px;
-      background-color: #e0e0e0;
-      border-radius: 0px;
-      font-size: 12px;
+      padding: 0;
+      text-align: center;
+    }
+
+    ol.time {
+      grid-area: time;
+      display: grid;
+      grid-template-rows: repeat(24, 1fr); # Total 24 rows for 24 different hour slots
+    }
+
+    ol.time > li {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      border-bottom: 2px dotted #573b8a;
+    }
+
+    ol.time > li > time {
+      padding: 3px;
+      line-height: 1;
+      font-size: small;
+    }
+
+    ol.days {
+      grid-area: days;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr); # Total 7 columns for 7 days
+    }
+
+    ol.calendar {
+      grid-area: calendar;
+      display: grid;
+      gap: 1px;
+      grid-template: repeat(4*24, 1fr)/repeat(7, 1fr); # 96 rows for 24 hours, 4 15-min segments to each individual hour. 7 columns for 7 days
+      grid-auto-flow: column;
+      background-color: #e1e2e6;
+      border: 2px solid #573b8a;
+      border-radius: 2px;
+    }
+
+    ol.calendar > li {
+      height: 35px;
+      grid-column: var(--column);
+      grid-row: var(--row);
+      background-color: white;
+    }
+
+    <% 24.times do |i|%>
+      ol.calendar li:nth-child(24n+<%=i+1%>) {
+        --row: <%= (4*i)+1 %> / span 4; # Set the row of each part of our calendar (based on number of hours in calendar)
+      }
+    <% end %>
+
+    <% 7.times do |i|%>
+      ol.calendar li:nth-child(n+<%= i*24 + 1%>):nth-child(-n+<%= (i+1)*24%>) {
+        --column: <%= i+1 %>; # Set the column of each part of our calendar (based on number of days in calendar)
+      }
+    <% end %>
+
+    .task {
+      z-index: var(--z-index);
+      grid-column: var(--column);
+      grid-row: var(--row);
+      background-color: var(--color);
+      border-radius: 4px;
+      margin: 1px 1px 1px 1px;
+      opacity: 0.7
+    }
+
+    .task:hover{
+      opacity: 1.0;
+      font-weight: bold;
+    }
+
+    .task:hover div{
+      font-weight: normal;
+      display: inline;
+    }
+
+    .task p {
+      margin: 0;
+      padding: 2px;
+      font-size: 1vw;
       position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      background-color:black;
+      color:white;
+      border-radius: 4px;
+    }
+
+    .task div {
+      margin-left: 100px;
+      display: none;
+      margin: 0;
+      white-space: pre-line;
+      padding: 2px;
+      font-size: 1vw;
+      position: absolute;
+      right: 20px;
+      top: 600px;
+      width: 15%;
+      background-color: black;
+      color: white;
+      border: 1px solid black;
+      border-radius: 10px;
     }
 
     .btn {
@@ -53,30 +137,35 @@
 
 </br></br></br>
 
-<table class="calendar-table" border="1">
-  <thead>
-    <tr>
-      <th class="time-column">Time</th>
-      <% @all_days.each do |day| %>
-        <th class="day-column"><%= "#{day[:wday]} #{day[:date]}" %></th>
-      <% end %>
-    </tr>
-  </thead>
-  <tbody>
-    <% (0..23).each do |hour| %>
-      <tr>
-        <td class="time-cell"><%= format('%02d:00', hour) %></td>
-        <% (0..6).each do |day| %>
-          <td class="event-cell">
-            <% events_for_cell = @calendars.select { |event| event.start_time.wday == day && (event.start_time.hour <= hour && event.end_time.hour > hour) } %>
-            <% events_for_cell.each do |event| %>
-              <p><%= "#{event.courseName} (#{event.start_time.strftime('%H:%M')} - #{event.end_time.strftime('%H:%M')})" %></p>
-            <% end %>
-          </td>
-        <% end %>
-      </tr>
+<section class="container">
+  <ol class="days">
+    <% @all_days.each do |day| %>
+      <li><%= "#{day[:wday]} #{day[:date]} " %></li>
     <% end %>
-  </tbody>
-</table>
+  </ol>
+  <ol class="time">
+    <% (1..24).each do |hour| %>
+      <li>
+        <time><%= (hour % 12 != 0 ? hour % 12 : 12).to_s + (hour >= 12 && hour != 24? ' pm' : ' am') %></time>
+      </li>
+    <% end %>
+  </ol>
+  <ol class="calendar">
+    <% (@all_days.length * 24).times do %>
+      <li></li>
+    <% end %>
+    <% @calendars.each_with_index do |event, index| %>
+      <% color = '#%X00%X' % 2.times.map{ rand() * 200 + 50 } %>
+      <% converted_wday = event.start_time.wday + 1 %>
+      <% start_row = (event.start_time.hour * 4 + event.start_time.min.div(15)) + 1 %>
+      <% span = event.end_time.wday == event.start_time.wday ? (event.end_time.hour * 4 + event.end_time.min.div(15)) + 1 - start_row : 96 - start_row + 1 %>
+      <section class="task"  
+      style="--z-index: <%= index %>; --column: <%= converted_wday %>; --row: <%= start_row %> / span <%= span %>; --color: <%= color %>;">
+        <p><%= "#{event.courseName} OH" %></p>
+        <div><%= "Organizer Uni: #{User.find(event.user_id).uni} \n Course: #{event.courseName} \n Time: #{event.start_time.strftime('%l:%M%p')} to #{event.end_time.strftime('%l:%M%p')}" %></div>
+      </section>
+    <% end %>
+  </ol>
+</section>
 
 <%= link_to 'Back', user_profile_path, :class => 'btn btn-primary col-1' %>

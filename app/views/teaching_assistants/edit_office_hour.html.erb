@@ -17,6 +17,7 @@
       <th>Course Name</th>
       <th>Start Time</th>
       <th>End Time</th>
+      <th>Location</th>
       <th>Action</th>
     </tr>
   </thead>
@@ -31,6 +32,9 @@
         </td>
         <td>
           <%= slot.end_time %>
+        </td>
+        <td>
+          <%= slot.location %>
         </td>
         <td>
           <%= link_to 'Edit', edit_calendar_path(slot), class: 'btn btn-warning' %>

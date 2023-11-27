@@ -1,81 +1,107 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="app/assets/stylesheets/sessions.scss">
+    <link rel="stylesheet" href="app/assets/stylesheets/profile.scss">
 </head>
-<body>
-<%= content_tag :h1, "Hello, #{current_user.name}!" %>
-<%= link_to "Sign out", clear_session_path, method:"delete", :class => 'text-right' %>
+<body class="profileclass">
+<div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+            <%= image_tag "hourglass.png", :class => 'rounded-circle pic', :width=>"150px" %>
+              <span class="font-weight-bold"><%= content_tag :h1, "#{current_user.name}" %></span><span class="text-black-50"><%= "#{current_user.uni}" %></span><span> </span>
+            </div>
+            <% if current_user.is_professor == true %>
+              <%= link_to 'Create a New Course', professors_path, :class => 'btn btn-primary leftfloat' %>
+            <% end %>
+            </br>
+            </br>
+            <% if @entitlements.any? { |entitlement| ['Prof', 'TA'].include?(entitlement.role) } %>
+              <%= link_to 'Create New TA Office Hours', new_office_hour_teaching_assistants_path, :class => 'btn btn-primary leftfloat' %>  
+              </br>
+              </br>   
+              <%= link_to 'Edit TA Office Hours', edit_office_hour_teaching_assistants_path, :class => 'btn btn-primary leftfloat' %>
+            <% end %>
+            </br>
+            </br>
+            <%= link_to "Sign out", clear_session_path, method:"delete", :class => 'btn btn-primary leftfloat' %>
+        </div>
+        <div class="col-md-5 border-right">
+        <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+          <%= content_tag :h3, "Add a new course to your Schedule" %>
+          <%= form_tag entitlements_path, method: :post, :class => 'form' do %>
+            <%= label :entitlement, :courseName, 'Course Name', :class => 'col-form-label'  %>
+            <%= select :entitlement, :courseName, @all_course_list, { prompt: 'Select a Course' }, class: 'form-control' %>
+            <%= text_field :entitlement, :role, value: 'Viewer', :type => 'hidden' %>
+            </br>
+            <%= submit_tag "Add New Viewable Course", :class => 'btn btn-primary leftfloat' %>
+          <% end %>
 
-</br></br></br>
-<%= content_tag :h3, "Your Viewable Courses" %>
-<table class="table table-striped col-md-12" id="movies">
-  <thead>
-    <tr>
-      <th>Course Name</th>
-      <th>Course Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @viewable_courses.each do |course| %>
-      <tr>
-        <td>
-          <%= course.courseName %>
-        </td>
-        <td>
-          <%= course.courseDescription %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+          </br></br></br>
+          <% if @entitlements.any? { |entitlement| ['Prof', 'TA'].include?(entitlement.role) } %>
+          <%= content_tag :h3, "Your Office Hour Slots" %>
+          <table class="table table-striped col-md-12" id="movies">
+            <thead>
+              <tr>
+                <th>Course Name</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Location</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @calendars.each do |slot| %>
+                <tr>
+                  <td>
+                    <%= slot.courseName %>
+                  </td>
+                  <td>
+                    <%= slot.start_time %>
+                  </td>
+                  <td>
+                    <%= slot.end_time %>
+                  </td>
+                  <td>
+                    <%= slot.location %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </br></br></br>
+        <% end %>
 
-<%= link_to 'View Schedule', calendars_path, :class => 'btn btn-primary col-2' %>
-</br></br></br>
-
-<% if @entitlements.any? { |entitlement| ['Prof', 'TA'].include?(entitlement.role) } %>
-  <%= content_tag :h3, "Your Office Hour Slots" %>
-  <table class="table table-striped col-md-12" id="movies">
-    <thead>
-      <tr>
-        <th>Course Name</th>
-        <th>Start Time</th>
-        <th>End Time</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @calendars.each do |slot| %>
-        <tr>
-          <td>
-            <%= slot.courseName %>
-          </td>
-          <td>
-            <%= slot.start_time %>
-          </td>
-          <td>
-            <%= slot.end_time %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <%= link_to 'Create New TA Office Hours', new_office_hour_teaching_assistants_path, :class => 'btn btn-primary leftfloat col-3' %>     
-  <%= link_to 'Edit TA Office Hours', edit_office_hour_teaching_assistants_path, :class => 'btn btn-primary leftfloat col-3' %>
-</br></br></br>
-<% end %>
-
-<%= content_tag :h3, "View a new course on your schedule" %>
-<%= form_tag entitlements_path, method: :post, :class => 'form' do %>
-  <%= label :entitlement, :courseName, 'Course Name', :class => 'col-form-label'  %>
-  <%= select :entitlement, :courseName, @all_course_list, { prompt: 'Select a Course' }, class: 'form-control' %>
-  <%= text_field :entitlement, :role, value: 'Viewer', :type => 'hidden' %>
-  </br>
-  <%= submit_tag "Add New Viewable Course", :class => 'btn btn-primary leftfloat col-3' %>
-<% end %>
-
-<% if current_user.is_professor == true %>
-  <%= link_to 'Create a New Course', professors_path, :class => 'btn btn-primary leftfloat col-2' %>
-<% end %>
-
+        </div>
+        </div>
+        <div class="col-md-4">
+        <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+        <%= content_tag :h3, "Your Viewable Courses" %>
+        <table class="table table-striped col-md-12" id="movies">
+          <thead>
+            <tr>
+              <th>Course Name</th>
+              <th>Course Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @viewable_courses.each do |course| %>
+              <tr>
+                <td>
+                  <%= course.courseName %>
+                </td>
+                <td>
+                  <%= course.courseDescription %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <%= link_to 'View Schedule', calendars_path, :class => 'btn btn-primary' %>
+        </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
 </body>
 </html>

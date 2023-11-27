@@ -30,10 +30,11 @@ class ProfessorsController < ApplicationController
         Entitlement.create!({:uni => current_user.uni, :courseName => course.courseName, :role => "Prof"})
         unis.split( /, */ ).each { |uni| Entitlement.create!({:uni => uni, :courseName => course.courseName, :role => "TA"})}
         flash[:notice] = "Successfully created new course \'#{name}:#{description}\'."
+        redirect_to user_profile_path
       else
         flash[:warning] = "Error: Course \'#{name}\' already exists."
+        redirect_to professors_path
       end
-      redirect_to user_profile_path
     end
 
     private

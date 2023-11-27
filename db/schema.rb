@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20231111215639) do
     t.datetime "start_time"
     t.datetime "end_time"
     t.integer  "repeated_weeks", default: 0
+    t.string   "location"
     t.integer  "user_id"
   end
 
