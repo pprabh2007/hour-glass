@@ -17,10 +17,10 @@
             </br>
             </br>
             <% if @entitlements.any? { |entitlement| ['Prof', 'TA'].include?(entitlement.role) } %>
-              <%= link_to 'Create New TA Office Hours', new_office_hour_teaching_assistants_path, :class => 'btn btn-primary leftfloat' %>  
+              <%= link_to 'Create New Office Hours', new_office_hour_teaching_assistants_path, :class => 'btn btn-primary leftfloat' %>  
               </br>
               </br>   
-              <%= link_to 'Edit TA Office Hours', edit_office_hour_teaching_assistants_path, :class => 'btn btn-primary leftfloat' %>
+              <%= link_to 'Edit Current Office Hours', edit_office_hour_teaching_assistants_path, :class => 'btn btn-primary leftfloat' %>
             <% end %>
             </br>
             </br>
@@ -46,6 +46,7 @@
                 <th>Course Name</th>
                 <th>Start Time</th>
                 <th>End Time</th>
+                <th>Location</th>
               </tr>
             </thead>
             <tbody>
@@ -59,6 +60,9 @@
                   </td>
                   <td>
                     <%= slot.end_time %>
+                  </td>
+                  <td>
+                    <%= slot.location %>
                   </td>
                 </tr>
               <% end %>
@@ -101,3 +105,8 @@
 </div>
 </body>
 </html>
+
+</br></br></br>
+</br></br></br>
+</br></br></br>
+</br></br></br>

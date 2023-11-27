@@ -162,7 +162,7 @@
       <section class="task"  
       style="--z-index: <%= index %>; --column: <%= converted_wday %>; --row: <%= start_row %> / span <%= span %>; --color: <%= color %>;">
         <p><%= "#{event.courseName} OH" %></p>
-        <div><%= "Organizer Uni: #{User.find(event.user_id).uni} \n Course: #{event.courseName} \n Time: #{event.start_time.strftime('%l:%M%p')} to #{event.end_time.strftime('%l:%M%p')}" %></div>
+        <div><%= "Organizer Uni: #{User.find(event.user_id).uni} \n Course: #{event.courseName} \n Time: #{event.start_time.strftime('%l:%M%p')} to #{event.end_time.strftime('%l:%M%p')} \n Location: #{event.location}" %></div>
       </section>
     <% end %>
   </ol>

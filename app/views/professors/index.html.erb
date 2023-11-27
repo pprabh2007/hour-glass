@@ -1,43 +1,88 @@
-<%= content_tag :h1, "Hello, Professor #{current_user.name}!" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="app/assets/stylesheets/professors.scss">
+</head>
+<body class="professorsclass">
+<div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+            <%= image_tag "hourglass.png", :class => 'rounded-circle pic', :width=>"150px" %>
+              <span class="font-weight-bold"><%= content_tag :h1, "#{current_user.name}" %></span><span class="text-black-50"><%= "#{current_user.uni}" %></span><span> </span>
+            </div>
+            </br>
+            <% if @entitlements.any? { |entitlement| ['Prof', 'TA'].include?(entitlement.role) } %>
+              <%= link_to 'Create New Office Hours', new_office_hour_teaching_assistants_path, :class => 'btn btn-primary leftfloat' %>  
+              </br>
+              </br>   
+              <%= link_to 'Edit Current Office Hours', edit_office_hour_teaching_assistants_path, :class => 'btn btn-primary leftfloat' %>
+            <% end %>
+            </br>
+            </br>
+            <%= link_to "Sign out", clear_session_path, method:"delete", :class => 'btn btn-primary leftfloat' %>
+        </div>
+        <div class="col-md-4 border-right">
+        <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+          
+          <%= content_tag :h3, "Create A New Course" %>
+          <%= form_tag professors_path, method: :post, :class => 'form' do %>
+            <%= label :professor, :courseName, 'Course Name', :class => 'col-form-label'  %>
+            <%= text_field :professor, :courseName, :class => 'form-control' %>
+            
+            <%= label :professor, :courseDescription, 'Course Description', :class => 'col-form-label'  %>
+            <%= text_field :professor, :courseDescription, :class => 'form-control' %>
+            
+            <%= label :professor, :unis, 'Enter TA UNIs (comma seperated)', :class => 'col-form-label'  %>
+            <%= text_field :professor, :unis, :class => 'form-control' %>
+            
+            <%= text_field :professor, :role, value: 'Prof', :type => 'hidden' %>
+            </br>
+            <%= submit_tag "Create Course", :class => 'btn btn-primary' %>
+          <% end %>
+        </div>
+        </div>
+        <div class="col-md-5">
+        <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+          <%= content_tag :h3, "Owned Courses" %>
 
-</br>
-<%= content_tag :h3, "Currently Owned Courses" %>
+          <table class="table table-striped col-md-12" id="movies">
+            <thead>
+              <tr>
+                <th>Course</th>
+                <th>Description</th>
+                <th>TA's</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @viewable_courses.each do |course, tas| %>
+                <tr>
+                  <td>
+                    <%= course.courseName %>
+                  </td>
+                  <td>
+                    <%= course.courseDescription %>
+                  </td>
+                  <td>
+                    <% tas.each do |ta| %>
+                      <%= ta %>
+                      </br>
+                    <% end %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        </div>
+        <%= link_to 'Return to Profile', user_profile_path, :class => 'btn btn-primary' %>
+    </div>
+</div>
+</div>
+</div>
+</body>
+</html>
 
-<table class="table table-striped col-md-12" id="movies">
-  <thead>
-    <tr>
-      <th>Course</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @viewable_courses.each do |course| %>
-      <tr>
-        <td>
-          <%= course.courseName %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-</br>
-
-</br>
-<%= content_tag :h3, "Create A New Course" %>
-<%= form_tag professors_path, method: :post, :class => 'form' do %>
-  <%= label :professor, :courseName, 'Course Name', :class => 'col-form-label'  %>
-  <%= text_field :professor, :courseName, :class => 'form-control' %>
-  
-  <%= label :professor, :courseDescription, 'Course Description', :class => 'col-form-label'  %>
-  <%= text_field :professor, :courseDescription, :class => 'form-control' %>
-  
-  <%= label :professor, :unis, 'Enter TA UNIs (comma seperated)', :class => 'col-form-label'  %>
-  <%= text_field :professor, :unis, :class => 'form-control' %>
-  
-  <%= text_field :professor, :role, value: 'Prof', :type => 'hidden' %>
-  </br>
-  <%= submit_tag "Create a New Course", :class => 'btn btn-primary col-2' %>
-<% end %>
-
-</br>
-<%= link_to 'Back to Profile Page', user_profile_path, :class => 'btn btn-primary col-2' %>
+</br></br></br>
+</br></br></br>

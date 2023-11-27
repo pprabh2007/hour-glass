@@ -10,12 +10,17 @@ class ProfessorsController < ApplicationController
     end
 
     def index
-      @viewable_courses = Set.new
+      @viewable_courses = Hash.new
         @entitlements = Entitlement.where(uni: current_user.uni, role: "Prof")
         @entitlements.each do |entitlement|
           potential_course = Course.find_by(courseName: entitlement.courseName)
             if not potential_course.nil?
-              @viewable_courses << potential_course
+              @tas = Entitlement.where(courseName: potential_course.courseName, role: "TA")
+              @talist = Set.new
+              @tas.each do |ta|
+                @talist << ta.uni
+              end
+              @viewable_courses[potential_course] = @talist
             end
       end
     end
@@ -30,7 +35,7 @@ class ProfessorsController < ApplicationController
         Entitlement.create!({:uni => current_user.uni, :courseName => course.courseName, :role => "Prof"})
         unis.split( /, */ ).each { |uni| Entitlement.create!({:uni => uni, :courseName => course.courseName, :role => "TA"})}
         flash[:notice] = "Successfully created new course \'#{name}:#{description}\'."
-        redirect_to user_profile_path
+        redirect_to professors_path
       else
         flash[:warning] = "Error: Course \'#{name}\' already exists."
         redirect_to professors_path

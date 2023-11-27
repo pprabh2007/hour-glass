@@ -41,11 +41,12 @@ RSpec.describe ProfessorsController, type: :controller do
       session[:user_uni] = user.uni
       session[:user_password] = user.password
       entitlement = Entitlement.create(uni: user.uni, courseName: "COMS 4152", role: "Prof")
+      Entitlement.create(uni: "testeruni", courseName: "COMS 4152", role: "TA")
       course = Course.create(courseName: "COMS 4152", courseDescription: "Engineering Software-as-a-Service")
 
       get :index
 
-      expect(assigns(:viewable_courses)).to contain_exactly(course)
+      expect(assigns(:viewable_courses).keys()).to contain_exactly(course)
       expect(response).to render_template(:index)
     end
   end
@@ -64,7 +65,7 @@ RSpec.describe ProfessorsController, type: :controller do
           }
         }
 
-        expect(response).to redirect_to(user_profile_path)
+        expect(response).to redirect_to(professors_path)
         expect(flash[:notice]).to eq("Successfully created new course 'COMS 4152:Engineering Software-as-a-Service'.")
         expect(Course.find_by(courseName: 'COMS 4152')).to be_present
         expect(Entitlement.where(courseName: 'COMS 4152')).to_not be_empty

@@ -1,42 +1,90 @@
-<h1>Edit Office Hour</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="app/assets/stylesheets/profile.scss">
+</head>
+<body class="profileclass">
+<div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+            <%= image_tag "hourglass.png", :class => 'rounded-circle pic', :width=>"150px" %>
+              <span class="font-weight-bold"><%= content_tag :h1, "#{current_user.name}" %></span><span class="text-black-50"><%= "#{current_user.uni}" %></span><span> </span>
+            </div>
+            <% if current_user.is_professor == true %>
+              <%= link_to 'Create a New Course', professors_path, :class => 'btn btn-primary leftfloat' %>
+            <% end %>
+            </br>
+            </br>
+            
+              <%= link_to 'Create New Office Hours', new_office_hour_teaching_assistants_path, :class => 'btn btn-primary leftfloat' %>  
+              </br>
+              </br>   
+              <%= link_to 'Edit Current Office Hours', edit_office_hour_teaching_assistants_path, :class => 'btn btn-primary leftfloat' %>
+            </br>
+            </br>
+            <%= link_to "Sign out", clear_session_path, method:"delete", :class => 'btn btn-primary leftfloat' %>
+        </div>
+        <div class="col-md-8 border-right">
+        <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+          <h1>Edit Office Hours</h1>
 
-<%= form_for @calendar, url: teaching_assistant_path(@calendar), method: :patch do |form| %>
-  <% if @calendar.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@calendar.errors.count, "error") %> prohibited this calendar from being saved:</h2>
-      <ul>
-        <% @calendar.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+          </br>
+
+          <%= form_for @calendar, url: teaching_assistant_path(@calendar), method: :patch do |form| %>
+            <% if @calendar.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@calendar.errors.count, "error") %> prohibited this calendar from being saved:</h2>
+                <ul>
+                  <% @calendar.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+          
+            <div class="field">
+              <span class="form-group form-inline">
+                <%= form.label :start_time %>
+                <%= form.datetime_select :start_time, :default => DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, DateTime.now.hour, 0), :ampm => true, :minute_step => 15%>
+              </span>
+            </div>
+          
+            <div class="field">
+              <span class="form-group form-inline">
+                <%= form.label :end_time %>
+                <%= form.datetime_select :end_time, :default => DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, DateTime.now.hour, 0), :ampm => true, :minute_step => 15%>
+              </span>
+            </div>
+          
+            <div class="field">
+              <%= form.label :repeated_weeks, "Number of Repeated Weeks" %>
+              <%= form.number_field :repeated_weeks, class: 'form-control' %>
+            </div>
+
+            <div class="field">
+            <%= form.label :location %>
+            <%= form.text_field :location, class: 'form-control' %>
+          </div>
+          
+            <div class="actions">
+              <%= form.submit 'Update Calendar', :class => 'btn btn-primary' %>
+            </div>
+          <% end %>
+        </div>
+        </div>
+        <div class="col-md-0">
+        <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+        
+        </div>
+        </div>
+        <%= link_to 'Return to Profile', user_profile_path, :class => 'btn btn-primary leftfloat col-3' %>
     </div>
-  <% end %>
+</div>
+</div>
+</div>
+</body>
+</html>
 
-  <div class="field">
-    <span class="form-group form-inline">
-      <%= form.label :start_time %>
-      <%= form.datetime_select :start_time, :default => DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, DateTime.now.hour, 0), :ampm => true, :minute_step => 15%>
-    </span>
-  </div>
-
-  <div class="field">
-    <span class="form-group form-inline">
-      <%= form.label :end_time %>
-      <%= form.datetime_select :end_time, :default => DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, DateTime.now.hour, 0), :ampm => true, :minute_step => 15%>
-    </span>
-  </div>
-
-  <div class="field">
-    <%= form.label :repeated_weeks, "Number of Repeated Weeks" %>
-    <%= form.number_field :repeated_weeks, class: 'form-control' %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit 'Update Calendar', :class => 'btn btn-primary leftfloat col-2' %>
-  </div>
-<% end %>
-
+</br></br></br>
 </br>
-</br>
-</br>
-<%= link_to 'Back to Edit TA Office Hours Page', edit_office_hour_teaching_assistants_path, :class => 'btn btn-primary leftfloat col-4' %>

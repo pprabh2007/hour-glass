@@ -5,6 +5,8 @@ class TeachingAssistantsController < ApplicationController
   def new_office_hour
     @your_classes = Entitlement.where({uni: current_user.uni, role: ["TA", "Prof"]}).map(&:courseName)
     @calendar = Calendar.new
+
+    @entitlements = Entitlement.where(uni: current_user.uni, role: ["TA", "Prof"])
   end
 
   def create_office_hour
@@ -13,18 +15,21 @@ class TeachingAssistantsController < ApplicationController
       redirect_to new_office_hour_teaching_assistants_path
     elsif
       @calendar = current_user.calendars.build(calendar_params)
+      @entitlements = Entitlement.where(uni: current_user.uni, role: ["TA", "Prof"])
       if @calendar.save
         if @calendar.repeated_weeks.positive?
           start_time = @calendar.start_time.advance(weeks: 1)
           end_time = @calendar.end_time.advance(weeks: 1)
           repeated_weeks = @calendar.repeated_weeks
+          location = @calendar.location
     
           while start_time <= repeated_weeks.weeks.from_now(@calendar.start_time)
             new_calendar = current_user.calendars.build(
               courseName: @calendar.courseName,
               start_time: start_time,
               end_time: end_time,
-              repeated_weeks: @calendar.repeated_weeks
+              repeated_weeks: @calendar.repeated_weeks,
+              location: @calendar.location
             )
             new_calendar.save
             start_time = start_time.advance(weeks: 1)
@@ -45,6 +50,7 @@ class TeachingAssistantsController < ApplicationController
     else
       @filtered_calendars = current_user.calendars
     end
+    @entitlements = Entitlement.where(uni: current_user.uni, role: ["TA", "Prof"])
   end
 
   def update
@@ -59,7 +65,7 @@ class TeachingAssistantsController < ApplicationController
   
   private
   def calendar_params
-    params.require(:calendar).permit(:courseName, :start_time, :end_time, :repeated_weeks)
+    params.require(:calendar).permit(:courseName, :start_time, :end_time, :repeated_weeks, :location)
   end
 
   private
