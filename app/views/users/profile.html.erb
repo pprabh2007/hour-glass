@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="app/assets/stylesheets/profile.scss">
 </head>
 <body class="profileclass">
-<div class="container rounded bg-white mt-5 mb-5">
+<div class="container rounded bg-white mt-5 mb-5 newsize">
     <div class="row">
         <div class="col-md-3 border-right">
             <div class="d-flex flex-column align-items-center text-center p-3 py-5">
@@ -24,11 +24,14 @@
             <% end %>
             </br>
             </br>
+            </br>
+            </br>
+            </br>
             <%= link_to "Sign out", clear_session_path, method:"delete", :class => 'btn btn-primary leftfloat' %>
         </div>
         <div class="col-md-5 border-right">
         <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-          <%= content_tag :h3, "Add a new course to your Schedule" %>
+        <span class="highlight"><%= content_tag :h3, "Add a new course to your Schedule" %></span>
           <%= form_tag entitlements_path, method: :post, :class => 'form' do %>
             <%= label :entitlement, :courseName, 'Course Name', :class => 'col-form-label'  %>
             <%= select :entitlement, :courseName, @all_course_list, { prompt: 'Select a Course' }, class: 'form-control' %>
@@ -39,7 +42,8 @@
 
           </br></br></br>
           <% if @entitlements.any? { |entitlement| ['Prof', 'TA'].include?(entitlement.role) } %>
-          <%= content_tag :h3, "Your Office Hour Slots" %>
+          <%= content_tag :h3, "Your Office Hour Slots", :class => 'highlight' %>
+          </br>
           <table class="table table-striped col-md-12" id="movies">
             <thead>
               <tr>
@@ -75,7 +79,8 @@
         </div>
         <div class="col-md-4">
         <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-        <%= content_tag :h3, "Your Viewable Courses" %>
+        <%= content_tag :h3, "Your Viewable Courses", :class => 'highlight'%>
+        </br>
         <table class="table table-striped col-md-12" id="movies">
           <thead>
             <tr>

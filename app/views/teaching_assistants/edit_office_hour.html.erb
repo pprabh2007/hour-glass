@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="app/assets/stylesheets/profile.scss">
 </head>
 <body class="profileclass">
-<div class="container rounded bg-white mt-5 mb-5">
+<div class="container rounded bg-white mt-5 mb-5 newsize">
     <div class="row">
         <div class="col-md-3 border-right">
             <div class="d-flex flex-column align-items-center text-center p-3 py-5">
@@ -22,21 +22,23 @@
             <% end %>
             </br>
             </br>
+            </br>
+            </br>
             <%= link_to "Sign out", clear_session_path, method:"delete", :class => 'btn btn-primary leftfloat' %>
         </div>
         <div class="col-md-9 border-right">
         <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+          <div class="block_container">
 
-          <div id="block_container">
-
-            <div id="bloc1">
-              <%= content_tag :h3, "Filter by Course" %>
+            <div class="bloc1">
+              <%= content_tag :h3, "Filter by Course", :class => 'highlight' %>
+              </br>
               <%= form_tag({ controller: 'teaching_assistants', action: 'edit_office_hour' }, method: :get) do %>
               <%= label_tag :courseName, 'Select Course:' %>
               <%= select_tag(:courseName, options_for_select(@courseNames), { prompt: 'Select a Course' }) %>
             </div>  
             &nbsp&nbsp&nbsp&nbsp&nbsp
-            <div id="bloc2"><%= submit_tag 'Filter', :class => 'btn btn-primary' %></div>
+            <div class="bloc2"><%= submit_tag 'Filter', :class => 'btn btn-primary' %></div>
             <% end %>
           </div>
             <%= content_tag :h3, "Filtered Office Hour Slots" %>

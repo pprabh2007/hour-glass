@@ -71,12 +71,32 @@
     border-radius: 50%;
     margin-top: 0px;
 }
-#block_container
+.block_container
 {
     display:flex;
 }
-#bloc1, #bloc2
+.bloc1, #bloc2
 {
     display:inline;
+}
+
+.newsize {
+    min-width: 1500px;
+    margin-left: -200px;
+}
+
+.calendarsize {
+    min-width: 1470px;
+    margin-left: -180px;
+}
+
+.nextweek {
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.previousweek {
+    padding-right: 800px;
 }
 }

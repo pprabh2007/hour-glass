@@ -25,9 +25,10 @@
             </br>
             <%= link_to "Sign out", clear_session_path, method:"delete", :class => 'btn btn-primary leftfloat' %>
         </div>
-        <div class="col-md-8 border-right">
+        <div class="col-md-9 border-right">
         <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-          <%= form_for @calendar, url: create_office_hour_teaching_assistants_path, local: true do |form| %>
+        <%= content_tag :h3, "Create New Office Hours", :class => 'highlight'  %>  
+        <%= form_for @calendar, url: create_office_hour_teaching_assistants_path, local: true do |form| %>
             <% if @calendar.errors.any? %>
               <div id="error_explanation">
                 <h2><%= pluralize(@calendar.errors.count, "error") %> prohibited this calendar from being saved:</h2>

@@ -3,7 +3,7 @@
 <html>
 <head>
   <title>Calendar</title>
-
+  <link rel="stylesheet" href="app/assets/stylesheets/profile.scss">
   <style>
 
     .container {
@@ -126,46 +126,76 @@
     }
   </style>
 </head>
-<body>
 
-<h1>Calendar</h1>
+<body class="profileclass">
+<div class="container rounded bg-white mt-5 mb-5 calendarsize">
+    <div class="row">
+        <div class="col-md-2 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+            <%= image_tag "hourglass.png", :class => 'rounded-circle pic', :width=>"150px" %>
+              <span class="font-weight-bold"><%= content_tag :h1, "#{current_user.name}" %></span><span class="text-black-50"><%= "#{current_user.uni}" %></span><span> </span>
+            </div>
 
-<%= link_to 'Next Week', next_week_calendars_path(year: @year, month: @month, 
-                                                      day: @day ), :class => 'btn btn-primary rightfloat col-2' %>
-<%= link_to 'Prev Week', prev_week_calendars_path(year: @year, month: @month, 
-                                                      day: @day ), :class => 'btn btn-primary leftfloat col-2' %>
+            <%= link_to 'Return to Profile', user_profile_path, :class => 'btn btn-primary ' %>
+            </br>
+            <%= link_to "Sign out", clear_session_path, method:"delete", :class => 'btn btn-primary leftfloat' %>
+        </div>
+        <div class="col-md-10 border-right">
+        <div class="d-flex flex-column align-items-center text-center p-3 py-5"> 
+        <h1><span class="highlight">Course Office Hour Calendars</span></h1>
+
+          <div class="block_container">
+          <div class="bloc2 previousweek">
+          <%= link_to 'Prev Week', prev_week_calendars_path(year: @year, month: @month, 
+                                                              day: @day ), :class => 'btn btn-primary leftfloat' %>
+          </div>
+          
+          <div class="bloc1 nextweek"><%= link_to 'Next Week', next_week_calendars_path(year: @year, month: @month, 
+                                                                day: @day ), :class => 'btn btn-primary rightfloat' %>
+          </div>
+          </div>                                               
+          </br></br></br>
+          
+          <section class="container">
+            <ol class="days">
+              <% @all_days.each do |day| %>
+                <li><%= "#{day[:wday]} #{day[:date]} " %></li>
+              <% end %>
+            </ol>
+            <ol class="time">
+              <% (1..24).each do |hour| %>
+                <li>
+                  <time><%= (hour % 12 != 0 ? hour % 12 : 12).to_s + (hour >= 12 && hour != 24? ' pm' : ' am') %></time>
+                </li>
+              <% end %>
+            </ol>
+            <ol class="calendar">
+              <% (@all_days.length * 24).times do %>
+                <li></li>
+              <% end %>
+              <% @calendars.each_with_index do |event, index| %>
+                <% color = '#%X00%X' % 2.times.map{ rand() * 200 + 50 } %>
+                <% converted_wday = event.start_time.wday + 1 %>
+                <% start_row = (event.start_time.hour * 4 + event.start_time.min.div(15)) + 1 %>
+                <% span = event.end_time.wday == event.start_time.wday ? (event.end_time.hour * 4 + event.end_time.min.div(15)) + 1 - start_row : 96 - start_row + 1 %>
+                <section class="task"  
+                style="--z-index: <%= index %>; --column: <%= converted_wday %>; --row: <%= start_row %> / span <%= span %>; --color: <%= color %>;">
+                  <p><%= "#{event.courseName} OH" %></p>
+                  <div><%= "Organizer Uni: #{User.find(event.user_id).uni} \n Course: #{event.courseName} \n Time: #{event.start_time.strftime('%l:%M%p')} to #{event.end_time.strftime('%l:%M%p')} \n Location: #{event.location}" %></div>
+                </section>
+              <% end %>
+            </ol>
+          </section>
+    </div>
+</div>
+</div>
+</div>
+</body>
+</html>
 
 </br></br></br>
+</br></br></br>
+</br></br></br>
+</br></br></br>
 
-<section class="container">
-  <ol class="days">
-    <% @all_days.each do |day| %>
-      <li><%= "#{day[:wday]} #{day[:date]} " %></li>
-    <% end %>
-  </ol>
-  <ol class="time">
-    <% (1..24).each do |hour| %>
-      <li>
-        <time><%= (hour % 12 != 0 ? hour % 12 : 12).to_s + (hour >= 12 && hour != 24? ' pm' : ' am') %></time>
-      </li>
-    <% end %>
-  </ol>
-  <ol class="calendar">
-    <% (@all_days.length * 24).times do %>
-      <li></li>
-    <% end %>
-    <% @calendars.each_with_index do |event, index| %>
-      <% color = '#%X00%X' % 2.times.map{ rand() * 200 + 50 } %>
-      <% converted_wday = event.start_time.wday + 1 %>
-      <% start_row = (event.start_time.hour * 4 + event.start_time.min.div(15)) + 1 %>
-      <% span = event.end_time.wday == event.start_time.wday ? (event.end_time.hour * 4 + event.end_time.min.div(15)) + 1 - start_row : 96 - start_row + 1 %>
-      <section class="task"  
-      style="--z-index: <%= index %>; --column: <%= converted_wday %>; --row: <%= start_row %> / span <%= span %>; --color: <%= color %>;">
-        <p><%= "#{event.courseName} OH" %></p>
-        <div><%= "Organizer Uni: #{User.find(event.user_id).uni} \n Course: #{event.courseName} \n Time: #{event.start_time.strftime('%l:%M%p')} to #{event.end_time.strftime('%l:%M%p')} \n Location: #{event.location}" %></div>
-      </section>
-    <% end %>
-  </ol>
-</section>
-
-<%= link_to 'Back', user_profile_path, :class => 'btn btn-primary col-1' %>
+<body>

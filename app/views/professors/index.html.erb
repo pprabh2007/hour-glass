@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="app/assets/stylesheets/professors.scss">
 </head>
 <body class="professorsclass">
-<div class="container rounded bg-white mt-5 mb-5">
+<div class="container rounded bg-white mt-5 mb-5 professorsize">
     <div class="row">
         <div class="col-md-3 border-right">
             <div class="d-flex flex-column align-items-center text-center p-3 py-5">
@@ -25,7 +25,7 @@
         <div class="col-md-4 border-right">
         <div class="d-flex flex-column align-items-center text-center p-3 py-5">
           
-          <%= content_tag :h3, "Create A New Course" %>
+          <%= content_tag :h3, "Create A New Course", :class => 'highlight'  %>
           <%= form_tag professors_path, method: :post, :class => 'form' do %>
             <%= label :professor, :courseName, 'Course Name', :class => 'col-form-label'  %>
             <%= text_field :professor, :courseName, :class => 'form-control' %>
@@ -44,7 +44,8 @@
         </div>
         <div class="col-md-5">
         <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-          <%= content_tag :h3, "Owned Courses" %>
+          <%= content_tag :h3, "Owned Courses", :class => 'highlight' %>
+          </br>
 
           <table class="table table-striped col-md-12" id="movies">
             <thead>
