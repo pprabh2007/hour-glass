@@ -11,9 +11,9 @@ require 'bcrypt'
 courses = [{:courseName => 'CSOR 4231', :courseDescription => 'Intro to Algorithms'}]
 
 users = [
-  {:id => 1, :uni => "avv2116", :password_digest => BCrypt::Password.create("password"), :name => "Atharv Vanarase", :is_professor => false},
-  {:id => 2, :uni => "jy2324", :password_digest => BCrypt::Password.create("password"), :name => "Junfeng Yang", :is_professor => true},
-  {:id => 3, :uni => "yt2781", :password_digest => BCrypt::Password.create("password"), :name => "Yun-Yun Tsai", :is_professor => false},
+  {:uni => "avv2116", :password_digest => BCrypt::Password.create("password"), :name => "Atharv Vanarase", :is_professor => false},
+  {:uni => "jy2324", :password_digest => BCrypt::Password.create("password"), :name => "Junfeng Yang", :is_professor => true},
+  {:uni => "yt2781", :password_digest => BCrypt::Password.create("password"), :name => "Yun-Yun Tsai", :is_professor => false},
 ]
 
 entitlements = [
