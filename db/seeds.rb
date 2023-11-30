@@ -8,27 +8,22 @@ require 'bcrypt'
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-courses = [{:courseName => 'CSOR 4231', :courseDescription => 'Intro to Algorithms'},
-{:courseName => 'TestClass', :courseDescription => 'Test Description'}]
+courses = [{:courseName => 'CSOR 4231', :courseDescription => 'Intro to Algorithms'}]
 
 users = [
-  {:id => 1, :uni => "testStudent", :password_digest => BCrypt::Password.create("password"), :name => "testStudent", :is_professor => false},
-  {:id => 2, :uni => "testProfessor", :password_digest => BCrypt::Password.create("password"), :name => "testProfessor", :is_professor => true},
-  {:id => 3, :uni => "testTA", :password_digest => BCrypt::Password.create("password"), :name => "testTA", :is_professor => false},
-  {:id => 4, :uni => "testProfessor2", :password_digest => BCrypt::Password.create("password"), :name => "testProfessor2", :is_professor => true}
+  {:id => 1, :uni => "avv2116", :password_digest => BCrypt::Password.create("password"), :name => "Atharv Vanarase", :is_professor => false},
+  {:id => 2, :uni => "jy2324", :password_digest => BCrypt::Password.create("password"), :name => "Junfeng Yang", :is_professor => true},
+  {:id => 3, :uni => "yt2781", :password_digest => BCrypt::Password.create("password"), :name => "Yun-Yun Tsai", :is_professor => false},
 ]
 
 entitlements = [
-  {:uni => "testStudent", :courseName => "CSOR 4231", :role => "Viewer", 
+  {:uni => "avv2116", :courseName => "CSOR 4231", :role => "Viewer", 
    :created_at => DateTime.new(2023, 1, 1), :updated_at => DateTime.new(2023, 1, 1)},
 
-  {:uni => "testProfessor", :courseName => "CSOR 4231", :role => "Prof", 
+  {:uni => "jy2324", :courseName => "CSOR 4231", :role => "Prof", 
    :created_at => DateTime.new(2023, 1, 1), :updated_at => DateTime.new(2023, 1, 1)},
 
-  {:uni => "testProfessor2", :courseName => "TestClass", :role => "Prof", 
-   :created_at => DateTime.new(2023, 1, 1), :updated_at => DateTime.new(2023, 1, 1)},
-
-  {:uni => "testTA", :courseName => "CSOR 4231", :role => "TA", 
+  {:uni => "yt2781", :courseName => "CSOR 4231", :role => "TA", 
    :created_at => DateTime.new(2023, 1, 1), :updated_at => DateTime.new(2023, 1, 1)}
 ]
 
