@@ -55,14 +55,32 @@ class TeachingAssistantsController < ApplicationController
 
   def update
     @calendar = Calendar.find(params[:id])
+
+    time = DateTime.now
+    calendar_update_del = get_calendar_update(@calendar, time, :update_deletion) 
     if not valid_calendar
       flash[:warning] = 'All calendar events must end on the same day and strictly after the start time'
       redirect_to edit_calendar_path(@calendar)
-    elsif @calendar.update(calendar_params)
+    elsif @calendar.update(calendar_params)  
+      calendar_update_add = get_calendar_update(@calendar, time, :update_addition)
+      calendar_update_del.save
+      calendar_update_add.save 
       redirect_to edit_office_hour_teaching_assistants_path, notice: 'Office hour was successfully updated.'
     end
   end
   
+  def get_calendar_update(calendar, time, op)
+    CalendarEdit.new(
+      courseName: calendar.courseName,
+      start_time: calendar.start_time,
+      end_time: calendar.end_time,
+      location: calendar.location,
+      user_id: calendar.user_id,
+      edit_type: CalendarEdit.edit_types[op], # Assuming you have an enum in CalendarEdit for edit_type
+      update_time: time
+    )
+  end
+
   private
   def calendar_params
     params.require(:calendar).permit(:courseName, :start_time, :end_time, :repeated_weeks, :location)

@@ -37,12 +37,27 @@ class CalendarsController < ApplicationController
         new_calendar.wday = idx_to_day(calendar.start_time.wday)
         new_calendar
       end
+
+      @calendar_edits = CalendarEdit.where(courseName: classes).where('start_time >= ? AND end_time < ?', dtstart, dtend).order(:update_time)
+      puts @calendar_edits
     end
 
     def destroy
       @calendar = Calendar.find(params[:id])
-      @calendar.destroy
+      create_calendar_deletion(@calendar)
       redirect_to edit_office_hour_teaching_assistants_path, notice: 'Office hour was successfully deleted.'
+    end
+
+    def create_calendar_deletion(calendar)
+        CalendarEdit.create(
+          courseName: calendar.courseName,
+          start_time: calendar.start_time,
+          end_time: calendar.end_time,
+          location: calendar.location,
+          user_id: calendar.user_id,
+          edit_type: CalendarEdit.edit_types[:deletion], # Assuming you have an enum in CalendarEdit for edit_type
+          update_time: DateTime.now
+        )
     end
 
     def edit

@@ -189,6 +189,28 @@
               <% end %>
             </ol>
           </section>
+          
+          <br>
+          <br>
+          
+          <h3><span>Updates</span></h3>
+
+          <ul>
+            <% @calendar_edits.each do |event| %>
+              <li>
+                <strong>Event ID:</strong> <%= event.id %><br>
+                <strong>Course Name:</strong> <%= event.courseName %><br>
+                <strong>Start Time:</strong> <%= event.start_time %><br>
+                <strong>End Time:</strong> <%= event.end_time %><br>
+                <strong>Location:</strong> <%= event.location %><br>
+                <strong>User ID:</strong> <%= event.user_id %><br>
+                <strong>Edit Type:</strong> <%= event.edit_type %><br>
+                <strong>Update Time:</strong> <%= event.update_time %><br>
+              </li>
+              <hr> <!-- Add a horizontal line between events for better separation -->
+            <% end %>
+          </ul>
+          
     </div>
 </div>
 </div>

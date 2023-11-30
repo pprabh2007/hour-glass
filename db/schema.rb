@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20231111215639) do
+ActiveRecord::Schema.define(version: 20231130203217) do
+
+  create_table "calendar_edits", force: :cascade do |t|
+    t.string   "courseName"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.string   "location"
+    t.integer  "user_id"
+    t.integer  "edit_type"
+    t.datetime "update_time"
+  end
 
   create_table "calendars", force: :cascade do |t|
     t.string   "courseName"
