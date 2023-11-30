@@ -47,7 +47,7 @@
     ol.calendar {
       grid-area: calendar;
       display: grid;
-      gap: 1px;
+      gap: 1.4px;
       grid-template: repeat(4*24, 1fr)/repeat(7, 1fr); # 96 rows for 24 hours, 4 15-min segments to each individual hour. 7 columns for 7 days
       grid-auto-flow: column;
       background-color: #e1e2e6;
@@ -174,14 +174,17 @@
                 <li></li>
               <% end %>
               <% @calendars.each_with_index do |event, index| %>
-                <% color = '#%X00%X' % 2.times.map{ rand() * 200 + 50 } %>
+                <% random_gen = Random.new(Course.find_by(courseName: event.courseName).id) %>
+                <% red = random_gen.rand(200) + 50 %>
+                <% blue = random_gen.rand(200) + 50 %>
+                <% color = '#' + red.to_s(16) + '00' + blue.to_s(16) %>
                 <% converted_wday = event.start_time.wday + 1 %>
                 <% start_row = (event.start_time.hour * 4 + event.start_time.min.div(15)) + 1 %>
                 <% span = event.end_time.wday == event.start_time.wday ? (event.end_time.hour * 4 + event.end_time.min.div(15)) + 1 - start_row : 96 - start_row + 1 %>
                 <section class="task"  
                 style="--z-index: <%= index %>; --column: <%= converted_wday %>; --row: <%= start_row %> / span <%= span %>; --color: <%= color %>;">
                   <p><%= "#{event.courseName} OH" %></p>
-                  <div><%= "Organizer Uni: #{User.find(event.user_id).uni} \n Course: #{event.courseName} \n Time: #{event.start_time.strftime('%l:%M%p')} to #{event.end_time.strftime('%l:%M%p')} \n Location: #{event.location}" %></div>
+                  <div><%= "Organizer: #{User.find(event.user_id).uni} \n Course: #{event.courseName} \n Time: #{event.start_time.strftime('%l:%M%p')} to #{event.end_time.strftime('%l:%M%p')} \n Location: #{event.location}" %></div>
                 </section>
               <% end %>
             </ol>
