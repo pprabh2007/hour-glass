@@ -68,5 +68,7 @@ Scenario: Login as a TA, make a calendar update, and the student can see the cha
   And  I fill in "Password" with "testPassword"
   And  I press "Sign In!"
   And  I go to the calendars page for day 29, month 10, year 2023
-  Then I should not see "COMS 4152"
+  Then I should not see "COMS 4152" before "Updates for the week"
+  And I should see "Updates for the week" before "COMS 4152"
+  And I should see "COMS 4152" before "Cancelling OH on Oct 31" 
 
