@@ -48,6 +48,7 @@ class CalendarsController < ApplicationController
     def destroy
       @calendar = Calendar.find(params[:id])
       create_calendar_deletion(@calendar)
+      @calendar.destroy
       redirect_to edit_office_hour_teaching_assistants_path, notice: 'Office hour was successfully deleted.'
     end
 
@@ -77,8 +78,6 @@ class CalendarsController < ApplicationController
         "[#{u_time}] #{user}: Conducting replacement OH on #{s_day} from #{s_time} to #{e_time} at #{edit.location}"
       when 'deletion'
         "[#{u_time}] #{user}: Cancelling OH on #{s_day} from #{s_time} to #{e_time} at #{edit.location}"
-      else
-        ""
       end
     end
 

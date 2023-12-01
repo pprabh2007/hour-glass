@@ -100,4 +100,72 @@ RSpec.describe CalendarsController, type: :controller do
       get :index
     end
   end
+
+  describe '#tFmt' do
+    it 'formats DateTime in DT mode' do
+      time = DateTime.parse('2023-01-01 12:00:00')
+      formatted_time = controller.tFmt(time, 'DT')
+
+      expect(formatted_time).to eq('01/01/2023 12:00')
+    end
+
+    it 'formats DateTime in D mode' do
+      time = DateTime.parse('2023-01-01 12:00:00')
+      formatted_time = controller.tFmt(time, 'D')
+
+      expect(formatted_time).to eq('Jan 01 (Sunday)')
+    end
+
+    it 'formats DateTime in T mode' do
+      time = DateTime.parse('2023-01-01 12:00:00')
+      formatted_time = controller.tFmt(time, 'T')
+
+      expect(formatted_time).to eq('12:00')
+    end
+  end
+
+  describe '#edit_description' do
+    let(:user) { User.create(name: "testProfessor", uni: "testProfessor", password: "testPassword") }
+    let(:edit_a) { CalendarEdit.create(
+                    courseName: "CSOR 4231", 
+                    start_time: DateTime.now, 
+                    end_time: DateTime.now + 1.hour, 
+                    location: "Zoom",
+                    user_id: 1,
+                    edit_type: 'deletion',
+                    update_time: DateTime.now ) }
+    let(:edit_b) { CalendarEdit.create(
+                        courseName: "CSOR 4231", 
+                        start_time: DateTime.now, 
+                        end_time: DateTime.now + 1.hour, 
+                        location: "Zoom",
+                        user_id: 1,
+                        edit_type: 'update_addition',
+                        update_time: DateTime.now ) }
+    let(:edit_c) { CalendarEdit.create(
+                            courseName: "CSOR 4231", 
+                            start_time: DateTime.now, 
+                            end_time: DateTime.now + 1.hour, 
+                            location: "Zoom",
+                            user_id: 1,
+                            edit_type: 'update_deletion',
+                            update_time: DateTime.now ) }
+    it 'returns the correct description for deletion' do
+      description = controller.edit_description(edit_a)
+      expect(description).to include('[', user.uni, ']')
+      expect(description).to include('Cancelling OH on')
+    end
+
+    it 'returns the correct description for update_addition' do
+      description = controller.edit_description(edit_b)
+      expect(description).to include('[', user.uni, ']')
+      expect(description).to include('Conducting replacement OH on')
+    end
+
+    it 'returns the correct description for update_deletion' do
+      description = controller.edit_description(edit_c)
+      expect(description).to include('[', user.uni, ']')
+      expect(description).to include('Not holding OH originally scheduled on')
+    end
+  end
 end
