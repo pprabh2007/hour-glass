@@ -56,7 +56,7 @@ class TeachingAssistantsController < ApplicationController
   def update
     @calendar = Calendar.find(params[:id])
 
-    time = DateTime.now
+    time = DateTime.now.in_time_zone("EST")
     calendar_update_del = get_calendar_update(@calendar, time, :update_deletion) 
     if not valid_calendar
       flash[:warning] = 'All calendar events must end on the same day and strictly after the start time'

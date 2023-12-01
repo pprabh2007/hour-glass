@@ -5,7 +5,9 @@
   <title>Calendar</title>
   <link rel="stylesheet" href="app/assets/stylesheets/profile.scss">
   <style>
-
+    .update_deletion { color: #295285; }
+    .update_addition {color: #36853d; }
+    .deletion { color: #783d3d; }
     .container {
       width: 85%;
       display: grid;
@@ -189,30 +191,23 @@
               <% end %>
             </ol>
           </section>
-          
-          <br>
-          <br>
-          
-          <h3><span>Updates</span></h3>
+         
+          <br><br><h3><span>Updates for the week</span></h3>
+        </div>  
 
-          <ul>
-            <% @calendar_edits.each do |event| %>
-              <li>
-                <strong>Event ID:</strong> <%= event.id %><br>
-                <strong>Course Name:</strong> <%= event.courseName %><br>
-                <strong>Start Time:</strong> <%= event.start_time %><br>
-                <strong>End Time:</strong> <%= event.end_time %><br>
-                <strong>Location:</strong> <%= event.location %><br>
-                <strong>User ID:</strong> <%= event.user_id %><br>
-                <strong>Edit Type:</strong> <%= event.edit_type %><br>
-                <strong>Update Time:</strong> <%= event.update_time %><br>
-              </li>
-              <hr> <!-- Add a horizontal line between events for better separation -->
-            <% end %>
-          </ul>
-          
-    </div>
-</div>
+        <div class="d-flex flex-column align-items-left text-left p-5 py-5" style="margin-top: -50px;">  
+          <% @calendar_edits.each do |course_name, edits| %> 
+              <h5><span> <%= course_name %> </span></h5>
+
+              <% edits.each do |edit| %>
+                <span class="<%= edit.edit_type %>">
+                <strong><%= @edit_description.call(edit) %></strong>
+                </span>
+              <% end %>
+              <hr>
+          <% end %>
+         </div>
+      </div>
 </div>
 </div>
 </body>

@@ -1,4 +1,5 @@
 require 'date'
+require 'active_support/time'
 
 class CalendarsController < ApplicationController
 
@@ -38,8 +39,10 @@ class CalendarsController < ApplicationController
         new_calendar
       end
 
-      @calendar_edits = CalendarEdit.where(courseName: classes).where('start_time >= ? AND end_time < ?', dtstart, dtend).order(:update_time)
-      puts @calendar_edits
+      @calendar_edits = CalendarEdit.where(courseName: classes)
+                        .where('start_time >= ? AND end_time < ?', dtstart, dtend)
+                        .order(:update_time).group_by(&:courseName)
+      @edit_description = method(:edit_description)
     end
 
     def destroy
@@ -56,8 +59,38 @@ class CalendarsController < ApplicationController
           location: calendar.location,
           user_id: calendar.user_id,
           edit_type: CalendarEdit.edit_types[:deletion], # Assuming you have an enum in CalendarEdit for edit_type
-          update_time: DateTime.now
+          update_time: DateTime.now.in_time_zone("EST")
         )
+    end
+
+    def edit_description(edit)
+      user = User.find(edit.user_id).uni
+      
+      u_time = tFmt(edit.update_time.in_time_zone('EST'), 'DT')
+      s_day = tFmt(edit.start_time, 'D')
+      s_time = tFmt(edit.start_time, 'T')
+      e_time = tFmt(edit.end_time, 'T')
+      case edit.edit_type
+      when 'update_deletion'
+        "[#{u_time}] #{user}: Not holding OH originally scheduled on #{s_day} from #{s_time} to #{e_time} at #{edit.location}."
+      when 'update_addition'
+        "[#{u_time}] #{user}: Conducting replacement OH on #{s_day} from #{s_time} to #{e_time} at #{edit.location}"
+      when 'deletion'
+        "[#{u_time}] #{user}: Cancelling OH on #{s_day} from #{s_time} to #{e_time} at #{edit.location}"
+      else
+        ""
+      end
+    end
+
+    def tFmt(t, mode)
+      case mode
+      when 'DT'
+        t.strftime('%m/%d/%Y %H:%M')
+      when 'D'
+        t.strftime('%b %d (%A)')
+      when 'T'
+        t.strftime('%H:%M')
+      end
     end
 
     def edit
