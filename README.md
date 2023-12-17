@@ -12,6 +12,8 @@
 
 *Iteration 2 code is under the branch: iteration-2-submission*
 
+*Final submission code is under the branch: final-submission*
+
 **Code coverage (in the repo in the coverage/index.html directory):** 100%
 
 **To run our code, we used the following commands in our root project directory:**
