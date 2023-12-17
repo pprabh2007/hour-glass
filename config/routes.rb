@@ -2,6 +2,9 @@ Rottenpotatoes::Application.routes.draw do
     resources :users, only: [:create]
     resources :sessions, only: [:new, :create]
     resources :entitlements, only: [:create]
+    resources :entitlements do
+      post 'delete_viewer', on: :collection
+    end
     resources :movies
     resources :professors
     get '/profile', to: 'users#profile', as: 'user_profile'

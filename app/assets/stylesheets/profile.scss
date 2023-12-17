@@ -63,6 +63,15 @@
 .btn-primary:hover{
 	background: #6d44b8;
 }
+.btn-secondary{
+    width: auto;
+	height: 40px;
+	justify-content: center;
+	color: #fff;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+}
 
 .pic {
     border: 2px double #6d44b8;

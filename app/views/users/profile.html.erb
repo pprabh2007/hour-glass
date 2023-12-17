@@ -86,6 +86,7 @@
             <tr>
               <th>Course Name</th>
               <th>Course Description</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -96,6 +97,12 @@
                 </td>
                 <td>
                   <%= course.courseDescription %>
+                </td>
+                <td>
+                <%= form_tag delete_viewer_entitlements_path, method: :post, :class => 'form' do %>
+                  <%= text_field :entitlement, :courseName, value: course.courseName, :type => 'hidden' %>
+                  <%= submit_tag "Remove", class: 'btn btn-danger btn-secondary leftfloat' %>
+                <% end %>
                 </td>
               </tr>
             <% end %>
